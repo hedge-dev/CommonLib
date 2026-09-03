@@ -325,3 +325,7 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
 ///
 #define UNINSTALL_VFTABLE_HOOK(CLASS_NAME, FUNCTION_NAME) \
     UNINSTALL_HOOK(CLASS_NAME##_##FUNCTION_NAME)
+
+#ifdef _M_IX86
+#include "HookingUserCall.h"
+#endif

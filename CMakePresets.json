@@ -1,0 +1,135 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": { "major": 3, "minor": 20, "patch": 0 },
+
+    "configurePresets":
+    [
+        {
+            "name": "Default",
+
+            "binaryDir": "${sourceDir}/bin/${presetName}",
+
+            "hidden": true
+        },
+        
+        {
+            "name":     "Windows",
+            "inherits": "Default",
+
+            "condition": { "lhs": "${hostSystemName}", "type": "equals", "rhs": "Windows" },
+
+            "hidden": true
+        },
+        {
+            "name":     "Windows-Ninja",
+            "inherits": "Windows",
+
+            "generator": "Ninja Multi-Config",
+
+            "cacheVariables":
+            {
+                "CMAKE_VS_VERSION_PRERELEASE": "ON",
+                "CMAKE_VS_VERSION_RANGE": "[17.0,19.0)",
+                "CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM": "10.0.26100.0"
+            },
+
+            "hidden": true
+        },
+        {
+            "name":     "Windows-Ninja-MSVC",
+            "inherits": "Windows-Ninja",
+
+            "cacheVariables":
+            {
+                "CMAKE_TOOLCHAIN_FILE": "toolchains/WindowsToolchain/Windows.MSVC.toolchain.cmake"
+            },
+
+            "hidden": true
+        },
+        {
+            "name":     "Windows-Ninja-MSVC-x86",
+            "inherits": "Windows-Ninja-MSVC",
+
+            "cacheVariables":
+            {
+                "CMAKE_SYSTEM_PROCESSOR": "X86"
+            },
+
+            "hidden": true
+        },
+        {
+            "name":     "Windows-Ninja-MSVC-x64",
+            "inherits": "Windows-Ninja-MSVC",
+
+            "cacheVariables":
+            {
+                "CMAKE_SYSTEM_PROCESSOR": "AMD64"
+            },
+
+            "hidden": true
+        },
+
+        {
+            "name": "Debug",
+            
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+
+            "hidden": true
+        },
+        {
+            "name": "Release",
+
+            "cacheVariables":
+            {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_INTERPROCEDURAL_OPTIMIZATION": true
+            },
+
+            "hidden": true
+        },
+
+        {
+            "name":     "Windows-Ninja-MSVC-x86-Debug",
+            "inherits": ["Windows-Ninja-MSVC-x86", "Debug"]
+        },
+        {
+            "name":     "Windows-Ninja-MSVC-x86-Release",
+            "inherits": ["Windows-Ninja-MSVC-x86", "Release"]
+        },
+        {
+            "name":     "Windows-Ninja-MSVC-x64-Debug",
+            "inherits": ["Windows-Ninja-MSVC-x64", "Debug"]
+        },
+        {
+            "name":     "Windows-Ninja-MSVC-x64-Release",
+            "inherits": ["Windows-Ninja-MSVC-x64", "Release"]
+        }
+    ],
+    
+    "buildPresets":
+    [
+        {
+            "name":            "Windows-Ninja-MSVC-x86-Debug",
+            "configurePreset": "Windows-Ninja-MSVC-x86-Debug",
+            "configuration":   "Debug"
+        },
+        {
+            "name":            "Windows-Ninja-MSVC-x86-Release",
+            "configurePreset": "Windows-Ninja-MSVC-x86-Release",
+            "configuration":   "Release"
+        },
+        {
+            "name":            "Windows-Ninja-MSVC-x64-Debug",
+            "configurePreset": "Windows-Ninja-MSVC-x64-Debug",
+            "configuration":   "Debug"
+        },
+        {
+            "name":            "Windows-Ninja-MSVC-x64-Release",
+            "configurePreset": "Windows-Ninja-MSVC-x64-Release",
+            "configuration":   "Release"
+        }
+    ]
+}

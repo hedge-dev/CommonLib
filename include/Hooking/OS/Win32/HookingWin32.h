@@ -61,6 +61,7 @@
     typedef RETURN_TYPE CALLING_CONVENTION FUNCTION_NAME(__VA_ARGS__);     \
     FUNCTION_NAME* x_##FUNCTION_NAME = (FUNCTION_NAME*)(ADDRESS);          \
     FUNCTION_NAME* original_##FUNCTION_NAME = x_##FUNCTION_NAME;           \
+    FUNCTION_NAME* post_##FUNCTION_NAME{};                                 \
     RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)
 
 ///
@@ -159,6 +160,7 @@ static_assert(false, "THISCALL is not implemented for this architecture.");
 #define ASM_HOOK(NAME, ADDRESS)                         \
     extern "C" uint64_t x_##NAME = (uint64_t)(ADDRESS); \
     extern "C" uint64_t original_##NAME = x_##NAME;     \
+    extern "C" uint64_t post_##NAME{};                  \
     extern "C" void* impl_##NAME;                       \
     extern "C"
 
@@ -179,11 +181,18 @@ static_assert(false, "THISCALL is not implemented for this architecture.");
 #elif defined(_M_IX86)
 
 ///
-/// Returns from an assembly hook to the original code.
+/// Returns from an assembly hook and executes the original code.
 /// 
 /// \param NAME The name of the hook.
 ///
 #define ASM_HOOK_RETURN(NAME) __asm jmp original_##NAME
+
+///
+/// Returns from an assembly hook and skips the original code.
+/// 
+/// \param NAME The name of the hook.
+///
+#define ASM_HOOK_BRANCH(NAME) __asm jmp post_##NAME
 
 ///
 /// Defines the body of an x86 assembly hook.
@@ -194,6 +203,7 @@ static_assert(false, "THISCALL is not implemented for this architecture.");
 #define ASM_HOOK(NAME, ADDRESS)        \
     void* x_##NAME = (void*)(ADDRESS); \
     void* original_##NAME = x_##NAME;  \
+    void* post_##NAME{};               \
     void NAKED_FUNC impl_##NAME()
 
 ///
@@ -205,6 +215,7 @@ static_assert(false, "THISCALL is not implemented for this architecture.");
 #define STATIC_ASM_HOOK(NAME, ADDRESS)                               \
     void* x_##NAME = (void*)(ADDRESS);                               \
     void* original_##NAME = x_##NAME;                                \
+    void* post_##NAME{};                                             \
     void impl_##NAME();                                              \
     __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALL_HOOK); \
     void NAKED_FUNC impl_##NAME()
@@ -231,19 +242,24 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
 /// 
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
-#define INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                           \
-    std::invoke([&]()                                                           \
-    {                                                                           \
-        if (!original_##FUNCTION_NAME && !(ADDRESS))                            \
-            return false;                                                       \
-                                                                                \
-        *(void**)&original_##FUNCTION_NAME = (void*)(ADDRESS);                  \
-                                                                                \
-        DetourTransactionBegin();                                               \
-        DetourUpdateThread(GetCurrentThread());                                 \
-        DetourAttach((void**)&original_##FUNCTION_NAME, &impl_##FUNCTION_NAME); \
-                                                                                \
-        return DetourTransactionCommit() == NO_ERROR;                           \
+#define INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                   \
+    std::invoke([&]()                                                                                   \
+    {                                                                                                   \
+        if (!original_##FUNCTION_NAME && !(ADDRESS))                                                    \
+            return false;                                                                               \
+                                                                                                        \
+        *(void**)&original_##FUNCTION_NAME = (void*)(ADDRESS);                                          \
+                                                                                                        \
+        DetourTransactionBegin();                                                                       \
+        DetourUpdateThread(GetCurrentThread());                                                         \
+        DetourAttach((void**)&original_##FUNCTION_NAME, &impl_##FUNCTION_NAME);                         \
+                                                                                                        \
+        const auto result = DetourTransactionCommit() == NO_ERROR;                                      \
+                                                                                                        \
+        if (result)                                                                                     \
+            post_##FUNCTION_NAME = hedgedev::csl::hook::GetPostHookAddress((void*)(x_##FUNCTION_NAME)); \
+                                                                                                        \
+        return result;                                                                                  \
     })
 
 ///
@@ -288,7 +304,12 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
         DetourUpdateThread(GetCurrentThread());                                                              \
         DetourAttach((void**)&original##CLASS_NAME##_##FUNCTION_NAME, impl_##CLASS_NAME##_##FUNCTION_NAME);  \
                                                                                                              \
-        return DetourTransactionCommit() == NO_ERROR;                                                        \
+        const auto result = DetourTransactionCommit() == NO_ERROR;                                           \
+                                                                                                             \
+        if (result)                                                                                          \
+            post_##FUNCTION_NAME = hedgedev::csl::hook::GetPostHookAddress((void*)(x_##FUNCTION_NAME));      \
+                                                                                                             \
+        return result;                                                                                       \
     })
 
 ///
@@ -305,3 +326,21 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
 #ifdef _M_IX86
 #include "HookingUserCall.h"
 #endif
+
+namespace hedgedev::csl::hook
+{
+    inline void* GetPostHookAddress(void* in_pHookStart)
+    {
+        if (!in_pHookStart)
+            return nullptr;
+        
+        const auto branchInfo = hedgedev::csl::mem::GetBranchInfo(in_pHookStart);
+
+        auto pPostHook = (uint8_t*)(size_t(in_pHookStart) + branchInfo.InstrLength);
+
+        while (*pPostHook == 0xCC)
+            pPostHook++;
+
+        return pPostHook;
+    }
+}

@@ -16,11 +16,11 @@
 #include <cstdint>
 
 #include "Utility/Utility.h"
+#include "Memory/Memory.h"
 
 #include "Configuration/Configuration.h"
 #include "Diagnostics/Diagnostics.h"
 #include "Hooking/Hooking.h"
-#include "Memory/Memory.h"
 
 #if !defined(CMNLIB_HEADER_ONLY) && defined(__CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)
 #pragma message("CommonLib must be statically linked. " __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)

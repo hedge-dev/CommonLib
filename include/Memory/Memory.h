@@ -23,6 +23,20 @@
 
 namespace hedgedev::csl::mem
 {
+    enum class BranchType;
+    enum class BranchDistance;
+    enum class BranchCondition;
+
+    struct BranchInfo
+    {
+        BranchType Type{};
+        BranchDistance Distance{};
+        BranchCondition Condition{};
+        uint8_t OpcodeLength{};
+        uint8_t InstrLength{};
+        void* pDestination{};
+    };
+
     ///
     /// Gets the original base address of the current module.
     ///
@@ -81,6 +95,15 @@ namespace hedgedev::csl::mem
     ///
     template <typename T, size_t Count>
     inline std::array<T, Count> Read(void* in_pAddress);
+
+    ///
+    /// Gets information about a branch instruction in memory.
+    ///
+    /// \param in_pAddress The address of the branch instruction.
+    /// 
+    /// \returns A structure containing information about the branch.
+    ///
+    inline BranchInfo GetBranchInfo(void* in_pAddress);
 
     ///
     /// Reads the address of an instruction in memory.

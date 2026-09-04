@@ -7,6 +7,40 @@ namespace hedgedev::csl::mem
     inline static const HMODULE g_khModule = GetModuleHandle(NULL);
     inline static void* g_pOrigModuleBase{};
 
+    enum class BranchType
+    {
+        Conditional,
+        Jump,
+        Call
+    };
+
+    enum class BranchDistance
+    {
+        Short,
+        Near,
+        Far
+    };
+
+    enum class BranchCondition
+    {
+        Overflow,
+        NotOverflow,
+        Below,
+        NotBelow,
+        Equal,
+        NotEqual,
+        BelowOrEqual,
+        Above,
+        Sign,
+        NotSign,
+        Parity,
+        NotParity,
+        Less,
+        NotLess,
+        NotGreater,
+        Greater
+    };
+
     inline void* GetOriginalModuleBase()
     {
         if (!g_khModule)
@@ -14,14 +48,7 @@ namespace hedgedev::csl::mem
 
         const auto pModuleBase = (uint8_t*)g_khModule;
         const auto pDosHeader = (IMAGE_DOS_HEADER*)pModuleBase;
-
-        if (pDosHeader->e_magic != IMAGE_DOS_SIGNATURE)
-            return nullptr;
-
         const auto pNtHeaders = (IMAGE_NT_HEADERS*)(pModuleBase + pDosHeader->e_lfanew);
-
-        if (pNtHeaders->Signature != IMAGE_NT_SIGNATURE)
-            return nullptr;
 
         return (void*)pNtHeaders->OptionalHeader.ImageBase;
     }
@@ -68,6 +95,91 @@ namespace hedgedev::csl::mem
         return result;
     }
 
+    inline BranchInfo GetBranchInfo(void* in_pAddress)
+    {
+#if defined(_M_AMD64) || defined(_M_IX86)
+        BranchInfo result{};
+
+        if (!in_pAddress)
+            return result;
+        
+        const auto b0 = Read<uint8_t>(in_pAddress);
+        const auto b1 = Read<uint8_t>((uint8_t*)in_pAddress + 1);
+
+        if ((b0 & 0xF0) == 0x70 || b0 == 0x0F)
+        {
+            result.Type = BranchType::Conditional;
+
+            if (b0 == 0x0F)
+            {
+                result.Distance = BranchDistance::Near;
+                result.Condition = BranchCondition(b1 & ~0x80);
+                result.OpcodeLength = 2;
+                result.InstrLength = 6;
+            }
+            else
+            {
+                result.Distance = BranchDistance::Short;
+                result.Condition = BranchCondition(b0 & ~0x70);
+                result.OpcodeLength = 1;
+                result.InstrLength = 2;
+            }
+        }
+        else
+        {
+            if (b0 == 0xFF)
+            {
+                result.Type = b1 == 0x15 ? BranchType::Call : BranchType::Jump;
+                result.Distance = BranchDistance::Far;
+#ifdef WIN64
+                result.OpcodeLength = 6;
+                result.InstrLength = 14;
+#else
+                result.OpcodeLength = 2;
+                result.InstrLength = 6;
+#endif
+            }
+            else if (b0 == 0xEB)
+            {
+                result.Type = BranchType::Jump;
+                result.Distance = BranchDistance::Short;
+                result.OpcodeLength = 1;
+                result.InstrLength = 2;
+            }
+            else
+            {
+                result.Type = b0 == 0xE8 ? BranchType::Call : BranchType::Jump;
+                result.Distance = BranchDistance::Near;
+                result.OpcodeLength = 1;
+                result.InstrLength = 5;
+            }
+        }
+
+        auto rva = size_t(in_pAddress) + result.OpcodeLength;
+
+        switch (result.Distance)
+        {
+            case BranchDistance::Short:
+                rva = *(int8_t*)rva;
+                break;
+
+            case BranchDistance::Near:
+                rva = *(int32_t*)rva;
+                break;
+
+            case BranchDistance::Far:
+                rva = *(size_t*)rva;
+                break;
+        }
+
+        result.pDestination = (void*)((size_t(in_pAddress) + rva) + result.InstrLength);
+
+        return result;
+#else
+        static_assert(false, "GetBranchInfo is not implemented for this architecture.");
+#endif
+    }
+
     template <typename T>
     inline void* ReadInstructionAddress(void* in_pAddress, size_t in_offset, size_t in_stride)
     {
@@ -83,70 +195,12 @@ namespace hedgedev::csl::mem
 
     inline void* ReadCall(void* in_pAddress)
     {
-        return ReadInstructionAddress<int>(in_pAddress, 1, 5);
+        return ReadJump(in_pAddress);
     }
 
     inline void* ReadJump(void* in_pAddress)
     {
-        if (!in_pAddress)
-            return nullptr;
-
-#if defined(_M_AMD64) || defined(_M_IX86)
-        void* result{};
-
-        const auto opcode = Read<uint8_t>(in_pAddress);
-        auto jmpType = -1;
-        
-        if ((opcode & 0xF0) == 0x70)
-        {
-            jmpType = 0;
-        }
-        else
-        {
-            switch (opcode)
-            {
-                case 0xE3:
-                case 0xEB:
-                    jmpType = 0;
-                    break;
-
-                case 0xE9:
-                    jmpType = 1;
-                    break;
-
-                case 0x0F:
-                    jmpType = 2;
-                    break;
-
-                case 0xFF:
-                    jmpType = 3;
-                    break;
-            }
-        }
-        
-        switch (jmpType)
-        {
-            case 0:
-                result = ReadInstructionAddress<int8_t>(in_pAddress, 1, 2);
-                break;
-
-            case 1:
-                result = ReadInstructionAddress<int>(in_pAddress, 1, 5);
-                break;
-
-            case 2:
-                result = ReadInstructionAddress<int>(in_pAddress, 2, 6);
-                break;
-
-            case 3:
-                result = ReadInstructionAddress<int64_t>(in_pAddress, 6, 0);
-                break;
-        }
-        
-        return result;
-#else
-        static_assert(false, "ReadJump is not implemented for this architecture.");
-#endif
+        return GetBranchInfo(in_pAddress).pDestination;
     }
 
     template <typename T>
@@ -196,24 +250,26 @@ namespace hedgedev::csl::mem
         if (length - 2 <= 0x7F && !in_isCall)
         {
             ASSERT_RETURN_FALSE(Write<uint8_t>(in_pAddress, 0xEB));
-            ASSERT_RETURN_FALSE(Write<uint8_t>(((uint8_t*)in_pAddress) + 1, uint8_t(length - 2)));
+            ASSERT_RETURN_FALSE(Write<int8_t>(((uint8_t*)in_pAddress) + 1, int8_t(length - 2)));
         }
         else
         {
             if (length - 5 <= 0x7FFFFFFF)
             {
                 ASSERT_RETURN_FALSE(Write<uint8_t>(in_pAddress, in_isCall ? 0xE8 : 0xE9));
-                ASSERT_RETURN_FALSE(Write<uint32_t>(((uint8_t*)in_pAddress) + 1, uint32_t(length - 5)));
+                ASSERT_RETURN_FALSE(Write<int32_t>(((uint8_t*)in_pAddress) + 1, int32_t(length - 5)));
             }
-#ifdef WIN64
             else
             {
                 ASSERT_RETURN_FALSE(Write<uint8_t>(in_pAddress, 0xFF));
                 ASSERT_RETURN_FALSE(Write<uint8_t>(((uint8_t*)in_pAddress) + 1, in_isCall ? 0x15 : 0x25));
-                ASSERT_RETURN_FALSE(Write<uint32_t>(((uint8_t*)in_pAddress) + 2, 0));
-                ASSERT_RETURN_FALSE(Write<uint64_t>(((uint8_t*)in_pAddress) + 6, uint64_t(length - 14)));
+#ifdef WIN64
+                ASSERT_RETURN_FALSE(Write<int32_t>(((uint8_t*)in_pAddress) + 2, 0));
+                ASSERT_RETURN_FALSE(Write<int64_t>(((uint8_t*)in_pAddress) + 6, int64_t(length - 14)));
+#else
+                ASSERT_RETURN_FALSE(Write<int32_t>(((uint8_t*)in_pAddress) + 2, int32_t(length - 6)));
+#endif
             }
-#endif // WIN64
         }
 
         return true;

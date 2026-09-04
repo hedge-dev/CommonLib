@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include <array>
 #include <bit>
 #include <optional>
 #include <typeindex>
@@ -1014,7 +1013,7 @@ namespace hedgedev::csl::hook
                     continue;
                 }
 
-                emitPop(in_rInfo.GetParamRegister(i));
+                emitPop(currentRegister);
             }
 
             if (stackParamCount > 0)

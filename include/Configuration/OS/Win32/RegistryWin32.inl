@@ -1,8 +1,5 @@
 namespace hedgedev::csl::cfg::registry
 {
-    inline static constexpr size_t g_kRegistryMaxSubkeyPathLength = MAX_PATH;
-    inline static constexpr size_t g_kRegistryMaxValueNameLength = 0x3FFF;
-
     inline bool TryParseRegistryPath(const std::filesystem::path& in_rPath, HKEY& out_rHKey, std::wstring& out_rSubKey)
     {
         if (in_rPath.empty())

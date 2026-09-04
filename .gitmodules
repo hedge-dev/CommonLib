@@ -1,6 +1,7 @@
 [submodule "thirdparty/Detours"]
 	path = thirdparty/Detours
 	url = https://github.com/microsoft/Detours.git
+	ignore = dirty
 [submodule "toolchains/WindowsToolchain"]
 	path = toolchains/WindowsToolchain
 	url = https://github.com/MarkSchofield/WindowsToolchain.git

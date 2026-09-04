@@ -20,7 +20,7 @@
 #include "Diagnostics/Diagnostics.h"
 #include "Hooking/Hooking.h"
 
-#ifdef __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
+#if !defined(CMNLIB_HEADER_ONLY) && defined(__CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)
 #pragma message("CommonLib must be statically linked. " __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)
 #pragma comment(lib, "CommonLib.lib")
 #endif

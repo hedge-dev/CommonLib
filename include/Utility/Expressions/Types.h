@@ -39,39 +39,57 @@ namespace hedgedev::csl::ut::expr
     template <typename T>
     using GetCharType_t = typename GetCharType<std::decay_t<T>>::Type;
 
-    ///
-    /// Determines whether the type is a C string.
-    ///
     template <typename T>
-    concept IsCString = std::is_same_v<GetCharType_t<T>*, char*>;
-
-    ///
-    /// Determines whether the type is a C wide string.
-    ///
-    template <typename T>
-    concept IsCStringW = std::is_same_v<GetCharType_t<T>*, wchar_t*>;
-
-    template <typename T>
-    struct IsString : std::false_type {};
+    struct IsBasicString : std::false_type {};
     
     ///
     /// Determines whether the type is an std::basic_string.
     ///
     template <typename TChar, typename TTraits>
-    struct IsString<std::basic_string<TChar, TTraits>> : std::true_type {};
+    struct IsBasicString<std::basic_string<TChar, TTraits>> : std::true_type {};
 
     template <typename T>
-    struct IsStringView : std::false_type {};
+    struct IsBasicStringView : std::false_type {};
     
     ///
     /// Determines whether the type is an std::basic_string_view.
     ///
     template <typename TChar, typename TTraits>
-    struct IsStringView<std::basic_string_view<TChar, TTraits>> : std::true_type {};
+    struct IsBasicStringView<std::basic_string_view<TChar, TTraits>> : std::true_type {};
 
     ///
-    /// Determines whether the type is an std::basic_string or std::basic_string_view.
+    /// A multibyte C string type.
     ///
     template <typename T>
-    concept IsStringOrView = IsString<std::remove_cvref_t<std::decay_t<T>>>::value || IsStringView<std::remove_cvref_t<std::decay_t<T>>>::value;
+    concept CStringA = std::is_same_v<GetCharType_t<T>, char>;
+
+    ///
+    /// A wide C string type.
+    ///
+    template <typename T>
+    concept CStringW = std::is_same_v<GetCharType_t<T>, wchar_t>;
+
+    ///
+    /// A multibyte or wide C string type
+    ///
+    template <typename T>
+    concept CString = CStringA<T> || CStringW<T>;
+
+    ///
+    /// An std::basic_string type.
+    ///
+    template <typename T>
+    concept BasicString = IsBasicString<std::remove_cvref_t<std::decay_t<T>>>::value;
+
+    ///
+    /// An std::basic_string_view type.
+    ///
+    template <typename T>
+    concept BasicStringView = IsBasicStringView<std::remove_cvref_t<std::decay_t<T>>>::value;
+
+    ///
+    /// A multibyte or wide C string type, or an std::basic_string or std::basic_string_view type.
+    ///
+    template <typename T>
+    concept AnyString = CString<T> || BasicString<T> || BasicStringView<T>;
 }

@@ -137,10 +137,7 @@ namespace hedgedev::csl::cfg::registry
         DWORD dataType{};
         std::wstring strData{};
         
-        if constexpr (hedgedev::csl::ut::expr::IsCString<T>      ||
-                      hedgedev::csl::ut::expr::IsCStringW<T>     ||
-                      hedgedev::csl::ut::expr::IsStringOrView<T> ||
-                      std::is_same_v<T, std::filesystem::path>)
+        if constexpr (hedgedev::csl::ut::expr::AnyString<T> || std::is_same_v<T, std::filesystem::path>)
         {
             if (hedgedev::csl::ut::string::TryConvert(in_rData, strData))
             {

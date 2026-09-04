@@ -34,7 +34,7 @@
 #define __userpurge 1
 
 #define USER_REGISTER(REGISTER) \
-    ((uint64_t)(hedgedev::csl::hook::UserRegister::REGISTER))
+    ((uint64_t)(hedgedev::csl::hook::UserRegister(hedgedev::csl::hook::Register::REGISTER)))
 
 ///
 /// Specifies the hook has no return value.
@@ -207,6 +207,63 @@ namespace hedgedev::csl::hook
         XMM5,
         XMM6,
         XMM7,
+
+        Count
+    };
+
+    enum class Register : uint64_t
+    {
+        None,
+        
+        AL  = UserRegister::EAX,
+        AX  = UserRegister::EAX,
+        EAX = UserRegister::EAX,
+
+        CL  = UserRegister::ECX,
+        CX  = UserRegister::ECX,
+        ECX = UserRegister::ECX,
+
+        DL  = UserRegister::EDX,
+        DX  = UserRegister::EDX,
+        EDX = UserRegister::EDX,
+
+        BL  = UserRegister::EBX,
+        BX  = UserRegister::EBX,
+        EBX = UserRegister::EBX,
+
+        SPL = UserRegister::ESP,
+        SP  = UserRegister::ESP,
+        ESP = UserRegister::ESP,
+
+        BPL = UserRegister::EBP,
+        BP  = UserRegister::EBP,
+        EBP = UserRegister::EBP,
+        
+        SIL = UserRegister::ESI,
+        SI  = UserRegister::ESI,
+        ESI = UserRegister::ESI,
+
+        DIL = UserRegister::EDI,
+        DI  = UserRegister::EDI,
+        EDI = UserRegister::EDI,
+
+        ST0 = UserRegister::ST0,
+        ST1 = UserRegister::ST1,
+        ST2 = UserRegister::ST2,
+        ST3 = UserRegister::ST3,
+        ST4 = UserRegister::ST4,
+        ST5 = UserRegister::ST5,
+        ST6 = UserRegister::ST6,
+        ST7 = UserRegister::ST7,
+        
+        XMM0 = UserRegister::XMM0,
+        XMM1 = UserRegister::XMM1,
+        XMM2 = UserRegister::XMM2,
+        XMM3 = UserRegister::XMM3,
+        XMM4 = UserRegister::XMM4,
+        XMM5 = UserRegister::XMM5,
+        XMM6 = UserRegister::XMM6,
+        XMM7 = UserRegister::XMM7,
 
         Count
     };

@@ -81,7 +81,7 @@
     RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)
 
 ///
-/// Gets the installation result of a hook defined with \ref STATIC_HOOK, \ref STATIC_THIS_HOOK, \ref STATIC_USER_HOOK or \ref STATIC_ASM_HOOK.
+/// Gets the installation result of a hook defined with \ref STATIC_HOOK, \ref STATIC_USER_HOOK or \ref STATIC_ASM_HOOK.
 /// 
 /// \param FUNCTION_NAME The name of the function that was hooked.
 /// 
@@ -92,42 +92,18 @@
 
 #if defined(_M_AMD64) || defined(_M_IX86)
 
+#define THISCALL __fastcall
+
 #if defined(_M_AMD64)
-#define THIS_HOOK_PARAMS(CLASS_NAME) CLASS_NAME* self
-#define THIS_HOOK_RETURN_PARAMS self
+#define THISCALL_PARAMS(CLASS_NAME) CLASS_NAME* self
+#define THISCALL_RETURN_PARAMS      self
 #elif defined(_M_IX86)
-#define THIS_HOOK_PARAMS(CLASS_NAME) CLASS_NAME* self, void* _
-#define THIS_HOOK_RETURN_PARAMS self, _
+#define THISCALL_PARAMS(CLASS_NAME) CLASS_NAME* self, void* _
+#define THISCALL_RETURN_PARAMS      self, _
 #endif
 
-///
-/// Defines the body of a hook for a class function in memory.
-/// 
-/// \param RETURN_TYPE        The return type of the function.
-/// \param CLASS_NAME         The name of the class that contains the function being hooked.
-///                           Use `void` if the class is undefined.
-/// \param FUNCTION_NAME      The name of the function.
-/// \param ADDRESS            The address of the function.
-/// \param __VA_ARGS__        The parameters of the function (excluding `this`).
-///
-#define THIS_HOOK(RETURN_TYPE, CLASS_NAME, FUNCTION_NAME, ADDRESS, ...) \
-    HOOK(RETURN_TYPE, __fastcall, FUNCTION_NAME, ADDRESS, THIS_HOOK_PARAMS(CLASS_NAME), __VA_ARGS__)
-
-///
-/// Defines the body of a hook for a class function in memory, and installs it upon initialisation.
-/// 
-/// \param RETURN_TYPE        The return type of the function.
-/// \param CLASS_NAME         The name of the class that contains the function being hooked.
-///                           Use `void` if the class is undefined.
-/// \param FUNCTION_NAME      The name of the function.
-/// \param ADDRESS            The address of the function.
-/// \param __VA_ARGS__        The parameters of the function (excluding `this`).
-///
-#define STATIC_THIS_HOOK(RETURN_TYPE, CLASS_NAME, FUNCTION_NAME, ADDRESS, ...) \
-    STATIC_HOOK(RETURN_TYPE, __fastcall, FUNCTION_NAME, ADDRESS, THIS_HOOK_PARAMS(CLASS_NAME), __VA_ARGS__)
-
 #else
-static_assert(false, "THIS_HOOK is not implemented for this architecture.");
+static_assert(false, "THISCALL is not implemented for this architecture.");
 #endif
 
 ///
@@ -238,7 +214,7 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
 #endif
 
 ///
-/// Installs a hook defined with \ref HOOK, \ref THIS_HOOK or \ref ASM_HOOK.
+/// Installs a hook defined with \ref HOOK or \ref ASM_HOOK.
 /// 
 /// \param FUNCTION_NAME The name of the function to call before the original.
 /// 
@@ -248,7 +224,7 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
     INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, original_##FUNCTION_NAME)
 
 ///
-/// Installs a hook defined with \ref HOOK, \ref THIS_HOOK or \ref ASM_HOOK at an explicit address.
+/// Installs a hook defined with \ref HOOK or \ref ASM_HOOK at an explicit address.
 /// 
 /// \param FUNCTION_NAME The name of the function to call before the original.
 /// \param ADDRESS       The address of the function to hook.

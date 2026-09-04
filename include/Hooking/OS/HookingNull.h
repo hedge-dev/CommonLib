@@ -21,12 +21,6 @@
 #define GET_STATIC_HOOK_RESULT(FUNCTION_NAME) \
     static_assert(false, "GET_STATIC_HOOK_RESULT is not implemented for this OS.");
 
-#define THIS_HOOK(RETURN_TYPE, CLASS_NAME, FUNCTION_NAME, ADDRESS, ...) \
-    static_assert(false, "THIS_HOOK is not implemented for this OS.");
-
-#define STATIC_THIS_HOOK(RETURN_TYPE, CLASS_NAME, FUNCTION_NAME, ADDRESS, ...) \
-    static_assert(false, "STATIC_THIS_HOOK is not implemented for this OS.");
-
 #define VFTABLE_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME, FUNCTION_NAME, ...) \
     static_assert(false, "VFTABLE_HOOK is not implemented for this OS.");
 

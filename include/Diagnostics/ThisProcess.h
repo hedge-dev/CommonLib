@@ -82,5 +82,5 @@ namespace hedgedev::csl::diag::this_process
 #include "ThisProcess.inl"
 
 #ifdef WIN32
-#include "OS/Win32/ThisProcessWin32.inl"
+#include "Win32/ThisProcess.inl"
 #endif

@@ -20,5 +20,5 @@ namespace hedgedev::csl::diag::process
 }
 
 #ifdef WIN32
-#include "OS/Win32/ProcessWin32.inl"
+#include "Win32/Process.inl"
 #endif

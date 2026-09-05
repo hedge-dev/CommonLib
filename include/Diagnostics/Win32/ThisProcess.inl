@@ -73,7 +73,7 @@ namespace hedgedev::csl::diag::this_process
 		const auto hThread = GetCurrentThread();
 		STACKFRAME stackFrame{};
 
-#if defined(_M_AMD64)
+#if defined(CMNLIB_X64)
 		machineType = IMAGE_FILE_MACHINE_AMD64;
 		stackFrame.AddrPC.Offset = context.Rip;
 		stackFrame.AddrPC.Mode = AddrModeFlat;
@@ -81,7 +81,7 @@ namespace hedgedev::csl::diag::this_process
 		stackFrame.AddrStack.Mode = AddrModeFlat;
 		stackFrame.AddrFrame.Offset = context.Rbp;
 		stackFrame.AddrFrame.Mode = AddrModeFlat;
-#elif defined(_M_IX86)
+#elif defined(CMNLIB_X86)
 		machineType = IMAGE_FILE_MACHINE_I386;
 		stackFrame.AddrPC.Offset = context.Eip;
 		stackFrame.AddrPC.Mode = AddrModeFlat;

@@ -52,5 +52,5 @@ namespace hedgedev::csl::cfg::registry
 }
 
 #ifdef WIN32
-#include "OS/Win32/RegistryWin32.inl"
+#include "Win32/Registry.inl"
 #endif

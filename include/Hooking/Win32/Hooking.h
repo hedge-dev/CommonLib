@@ -91,14 +91,14 @@
 #define GET_STATIC_HOOK_RESULT(FUNCTION_NAME) \
     result_##FUNCTION_NAME
 
-#if defined(_M_AMD64) || defined(_M_IX86)
+#if defined(CMNLIB_X64) || defined(CMNLIB_X86)
 
 #define THISCALL __fastcall
 
-#if defined(_M_AMD64)
+#if defined(CMNLIB_X64)
 #define THISCALL_PARAMS(CLASS_NAME) CLASS_NAME* self
 #define THISCALL_RETURN_PARAMS      self
-#elif defined(_M_IX86)
+#elif defined(CMNLIB_X86)
 #define THISCALL_PARAMS(CLASS_NAME) CLASS_NAME* self, void* _
 #define THISCALL_RETURN_PARAMS      self, _
 #endif
@@ -146,7 +146,7 @@ static_assert(false, "THISCALL is not implemented for this architecture.");
 #define GET_STATIC_VFTABLE_HOOK_RESULT(CLASS_NAME, FUNCTION_NAME) \
     result_##CLASS_NAME##_##FUNCTION_NAME
 
-#if defined(_M_AMD64)
+#if defined(CMNLIB_X64)
 
 ///
 /// Declares an x64 assembly hook. The body must be defined in an `*.asm` file using MASM.
@@ -178,7 +178,7 @@ static_assert(false, "THISCALL is not implemented for this architecture.");
     __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALL_HOOK); \
     extern "C"
 
-#elif defined(_M_IX86)
+#elif defined(CMNLIB_X86)
 
 ///
 /// Returns from an assembly hook and executes the original code.
@@ -323,10 +323,6 @@ static_assert(false, "Assembly hooks are not implemented for this architecture."
 #define UNINSTALL_VFTABLE_HOOK(CLASS_NAME, FUNCTION_NAME) \
     UNINSTALL_HOOK(CLASS_NAME##_##FUNCTION_NAME)
 
-#ifdef _M_IX86
-#include "HookingUserCall.h"
-#endif
-
 namespace hedgedev::csl::hook
 {
     inline void* GetPostHookAddress(void* in_pHookStart)
@@ -344,3 +340,7 @@ namespace hedgedev::csl::hook
         return pPostHook;
     }
 }
+
+#ifdef CMNLIB_X86
+#include "HookingUserCall.h"
+#endif

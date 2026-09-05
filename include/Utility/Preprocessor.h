@@ -34,7 +34,5 @@
     ASSERT_RETURN(CONDITION, false)
 
 #ifdef WIN32
-#include "OS/Win32/PreprocessorWin32.h"
-#else
-#include "OS/PreprocessorNull.h"
+#include "Win32/Preprocessor.h"
 #endif

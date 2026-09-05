@@ -1,1 +1,1 @@
-include Hooking\OS\Win32\HookingWin32.masm.inc
+include Hooking\Win32\Hooking.masm.inc

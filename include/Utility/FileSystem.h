@@ -47,7 +47,7 @@ namespace hedgedev::csl::ut::filesystem
 #include "FileSystem.inl"
 
 #ifdef WIN32
-#include "OS/Win32/FileSystemWin32.inl"
+#include "Win32/FileSystem.inl"
 #endif
 
 __CMNLIB_INTERNAL_MAKE_NAMESPACE_ALIAS(hedgedev::csl::ut, filesystem, fs);

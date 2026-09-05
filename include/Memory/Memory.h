@@ -23,6 +23,25 @@
 
 namespace hedgedev::csl::mem
 {
+    enum class PageProtection
+    {
+        NoAccess = 0 << 0,
+
+        Read = 1 << 0,
+        Write = 1 << 1,
+        Execute = 1 << 2,
+        ReadWrite = Read | Write,
+        ReadExecute = Read | Execute,
+        ReadWriteExecute = Read | Write | Execute,
+
+        R = Read,
+        W = Write,
+        X = Execute,
+        RW = ReadWrite,
+        RX = ReadExecute,
+        RWX = ReadWriteExecute
+    };
+
     enum class BranchType;
     enum class BranchDistance;
     enum class BranchCondition;
@@ -41,6 +60,16 @@ namespace hedgedev::csl::mem
     /// Gets the original base address of the current module.
     ///
     inline void* GetOriginalModuleBase();
+
+    ///
+    /// Gets the system flags for the specified page protection.
+    ///
+    inline uint32_t GetProtectionFlags(PageProtection in_protection);
+
+    ///
+    /// Sets the protection of a page of memory.
+    ///
+    inline bool Protect(void* in_pAddress, size_t in_length, uint32_t in_newProtectionFlags, uint32_t* out_pOldProtectionFlags = nullptr);
 
     ///
     /// Transforms a virtual address to the current module's ASLR base.
@@ -144,9 +173,10 @@ namespace hedgedev::csl::mem
     ///
     /// \param in_pAddress The address to write to.
     /// \param in_rData    The data to write.
+    /// \param in_count    The total number of values to write.
     ///
     template <typename T>
-    inline bool Write(void* in_pAddress, const T& in_rData);
+    inline bool Write(void* in_pAddress, const T& in_rData, size_t in_count = 1);
 
     ///
     /// Writes an array of values in memory.
@@ -180,9 +210,9 @@ namespace hedgedev::csl::mem
     /// Writes a no-operation (NOP) instruction in memory.
     ///
     /// \param in_pAddress The address to write to.
-    /// \param in_length   The total number of no-operation (NOP) instructions to write.
+    /// \param in_count    The total number of no-operation (NOP) instructions to write.
     ///
-    inline bool WriteNop(void* in_pAddress, size_t in_length);
+    inline bool WriteNop(void* in_pAddress, size_t in_count = 1);
 
     ///
     /// Writes a string in memory.
@@ -206,6 +236,12 @@ namespace hedgedev::csl::mem
     inline bool WriteStringFixedLength(void* in_pAddress, const T& in_rStr, size_t in_length = 0);
 }
 
+#include "Memory.inl"
+
+#if defined(CMNLIB_X64) || defined(CMNLIB_X86)
+#include "x86/Memory.inl"
+#endif
+
 #ifdef WIN32
-#include "OS/Win32/MemoryWin32.inl"
+#include "Win32/Memory.inl"
 #endif

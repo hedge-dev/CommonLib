@@ -7,6 +7,16 @@
     namespace PARENT { namespace ALIAS = NAME; }
 #endif
 
+#if defined(_M_X64) || defined(_M_AMD64) || defined(__x86_64__)
+#define CMNLIB_X64
+#elif defined(_M_IX86) || defined(__i386__)
+#define CMNLIB_X86
+#elif defined(_M_ARM64) || defined(__aarch64__)
+#define CMNLIB_ARM64
+#elif defined(_M_ARM) || defined(__arm__)
+#define CMNLIB_ARM
+#endif
+
 #ifdef WIN32
 #define WIN32_LEAN_AND_MEAN
 #define NOMINMAX

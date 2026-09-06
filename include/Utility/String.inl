@@ -1,101 +1,83 @@
+#include <algorithm>
 #include <charconv>
 #include <iomanip>
 #include <regex>
 
 namespace hedgedev::csl::ut::string
 {
-	template <typename TLiteralA, typename TLiteralB>
-	inline bool Compare(const TLiteralA* in_a, const TLiteralB* in_b, bool in_isCaseSensitive)
+    template <expr::AnyString TLeft, expr::AnyString TRight>
+    inline bool Compare(const TLeft& in_rLeft, const TRight& in_rRight, bool in_isCaseSensitive)
 	{
-		using TStringViewA = std::basic_string_view<TLiteralA>;
-		using TStringViewB = std::basic_string_view<TLiteralB>;
+		const auto strings = PrecedentConvert(in_rLeft, in_rRight);
 
-		const auto viewA = TStringViewA(in_a);
-		const auto viewB = TStringViewB(in_b);
-
-		if (viewA.length() != viewB.length())
+		const auto& left = strings[0];
+		const auto& right = strings[1];
+		
+		if (left.length() != right.length())
 			return false;
+		
+		if (!in_isCaseSensitive)
+			return ToLower(left) == ToLower(right);
+		
+		return left == right;
+	}
 
-		if constexpr (sizeof(TLiteralA) < sizeof(TLiteralB))
-		{
-			std::basic_string<TLiteralB> cmpA{};
+    template <expr::AnyString TString, expr::AnyString TSubString>
+    inline bool Contains(const TString& in_rStr, const TSubString& in_rSubStr, bool in_isCaseSensitive)
+	{
+		using TStringView = expr::PrecedentInferredStringView<TString, TSubString>;
 
-			if (TryConvert(in_a, cmpA))
-			{
-				if (in_isCaseSensitive)
-				{
-					return cmpA == viewB;
-				}
-				else
-				{
-					return ToLower(TStringViewB(cmpA)) == ToLower(viewB);
-				}
-			}
+		const auto strings = PrecedentConvert(in_rStr, in_rSubStr);
 
+		const auto& rStr = strings[0];
+		const auto& rSubStr = strings[1];
+		
+		if (rStr.length() < rSubStr.length())
 			return false;
-		}
-		else if constexpr (sizeof(TLiteralA) > sizeof(TLiteralB))
+		
+		if (!in_isCaseSensitive)
 		{
-			std::basic_string<TLiteralA> cmpB{};
-
-			if (TryConvert(in_b, cmpB))
-			{
-				if (in_isCaseSensitive)
+			using TChar = expr::GetCharType_t<TStringView>;
+		
+			const auto it = std::search(rStr.begin(), rStr.end(), rSubStr.begin(), rSubStr.end(),
+			//
+				[](TChar l, TChar r)
 				{
-					return viewA == cmpB;
+					return std::tolower(l) == std::tolower(r);
 				}
-				else
-				{
-					return ToLower(viewA) == ToLower(TStringViewA(cmpB));
-				}
-			}
-
-			return false;
+			);
+		
+			return it != rStr.end();
 		}
-		else if constexpr (!std::is_same_v<std::remove_cv_t<TLiteralA>, std::remove_cv_t<TLiteralB>>)
+		
+		return rStr.find(rSubStr) != TStringView::npos;
+	}
+
+	template <expr::AnyString TDst, expr::AnyString TSrc>
+	inline std::conditional_t<std::is_same_v<TDst, TSrc> && !std::is_pointer_v<TSrc>, const TDst&, TDst> Convert(const TSrc& in_rStr)
+	{
+		if constexpr (std::is_same_v<TDst, TSrc>)
 		{
-			// The strings use the same char length, but are encoded differently.
-			static_assert(false, "Unconvertable mismatching string types.");
+			return in_rStr;
 		}
-
-		const auto bAsViewA = TStringViewA((const TLiteralA*)in_b);
-
-		if (in_isCaseSensitive)
-			return viewA == bAsViewA;
-
-		return ToLower(viewA) == ToLower(bAsViewA);
-	}
-
-	template <typename TStringView, typename TLiteral>
-	inline bool Contains(TStringView in_str, const TLiteral* in_pSubStr)
-	{
-		return in_str.find(in_pSubStr) != TStringView::npos;
-	}
-
-    template <typename TDst, typename TSrc>
-    inline TDst Convert(TSrc&& in_rrStr)
-	{
-		TDst result{};
-		TryConvert<TDst>(in_rrStr, result);
-		return result;
-	}
-
-	template <typename TString, typename TLiteral>
-	inline constexpr TString CreateInferredString(const TLiteral* in_pStr)
-	{
-		auto result = std::basic_string_view<TLiteral>(in_pStr);
-
-		return TString(result.begin(), result.end());
-	}
-
-	template <typename TString, typename TLiteral, typename TStringView>
-	static TString Escape(TStringView in_str, TLiteral in_charToEscape, TLiteral in_escapeChar)
-	{
-		std::basic_stringstream<TLiteral> result{};
-
-		for (const auto& c : in_str)
+		else
 		{
-			if (c == in_charToEscape)
+			TDst result{};
+
+			TryConvert<TDst>(in_rStr, result);
+
+			return result;
+		}
+	}
+
+	template <expr::AnyString TString, typename TChar>
+	inline expr::InferredString<TString> Escape(const TString& in_rStr, TChar in_searchChar, TChar in_escapeChar)
+	{
+		std::basic_stringstream<TChar> result{};
+
+		for (const auto& c : expr::InferredStringView(in_rStr))
+		{
+			if (c == in_searchChar)
 				result << in_escapeChar;
 
 			result << c;
@@ -104,53 +86,56 @@ namespace hedgedev::csl::ut::string
 		return result.str();
 	}
 
-	template <typename TLiteral, typename TString>
-	inline TString Format(const TLiteral* in_pStr, ...)
+	template <expr::AnyString TString>
+	inline expr::InferredString<TString> Format(const TString in_str, ...)
 	{
 		va_list args;
-		va_start(args, in_pStr);
+		va_start(args, in_str);
 
-		size_t size{};
+		using TChar = expr::GetCharType_t<TString>;
 
-		if constexpr (std::is_same_v<TLiteral, char>)
+		const auto view = expr::InferredStringView<TString>(in_str);
+		size_t length = sizeof(TChar);
+
+		if constexpr (std::is_same_v<TChar, char>)
 		{
-			size = _vscprintf(in_pStr, args);
+			length += _vscprintf(view.data(), args);
 		}
-		else if constexpr (std::is_same_v<TLiteral, wchar_t>)
+		else if constexpr (std::is_same_v<TChar, wchar_t>)
 		{
-			size = _vscwprintf(in_pStr, args);
+			length += _vscwprintf(view.data(), args);
 		}
 		else
 		{
 			static_assert(false, "Unsupported string type.");
 		}
 
-		auto buffer = std::vector<TLiteral>(size + 1);
+		const auto upBuffer = std::make_unique<TChar[]>(length);
 
-		if (size > 0)
+		if (length > 0)
 		{
-			if constexpr (std::is_same_v<TLiteral, char>)
+			if constexpr (std::is_same_v<TChar, char>)
 			{
-				_vsnprintf_s(buffer.data(), buffer.size(), _TRUNCATE, in_pStr, args);
+				_vsnprintf_s(upBuffer.get(), length, _TRUNCATE, view.data(), args);
 			}
-			else if constexpr (std::is_same_v<TLiteral, wchar_t>)
+			else if constexpr (std::is_same_v<TChar, wchar_t>)
 			{
-				_vsnwprintf_s(buffer.data(), buffer.size(), _TRUNCATE, in_pStr, args);
+				_vsnwprintf_s(upBuffer.get(), length, _TRUNCATE, view.data(), args);
 			}
 		}
 
 		va_end(args);
 
-		return TString(buffer.data(), size);
+		return expr::InferredString<TString>(upBuffer.get(), length);
 	}
 
-	template <typename TStringView>
-	inline size_t GetWidth(TStringView in_str)
+	template <expr::AnyString TString>
+	inline size_t GetWidth(const TString& in_rStr)
 	{
 		size_t result{};
 
-		std::basic_stringstream<typename TStringView::value_type> stream(in_str);
-		std::basic_string<typename TStringView::value_type> line{};
+		std::basic_stringstream<expr::GetCharType_t<TString>> stream(in_rStr);
+		expr::InferredString<TString> line{};
 
 		while (std::getline(stream, line))
 			result = std::max(result, line.length());
@@ -158,76 +143,161 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <typename TStringView, typename TString>
-	static TString Hyperlink(TStringView in_str, TStringView in_url)
+	template <expr::AnyString TString, expr::AnyString TUrl, typename TOut>
+	inline TOut Hyperlink(const TString& in_rStr, const TUrl& in_rUrl)
 	{
-		if (in_url.empty())
-			return in_str;
+		const auto strings = PrecedentConvert(in_rStr, in_rUrl);
 
-		std::basic_stringstream<typename TString::value_type> result{};
+		const auto& rStr = strings[0];
+		const auto& rUrl = strings[1];
 
-		result << CreateInferredString<TString>("<a href=\"")
-			<< in_url << CreateInferredString<TString>("\">")
-			<< in_str << CreateInferredString<TString>("</a>");
-
+		if (rUrl.empty())
+			return TOut(rStr);
+		
+		std::basic_stringstream<expr::GetCharType_t<TOut>> result{};
+		
+		result << expr::CreateInferredString<TOut>("<a href=\"")
+			   << rUrl << expr::CreateInferredString<TOut>("\">")
+			   << rStr << expr::CreateInferredString<TOut>("</a>");
+		
 		return result.str();
 	}
 
-	template <typename TLiteral, typename TString>
-	inline TString Join(const TLiteral* in_pDelimiter, const std::vector<TString>& in_rStrings)
+	template <expr::AnyString TDelimiter, expr::AnyString TCollection>
+	inline expr::InferredString<TCollection> Join(const TDelimiter& in_rDelimiter, const std::vector<TCollection>& in_rStrings)
 	{
-		std::basic_stringstream<typename TString::value_type> result{};
+		if constexpr (!expr::IsSameUnderlyingCharType<TDelimiter, TCollection>)
+			static_assert(false, "The delimiter must have the same underlying character type as the collection.");
 
-		if (in_rStrings.empty())
-			return result.str();
+		std::basic_stringstream<expr::GetCharType_t<TCollection>> result{};
 
-		const auto length = in_rStrings.size();
-
-		for (auto i = 0; i < length; i++)
+		if (!in_rStrings.empty())
 		{
-			const auto& rStr = in_rStrings[i];
+			const auto length = in_rStrings.size();
 
-			result << rStr;
+			for (size_t i = 0; i < length; i++)
+			{
+				const auto& rStr = in_rStrings[i];
 
-			if (i == length - 1)
-				continue;
+				result << rStr;
 
-			result << in_pDelimiter;
+				if (i == length - 1)
+					continue;
+
+				result << in_rDelimiter;
+			}
 		}
 
 		return result.str();
 	}
 
-	template <typename TStringView, typename TLiteral, typename TString>
-	inline TString Pad(TStringView in_str, const TLiteral in_padChar)
+	template <expr::AnyString TDelimiter, expr::AnyString... TArgs, typename TOut>
+	inline TOut Join(const TDelimiter& in_rDelimiter, const TArgs&... in_rArgs)
 	{
-		std::basic_stringstream<TLiteral> result{};
+		const auto strings = PrecedentConvert(in_rDelimiter, in_rArgs...);
 
-		result << in_padChar << in_str << in_padChar;
+		return Join(strings[0], std::vector(strings.begin() + 1, strings.end()));
+	}
+
+	template <expr::AnyString TString, expr::AnyString TPadString, typename TOut>
+	inline TOut Pad(const TString& in_rStr, const TPadString& in_rPadStr)
+	{
+		std::basic_stringstream<expr::GetCharType_t<TOut>> result{};
+
+		const auto strings = PrecedentConvert(in_rStr, in_rPadStr);
+
+		const auto& rStr = strings[0];
+		const auto& rPadStr = strings[1];
+
+		result << rPadStr << rStr << rPadStr;
 
 		return result.str();
 	}
 
-	template <typename TStringView, typename TString>
-	inline TString RemoveHtmlTags(TStringView in_str)
+	template <typename TOut, expr::AnyString TString>
+	inline TOut Parse(const TString& in_rStr)
 	{
-		return std::regex_replace(in_str,
-			std::basic_regex<typename TStringView::value_type>(CreateInferredString<TStringView>("<[^>]*>")),
-			CreateInferredString<TStringView>(""));
+		TOut result{};
+
+		TryParse(in_rStr, result);
+
+		return result;
 	}
 
-	template <typename TStringView, typename TLiteral, typename TString>
-	inline std::vector<TString> Split(TStringView in_str, const TLiteral* in_pDelimiter)
+	template <expr::AnyString... TArgs, typename TOut>
+	inline std::array<TOut, sizeof...(TArgs)> PrecedentConvert(const TArgs&... in_rArgs)
 	{
-		std::vector<TString> result{};
-		size_t start{};
+		std::array<TOut, sizeof...(TArgs)> result{};
 
-		const auto delimiterLength = std::char_traits<TLiteral>::length(in_pDelimiter);
+		const auto args = std::make_tuple(in_rArgs...);
+		constexpr auto precedence = expr::GetStringTypePrecedence<TArgs...>();
+
+		[&] <size_t... Index>(std::index_sequence<Index...>)
+		{
+			const auto convert = [&] <expr::AnyString T>(const size_t in_index, const T& in_rStr)
+			{
+				if constexpr (expr::IsAllSame<TArgs...>)
+				{
+					if constexpr (expr::CString<T>)
+					{
+						// Create inferred string from C string.
+						result[in_index] = TOut(in_rStr);
+					}
+					else
+					{
+						// Copy original string.
+						result[in_index] = in_rStr;
+					}
+				}
+				else
+				{
+					if constexpr (std::is_same_v<T, TOut>)
+					{
+						// Copy original string.
+						result[in_index] = in_rStr;
+					}
+					else
+					{
+						// Convert string to precedent type.
+						result[in_index] = Convert<TOut>(in_rStr);
+					}
+				}
+			};
+
+			(convert(Index, std::get<Index>(args)), ...);
+		}
+		(std::make_index_sequence<sizeof...(TArgs)>{});
+
+		return result;
+	}
+
+	template <expr::AnyString TString>
+	inline expr::InferredString<TString> RemoveXmlTags(const TString& in_rStr)
+	{
+		return std::regex_replace(expr::InferredStringView<TString>(in_rStr).data(),
+			std::basic_regex<expr::GetCharType_t<TString>>(expr::CreateInferredString<expr::InferredString<TString>>("<[^>]*>")),
+			expr::InferredString<TString>());
+	}
+
+	template <expr::AnyString TString, expr::AnyString TDelimiter, typename TOut>
+	inline std::vector<TOut> Split(const TString& in_rStr, const TDelimiter& in_rDelimiter)
+	{
+		std::vector<TOut> result{};
+
+		using TStringView = expr::PrecedentInferredStringView<TString, TDelimiter>;
+
+		const auto strings = PrecedentConvert(in_rStr, in_rDelimiter);
+
+		const auto& rStr = strings[0];
+		const auto& rDelimiter = strings[1];
+
+		size_t start{};
+		const auto delimiterLength = rDelimiter.length();
 
 		while (true)
 		{
-			const auto pos = in_str.find(in_pDelimiter, start);
-			const auto token = in_str.substr(start, pos == TStringView::npos ? in_str.size() - start : pos - start);
+			const auto pos = rStr.find(rDelimiter, start);
+			const auto token = rStr.substr(start, pos == TStringView::npos ? rStr.size() - start : pos - start);
 
 			result.emplace_back(Trim(token));
 
@@ -240,132 +310,162 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <typename TStringView, typename TString>
-	inline TString ToLower(TStringView in_str)
+	template <expr::AnyString TString>
+	inline expr::InferredString<TString> ToLower(const TString& in_rStr)
 	{
-		auto result = TString(in_str);
+		auto result = expr::InferredString<TString>(in_rStr);
 
 		if (!result.empty())
 		{
 			std::transform(result.begin(), result.end(), result.begin(),
-				[](TString::value_type c) { return std::tolower(c); });
+				[](expr::GetCharType_t<TString> c) { return std::tolower(c); });
 		}
 
 		return result;
 	}
 
-	template <typename TStringView, typename TLiteral, typename TString>
-	inline TStringView TrimStart(TStringView in_str, const TLiteral in_trimChar)
+	template <expr::AnyString TString>
+	inline expr::InferredString<TString> ToUpper(const TString& in_rStr)
 	{
-		const auto startIt = std::find_if(in_str.begin(), in_str.end(),
-		//
-			[&](typename TStringView::value_type c) -> bool
-			{
-				if (!in_trimChar)
-					return !std::isspace(c);
+		auto result = expr::InferredString<TString>(in_rStr);
 
-				return c != in_trimChar;
+		if (!result.empty())
+		{
+			std::transform(result.begin(), result.end(), result.begin(),
+				[](expr::GetCharType_t<TString> c) { return std::toupper(c); });
+		}
+
+		return result;
+	}
+
+	template <expr::AnyString TString, typename TChar>
+	inline expr::InferredString<TString> TrimStart(const TString& in_rStr, std::optional<std::vector<TChar>> in_trimChars)
+	{
+		const auto str = expr::InferredStringView<TString>(in_rStr);
+
+		const auto it = std::find_if(str.begin(), str.end(),
+		//
+			[&](TChar c) -> bool
+			{
+				if (in_trimChars.has_value())
+					return std::find(in_trimChars->begin(), in_trimChars->end(), c) == in_trimChars->end();
+
+				return !std::isspace(c);
 			}
 		);
 
-		return in_str.substr(std::distance(in_str.begin(), startIt));
+		return expr::InferredString<TString>(str.substr(std::distance(str.begin(), it)));
 	}
 
-	template <typename TStringView, typename TLiteral, typename TString>
-	inline TStringView TrimEnd(TStringView in_str, const TLiteral in_trimChar)
+	template <expr::AnyString TString, typename TChar>
+	inline expr::InferredString<TString> TrimEnd(const TString& in_rStr, std::optional<std::vector<TChar>> in_trimChars)
 	{
-		const auto endIt = std::find_if_not(in_str.rbegin(), in_str.rend(),
-		//
-			[&](typename TStringView::value_type c) -> bool
-			{
-				if (!in_trimChar)
-					return std::isspace(c);
+		const auto str = expr::InferredStringView<TString>(in_rStr);
 
-				return c == in_trimChar;
+		const auto it = std::find_if_not(str.rbegin(), str.rend(),
+		//
+			[&](TChar c) -> bool
+			{
+				if (in_trimChars.has_value())
+					return std::find(in_trimChars->begin(), in_trimChars->end(), c) != in_trimChars->end();
+
+				return std::isspace(c);
 			}
 		)
 		.base();
 
-		return in_str.substr(0, std::distance(in_str.begin(), endIt));
+		return expr::InferredString<TString>(str.substr(0, std::distance(str.begin(), it)));
 	}
 
-	template <typename TStringView, typename TLiteral, typename TString>
-	inline TStringView Trim(TStringView in_str, const TLiteral in_trimChar)
+	template <expr::AnyString TString, typename TChar>
+	inline expr::InferredString<TString> Trim(const TString& in_rStr, const std::optional<std::vector<TChar>> in_trimChars)
 	{
-		return TStringView(TrimEnd(TrimStart(in_str, in_trimChar), in_trimChar));
+		return TrimEnd(TrimStart(in_rStr, in_trimChars), in_trimChars);
 	}
 
-	template <typename TStringView, typename TString>
-	inline TString Truncate(TStringView in_str, size_t in_maxLength, bool in_truncateEnd, bool in_ellipsis)
+	template <expr::AnyString TString>
+	inline expr::InferredString<TString> Truncate(const TString& in_rStr, size_t in_maxLength, bool in_truncateEnd, bool in_ellipsis)
 	{
-		const auto ellipsisStr = CreateInferredString<TString>("...");
+		using TOut = expr::InferredString<TString>;
 
-		if (in_maxLength <= ellipsisStr.length())
-			return TString(ellipsisStr.substr(0, in_maxLength));
+		const auto ellipsis = expr::CreateInferredString<TOut>("...");
 
-		if (in_str.length() <= in_maxLength)
-			return TString(in_str);
+		// Truncate ellipsis to max length.
+		if (in_ellipsis && in_maxLength <= ellipsis.length())
+			return TOut(ellipsis.substr(0, in_maxLength));
 
-		TString result{};
-		size_t length = in_maxLength;
+		const auto str = expr::InferredStringView<TString>(in_rStr);
+
+		if (str.length() <= in_maxLength)
+			return TOut(str);
+
+		TOut result{};
+		auto length = in_maxLength;
 
 		if (in_ellipsis)
-			length -= ellipsisStr.length();
+			length -= ellipsis.length();
 
 		if (in_truncateEnd)
 		{
-			result = TString(in_str.substr(0, length));
+			result = TOut(str.substr(0, length));
 
 			if (in_ellipsis)
-				result += ellipsisStr;
+				result += ellipsis;
 		}
 		else
 		{
 			if (in_ellipsis)
-				result += ellipsisStr;
+				result += ellipsis;
 
-			result = TString(in_str.substr(in_str.length() - length, length));
+			result = TOut(str.substr(str.length() - length, length));
 		}
 
 		return result;
 	}
 
-	template <typename TString, typename TValue>
+	template <expr::BasicString TString, typename TValue>
 	inline TString ToHex(TValue in_value, size_t in_maxLength, bool in_prefix)
 	{
-		std::basic_stringstream<typename TString::value_type> result{};
+		using TChar = expr::GetCharType_t<TString>;
+
+		std::basic_stringstream<TChar> result{};
 
 		if (in_prefix)
-			result << CreateInferredString<TString>("0x");
+			result << expr::CreateInferredString<TString>("0x");
 
 		result << std::uppercase << std::hex;
 
 		if (in_maxLength)
-			result << std::setw(in_maxLength) << std::setfill((typename TString::value_type)'0');
+			result << std::setw(in_maxLength) << std::setfill(TChar('0'));
 
 		result << in_value;
 
 		return result.str();
 	}
 
-	template <typename TDst, typename TSrc>
-	inline bool TryConvert(TSrc&& in_rrStr, TDst& out_rValue)
+	template <expr::AnyString TDst, expr::AnyString TSrc>
+	inline bool TryConvert(const TSrc& in_rSrc, TDst& out_rDst)
 	{
-		using TSrcChar = hedgedev::csl::ut::expr::GetCharType_t<TSrc>;
-		using TDstChar = hedgedev::csl::ut::expr::GetCharType_t<TDst>;
+		using TSrcChar = expr::GetCharType_t<TSrc>;
+		using TDstChar = expr::GetCharType_t<TDst>;
 
-		const auto view = std::basic_string_view<TSrcChar>(in_rrStr);
+		const auto view = expr::InferredStringView<TSrc>(in_rSrc);
 		const auto size = view.size();
 		
 		if (!size)
 		{
-			out_rValue = TDst();
+			out_rDst = TDst();
 			return true;
 		}
-		
-		if constexpr (std::is_same_v<TSrcChar, TDstChar>)
+
+		if constexpr (std::is_same_v<TSrc, TDst>)
 		{
-			out_rValue = TDst(view);
+			out_rDst = in_rSrc;
+			return true;
+		}
+		else if constexpr (std::is_same_v<TSrcChar, TDstChar>)
+		{
+			out_rDst = TDst(view);
 			return true;
 		}
 
@@ -384,7 +484,7 @@ namespace hedgedev::csl::ut::string
 				if (wcstombs_s(&chars, (char*)upBuffer.get(), size + sizeof(char), view.data(), size) != 0)
 					return false;
 #endif
-				out_rValue = std::string((char*)upBuffer.get(), size);
+				out_rDst = std::string((char*)upBuffer.get(), size);
 			}
 		}
 		else if constexpr (std::is_same_v<TDst, std::wstring>)
@@ -401,7 +501,7 @@ namespace hedgedev::csl::ut::string
 				if (mbstowcs_s(&chars, (wchar_t*)upBuffer.get(), size + sizeof(wchar_t), view.data(), size) != 0)
 					return false;
 #endif
-				out_rValue = std::wstring((wchar_t*)upBuffer.get(), size);
+				out_rDst = std::wstring((wchar_t*)upBuffer.get(), size);
 			}
 		}
 		else
@@ -412,54 +512,58 @@ namespace hedgedev::csl::ut::string
 		return true;
 	}
 
-	template <typename TResult, typename TStringView>
-	inline bool TryParse(TStringView in_str, TResult& out_rValue)
+	template <typename TOut, expr::AnyString TString>
+	inline bool TryParse(const TString& in_rStr, TOut& out_rValue)
 	{
-		if constexpr (std::is_same_v<TResult, bool>)
+		const auto str = Trim(in_rStr);
+
+		if constexpr (std::is_same_v<TOut, bool>)
 		{
-			out_rValue = in_str.at(0) != (typename TStringView::value_type)'0' ||
-					ToLower(in_str) == CreateInferredString<TStringView>("true");
+			out_rValue = ToLower(str) == expr::CreateInferredString<expr::InferredString<TString>>("true") ||
+						 str == expr::CreateInferredString<expr::InferredString<TString>>("1");
 
 			return true;
 		}
-		else if constexpr (std::is_same_v<TResult, float> || std::is_same_v<TResult, double>)
+		else if constexpr (std::is_same_v<TOut, float> || std::is_same_v<TOut, double>)
 		{
-			TResult result{};
-			std::from_chars(in_str.data(), in_str.data() + in_str.size(), result);
+			TOut result{};
+			std::from_chars(str.data(), str.data() + str.size(), result);
 
 			out_rValue = result;
 
 			return true;
 		}
-		else if constexpr (std::is_integral_v<TResult> || std::is_enum_v<TResult>)
+		else if constexpr (std::is_integral_v<TOut> || std::is_enum_v<TOut>)
 		{
-			out_rValue = static_cast<TResult>(std::atoll(in_str.data()));
+			out_rValue = static_cast<TOut>(std::atoll(str.data()));
 			return true;
 		}
 
 		return false;
 	}
 
-	template <typename TStringView, typename TString>
-	inline TString Wrap(TStringView in_str, size_t in_maxLength)
+	template <expr::AnyString TString>
+	inline expr::InferredString<TString> Wrap(const TString& in_rStr, size_t in_maxWidth)
 	{
-		using TStringChar = typename TStringView::value_type;
+		expr::InferredString<TString> result{};
 
-		constexpr auto lineBreak = TStringChar('\n');
-		constexpr auto carriageReturn = TStringChar('\r');
+		const auto str = expr::InferredStringView<TString>(in_rStr);
 
-		constexpr TStringChar wordChars[] =
+		using TChar = expr::GetCharType_t<TString>;
+
+		static constexpr auto s_kLineBreak = TChar('\n');
+		static constexpr auto s_kCarriageReturn = TChar('\r');
+
+		static constexpr TChar s_kWordChars[] =
 		{
 			'.', ',', ';', '!', '?', '\"', '\\', '/'
 		};
 
-		TString result{};
+		const TChar* pos = str.data();
+		const TChar* end = str.data() + str.size();
 
-		const TStringChar* pos = in_str.data();
-		const TStringChar* end = in_str.data() + in_str.size();
-
-		const TStringChar* lastLineStart = pos;
-		const TStringChar* lastWordStart{};
+		const TChar* lastLineStart = pos;
+		const TChar* lastWordStart{};
 
 		bool isInsideWord = true;
 
@@ -470,7 +574,7 @@ namespace hedgedev::csl::ut::string
 
 			if (std::iscntrl(c))
 			{
-				if (c == TStringChar('\n'))
+				if (c == s_kLineBreak)
 				{
 					result.append(lastLineStart, nextPos);
 
@@ -484,7 +588,7 @@ namespace hedgedev::csl::ut::string
 					continue;
 				}
 
-				if (c == TStringChar('\r'))
+				if (c == s_kCarriageReturn)
 				{
 					pos = nextPos;
 					continue;
@@ -492,18 +596,18 @@ namespace hedgedev::csl::ut::string
 			}
 
 			isInsideWord = !std::isspace(c) &&
-				std::find(std::begin(wordChars), std::end(wordChars), c) != std::end(wordChars);
+				std::find(std::begin(s_kWordChars), std::end(s_kWordChars), c) != std::end(s_kWordChars);
 
 			if (!isInsideWord)
 				lastWordStart = pos;
 
-			if (size_t(pos - lastLineStart) >= in_maxLength)
+			if (size_t(pos - lastLineStart) >= in_maxWidth)
 			{
 				if (lastWordStart && lastWordStart > lastLineStart)
 				{
 					// Wrap to last word boundary.
 					result.append(lastLineStart, lastWordStart);
-					result.push_back(TStringChar('\n'));
+					result.push_back(s_kLineBreak);
 
 					lastLineStart = lastWordStart;
 					lastWordStart = nullptr;
@@ -512,7 +616,7 @@ namespace hedgedev::csl::ut::string
 				{
 					// Wrap immediately.
 					result.append(lastLineStart, pos);
-					result.push_back(TStringChar('\n'));
+					result.push_back(s_kLineBreak);
 
 					lastLineStart = pos;
 				}

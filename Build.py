@@ -1,21 +1,29 @@
 import argparse
+import fnmatch
+import glob
 import os
 import platform
 import re
 import shutil
 import subprocess
+import zipfile
 
 if not shutil.which("cmake"):
     print(f"CMake 3.20 or later is required.")
     exit(-1)
 
 preset = ""
+system = ""
+arch = ""
+config = ""
 
 parser = argparse.ArgumentParser(os.path.basename(__file__))
-parser.add_argument("-p", "--preset", type = str, help = "the name of the preset to configure and build (optional)")
-parser.add_argument("-s", "--system", type = str, help = "the name of the operating system to target (optional)")
-parser.add_argument("-a", "--arch",   type = str, help = "the name of the architecture to target (optional)")
-parser.add_argument("-c", "--config", type = str, help = "the name of the build configuration (optional)")
+
+parser.add_argument("-p", "--preset", type = str,            help = "the name of the preset to configure and build (optional)")
+parser.add_argument("-s", "--system", type = str,            help = "the name of the operating system to target (optional)")
+parser.add_argument("-a", "--arch",   type = str,            help = "the name of the architecture to target (optional)")
+parser.add_argument("-c", "--config", type = str,            help = "the name of the build configuration (optional)")
+parser.add_argument("-z", "--zip",    action = "store_true", help = "determines whether to create an archive of the build (optional)")
 
 args = parser.parse_args()
 
@@ -35,9 +43,6 @@ def get_architecture(original_name):
 if args.preset:
     preset = args.preset
 else:
-    system = ""
-    arch = ""
-
     if args.system:
         system = args.system
     else:
@@ -55,11 +60,51 @@ else:
         exit(-1)
 
     if args.config:
-        preset += f"-{args.config}"
+        config = args.config
     else:
-        preset += "-Release"
+        config = "Release"
+    
+    preset += f"-{config}"
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 subprocess.call(f"cmake --preset {preset}")
 subprocess.call(f"cmake --build --preset {preset}")
+
+if args.zip:
+    artifacts_dir = "artifacts"
+    thirdparty_dir = "thirdparty"
+
+    root_excludes = [artifacts_dir, "bin", "toolchains", ".*", "*.*"]
+    nest_excludes = [".*", "CMake*.*"]
+    deps_includes = ["**/include/**"]
+
+    os.makedirs(artifacts_dir, exist_ok = True)
+
+    archive_path = f"{artifacts_dir}{os.sep}{preset}.zip"
+
+    with zipfile.ZipFile(archive_path, "w") as z:
+        for path in glob.glob("**", recursive = True):
+            root = os.path.normpath(path).split(os.sep)[0]
+            relative_path = os.path.relpath(path, os.path.realpath(os.curdir))
+            basename = os.path.basename(relative_path)
+
+            if root == thirdparty_dir:
+                # Skip excluded dependency paths.
+                if not any(fnmatch.fnmatch(relative_path, include) for include in deps_includes):
+                    continue
+            else:
+                # Skip excluded root paths.
+                if any(fnmatch.fnmatch(root, exclude) for exclude in root_excludes):
+                    continue
+
+            # Skip excluded nested paths.
+            if any(fnmatch.fnmatch(basename, exclude) for exclude in nest_excludes):
+                continue
+
+            if os.path.isfile(path):
+                print(f"Packing: {relative_path}")
+
+            z.write(relative_path)
+
+    print(f"Written: {archive_path}")

@@ -1,0 +1,38 @@
+name: CommonLib
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    name: "${{matrix.system}}-${{matrix.architecture}}-${{matrix.configuration}}"
+    runs-on: ${{matrix.image}}
+    strategy:
+      matrix:
+        system: [ Windows ]
+        architecture: [ x86, x64 ]
+        configuration: [ Debug, Release ]
+        image: [ windows-2025-vs2026 ]
+    steps:
+    - name: Clone
+      uses: actions/checkout@v7
+      with:
+        submodules: true
+    - name: Install Python
+      uses: actions/setup-python@v7
+      with:
+        python-version: "3.13"
+    - name: Build
+      working-directory: ${{github.workspace}}
+      run: py ./Build.py -s ${{matrix.system}} -a ${{matrix.architecture}} -c ${{matrix.configuration}}
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: "${{matrix.system}}-${{matrix.architecture}}-${{matrix.configuration}}.zip"
+        retention-days: 90
+        path: |
+          include/
+          lib/
+          thirdparty/**/include/**
+          LICENSE
+          !**/.*
+          !**/CMake*

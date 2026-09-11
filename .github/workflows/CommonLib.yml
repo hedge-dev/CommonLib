@@ -20,13 +20,13 @@ jobs:
     - name: Install Python
       uses: actions/setup-python@v7
       with:
-        python-version: "3.13"
+        python-version: "3.14"
     - name: Install Python packages
       working-directory: ${{github.workspace}}
       run: pip install -r Requirements.txt
     - name: Build
-      working-directory: ${{github.workspace}}
-      run: ./CommonLib.bat build --target_os ${{matrix.system}} --target_arch ${{matrix.architecture}} --target_config ${{matrix.configuration}}
+      working-directory: ${{github.workspace}}/tools/scripts/cli
+      run: py ./main.py build --target_os ${{matrix.system}} --target_arch ${{matrix.architecture}} --target_config ${{matrix.configuration}}
     - name: Upload artifacts
       uses: actions/upload-artifact@v7
       with:

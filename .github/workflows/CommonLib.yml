@@ -26,7 +26,7 @@ jobs:
       run: pip install -r Requirements.txt
     - name: Build
       working-directory: ${{github.workspace}}/tools/scripts/cli
-      run: py ./main.py build --target_os ${{matrix.system}} --target_arch ${{matrix.architecture}} --target_config ${{matrix.configuration}}
+      run: py ./main.py build --target_os ${{matrix.system}} --target_arch ${{matrix.architecture}} --target_config ${{matrix.configuration}} --skip_submodules
     - name: Upload artifacts
       uses: actions/upload-artifact@v7
       with:

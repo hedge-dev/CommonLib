@@ -387,7 +387,7 @@ FodyWeavers.xsd
 # macOS metadata
 *.DS_Store
 
-# CMake files
+# CommonLib files
 bin/
 lib/
 **/CMakeFiles/

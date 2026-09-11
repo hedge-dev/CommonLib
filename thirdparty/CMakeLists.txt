@@ -29,10 +29,6 @@ if(WIN32)
         list(APPEND CMNLIB_LIBS ${DETOURS_LIB})
         list(APPEND CMNLIB_INCLUDES "${DETOURS_DIR}/include")
 
-        if(CMNLIB_IS_DEBUG)
-            list(APPEND DETOURS_BUILD_ARGS "DETOURS_DEBUG=1")
-        endif()
-
         if(DEVCMD_PATH AND DEVCMD_ARCH)
             ExternalProject_Add(Detours
                 PREFIX            "${DETOURS_DIR}"
@@ -40,7 +36,7 @@ if(WIN32)
                 CONFIGURE_COMMAND ""
                 INSTALL_COMMAND   ""
                 BUILD_IN_SOURCE   1
-                BUILD_COMMAND     CALL ${DEVCMD_PATH} ${DEVCMD_ARCH} && ${NMAKE} /NOLOGO ${DETOURS_BUILD_ARGS}
+                BUILD_COMMAND     CALL ${DEVCMD_PATH} ${DEVCMD_ARCH} && ${NMAKE} /NOLOGO ${DETOURS_BUILD_ARGS} $<$<CONFIG:Debug>:DETOURS_DEBUG=1>
                 BUILD_BYPRODUCTS  ${DETOURS_LIB}
             )
         else()

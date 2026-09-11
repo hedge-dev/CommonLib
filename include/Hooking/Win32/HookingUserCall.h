@@ -1093,11 +1093,9 @@ namespace hedgedev::csl::hook
 
         auto pTrampoline = _aligned_malloc(size, sizeof(void*));
         memcpy_s(pTrampoline, size, result.data(), size);
-
         emitBranchAddr(pTrampoline, branchOffset, in_address, in_isToOriginal);
-
-        DWORD oldProtect{};
-        VirtualProtect(pTrampoline, size, PAGE_EXECUTE_READWRITE, &oldProtect);
+        
+        hedgedev::csl::mem::Protect(pTrampoline, size, hedgedev::csl::mem::GetProtectionFlags(hedgedev::csl::mem::PageProtection::RWX));
 
         return pTrampoline;
     }

@@ -7,17 +7,8 @@ message(STATUS "System: ${CMAKE_SYSTEM_NAME}")
 
 include("toolchains/Processor.cmake")
 GetTargetProcessorArchitecture(CMNLIB_TARGET_ARCH)
-GetTargetProcessorEndianness(CMNLIB_TARGET_ENDIANNESS)
 
-message(STATUS "Target: ${CMNLIB_TARGET_ARCH} (${CMNLIB_TARGET_ENDIANNESS})")
-
-if(CMAKE_BUILD_TYPE STREQUAL "Release")
-    set(CMNLIB_IS_DEBUG 0)
-else()
-    set(CMNLIB_IS_DEBUG 1)
-endif()
-
-message(STATUS "Configuration: ${CMAKE_BUILD_TYPE}")
+message(STATUS "Target: ${CMNLIB_TARGET_ARCH}")
 
 set(CMNLIB_LIBS)
 set(CMNLIB_INCLUDES)

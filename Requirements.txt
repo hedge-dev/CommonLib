@@ -1,0 +1,4 @@
+# Required packages for Python scripts in this repository.
+# pip install -r Requirements.txt
+
+vswhere >= 1.4.0

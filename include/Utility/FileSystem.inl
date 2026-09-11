@@ -7,17 +7,6 @@ namespace hedgedev::csl::ut::filesystem
 		return string::Compare(in_rPathA.parent_path().c_str(), in_rPathB.parent_path().c_str(), false);
 	}
 
-	inline std::error_code TruncateFilesByAge(const std::filesystem::path& in_rPath, std::string_view in_extension, size_t in_max)
-	{
-		std::error_code result{};
-
-		// Sort files by oldest to newest.
-		return TruncateFiles(in_rPath, in_extension, in_max, [&](const auto& a, const auto& b)
-		{
-			return std::filesystem::last_write_time(a, result) < std::filesystem::last_write_time(b, result);
-		});
-	}
-
 	template <typename T>
 	inline std::error_code TruncateFiles(const std::filesystem::path& in_rPath, std::string_view in_extension, size_t in_max, T&& in_rrCompare)
 	{
@@ -50,5 +39,16 @@ namespace hedgedev::csl::ut::filesystem
 			std::filesystem::remove(files[i].path(), result);
 
 		return result;
+	}
+
+	inline std::error_code TruncateFilesByAge(const std::filesystem::path& in_rPath, std::string_view in_extension, size_t in_max)
+	{
+		std::error_code result{};
+
+		// Sort files by oldest to newest.
+		return TruncateFiles(in_rPath, in_extension, in_max, [&](const auto& a, const auto& b)
+		{
+			return std::filesystem::last_write_time(a, result) < std::filesystem::last_write_time(b, result);
+		});
 	}
 }

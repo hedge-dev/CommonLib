@@ -1,0 +1,27 @@
+var String_8h =
+[
+    [ "Compare", "d9/dba/String_8h.html#a793ee2595203c42f54e7ba36f54f575b", null ],
+    [ "Contains", "d9/dba/String_8h.html#a0b7192821ef455141a6cfed1f4868ec7", null ],
+    [ "Convert", "d9/dba/String_8h.html#ad61fa3e14214dc4e4b7be00930af1c64", null ],
+    [ "Escape", "d9/dba/String_8h.html#a2d3091b5b81dfbbde83a6ec3d9a3f970", null ],
+    [ "Format", "d9/dba/String_8h.html#ac2b59e83c19e482c4cde3085df942ce3", null ],
+    [ "GetWidth", "d9/dba/String_8h.html#a037c95d2081a4d97ffa2c196ea231037", null ],
+    [ "Hyperlink", "d9/dba/String_8h.html#a4710a1a0594537caa9fb13cc98a8fd93", null ],
+    [ "Join", "d9/dba/String_8h.html#a5dff100bc29660d1d5eb45b1cc8753ac", null ],
+    [ "Join", "d9/dba/String_8h.html#a789205ee873baaf457b4efb1bab9345b", null ],
+    [ "Pad", "d9/dba/String_8h.html#a4521657cb43fc51793bc17cf5b028f64", null ],
+    [ "Parse", "d9/dba/String_8h.html#a46ea987ee8f8d5685b37f1ee4d238859", null ],
+    [ "PrecedentConvert", "d9/dba/String_8h.html#a0ea96c3d43be09a9c0098a10cd7b2e74", null ],
+    [ "RemoveXmlTags", "d9/dba/String_8h.html#a952265d41821dc0e6e1e273034360399", null ],
+    [ "Split", "d9/dba/String_8h.html#a0d093a1a0d6dd727dc8160886257e357", null ],
+    [ "ToHex", "d9/dba/String_8h.html#a0b7a00202c0c5ddc72b85a4664d4467a", null ],
+    [ "ToLower", "d9/dba/String_8h.html#abc5c2d27a1c327cd9fef689911953fe7", null ],
+    [ "ToUpper", "d9/dba/String_8h.html#aee2969f812dbcd2328579b8797567da9", null ],
+    [ "Trim", "d9/dba/String_8h.html#afa0c678b22fea9a5f33523ddb0139426", null ],
+    [ "TrimEnd", "d9/dba/String_8h.html#a405565bebbfc52417c8314f604c8c323", null ],
+    [ "TrimStart", "d9/dba/String_8h.html#ad69ade3a18b7179a3ad4489b07d9f7c0", null ],
+    [ "Truncate", "d9/dba/String_8h.html#a930702f7a5f1c3d636a97a26cc2df74b", null ],
+    [ "TryConvert", "d9/dba/String_8h.html#ae205e42daa83177d4df8c5878b408c3f", null ],
+    [ "TryParse", "d9/dba/String_8h.html#a68bafd9514f2eb9a8cb4a629c9417d5a", null ],
+    [ "Wrap", "d9/dba/String_8h.html#ab8cdf64ffcd64bba6ba289c2669285cb", null ]
+];

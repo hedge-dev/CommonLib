@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CommonLib: Namespace Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
-<meta name="doxygen-page-layout" content="1" />
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="codefolding.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
@@ -22,7 +21,6 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -33,15 +31,6 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -53,7 +42,42 @@ let searchBox = new SearchBox("searchBox", "search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -65,28 +89,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacemembers_type.html','',''); });
 </script>
-<script type="application/json" id="doxygen-config">
-{
-  "relPath": "",
-  "generateTreeView": true,
-  "searchEngine": true,
-  "serverBasedSearch": false,
-  "disableIndex": false,
-  "dynamicMenus": true,
-  "fullSidebar": true
-}
-</script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -107,15 +111,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('namespacemembe
 
 <div class="contents">
 <div class="textblock">Here is a list of all namespace typedefs with links to the namespace documentation for each typedef:</div><ul>
-<li>GetCharType_t&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a0d7ba58c14ed666f7c6fba553b2d15b5">hedgedev::csl::ut::expr</a></li>
-<li>GetPackType&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">hedgedev::csl::ut::expr</a></li>
-<li>InferredString&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ac285ae73debe031a609e0806855a35a6">hedgedev::csl::ut::expr</a></li>
-<li>InferredStringOrView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a5b56149962ae61b32ebb1a5f91fe5727">hedgedev::csl::ut::expr</a></li>
-<li>InferredStringView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#aa97c2f6a02d3d08897371f7674ffd142">hedgedev::csl::ut::expr</a></li>
-<li>PrecedentInferredString&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a58843fad18552e245606a7a11a80a980">hedgedev::csl::ut::expr</a></li>
-<li>PrecedentInferredStringOrView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#af2d855d93ad41a6e6ff71996b780edcc">hedgedev::csl::ut::expr</a></li>
-<li>PrecedentInferredStringView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a523e9595ee56b4ed79c28c23e9eb3749">hedgedev::csl::ut::expr</a></li>
-<li>PrecedentString&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ac99e09c1643eeb1d9dcef1a1390ab898">hedgedev::csl::ut::expr</a></li>
+<li>GetCharType_t&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5">hedgedev::csl::ut::expr</a></li>
+<li>GetPackType&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a1d7424b7f1bfbb64d6fa9bacb3e3cc9f.html#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">hedgedev::csl::ut::expr</a></li>
+<li>InferredString&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac285ae73debe031a609e0806855a35a6.html#ac285ae73debe031a609e0806855a35a6">hedgedev::csl::ut::expr</a></li>
+<li>InferredStringOrView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a5b56149962ae61b32ebb1a5f91fe5727.html#a5b56149962ae61b32ebb1a5f91fe5727">hedgedev::csl::ut::expr</a></li>
+<li>InferredStringView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_aa97c2f6a02d3d08897371f7674ffd142.html#aa97c2f6a02d3d08897371f7674ffd142">hedgedev::csl::ut::expr</a></li>
+<li>PrecedentInferredString&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a58843fad18552e245606a7a11a80a980.html#a58843fad18552e245606a7a11a80a980">hedgedev::csl::ut::expr</a></li>
+<li>PrecedentInferredStringOrView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_af2d855d93ad41a6e6ff71996b780edcc.html#af2d855d93ad41a6e6ff71996b780edcc">hedgedev::csl::ut::expr</a></li>
+<li>PrecedentInferredStringView&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a523e9595ee56b4ed79c28c23e9eb3749.html#a523e9595ee56b4ed79c28c23e9eb3749">hedgedev::csl::ut::expr</a></li>
+<li>PrecedentString&#160;:&#160;<a class="el" href="d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac99e09c1643eeb1d9dcef1a1390ab898.html#ac99e09c1643eeb1d9dcef1a1390ab898">hedgedev::csl::ut::expr</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CommonLib: include/Configuration/Win32/Registry.inl File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<meta name="doxygen-page-layout" content="1" />
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
@@ -22,7 +21,6 @@
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -33,15 +31,6 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -53,7 +42,42 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "../../",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -65,28 +89,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d82/Registry_8inl.html','../../',''); });
 </script>
-<script type="application/json" id="doxygen-config">
-{
-  "relPath": "../../",
-  "generateTreeView": true,
-  "searchEngine": true,
-  "serverBasedSearch": false,
-  "disableIndex": false,
-  "dynamicMenus": true,
-  "fullSidebar": true
-}
-</script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -106,6 +110,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d82/Registr
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Registry.inl File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -119,25 +126,18 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3d9e10e1ea10aee630b9f6b56429f63e" id="r_a3d9e10e1ea10aee630b9f6b56429f63e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#a3d9e10e1ea10aee630b9f6b56429f63e">hedgedev::csl::cfg::registry::TryParseRegistryPath</a> (const std::filesystem::path &amp;in_rPath, HKEY &amp;out_rHKey, std::wstring &amp;out_rSubKey)</td></tr>
+<tr class="memitem:a3d9e10e1ea10aee630b9f6b56429f63e" id="r_a3d9e10e1ea10aee630b9f6b56429f63e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry_a3d9e10e1ea10aee630b9f6b56429f63e.html#a3d9e10e1ea10aee630b9f6b56429f63e">hedgedev::csl::cfg::registry::TryParseRegistryPath</a> (const std::filesystem::path &amp;in_rPath, HKEY &amp;out_rHKey, std::wstring &amp;out_rSubKey)</td></tr>
 <tr class="memitem:a2278161dde0dc14b1a16c44f3116e62b" id="r_a2278161dde0dc14b1a16c44f3116e62b"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a2278161dde0dc14b1a16c44f3116e62b template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#a2278161dde0dc14b1a16c44f3116e62b">hedgedev::csl::cfg::registry::Read</a> (const std::filesystem::path &amp;in_rPath, const std::filesystem::path &amp;in_rValueName, T &amp;out_rData)</td></tr>
+<tr class="memitem:a2278161dde0dc14b1a16c44f3116e62b template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry_a2278161dde0dc14b1a16c44f3116e62b.html#a2278161dde0dc14b1a16c44f3116e62b">hedgedev::csl::cfg::registry::Read</a> (const std::filesystem::path &amp;in_rPath, const std::filesystem::path &amp;in_rValueName, T &amp;out_rData)</td></tr>
 <tr class="memitem:aedbe46fd38442f3b6c95e491c63ca214" id="r_aedbe46fd38442f3b6c95e491c63ca214"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aedbe46fd38442f3b6c95e491c63ca214 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#aedbe46fd38442f3b6c95e491c63ca214">hedgedev::csl::cfg::registry::Read</a> (const std::filesystem::path &amp;in_rPath, T &amp;out_rData)</td></tr>
+<tr class="memitem:aedbe46fd38442f3b6c95e491c63ca214 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry_aedbe46fd38442f3b6c95e491c63ca214.html#aedbe46fd38442f3b6c95e491c63ca214">hedgedev::csl::cfg::registry::Read</a> (const std::filesystem::path &amp;in_rPath, T &amp;out_rData)</td></tr>
 <tr class="memitem:aa7f8094af3d1b10b17c0f2645b2f9932" id="r_aa7f8094af3d1b10b17c0f2645b2f9932"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aa7f8094af3d1b10b17c0f2645b2f9932 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#aa7f8094af3d1b10b17c0f2645b2f9932">hedgedev::csl::cfg::registry::Write</a> (const std::filesystem::path &amp;in_rPath, const std::filesystem::path &amp;in_rValueName, const T &amp;in_rData)</td></tr>
+<tr class="memitem:aa7f8094af3d1b10b17c0f2645b2f9932 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry_aa7f8094af3d1b10b17c0f2645b2f9932.html#aa7f8094af3d1b10b17c0f2645b2f9932">hedgedev::csl::cfg::registry::Write</a> (const std::filesystem::path &amp;in_rPath, const std::filesystem::path &amp;in_rValueName, const T &amp;in_rData)</td></tr>
 <tr class="memitem:a5b371b791cccdb35788584d5be08bf1e" id="r_a5b371b791cccdb35788584d5be08bf1e"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a5b371b791cccdb35788584d5be08bf1e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#a5b371b791cccdb35788584d5be08bf1e">hedgedev::csl::cfg::registry::Write</a> (const std::filesystem::path &amp;in_rPath, const T &amp;in_rData)</td></tr>
+<tr class="memitem:a5b371b791cccdb35788584d5be08bf1e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry_a5b371b791cccdb35788584d5be08bf1e.html#a5b371b791cccdb35788584d5be08bf1e">hedgedev::csl::cfg::registry::Write</a> (const std::filesystem::path &amp;in_rPath, const T &amp;in_rData)</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

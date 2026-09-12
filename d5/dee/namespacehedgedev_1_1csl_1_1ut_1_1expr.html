@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CommonLib: hedgedev::csl::ut::expr Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<meta name="doxygen-page-layout" content="1" />
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
@@ -22,7 +21,6 @@
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -33,15 +31,6 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -53,7 +42,42 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "../../",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -65,28 +89,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html','../../',''); });
 </script>
-<script type="application/json" id="doxygen-config">
-{
-  "relPath": "../../",
-  "generateTreeView": true,
-  "searchEngine": true,
-  "serverBasedSearch": false,
-  "disableIndex": false,
-  "dynamicMenus": true,
-  "fullSidebar": true
-}
-</script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -106,6 +110,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/dee/namespa
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">hedgedev::csl::ut::expr Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -134,419 +144,46 @@ Concepts</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a1d7424b7f1bfbb64d6fa9bacb3e3cc9f" id="r_a1d7424b7f1bfbb64d6fa9bacb3e3cc9f"><td class="memTemplParams" colspan="2">template&lt;size_t Index, typename... TArgs&gt; </td></tr>
-<tr class="memitem:a1d7424b7f1bfbb64d6fa9bacb3e3cc9f template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">GetPackType</a> = std::tuple_element_t&lt;Index, std::tuple&lt;TArgs...&gt;&gt;</td></tr>
+<tr class="memitem:a1d7424b7f1bfbb64d6fa9bacb3e3cc9f template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a1d7424b7f1bfbb64d6fa9bacb3e3cc9f.html#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">GetPackType</a> = std::tuple_element_t&lt;Index, std::tuple&lt;TArgs...&gt;&gt;</td></tr>
 <tr class="memitem:a0d7ba58c14ed666f7c6fba553b2d15b5" id="r_a0d7ba58c14ed666f7c6fba553b2d15b5"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a0d7ba58c14ed666f7c6fba553b2d15b5 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a> = typename <a class="el" href="../../d5/db9/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType.html">GetCharType</a>&lt;std::decay_t&lt;T&gt;&gt;::Type</td></tr>
+<tr class="memitem:a0d7ba58c14ed666f7c6fba553b2d15b5 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a> = typename <a class="el" href="../../d5/db9/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType.html">GetCharType</a>&lt;std::decay_t&lt;T&gt;&gt;::Type</td></tr>
 <tr class="memitem:ac285ae73debe031a609e0806855a35a6" id="r_ac285ae73debe031a609e0806855a35a6"><td class="memTemplParams" colspan="2">template&lt;AnyString T&gt; </td></tr>
-<tr class="memitem:ac285ae73debe031a609e0806855a35a6 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ac285ae73debe031a609e0806855a35a6">InferredString</a> = std::basic_string&lt;<a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T&gt;&gt;</td></tr>
+<tr class="memitem:ac285ae73debe031a609e0806855a35a6 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac285ae73debe031a609e0806855a35a6.html#ac285ae73debe031a609e0806855a35a6">InferredString</a> = std::basic_string&lt;<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T&gt;&gt;</td></tr>
 <tr class="memitem:aa97c2f6a02d3d08897371f7674ffd142" id="r_aa97c2f6a02d3d08897371f7674ffd142"><td class="memTemplParams" colspan="2">template&lt;AnyString T&gt; </td></tr>
-<tr class="memitem:aa97c2f6a02d3d08897371f7674ffd142 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a> = std::basic_string_view&lt;<a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T&gt;&gt;</td></tr>
+<tr class="memitem:aa97c2f6a02d3d08897371f7674ffd142 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_aa97c2f6a02d3d08897371f7674ffd142.html#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a> = std::basic_string_view&lt;<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T&gt;&gt;</td></tr>
 <tr class="memitem:a5b56149962ae61b32ebb1a5f91fe5727" id="r_a5b56149962ae61b32ebb1a5f91fe5727"><td class="memTemplParams" colspan="2">template&lt;AnyString T&gt; </td></tr>
-<tr class="memitem:a5b56149962ae61b32ebb1a5f91fe5727 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a5b56149962ae61b32ebb1a5f91fe5727">InferredStringOrView</a> = std::conditional_t&lt;CString&lt;T&gt;, <a class="el" href="#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a>&lt;T&gt;, <a class="el" href="#ac285ae73debe031a609e0806855a35a6">InferredString</a>&lt;T&gt;&gt;</td></tr>
+<tr class="memitem:a5b56149962ae61b32ebb1a5f91fe5727 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a5b56149962ae61b32ebb1a5f91fe5727.html#a5b56149962ae61b32ebb1a5f91fe5727">InferredStringOrView</a> = std::conditional_t&lt;CString&lt;T&gt;, <a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_aa97c2f6a02d3d08897371f7674ffd142.html#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a>&lt;T&gt;, <a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac285ae73debe031a609e0806855a35a6.html#ac285ae73debe031a609e0806855a35a6">InferredString</a>&lt;T&gt;&gt;</td></tr>
 <tr class="memitem:ac99e09c1643eeb1d9dcef1a1390ab898" id="r_ac99e09c1643eeb1d9dcef1a1390ab898"><td class="memTemplParams" colspan="2">template&lt;AnyString... TArgs&gt; </td></tr>
-<tr class="memitem:ac99e09c1643eeb1d9dcef1a1390ab898 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a> = std::tuple_element_t&lt;<a class="el" href="#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a>&lt;TArgs...&gt;(), std::tuple&lt;TArgs...&gt;&gt;</td></tr>
+<tr class="memitem:ac99e09c1643eeb1d9dcef1a1390ab898 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac99e09c1643eeb1d9dcef1a1390ab898.html#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a> = std::tuple_element_t&lt;<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a>&lt;TArgs...&gt;(), std::tuple&lt;TArgs...&gt;&gt;</td></tr>
 <tr class="memitem:a58843fad18552e245606a7a11a80a980" id="r_a58843fad18552e245606a7a11a80a980"><td class="memTemplParams" colspan="2">template&lt;AnyString... TArgs&gt; </td></tr>
-<tr class="memitem:a58843fad18552e245606a7a11a80a980 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a58843fad18552e245606a7a11a80a980">PrecedentInferredString</a> = <a class="el" href="#ac285ae73debe031a609e0806855a35a6">InferredString</a>&lt;<a class="el" href="#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a>&lt;TArgs...&gt;&gt;</td></tr>
+<tr class="memitem:a58843fad18552e245606a7a11a80a980 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a58843fad18552e245606a7a11a80a980.html#a58843fad18552e245606a7a11a80a980">PrecedentInferredString</a> = <a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac285ae73debe031a609e0806855a35a6.html#ac285ae73debe031a609e0806855a35a6">InferredString</a>&lt;<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac99e09c1643eeb1d9dcef1a1390ab898.html#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a>&lt;TArgs...&gt;&gt;</td></tr>
 <tr class="memitem:a523e9595ee56b4ed79c28c23e9eb3749" id="r_a523e9595ee56b4ed79c28c23e9eb3749"><td class="memTemplParams" colspan="2">template&lt;AnyString... TArgs&gt; </td></tr>
-<tr class="memitem:a523e9595ee56b4ed79c28c23e9eb3749 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a523e9595ee56b4ed79c28c23e9eb3749">PrecedentInferredStringView</a> = <a class="el" href="#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a>&lt;<a class="el" href="#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a>&lt;TArgs...&gt;&gt;</td></tr>
+<tr class="memitem:a523e9595ee56b4ed79c28c23e9eb3749 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a523e9595ee56b4ed79c28c23e9eb3749.html#a523e9595ee56b4ed79c28c23e9eb3749">PrecedentInferredStringView</a> = <a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_aa97c2f6a02d3d08897371f7674ffd142.html#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a>&lt;<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac99e09c1643eeb1d9dcef1a1390ab898.html#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a>&lt;TArgs...&gt;&gt;</td></tr>
 <tr class="memitem:af2d855d93ad41a6e6ff71996b780edcc" id="r_af2d855d93ad41a6e6ff71996b780edcc"><td class="memTemplParams" colspan="2">template&lt;AnyString... TArgs&gt; </td></tr>
-<tr class="memitem:af2d855d93ad41a6e6ff71996b780edcc template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#af2d855d93ad41a6e6ff71996b780edcc">PrecedentInferredStringOrView</a></td></tr>
+<tr class="memitem:af2d855d93ad41a6e6ff71996b780edcc template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_af2d855d93ad41a6e6ff71996b780edcc.html#af2d855d93ad41a6e6ff71996b780edcc">PrecedentInferredStringOrView</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a05a5a33c30be4824bbcad5c30f2c5805" id="r_a05a5a33c30be4824bbcad5c30f2c5805"><td class="memTemplParams" colspan="2">template&lt;class T, typename&gt; </td></tr>
-<tr class="memitem:a05a5a33c30be4824bbcad5c30f2c5805 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a05a5a33c30be4824bbcad5c30f2c5805">HasFlag</a> (T in_mask, T in_flag)</td></tr>
+<tr class="memitem:a05a5a33c30be4824bbcad5c30f2c5805 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a05a5a33c30be4824bbcad5c30f2c5805.html#a05a5a33c30be4824bbcad5c30f2c5805">HasFlag</a> (T in_mask, T in_flag)</td></tr>
 <tr class="memitem:a60be0b4ad31727647aac45a11a3c8072" id="r_a60be0b4ad31727647aac45a11a3c8072"><td class="memTemplParams" colspan="2">template&lt;AnyString TDst, AnyString TSrc&gt; </td></tr>
-<tr class="memitem:a60be0b4ad31727647aac45a11a3c8072 template"><td class="memItemLeft">constexpr TDst&#160;</td><td class="memItemRight"><a class="el" href="#a60be0b4ad31727647aac45a11a3c8072">CreateInferredString</a> (const TSrc &amp;in_rStr)</td></tr>
+<tr class="memitem:a60be0b4ad31727647aac45a11a3c8072 template"><td class="memItemLeft">constexpr TDst&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">CreateInferredString</a> (const TSrc &amp;in_rStr)</td></tr>
 <tr class="memitem:a6f0c26f1c2e4b9dd2d92a3eeb8a16a58" id="r_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58"><td class="memTemplParams" colspan="2">template&lt;AnyString... TArgs&gt; </td></tr>
-<tr class="memitem:a6f0c26f1c2e4b9dd2d92a3eeb8a16a58 template"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a> ()</td></tr>
+<tr class="memitem:a6f0c26f1c2e4b9dd2d92a3eeb8a16a58 template"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:afb6c1204747053adba306e5d19244799" id="r_afb6c1204747053adba306e5d19244799"><td class="memTemplParams" colspan="2">template&lt;typename T, typename... TArgs&gt; </td></tr>
-<tr class="memitem:afb6c1204747053adba306e5d19244799 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#afb6c1204747053adba306e5d19244799">IsAllSame</a> = std::conjunction_v&lt;std::is_same&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;, std::remove_cvref_t&lt;std::decay_t&lt;TArgs&gt;&gt;&gt;...&gt;</td></tr>
+<tr class="memitem:afb6c1204747053adba306e5d19244799 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_afb6c1204747053adba306e5d19244799.html#afb6c1204747053adba306e5d19244799">IsAllSame</a> = std::conjunction_v&lt;std::is_same&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;, std::remove_cvref_t&lt;std::decay_t&lt;TArgs&gt;&gt;&gt;...&gt;</td></tr>
 <tr class="memitem:a3ce4cfb712334185d14b27a6902e982a" id="r_a3ce4cfb712334185d14b27a6902e982a"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a3ce4cfb712334185d14b27a6902e982a template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a3ce4cfb712334185d14b27a6902e982a">IsBasicString_v</a> = <a class="el" href="../../d4/de3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicString.html">IsBasicString</a>&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;&gt;::value</td></tr>
+<tr class="memitem:a3ce4cfb712334185d14b27a6902e982a template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a3ce4cfb712334185d14b27a6902e982a.html#a3ce4cfb712334185d14b27a6902e982a">IsBasicString_v</a> = <a class="el" href="../../d4/de3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicString.html">IsBasicString</a>&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;&gt;::value</td></tr>
 <tr class="memitem:ab5749dd2c755adf4243a66b9337c17be" id="r_ab5749dd2c755adf4243a66b9337c17be"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:ab5749dd2c755adf4243a66b9337c17be template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#ab5749dd2c755adf4243a66b9337c17be">IsBasicStringView_v</a> = <a class="el" href="../../dc/d94/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicStringView.html">IsBasicStringView</a>&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;&gt;::value</td></tr>
+<tr class="memitem:ab5749dd2c755adf4243a66b9337c17be template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ab5749dd2c755adf4243a66b9337c17be.html#ab5749dd2c755adf4243a66b9337c17be">IsBasicStringView_v</a> = <a class="el" href="../../dc/d94/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicStringView.html">IsBasicStringView</a>&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;&gt;::value</td></tr>
 <tr class="memitem:a11799d49707e393727b2fb5bf860afe9" id="r_a11799d49707e393727b2fb5bf860afe9"><td class="memTemplParams" colspan="2">template&lt;AnyString T1, AnyString T2&gt; </td></tr>
-<tr class="memitem:a11799d49707e393727b2fb5bf860afe9 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="#a11799d49707e393727b2fb5bf860afe9">IsSameUnderlyingCharType</a> = std::is_same_v&lt;<a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T1&gt;, <a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T2&gt;&gt;</td></tr>
+<tr class="memitem:a11799d49707e393727b2fb5bf860afe9 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a11799d49707e393727b2fb5bf860afe9.html#a11799d49707e393727b2fb5bf860afe9">IsSameUnderlyingCharType</a> = std::is_same_v&lt;<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T1&gt;, <a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T2&gt;&gt;</td></tr>
 </table>
-<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
-<a id="a0d7ba58c14ed666f7c6fba553b2d15b5" name="a0d7ba58c14ed666f7c6fba553b2d15b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7ba58c14ed666f7c6fba553b2d15b5">&#9670;&#160;</a></span>GetCharType_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">hedgedev::csl::ut::expr::GetCharType_t</a> = typename <a class="el" href="../../d5/db9/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType.html">GetCharType</a>&lt;std::decay_t&lt;T&gt;&gt;::Type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Gets the character type of a string. </p>
-
-</div>
-</div>
-<a id="a1d7424b7f1bfbb64d6fa9bacb3e3cc9f" name="a1d7424b7f1bfbb64d6fa9bacb3e3cc9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">&#9670;&#160;</a></span>GetPackType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t Index, typename... TArgs&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">hedgedev::csl::ut::expr::GetPackType</a> = std::tuple_element_t&lt;Index, std::tuple&lt;TArgs...&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac285ae73debe031a609e0806855a35a6" name="ac285ae73debe031a609e0806855a35a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac285ae73debe031a609e0806855a35a6">&#9670;&#160;</a></span>InferredString</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#ac285ae73debe031a609e0806855a35a6">hedgedev::csl::ut::expr::InferredString</a> = std::basic_string&lt;<a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>An <span class="tt">std::basic_string</span> inferred from any string type. </p>
-
-</div>
-</div>
-<a id="a5b56149962ae61b32ebb1a5f91fe5727" name="a5b56149962ae61b32ebb1a5f91fe5727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b56149962ae61b32ebb1a5f91fe5727">&#9670;&#160;</a></span>InferredStringOrView</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a5b56149962ae61b32ebb1a5f91fe5727">hedgedev::csl::ut::expr::InferredStringOrView</a> = std::conditional_t&lt;CString&lt;T&gt;, <a class="el" href="#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a>&lt;T&gt;, <a class="el" href="#ac285ae73debe031a609e0806855a35a6">InferredString</a>&lt;T&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>An <span class="tt">std::basic_string</span> or <span class="tt">std::basic_string_view</span> inferred from the string type.</p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">std::basic_string_view</span> if the type is a C string. Otherwise, <span class="tt">std::basic_string</span>. </dd></dl>
-
-</div>
-</div>
-<a id="aa97c2f6a02d3d08897371f7674ffd142" name="aa97c2f6a02d3d08897371f7674ffd142"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa97c2f6a02d3d08897371f7674ffd142">&#9670;&#160;</a></span>InferredStringView</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString T&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#aa97c2f6a02d3d08897371f7674ffd142">hedgedev::csl::ut::expr::InferredStringView</a> = std::basic_string_view&lt;<a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>An <span class="tt">std::basic_string_view</span> inferred from any string type. </p>
-
-</div>
-</div>
-<a id="a58843fad18552e245606a7a11a80a980" name="a58843fad18552e245606a7a11a80a980"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58843fad18552e245606a7a11a80a980">&#9670;&#160;</a></span>PrecedentInferredString</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString... TArgs&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a58843fad18552e245606a7a11a80a980">hedgedev::csl::ut::expr::PrecedentInferredString</a> = <a class="el" href="#ac285ae73debe031a609e0806855a35a6">InferredString</a>&lt;<a class="el" href="#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a>&lt;TArgs...&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>An <span class="tt">std::basic_string</span> inferred from the string type with the largest character size. </p>
-
-</div>
-</div>
-<a id="af2d855d93ad41a6e6ff71996b780edcc" name="af2d855d93ad41a6e6ff71996b780edcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2d855d93ad41a6e6ff71996b780edcc">&#9670;&#160;</a></span>PrecedentInferredStringOrView</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString... TArgs&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#af2d855d93ad41a6e6ff71996b780edcc">hedgedev::csl::ut::expr::PrecedentInferredStringOrView</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">std::conditional_t&lt;(<a class="code hl_variable" href="#afb6c1204747053adba306e5d19244799">IsAllSame</a>&lt;TArgs...&gt; &amp;&amp; <a class="code hl_concept" href="../../df/d52/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1CString.html">CString</a>&lt;<a class="code hl_typedef" href="#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">GetPackType</a>&lt;0, TArgs...&gt;&gt;),</div>
-<div class="line">       <a class="code hl_typedef" href="#a523e9595ee56b4ed79c28c23e9eb3749">PrecedentInferredStringView&lt;TArgs...&gt;</a>,</div>
-<div class="line">       <a class="code hl_typedef" href="#a58843fad18552e245606a7a11a80a980">PrecedentInferredString&lt;TArgs...&gt;</a>&gt;</div>
-<div class="ttc" id="aconcepthedgedev_1_1csl_1_1ut_1_1expr_1_1CString_html"><div class="ttname"><a href="../../df/d52/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1CString.html">hedgedev::csl::ut::expr::CString</a></div><div class="ttdef"><b>Definition</b> StringTypes.h:71</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a1d7424b7f1bfbb64d6fa9bacb3e3cc9f"><div class="ttname"><a href="#a1d7424b7f1bfbb64d6fa9bacb3e3cc9f">hedgedev::csl::ut::expr::GetPackType</a></div><div class="ttdeci">std::tuple_element_t&lt; Index, std::tuple&lt; TArgs... &gt; &gt; GetPackType</div><div class="ttdef"><b>Definition</b> Expressions.h:9</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a523e9595ee56b4ed79c28c23e9eb3749"><div class="ttname"><a href="#a523e9595ee56b4ed79c28c23e9eb3749">hedgedev::csl::ut::expr::PrecedentInferredStringView</a></div><div class="ttdeci">InferredStringView&lt; PrecedentString&lt; TArgs... &gt; &gt; PrecedentInferredStringView</div><div class="ttdef"><b>Definition</b> StringTypes.h:154</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a58843fad18552e245606a7a11a80a980"><div class="ttname"><a href="#a58843fad18552e245606a7a11a80a980">hedgedev::csl::ut::expr::PrecedentInferredString</a></div><div class="ttdeci">InferredString&lt; PrecedentString&lt; TArgs... &gt; &gt; PrecedentInferredString</div><div class="ttdef"><b>Definition</b> StringTypes.h:148</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_afb6c1204747053adba306e5d19244799"><div class="ttname"><a href="#afb6c1204747053adba306e5d19244799">hedgedev::csl::ut::expr::IsAllSame</a></div><div class="ttdeci">constexpr bool IsAllSame</div><div class="ttdef"><b>Definition</b> Expressions.h:15</div></div>
-</div><!-- fragment --><p>An <span class="tt">std::basic_string</span> or <span class="tt">std::basic_string_view</span> inferred from the string type with the largest character size.</p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">std::basic_string_view</span> if all types are C strings. Otherwise, <span class="tt">std::basic_string</span>. </dd></dl>
-
-</div>
-</div>
-<a id="a523e9595ee56b4ed79c28c23e9eb3749" name="a523e9595ee56b4ed79c28c23e9eb3749"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a523e9595ee56b4ed79c28c23e9eb3749">&#9670;&#160;</a></span>PrecedentInferredStringView</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString... TArgs&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#a523e9595ee56b4ed79c28c23e9eb3749">hedgedev::csl::ut::expr::PrecedentInferredStringView</a> = <a class="el" href="#aa97c2f6a02d3d08897371f7674ffd142">InferredStringView</a>&lt;<a class="el" href="#ac99e09c1643eeb1d9dcef1a1390ab898">PrecedentString</a>&lt;TArgs...&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>An <span class="tt">std::basic_string_view</span> inferred from the string type with the largest character size. </p>
-
-</div>
-</div>
-<a id="ac99e09c1643eeb1d9dcef1a1390ab898" name="ac99e09c1643eeb1d9dcef1a1390ab898"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac99e09c1643eeb1d9dcef1a1390ab898">&#9670;&#160;</a></span>PrecedentString</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString... TArgs&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#ac99e09c1643eeb1d9dcef1a1390ab898">hedgedev::csl::ut::expr::PrecedentString</a> = std::tuple_element_t&lt;<a class="el" href="#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a>&lt;TArgs...&gt;(), std::tuple&lt;TArgs...&gt;&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Evaluates the string type with the largest character size. </p>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a60be0b4ad31727647aac45a11a3c8072" name="a60be0b4ad31727647aac45a11a3c8072"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60be0b4ad31727647aac45a11a3c8072">&#9670;&#160;</a></span>CreateInferredString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString TDst, AnyString TSrc&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TDst hedgedev::csl::ut::expr::CreateInferredString </td>
-          <td>(</td>
-          <td class="paramtype">const TSrc &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rStr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Creates a string inferred from a string literal at compile time.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">TDst</td><td>The string type to create. </td></tr>
-    <tr><td class="paramname">TSrc</td><td>The string type to convert from.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_rStr</td><td>The string to create.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The input string in the destination format. </dd></dl>
-
-</div>
-</div>
-<a id="a6f0c26f1c2e4b9dd2d92a3eeb8a16a58" name="a6f0c26f1c2e4b9dd2d92a3eeb8a16a58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">&#9670;&#160;</a></span>GetStringTypePrecedence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString... TArgs&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t hedgedev::csl::ut::expr::GetStringTypePrecedence </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Determines which string type has the largest character size.</p>
-<dl class="section return"><dt>Returns</dt><dd>The index of the string type with the largest character size. </dd></dl>
-
-</div>
-</div>
-<a id="a05a5a33c30be4824bbcad5c30f2c5805" name="a05a5a33c30be4824bbcad5c30f2c5805"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05a5a33c30be4824bbcad5c30f2c5805">&#9670;&#160;</a></span>HasFlag()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T, typename&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::ut::expr::HasFlag </td>
-          <td>(</td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>in_mask</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">T</td>          <td class="paramname"><span class="paramname"><em>in_flag</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="afb6c1204747053adba306e5d19244799" name="afb6c1204747053adba306e5d19244799"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb6c1204747053adba306e5d19244799">&#9670;&#160;</a></span>IsAllSame</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, typename... TArgs&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::ut::expr::IsAllSame = std::conjunction_v&lt;std::is_same&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;, std::remove_cvref_t&lt;std::decay_t&lt;TArgs&gt;&gt;&gt;...&gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3ce4cfb712334185d14b27a6902e982a" name="a3ce4cfb712334185d14b27a6902e982a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ce4cfb712334185d14b27a6902e982a">&#9670;&#160;</a></span>IsBasicString_v</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::ut::expr::IsBasicString_v = <a class="el" href="../../d4/de3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicString.html">IsBasicString</a>&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;&gt;::value</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Checks if the type is an <span class="tt">std::basic_string</span>. </p>
-
-</div>
-</div>
-<a id="ab5749dd2c755adf4243a66b9337c17be" name="ab5749dd2c755adf4243a66b9337c17be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5749dd2c755adf4243a66b9337c17be">&#9670;&#160;</a></span>IsBasicStringView_v</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::ut::expr::IsBasicStringView_v = <a class="el" href="../../dc/d94/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicStringView.html">IsBasicStringView</a>&lt;std::remove_cvref_t&lt;std::decay_t&lt;T&gt;&gt;&gt;::value</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Checks if the type is an <span class="tt">std::basic_string_view</span>. </p>
-
-</div>
-</div>
-<a id="a11799d49707e393727b2fb5bf860afe9" name="a11799d49707e393727b2fb5bf860afe9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11799d49707e393727b2fb5bf860afe9">&#9670;&#160;</a></span>IsSameUnderlyingCharType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;AnyString T1, AnyString T2&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::ut::expr::IsSameUnderlyingCharType = std::is_same_v&lt;<a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T1&gt;, <a class="el" href="#a0d7ba58c14ed666f7c6fba553b2d15b5">GetCharType_t</a>&lt;T2&gt;&gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Checks if the underlying type of two given string types are the same. </p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

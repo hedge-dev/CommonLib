@@ -2580,12 +2580,6 @@ details[open]>summary::before {
 .hidden {
   display: none;
 }
-
-#titlearea {
-  border-bottom: none;
-  background-color: var(--nav-background-color);
-  border-right: 1px solid var(--nav-border-color);
-}
 :root {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-background-color);

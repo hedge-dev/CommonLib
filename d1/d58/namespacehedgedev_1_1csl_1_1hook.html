@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CommonLib: hedgedev::csl::hook Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<meta name="doxygen-page-layout" content="1" />
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
@@ -22,7 +21,6 @@
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -33,15 +31,6 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -53,7 +42,42 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "../../",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -65,28 +89,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d58/namespacehedgedev_1_1csl_1_1hook.html','../../',''); });
 </script>
-<script type="application/json" id="doxygen-config">
-{
-  "relPath": "../../",
-  "generateTreeView": true,
-  "searchEngine": true,
-  "serverBasedSearch": false,
-  "disableIndex": false,
-  "dynamicMenus": true,
-  "fullSidebar": true
-}
-</script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -106,6 +110,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d58/namespa
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">hedgedev::csl::hook Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -116,399 +124,111 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a30fb4da95328479a477e60de481e0ebf" id="r_a30fb4da95328479a477e60de481e0ebf"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a30fb4da95328479a477e60de481e0ebf">UserRegister</a> : uint64_t { <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfa6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfaeee994d8f3b3c70335763b9a4a2caeb1">EAX</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfaf4f316d9e3af74567e781129ce9b384c">ECX</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa22b5dc1e93a77a0361aaf220517c1fa1">EDX</a>
+<tr class="memitem:a30fb4da95328479a477e60de481e0ebf" id="r_a30fb4da95328479a477e60de481e0ebf"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebf">UserRegister</a> : uint64_t { <br />
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfaeee994d8f3b3c70335763b9a4a2caeb1">EAX</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfaf4f316d9e3af74567e781129ce9b384c">ECX</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa22b5dc1e93a77a0361aaf220517c1fa1">EDX</a>
 , <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfa89d5f2c300bc5e8df2b587981e9f83ae">EBX</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa3e30ce90c5b1d89ae09b7d4c73d8e172">ESP</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa4e7627e030290994aff0ced165dbfc7b">EBP</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfadd445edb9c3b702b74855e30f795ad4e">ESI</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa89d5f2c300bc5e8df2b587981e9f83ae">EBX</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa3e30ce90c5b1d89ae09b7d4c73d8e172">ESP</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa4e7627e030290994aff0ced165dbfc7b">EBP</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfadd445edb9c3b702b74855e30f795ad4e">ESI</a>
 , <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfa4d2e27158ca5f1c109c99624b7ee9092">EDI</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfad758a5d987a118322a363e28f7b01806">ST0</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa04165bfaf352643d7db29e271dac92d7">ST1</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa743b3257b344fcb0dc3158aa21e2c329">ST2</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa4d2e27158ca5f1c109c99624b7ee9092">EDI</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfad758a5d987a118322a363e28f7b01806">ST0</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa04165bfaf352643d7db29e271dac92d7">ST1</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa743b3257b344fcb0dc3158aa21e2c329">ST2</a>
 , <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfa36ab7b000da26b0547bfc3c3fdf143dc">ST3</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfaa8047d24376e2ce5c62663d435629812">ST4</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa30f41bdee3c7ede12ec23ab49a2c8ec6">ST5</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa39e7ebaefca71802a1c58c09949f171a">ST6</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa36ab7b000da26b0547bfc3c3fdf143dc">ST3</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfaa8047d24376e2ce5c62663d435629812">ST4</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa30f41bdee3c7ede12ec23ab49a2c8ec6">ST5</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa39e7ebaefca71802a1c58c09949f171a">ST6</a>
 , <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfaccf014626cbd3930f29590503f61c61f">ST7</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa3733e4ac8656438f2023f5da6e95c2e7">XMM0</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa9aded8e4480df3ec0704111b18f2f07b">XMM1</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfaddd50bd4c3275cc2b1959340082a5c47">XMM2</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfaccf014626cbd3930f29590503f61c61f">ST7</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa3733e4ac8656438f2023f5da6e95c2e7">XMM0</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa9aded8e4480df3ec0704111b18f2f07b">XMM1</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfaddd50bd4c3275cc2b1959340082a5c47">XMM2</a>
 , <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfa5250d87973cee66807910291b60fa723">XMM3</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa5889f84cd6dca48093ae315108369cee">XMM4</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa0e3f8268d75c6dfafad95de650d35a9a">XMM5</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfa9fb8eb4bfba1d1205f37eec26baf3999">XMM6</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa5250d87973cee66807910291b60fa723">XMM3</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa5889f84cd6dca48093ae315108369cee">XMM4</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa0e3f8268d75c6dfafad95de650d35a9a">XMM5</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa9fb8eb4bfba1d1205f37eec26baf3999">XMM6</a>
 , <br />
-&#160;&#160;<a class="el" href="#a30fb4da95328479a477e60de481e0ebfa19d1cc125c577fcc60594457b6eb4a1f">XMM7</a>
-, <a class="el" href="#a30fb4da95328479a477e60de481e0ebfae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa19d1cc125c577fcc60594457b6eb4a1f">XMM7</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
-<tr class="memitem:a94329e8402e75aa7f9c60331cc5ace82" id="r_a94329e8402e75aa7f9c60331cc5ace82"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82">Register</a> : uint64_t { <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82ae892e780304dc3ef15e69b9f3fed3669">AL</a> = UserRegister::EAX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a58e69a293e3d65294bd972b467c40996">AX</a> = UserRegister::EAX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82aeee994d8f3b3c70335763b9a4a2caeb1">EAX</a> = UserRegister::EAX
+<tr class="memitem:a94329e8402e75aa7f9c60331cc5ace82" id="r_a94329e8402e75aa7f9c60331cc5ace82"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82">Register</a> : uint64_t { <br />
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82ae892e780304dc3ef15e69b9f3fed3669">AL</a> = UserRegister::EAX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a58e69a293e3d65294bd972b467c40996">AX</a> = UserRegister::EAX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82aeee994d8f3b3c70335763b9a4a2caeb1">EAX</a> = UserRegister::EAX
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a5bc574a47246f122016869b32a6aa6f0">CL</a> = UserRegister::ECX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a833e36d1a5a93dedb10c85f50ced9ce7">CX</a> = UserRegister::ECX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82af4f316d9e3af74567e781129ce9b384c">ECX</a> = UserRegister::ECX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82af5ce9f5cb682a1f863d5a8c51ac28683">DL</a> = UserRegister::EDX
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a5bc574a47246f122016869b32a6aa6f0">CL</a> = UserRegister::ECX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a833e36d1a5a93dedb10c85f50ced9ce7">CX</a> = UserRegister::ECX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82af4f316d9e3af74567e781129ce9b384c">ECX</a> = UserRegister::ECX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82af5ce9f5cb682a1f863d5a8c51ac28683">DL</a> = UserRegister::EDX
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a72a530b2433264cef373d8fcca5662c1">DX</a> = UserRegister::EDX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a22b5dc1e93a77a0361aaf220517c1fa1">EDX</a> = UserRegister::EDX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82aa6f5350f5a2b25a96d66757f761ce65c">BL</a> = UserRegister::EBX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82acc7f5d4a45770811a49a1397cefb3426">BX</a> = UserRegister::EBX
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a72a530b2433264cef373d8fcca5662c1">DX</a> = UserRegister::EDX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a22b5dc1e93a77a0361aaf220517c1fa1">EDX</a> = UserRegister::EDX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82aa6f5350f5a2b25a96d66757f761ce65c">BL</a> = UserRegister::EBX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82acc7f5d4a45770811a49a1397cefb3426">BX</a> = UserRegister::EBX
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a89d5f2c300bc5e8df2b587981e9f83ae">EBX</a> = UserRegister::EBX
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a18e6b17f5ea12a9dfb6ca9b1feb4755c">SPL</a> = UserRegister::ESP
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a674769e3326f8cf937af4282f2815c02">SP</a> = UserRegister::ESP
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a3e30ce90c5b1d89ae09b7d4c73d8e172">ESP</a> = UserRegister::ESP
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a89d5f2c300bc5e8df2b587981e9f83ae">EBX</a> = UserRegister::EBX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a18e6b17f5ea12a9dfb6ca9b1feb4755c">SPL</a> = UserRegister::ESP
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a674769e3326f8cf937af4282f2815c02">SP</a> = UserRegister::ESP
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a3e30ce90c5b1d89ae09b7d4c73d8e172">ESP</a> = UserRegister::ESP
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a2505eaefa7cfdd83ff021d29f553b474">BPL</a> = UserRegister::EBP
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a96d4cdff8ed57e93e3b3d843cffe3af7">BP</a> = UserRegister::EBP
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a4e7627e030290994aff0ced165dbfc7b">EBP</a> = UserRegister::EBP
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a931956b28520f66fca597c302e66a79d">SIL</a> = UserRegister::ESI
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a2505eaefa7cfdd83ff021d29f553b474">BPL</a> = UserRegister::EBP
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a96d4cdff8ed57e93e3b3d843cffe3af7">BP</a> = UserRegister::EBP
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a4e7627e030290994aff0ced165dbfc7b">EBP</a> = UserRegister::EBP
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a931956b28520f66fca597c302e66a79d">SIL</a> = UserRegister::ESI
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82ace774d9cab3ae0bdf522cd0839bed364">SI</a> = UserRegister::ESI
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82add445edb9c3b702b74855e30f795ad4e">ESI</a> = UserRegister::ESI
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a9faebea8b5be8ae9e79e92d5a527b918">DIL</a> = UserRegister::EDI
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82aa1b1c0cd777edd2e5cfcaf8e2e7dcab8">DI</a> = UserRegister::EDI
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82ace774d9cab3ae0bdf522cd0839bed364">SI</a> = UserRegister::ESI
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82add445edb9c3b702b74855e30f795ad4e">ESI</a> = UserRegister::ESI
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a9faebea8b5be8ae9e79e92d5a527b918">DIL</a> = UserRegister::EDI
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82aa1b1c0cd777edd2e5cfcaf8e2e7dcab8">DI</a> = UserRegister::EDI
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a4d2e27158ca5f1c109c99624b7ee9092">EDI</a> = UserRegister::EDI
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82ad758a5d987a118322a363e28f7b01806">ST0</a> = UserRegister::ST0
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a04165bfaf352643d7db29e271dac92d7">ST1</a> = UserRegister::ST1
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a743b3257b344fcb0dc3158aa21e2c329">ST2</a> = UserRegister::ST2
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a4d2e27158ca5f1c109c99624b7ee9092">EDI</a> = UserRegister::EDI
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82ad758a5d987a118322a363e28f7b01806">ST0</a> = UserRegister::ST0
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a04165bfaf352643d7db29e271dac92d7">ST1</a> = UserRegister::ST1
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a743b3257b344fcb0dc3158aa21e2c329">ST2</a> = UserRegister::ST2
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a36ab7b000da26b0547bfc3c3fdf143dc">ST3</a> = UserRegister::ST3
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82aa8047d24376e2ce5c62663d435629812">ST4</a> = UserRegister::ST4
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a30f41bdee3c7ede12ec23ab49a2c8ec6">ST5</a> = UserRegister::ST5
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a39e7ebaefca71802a1c58c09949f171a">ST6</a> = UserRegister::ST6
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a36ab7b000da26b0547bfc3c3fdf143dc">ST3</a> = UserRegister::ST3
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82aa8047d24376e2ce5c62663d435629812">ST4</a> = UserRegister::ST4
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a30f41bdee3c7ede12ec23ab49a2c8ec6">ST5</a> = UserRegister::ST5
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a39e7ebaefca71802a1c58c09949f171a">ST6</a> = UserRegister::ST6
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82accf014626cbd3930f29590503f61c61f">ST7</a> = UserRegister::ST7
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a3733e4ac8656438f2023f5da6e95c2e7">XMM0</a> = UserRegister::XMM0
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a9aded8e4480df3ec0704111b18f2f07b">XMM1</a> = UserRegister::XMM1
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82addd50bd4c3275cc2b1959340082a5c47">XMM2</a> = UserRegister::XMM2
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82accf014626cbd3930f29590503f61c61f">ST7</a> = UserRegister::ST7
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a3733e4ac8656438f2023f5da6e95c2e7">XMM0</a> = UserRegister::XMM0
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a9aded8e4480df3ec0704111b18f2f07b">XMM1</a> = UserRegister::XMM1
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82addd50bd4c3275cc2b1959340082a5c47">XMM2</a> = UserRegister::XMM2
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a5250d87973cee66807910291b60fa723">XMM3</a> = UserRegister::XMM3
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a5889f84cd6dca48093ae315108369cee">XMM4</a> = UserRegister::XMM4
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a0e3f8268d75c6dfafad95de650d35a9a">XMM5</a> = UserRegister::XMM5
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a9fb8eb4bfba1d1205f37eec26baf3999">XMM6</a> = UserRegister::XMM6
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a5250d87973cee66807910291b60fa723">XMM3</a> = UserRegister::XMM3
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a5889f84cd6dca48093ae315108369cee">XMM4</a> = UserRegister::XMM4
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a0e3f8268d75c6dfafad95de650d35a9a">XMM5</a> = UserRegister::XMM5
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a9fb8eb4bfba1d1205f37eec26baf3999">XMM6</a> = UserRegister::XMM6
 , <br />
-&#160;&#160;<a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82a19d1cc125c577fcc60594457b6eb4a1f">XMM7</a> = UserRegister::XMM7
-, <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
+&#160;&#160;<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a19d1cc125c577fcc60594457b6eb4a1f">XMM7</a> = UserRegister::XMM7
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a>
 <br />
  }</td></tr>
-<tr class="memitem:a2d42f7df6db194599f99ce8b12fd0b30" id="r_a2d42f7df6db194599f99ce8b12fd0b30"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30">UserRegisterFamily</a> : uint64_t { <a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30a6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30add20dd4273adca660f20d417a618e3e7">GPR</a> = UserRegister::EAX
-, <a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30a11e4d339cb835db9884cd4a4e0c3dbb7">FPU</a> = UserRegister::ST0
-, <a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30a5fc53fc8197865c63285f74b1e147013">SSE</a> = UserRegister::XMM0
+<tr class="memitem:a2d42f7df6db194599f99ce8b12fd0b30" id="r_a2d42f7df6db194599f99ce8b12fd0b30"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30">UserRegisterFamily</a> : uint64_t { <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30a6adf97f83acf6453d4a6a4b1070f3754">None</a>
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30add20dd4273adca660f20d417a618e3e7">GPR</a> = UserRegister::EAX
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30a11e4d339cb835db9884cd4a4e0c3dbb7">FPU</a> = UserRegister::ST0
+, <a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30a5fc53fc8197865c63285f74b1e147013">SSE</a> = UserRegister::XMM0
  }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a348b8a7054e9222082b188d75757b835" id="r_a348b8a7054e9222082b188d75757b835"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#a348b8a7054e9222082b188d75757b835">GetPostHookAddress</a> (void *in_pHookStart)</td></tr>
-<tr class="memitem:a5ebd40da4eabdb39e143b34df2b4033c" id="r_a5ebd40da4eabdb39e143b34df2b4033c"><td class="memItemLeft"><a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30">UserRegisterFamily</a>&#160;</td><td class="memItemRight"><a class="el" href="#a5ebd40da4eabdb39e143b34df2b4033c">GetRegisterFamily</a> (<a class="el" href="#a30fb4da95328479a477e60de481e0ebf">UserRegister</a> in_register)</td></tr>
-<tr class="memitem:a5768a9babda227735a921773a359ee26" id="r_a5768a9babda227735a921773a359ee26"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a5768a9babda227735a921773a359ee26">GetRegisterID</a> (<a class="el" href="#a30fb4da95328479a477e60de481e0ebf">UserRegister</a> in_register)</td></tr>
-<tr class="memitem:a91e4d1bec89b0c38b410f4a07e9fd9d6" id="r_a91e4d1bec89b0c38b410f4a07e9fd9d6"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#a91e4d1bec89b0c38b410f4a07e9fd9d6">EmitUserTrampoline</a> (const <a class="el" href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">UserCallInfo</a> &amp;in_rInfo, const size_t in_address, bool in_isToOriginal=false)</td></tr>
+<tr class="memitem:a348b8a7054e9222082b188d75757b835" id="r_a348b8a7054e9222082b188d75757b835"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a348b8a7054e9222082b188d75757b835.html#a348b8a7054e9222082b188d75757b835">GetPostHookAddress</a> (void *in_pHookStart)</td></tr>
+<tr class="memitem:a5ebd40da4eabdb39e143b34df2b4033c" id="r_a5ebd40da4eabdb39e143b34df2b4033c"><td class="memItemLeft"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30">UserRegisterFamily</a>&#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a5ebd40da4eabdb39e143b34df2b4033c.html#a5ebd40da4eabdb39e143b34df2b4033c">GetRegisterFamily</a> (<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebf">UserRegister</a> in_register)</td></tr>
+<tr class="memitem:a5768a9babda227735a921773a359ee26" id="r_a5768a9babda227735a921773a359ee26"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a5768a9babda227735a921773a359ee26.html#a5768a9babda227735a921773a359ee26">GetRegisterID</a> (<a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebf">UserRegister</a> in_register)</td></tr>
+<tr class="memitem:a91e4d1bec89b0c38b410f4a07e9fd9d6" id="r_a91e4d1bec89b0c38b410f4a07e9fd9d6"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6.html#a91e4d1bec89b0c38b410f4a07e9fd9d6">EmitUserTrampoline</a> (const <a class="el" href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">UserCallInfo</a> &amp;in_rInfo, const size_t in_address, bool in_isToOriginal=false)</td></tr>
 </table>
-<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="a94329e8402e75aa7f9c60331cc5ace82" name="a94329e8402e75aa7f9c60331cc5ace82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94329e8402e75aa7f9c60331cc5ace82">&#9670;&#160;</a></span>Register</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a94329e8402e75aa7f9c60331cc5ace82">hedgedev::csl::hook::Register</a> : uint64_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="3">Enumerator</th></tr><tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a6adf97f83acf6453d4a6a4b1070f3754" name="a94329e8402e75aa7f9c60331cc5ace82a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fieldinit">&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82ae892e780304dc3ef15e69b9f3fed3669" name="a94329e8402e75aa7f9c60331cc5ace82ae892e780304dc3ef15e69b9f3fed3669"></a>AL&#160;</td><td class="fieldinit">UserRegister::EAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a58e69a293e3d65294bd972b467c40996" name="a94329e8402e75aa7f9c60331cc5ace82a58e69a293e3d65294bd972b467c40996"></a>AX&#160;</td><td class="fieldinit">UserRegister::EAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82aeee994d8f3b3c70335763b9a4a2caeb1" name="a94329e8402e75aa7f9c60331cc5ace82aeee994d8f3b3c70335763b9a4a2caeb1"></a>EAX&#160;</td><td class="fieldinit">UserRegister::EAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a5bc574a47246f122016869b32a6aa6f0" name="a94329e8402e75aa7f9c60331cc5ace82a5bc574a47246f122016869b32a6aa6f0"></a>CL&#160;</td><td class="fieldinit">UserRegister::ECX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a833e36d1a5a93dedb10c85f50ced9ce7" name="a94329e8402e75aa7f9c60331cc5ace82a833e36d1a5a93dedb10c85f50ced9ce7"></a>CX&#160;</td><td class="fieldinit">UserRegister::ECX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82af4f316d9e3af74567e781129ce9b384c" name="a94329e8402e75aa7f9c60331cc5ace82af4f316d9e3af74567e781129ce9b384c"></a>ECX&#160;</td><td class="fieldinit">UserRegister::ECX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82af5ce9f5cb682a1f863d5a8c51ac28683" name="a94329e8402e75aa7f9c60331cc5ace82af5ce9f5cb682a1f863d5a8c51ac28683"></a>DL&#160;</td><td class="fieldinit">UserRegister::EDX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a72a530b2433264cef373d8fcca5662c1" name="a94329e8402e75aa7f9c60331cc5ace82a72a530b2433264cef373d8fcca5662c1"></a>DX&#160;</td><td class="fieldinit">UserRegister::EDX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a22b5dc1e93a77a0361aaf220517c1fa1" name="a94329e8402e75aa7f9c60331cc5ace82a22b5dc1e93a77a0361aaf220517c1fa1"></a>EDX&#160;</td><td class="fieldinit">UserRegister::EDX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82aa6f5350f5a2b25a96d66757f761ce65c" name="a94329e8402e75aa7f9c60331cc5ace82aa6f5350f5a2b25a96d66757f761ce65c"></a>BL&#160;</td><td class="fieldinit">UserRegister::EBX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82acc7f5d4a45770811a49a1397cefb3426" name="a94329e8402e75aa7f9c60331cc5ace82acc7f5d4a45770811a49a1397cefb3426"></a>BX&#160;</td><td class="fieldinit">UserRegister::EBX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a89d5f2c300bc5e8df2b587981e9f83ae" name="a94329e8402e75aa7f9c60331cc5ace82a89d5f2c300bc5e8df2b587981e9f83ae"></a>EBX&#160;</td><td class="fieldinit">UserRegister::EBX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a18e6b17f5ea12a9dfb6ca9b1feb4755c" name="a94329e8402e75aa7f9c60331cc5ace82a18e6b17f5ea12a9dfb6ca9b1feb4755c"></a>SPL&#160;</td><td class="fieldinit">UserRegister::ESP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a674769e3326f8cf937af4282f2815c02" name="a94329e8402e75aa7f9c60331cc5ace82a674769e3326f8cf937af4282f2815c02"></a>SP&#160;</td><td class="fieldinit">UserRegister::ESP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a3e30ce90c5b1d89ae09b7d4c73d8e172" name="a94329e8402e75aa7f9c60331cc5ace82a3e30ce90c5b1d89ae09b7d4c73d8e172"></a>ESP&#160;</td><td class="fieldinit">UserRegister::ESP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a2505eaefa7cfdd83ff021d29f553b474" name="a94329e8402e75aa7f9c60331cc5ace82a2505eaefa7cfdd83ff021d29f553b474"></a>BPL&#160;</td><td class="fieldinit">UserRegister::EBP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a96d4cdff8ed57e93e3b3d843cffe3af7" name="a94329e8402e75aa7f9c60331cc5ace82a96d4cdff8ed57e93e3b3d843cffe3af7"></a>BP&#160;</td><td class="fieldinit">UserRegister::EBP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a4e7627e030290994aff0ced165dbfc7b" name="a94329e8402e75aa7f9c60331cc5ace82a4e7627e030290994aff0ced165dbfc7b"></a>EBP&#160;</td><td class="fieldinit">UserRegister::EBP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a931956b28520f66fca597c302e66a79d" name="a94329e8402e75aa7f9c60331cc5ace82a931956b28520f66fca597c302e66a79d"></a>SIL&#160;</td><td class="fieldinit">UserRegister::ESI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82ace774d9cab3ae0bdf522cd0839bed364" name="a94329e8402e75aa7f9c60331cc5ace82ace774d9cab3ae0bdf522cd0839bed364"></a>SI&#160;</td><td class="fieldinit">UserRegister::ESI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82add445edb9c3b702b74855e30f795ad4e" name="a94329e8402e75aa7f9c60331cc5ace82add445edb9c3b702b74855e30f795ad4e"></a>ESI&#160;</td><td class="fieldinit">UserRegister::ESI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a9faebea8b5be8ae9e79e92d5a527b918" name="a94329e8402e75aa7f9c60331cc5ace82a9faebea8b5be8ae9e79e92d5a527b918"></a>DIL&#160;</td><td class="fieldinit">UserRegister::EDI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82aa1b1c0cd777edd2e5cfcaf8e2e7dcab8" name="a94329e8402e75aa7f9c60331cc5ace82aa1b1c0cd777edd2e5cfcaf8e2e7dcab8"></a>DI&#160;</td><td class="fieldinit">UserRegister::EDI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a4d2e27158ca5f1c109c99624b7ee9092" name="a94329e8402e75aa7f9c60331cc5ace82a4d2e27158ca5f1c109c99624b7ee9092"></a>EDI&#160;</td><td class="fieldinit">UserRegister::EDI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82ad758a5d987a118322a363e28f7b01806" name="a94329e8402e75aa7f9c60331cc5ace82ad758a5d987a118322a363e28f7b01806"></a>ST0&#160;</td><td class="fieldinit">UserRegister::ST0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a04165bfaf352643d7db29e271dac92d7" name="a94329e8402e75aa7f9c60331cc5ace82a04165bfaf352643d7db29e271dac92d7"></a>ST1&#160;</td><td class="fieldinit">UserRegister::ST1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a743b3257b344fcb0dc3158aa21e2c329" name="a94329e8402e75aa7f9c60331cc5ace82a743b3257b344fcb0dc3158aa21e2c329"></a>ST2&#160;</td><td class="fieldinit">UserRegister::ST2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a36ab7b000da26b0547bfc3c3fdf143dc" name="a94329e8402e75aa7f9c60331cc5ace82a36ab7b000da26b0547bfc3c3fdf143dc"></a>ST3&#160;</td><td class="fieldinit">UserRegister::ST3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82aa8047d24376e2ce5c62663d435629812" name="a94329e8402e75aa7f9c60331cc5ace82aa8047d24376e2ce5c62663d435629812"></a>ST4&#160;</td><td class="fieldinit">UserRegister::ST4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a30f41bdee3c7ede12ec23ab49a2c8ec6" name="a94329e8402e75aa7f9c60331cc5ace82a30f41bdee3c7ede12ec23ab49a2c8ec6"></a>ST5&#160;</td><td class="fieldinit">UserRegister::ST5&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a39e7ebaefca71802a1c58c09949f171a" name="a94329e8402e75aa7f9c60331cc5ace82a39e7ebaefca71802a1c58c09949f171a"></a>ST6&#160;</td><td class="fieldinit">UserRegister::ST6&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82accf014626cbd3930f29590503f61c61f" name="a94329e8402e75aa7f9c60331cc5ace82accf014626cbd3930f29590503f61c61f"></a>ST7&#160;</td><td class="fieldinit">UserRegister::ST7&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a3733e4ac8656438f2023f5da6e95c2e7" name="a94329e8402e75aa7f9c60331cc5ace82a3733e4ac8656438f2023f5da6e95c2e7"></a>XMM0&#160;</td><td class="fieldinit">UserRegister::XMM0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a9aded8e4480df3ec0704111b18f2f07b" name="a94329e8402e75aa7f9c60331cc5ace82a9aded8e4480df3ec0704111b18f2f07b"></a>XMM1&#160;</td><td class="fieldinit">UserRegister::XMM1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82addd50bd4c3275cc2b1959340082a5c47" name="a94329e8402e75aa7f9c60331cc5ace82addd50bd4c3275cc2b1959340082a5c47"></a>XMM2&#160;</td><td class="fieldinit">UserRegister::XMM2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a5250d87973cee66807910291b60fa723" name="a94329e8402e75aa7f9c60331cc5ace82a5250d87973cee66807910291b60fa723"></a>XMM3&#160;</td><td class="fieldinit">UserRegister::XMM3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a5889f84cd6dca48093ae315108369cee" name="a94329e8402e75aa7f9c60331cc5ace82a5889f84cd6dca48093ae315108369cee"></a>XMM4&#160;</td><td class="fieldinit">UserRegister::XMM4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a0e3f8268d75c6dfafad95de650d35a9a" name="a94329e8402e75aa7f9c60331cc5ace82a0e3f8268d75c6dfafad95de650d35a9a"></a>XMM5&#160;</td><td class="fieldinit">UserRegister::XMM5&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a9fb8eb4bfba1d1205f37eec26baf3999" name="a94329e8402e75aa7f9c60331cc5ace82a9fb8eb4bfba1d1205f37eec26baf3999"></a>XMM6&#160;</td><td class="fieldinit">UserRegister::XMM6&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82a19d1cc125c577fcc60594457b6eb4a1f" name="a94329e8402e75aa7f9c60331cc5ace82a19d1cc125c577fcc60594457b6eb4a1f"></a>XMM7&#160;</td><td class="fieldinit">UserRegister::XMM7&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a94329e8402e75aa7f9c60331cc5ace82ae93f994f01c537c4e2f7d8528c3eb5e9" name="a94329e8402e75aa7f9c60331cc5ace82ae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fieldinit">&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a30fb4da95328479a477e60de481e0ebf" name="a30fb4da95328479a477e60de481e0ebf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30fb4da95328479a477e60de481e0ebf">&#9670;&#160;</a></span>UserRegister</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a30fb4da95328479a477e60de481e0ebf">hedgedev::csl::hook::UserRegister</a> : uint64_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Registers used for <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#aded241a65f525ecf9bfb35bebbb7db0f">__usercall</a></span>/<span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#ab6d79e66b8474a6dcc34dbc80e8717a0">__userpurge</a></span> calling conventions.</p>
-<p>These registers have been ordered in an specific way that line up with register IDs used for encoding instructions. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa6adf97f83acf6453d4a6a4b1070f3754" name="a30fb4da95328479a477e60de481e0ebfa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfaeee994d8f3b3c70335763b9a4a2caeb1" name="a30fb4da95328479a477e60de481e0ebfaeee994d8f3b3c70335763b9a4a2caeb1"></a>EAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfaf4f316d9e3af74567e781129ce9b384c" name="a30fb4da95328479a477e60de481e0ebfaf4f316d9e3af74567e781129ce9b384c"></a>ECX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa22b5dc1e93a77a0361aaf220517c1fa1" name="a30fb4da95328479a477e60de481e0ebfa22b5dc1e93a77a0361aaf220517c1fa1"></a>EDX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa89d5f2c300bc5e8df2b587981e9f83ae" name="a30fb4da95328479a477e60de481e0ebfa89d5f2c300bc5e8df2b587981e9f83ae"></a>EBX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa3e30ce90c5b1d89ae09b7d4c73d8e172" name="a30fb4da95328479a477e60de481e0ebfa3e30ce90c5b1d89ae09b7d4c73d8e172"></a>ESP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa4e7627e030290994aff0ced165dbfc7b" name="a30fb4da95328479a477e60de481e0ebfa4e7627e030290994aff0ced165dbfc7b"></a>EBP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfadd445edb9c3b702b74855e30f795ad4e" name="a30fb4da95328479a477e60de481e0ebfadd445edb9c3b702b74855e30f795ad4e"></a>ESI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa4d2e27158ca5f1c109c99624b7ee9092" name="a30fb4da95328479a477e60de481e0ebfa4d2e27158ca5f1c109c99624b7ee9092"></a>EDI&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfad758a5d987a118322a363e28f7b01806" name="a30fb4da95328479a477e60de481e0ebfad758a5d987a118322a363e28f7b01806"></a>ST0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa04165bfaf352643d7db29e271dac92d7" name="a30fb4da95328479a477e60de481e0ebfa04165bfaf352643d7db29e271dac92d7"></a>ST1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa743b3257b344fcb0dc3158aa21e2c329" name="a30fb4da95328479a477e60de481e0ebfa743b3257b344fcb0dc3158aa21e2c329"></a>ST2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa36ab7b000da26b0547bfc3c3fdf143dc" name="a30fb4da95328479a477e60de481e0ebfa36ab7b000da26b0547bfc3c3fdf143dc"></a>ST3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfaa8047d24376e2ce5c62663d435629812" name="a30fb4da95328479a477e60de481e0ebfaa8047d24376e2ce5c62663d435629812"></a>ST4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa30f41bdee3c7ede12ec23ab49a2c8ec6" name="a30fb4da95328479a477e60de481e0ebfa30f41bdee3c7ede12ec23ab49a2c8ec6"></a>ST5&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa39e7ebaefca71802a1c58c09949f171a" name="a30fb4da95328479a477e60de481e0ebfa39e7ebaefca71802a1c58c09949f171a"></a>ST6&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfaccf014626cbd3930f29590503f61c61f" name="a30fb4da95328479a477e60de481e0ebfaccf014626cbd3930f29590503f61c61f"></a>ST7&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa3733e4ac8656438f2023f5da6e95c2e7" name="a30fb4da95328479a477e60de481e0ebfa3733e4ac8656438f2023f5da6e95c2e7"></a>XMM0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa9aded8e4480df3ec0704111b18f2f07b" name="a30fb4da95328479a477e60de481e0ebfa9aded8e4480df3ec0704111b18f2f07b"></a>XMM1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfaddd50bd4c3275cc2b1959340082a5c47" name="a30fb4da95328479a477e60de481e0ebfaddd50bd4c3275cc2b1959340082a5c47"></a>XMM2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa5250d87973cee66807910291b60fa723" name="a30fb4da95328479a477e60de481e0ebfa5250d87973cee66807910291b60fa723"></a>XMM3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa5889f84cd6dca48093ae315108369cee" name="a30fb4da95328479a477e60de481e0ebfa5889f84cd6dca48093ae315108369cee"></a>XMM4&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa0e3f8268d75c6dfafad95de650d35a9a" name="a30fb4da95328479a477e60de481e0ebfa0e3f8268d75c6dfafad95de650d35a9a"></a>XMM5&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa9fb8eb4bfba1d1205f37eec26baf3999" name="a30fb4da95328479a477e60de481e0ebfa9fb8eb4bfba1d1205f37eec26baf3999"></a>XMM6&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfa19d1cc125c577fcc60594457b6eb4a1f" name="a30fb4da95328479a477e60de481e0ebfa19d1cc125c577fcc60594457b6eb4a1f"></a>XMM7&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a30fb4da95328479a477e60de481e0ebfae93f994f01c537c4e2f7d8528c3eb5e9" name="a30fb4da95328479a477e60de481e0ebfae93f994f01c537c4e2f7d8528c3eb5e9"></a>Count&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a2d42f7df6db194599f99ce8b12fd0b30" name="a2d42f7df6db194599f99ce8b12fd0b30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d42f7df6db194599f99ce8b12fd0b30">&#9670;&#160;</a></span>UserRegisterFamily</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30">hedgedev::csl::hook::UserRegisterFamily</a> : uint64_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="3">Enumerator</th></tr><tr><td class="fieldname"><a id="a2d42f7df6db194599f99ce8b12fd0b30a6adf97f83acf6453d4a6a4b1070f3754" name="a2d42f7df6db194599f99ce8b12fd0b30a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fieldinit">&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2d42f7df6db194599f99ce8b12fd0b30add20dd4273adca660f20d417a618e3e7" name="a2d42f7df6db194599f99ce8b12fd0b30add20dd4273adca660f20d417a618e3e7"></a>GPR&#160;</td><td class="fieldinit">UserRegister::EAX&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2d42f7df6db194599f99ce8b12fd0b30a11e4d339cb835db9884cd4a4e0c3dbb7" name="a2d42f7df6db194599f99ce8b12fd0b30a11e4d339cb835db9884cd4a4e0c3dbb7"></a>FPU&#160;</td><td class="fieldinit">UserRegister::ST0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a2d42f7df6db194599f99ce8b12fd0b30a5fc53fc8197865c63285f74b1e147013" name="a2d42f7df6db194599f99ce8b12fd0b30a5fc53fc8197865c63285f74b1e147013"></a>SSE&#160;</td><td class="fieldinit">UserRegister::XMM0&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a91e4d1bec89b0c38b410f4a07e9fd9d6" name="a91e4d1bec89b0c38b410f4a07e9fd9d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91e4d1bec89b0c38b410f4a07e9fd9d6">&#9670;&#160;</a></span>EmitUserTrampoline()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::hook::EmitUserTrampoline </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">UserCallInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rInfo</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>in_address</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>in_isToOriginal</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Emits a trampoline that forwards arguments from a function with custom calling convention to a <span class="tt">__cdecl</span> function in a hook defined with <a class="el" href="../../db/d6b/HookingUserCall_8h.html#a07a15f7e0401b5a1617755ac474849b3" title="USER_HOOK">USER_HOOK</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_rInfo</td><td>The info about the hook. </td></tr>
-    <tr><td class="paramname">in_address</td><td>The address of the <span class="tt">__cdecl</span> function to trampoline to. </td></tr>
-    <tr><td class="paramname">in_isToOriginal</td><td>Determines whether this trampoline is going back to the original function.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the trampoline that was emitted. </dd></dl>
-
-</div>
-</div>
-<a id="a348b8a7054e9222082b188d75757b835" name="a348b8a7054e9222082b188d75757b835"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a348b8a7054e9222082b188d75757b835">&#9670;&#160;</a></span>GetPostHookAddress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::hook::GetPostHookAddress </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pHookStart</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5ebd40da4eabdb39e143b34df2b4033c" name="a5ebd40da4eabdb39e143b34df2b4033c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ebd40da4eabdb39e143b34df2b4033c">&#9670;&#160;</a></span>GetRegisterFamily()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a2d42f7df6db194599f99ce8b12fd0b30">UserRegisterFamily</a> hedgedev::csl::hook::GetRegisterFamily </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a30fb4da95328479a477e60de481e0ebf">UserRegister</a></td>          <td class="paramname"><span class="paramname"><em>in_register</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Gets the family a register belongs to.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_register</td><td>The register to check. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5768a9babda227735a921773a359ee26" name="a5768a9babda227735a921773a359ee26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5768a9babda227735a921773a359ee26">&#9670;&#160;</a></span>GetRegisterID()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int hedgedev::csl::hook::GetRegisterID </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a30fb4da95328479a477e60de481e0ebf">UserRegister</a></td>          <td class="paramname"><span class="paramname"><em>in_register</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Gets the ID of a register.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_register</td><td>The register to get the ID for. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

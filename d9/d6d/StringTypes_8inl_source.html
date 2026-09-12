@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CommonLib: include/Utility/Expressions/StringTypes.inl Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<meta name="doxygen-page-layout" content="1" />
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
@@ -22,7 +21,6 @@
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -33,15 +31,6 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -53,7 +42,42 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "../../",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -65,28 +89,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d6d/StringTypes_8inl_source.html','../../',''); });
 </script>
-<script type="application/json" id="doxygen-config">
-{
-  "relPath": "../../",
-  "generateTreeView": true,
-  "searchEngine": true,
-  "serverBasedSearch": false,
-  "disableIndex": false,
-  "dynamicMenus": true,
-  "fullSidebar": true
-}
-</script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -113,7 +117,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d6d/StringT
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>{</div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>    <span class="keyword">template</span> &lt;AnyString TDst, AnyString TSrc&gt;</div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072">    4</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072">TDst</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072">CreateInferredString</a>(<span class="keyword">const</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072">TSrc</a>&amp; <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072">in_rStr</a>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">    4</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">TDst</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">CreateInferredString</a>(<span class="keyword">const</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">TSrc</a>&amp; <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">in_rStr</a>)</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>        <span class="keyword">const</span> <span class="keyword">auto</span> result = InferredStringView&lt;TSrc&gt;(in_rStr);</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
@@ -123,7 +127,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d6d/StringT
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">template</span> &lt;AnyString... TArgs&gt;</div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">   12</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">size_t</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a>()</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">   12</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">size_t</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">GetStringTypePrecedence</a>()</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        std::tuple&lt;size_t, size_t&gt; result{ 0, 0 };</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        size_t i{};</div>
@@ -146,8 +150,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d6d/StringT
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a60be0b4ad31727647aac45a11a3c8072"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072">hedgedev::csl::ut::expr::CreateInferredString</a></div><div class="ttdeci">constexpr TDst CreateInferredString(const TSrc &amp;in_rStr)</div><div class="ttdef"><b>Definition</b> StringTypes.inl:4</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">hedgedev::csl::ut::expr::GetStringTypePrecedence</a></div><div class="ttdeci">constexpr size_t GetStringTypePrecedence()</div><div class="ttdef"><b>Definition</b> StringTypes.inl:12</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072_html_a60be0b4ad31727647aac45a11a3c8072"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a60be0b4ad31727647aac45a11a3c8072.html#a60be0b4ad31727647aac45a11a3c8072">hedgedev::csl::ut::expr::CreateInferredString</a></div><div class="ttdeci">constexpr TDst CreateInferredString(const TSrc &amp;in_rStr)</div><div class="ttdef"><b>Definition</b> StringTypes.inl:4</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58_html_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a6f0c26f1c2e4b9dd2d92a3eeb8a16a58.html#a6f0c26f1c2e4b9dd2d92a3eeb8a16a58">hedgedev::csl::ut::expr::GetStringTypePrecedence</a></div><div class="ttdeci">constexpr size_t GetStringTypePrecedence()</div><div class="ttdef"><b>Definition</b> StringTypes.inl:12</div></div>
 <div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_html"><div class="ttname"><a href="../../dc/d62/namespacehedgedev_1_1csl_1_1ut.html">hedgedev::csl::ut</a></div><div class="ttdef"><b>Definition</b> Expressions.inl:2</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

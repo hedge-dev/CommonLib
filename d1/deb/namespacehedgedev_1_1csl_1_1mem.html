@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CommonLib: hedgedev::csl::mem Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
-<meta name="doxygen-page-layout" content="1" />
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
 <script type="text/javascript" src="../../clipboard.js"></script>
@@ -22,7 +21,6 @@
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="side-nav" class="ui-resizable side-nav-resizable"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 <div id="titlearea">
 <table cellspacing="0" cellpadding="0">
@@ -33,15 +31,6 @@
    </div>
   </td>
  </tr>
-   <tr><td colspan="2">        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
-          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
-          </span>
-        </div>
-</td></tr>
  </tbody>
 </table>
 </div>
@@ -53,7 +42,42 @@ let searchBox = new SearchBox("searchBox", "../../search/",'.html');
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', codefold.init);
 </script>
+<script type="application/json" id="doxygen-config">
+{
+  "relPath": "../../",
+  "generateTreeView": true,
+  "searchEngine": true,
+  "serverBasedSearch": false,
+  "disableIndex": false,
+  "dynamicMenus": true,
+  "fullSidebar": false
+}
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
     <div id="nav-tree-contents">
       <div id="nav-sync" class="sync"></div>
@@ -65,28 +89,8 @@ document.addEventListener('DOMContentLoaded', codefold.init);
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/deb/namespacehedgedev_1_1csl_1_1mem.html','../../',''); });
 </script>
-<script type="application/json" id="doxygen-config">
-{
-  "relPath": "../../",
-  "generateTreeView": true,
-  "searchEngine": true,
-  "serverBasedSearch": false,
-  "disableIndex": false,
-  "dynamicMenus": true,
-  "fullSidebar": true
-}
-</script>
-<script type="text/javascript" src="../../menudata.js"></script>
-<script type="text/javascript" src="../../menu.js"></script>
-<div id="main-nav-mobile">
-</div><!-- main-nav-mobile -->
-<div id="main-nav">
-  <ul class="sm sm-dox" id="main-menu">
-    <li id="searchBoxPos2">
-    </li>
-  </ul>
-</div><!-- main-nav -->
-<div id="container"><div id="doc-content">
+<div id="container">
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow">
 </div>
@@ -106,6 +110,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/deb/namespa
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">hedgedev::csl::mem Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -116,959 +124,87 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a411d938cf234ebc9e04abf0149dabf54" id="r_a411d938cf234ebc9e04abf0149dabf54"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a411d938cf234ebc9e04abf0149dabf54">PageProtection</a> { <br />
-&#160;&#160;<a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a88a12f09800c497f30b98781952b50f2">NoAccess</a> = 0 &lt;&lt; 0
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a7a1a5f3e79fdc91edf2f5ead9d66abb4">Read</a> = 1 &lt;&lt; 0
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a1129c0e4d43f2d121652a7302712cff6">Write</a> = 1 &lt;&lt; 1
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a40cd014b7b6251e3a22e6a45a73a64e1">Execute</a> = 1 &lt;&lt; 2
+<tr class="memitem:a411d938cf234ebc9e04abf0149dabf54" id="r_a411d938cf234ebc9e04abf0149dabf54"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54">PageProtection</a> { <br />
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a88a12f09800c497f30b98781952b50f2">NoAccess</a> = 0 &lt;&lt; 0
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a7a1a5f3e79fdc91edf2f5ead9d66abb4">Read</a> = 1 &lt;&lt; 0
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a1129c0e4d43f2d121652a7302712cff6">Write</a> = 1 &lt;&lt; 1
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a40cd014b7b6251e3a22e6a45a73a64e1">Execute</a> = 1 &lt;&lt; 2
 , <br />
-&#160;&#160;<a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a70a2a84088d405a2e3f1e3accaa16723">ReadWrite</a> = Read | Write
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a847478398fca6833e50a3ba5255eb2bf">ReadExecute</a> = Read | Execute
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a68fbe19a33b2eec8657b4ec31a38ad94">ReadWriteExecute</a> = Read | Write | Execute
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54ae1e1d3d40573127e9ee0480caf1283d6">R</a> = Read
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a70a2a84088d405a2e3f1e3accaa16723">ReadWrite</a> = Read | Write
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a847478398fca6833e50a3ba5255eb2bf">ReadExecute</a> = Read | Execute
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a68fbe19a33b2eec8657b4ec31a38ad94">ReadWriteExecute</a> = Read | Write | Execute
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54ae1e1d3d40573127e9ee0480caf1283d6">R</a> = Read
 , <br />
-&#160;&#160;<a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a61e9c06ea9a85a5088a499df6458d276">W</a> = Write
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a02129bb861061d1a052c592e2dc6b383">X</a> = Execute
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a5c6dc3d436504b7a65191cafe28212ee">RW</a> = ReadWrite
-, <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54af9c24782c24c237d16e79f18e2fa9046">RX</a> = ReadExecute
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a61e9c06ea9a85a5088a499df6458d276">W</a> = Write
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a02129bb861061d1a052c592e2dc6b383">X</a> = Execute
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a5c6dc3d436504b7a65191cafe28212ee">RW</a> = ReadWrite
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54af9c24782c24c237d16e79f18e2fa9046">RX</a> = ReadExecute
 , <br />
-&#160;&#160;<a class="el" href="#a411d938cf234ebc9e04abf0149dabf54a49dc2567d6031753c6f564f2a5c3fa8b">RWX</a> = ReadWriteExecute
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a49dc2567d6031753c6f564f2a5c3fa8b">RWX</a> = ReadWriteExecute
 <br />
  }</td></tr>
-<tr class="memitem:a475e1d9b3b66b3a4922cd89232f8926e" id="r_a475e1d9b3b66b3a4922cd89232f8926e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a475e1d9b3b66b3a4922cd89232f8926e">BranchType</a> { <a class="el" href="#a475e1d9b3b66b3a4922cd89232f8926ea9d3afea73e90192d96dda8d38c87a4fe">Conditional</a>
-, <a class="el" href="#a475e1d9b3b66b3a4922cd89232f8926ea101f693f72287a2819a364f64ca1c0ed">Jump</a>
-, <a class="el" href="#a475e1d9b3b66b3a4922cd89232f8926eac3755e61202abd74da5885d2e9c9160e">Call</a>
+<tr class="memitem:a475e1d9b3b66b3a4922cd89232f8926e" id="r_a475e1d9b3b66b3a4922cd89232f8926e"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a475e1d9b3b66b3a4922cd89232f8926e.html#a475e1d9b3b66b3a4922cd89232f8926e">BranchType</a> { <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a475e1d9b3b66b3a4922cd89232f8926e.html#a475e1d9b3b66b3a4922cd89232f8926ea9d3afea73e90192d96dda8d38c87a4fe">Conditional</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a475e1d9b3b66b3a4922cd89232f8926e.html#a475e1d9b3b66b3a4922cd89232f8926ea101f693f72287a2819a364f64ca1c0ed">Jump</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a475e1d9b3b66b3a4922cd89232f8926e.html#a475e1d9b3b66b3a4922cd89232f8926eac3755e61202abd74da5885d2e9c9160e">Call</a>
  }</td></tr>
-<tr class="memitem:aab1fb6c4fb11964b04f4a19a285076e7" id="r_aab1fb6c4fb11964b04f4a19a285076e7"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#aab1fb6c4fb11964b04f4a19a285076e7">BranchDistance</a> { <a class="el" href="#aab1fb6c4fb11964b04f4a19a285076e7a30bb747c98bccdd11b3f89e644c4d0ad">Short</a>
-, <a class="el" href="#aab1fb6c4fb11964b04f4a19a285076e7aa535711d028372f87fdbce03cd43b25d">Near</a>
-, <a class="el" href="#aab1fb6c4fb11964b04f4a19a285076e7acfcd41f0c1804fb7778f8f01301223f6">Far</a>
+<tr class="memitem:aab1fb6c4fb11964b04f4a19a285076e7" id="r_aab1fb6c4fb11964b04f4a19a285076e7"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aab1fb6c4fb11964b04f4a19a285076e7.html#aab1fb6c4fb11964b04f4a19a285076e7">BranchDistance</a> { <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aab1fb6c4fb11964b04f4a19a285076e7.html#aab1fb6c4fb11964b04f4a19a285076e7a30bb747c98bccdd11b3f89e644c4d0ad">Short</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aab1fb6c4fb11964b04f4a19a285076e7.html#aab1fb6c4fb11964b04f4a19a285076e7aa535711d028372f87fdbce03cd43b25d">Near</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aab1fb6c4fb11964b04f4a19a285076e7.html#aab1fb6c4fb11964b04f4a19a285076e7acfcd41f0c1804fb7778f8f01301223f6">Far</a>
  }</td></tr>
-<tr class="memitem:a984c1bda11b121d475b57ff01a071575" id="r_a984c1bda11b121d475b57ff01a071575"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a984c1bda11b121d475b57ff01a071575">BranchCondition</a> { <br />
-&#160;&#160;<a class="el" href="#a984c1bda11b121d475b57ff01a071575a129e8109f319870e328cc7a1d5b5cae3">Overflow</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575aa860d404a2986728569a8cdb40bbc9aa">NotOverflow</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575ae59dd8d25c0b6bb6697eac0617ccd412">Below</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a31bf13c125663308f543e04359ad9012">NotBelow</a>
+<tr class="memitem:a984c1bda11b121d475b57ff01a071575" id="r_a984c1bda11b121d475b57ff01a071575"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575">BranchCondition</a> { <br />
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a129e8109f319870e328cc7a1d5b5cae3">Overflow</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575aa860d404a2986728569a8cdb40bbc9aa">NotOverflow</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575ae59dd8d25c0b6bb6697eac0617ccd412">Below</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a31bf13c125663308f543e04359ad9012">NotBelow</a>
 , <br />
-&#160;&#160;<a class="el" href="#a984c1bda11b121d475b57ff01a071575af5f286e73bda105e538310b3190f75c5">Equal</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a19bb0af2c3c530538cb41aff7f235b96">NotEqual</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a0aae713fcecfd89bc467c4a32d04146a">BelowOrEqual</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a5b469fd01889ec12f1e84c6e66829fc1">Above</a>
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575af5f286e73bda105e538310b3190f75c5">Equal</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a19bb0af2c3c530538cb41aff7f235b96">NotEqual</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a0aae713fcecfd89bc467c4a32d04146a">BelowOrEqual</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a5b469fd01889ec12f1e84c6e66829fc1">Above</a>
 , <br />
-&#160;&#160;<a class="el" href="#a984c1bda11b121d475b57ff01a071575a31c6b3fdfaaa80dba2dbf92a4600524c">Sign</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a5f199360bafe45abb18d21c8f78fffe1">NotSign</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575aa91d6e31a7e409defa6beb8f1311ef98">Parity</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575aed698868644fe6260ce8df47301f7d7c">NotParity</a>
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a31c6b3fdfaaa80dba2dbf92a4600524c">Sign</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a5f199360bafe45abb18d21c8f78fffe1">NotSign</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575aa91d6e31a7e409defa6beb8f1311ef98">Parity</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575aed698868644fe6260ce8df47301f7d7c">NotParity</a>
 , <br />
-&#160;&#160;<a class="el" href="#a984c1bda11b121d475b57ff01a071575a1cfdf0e8d0c87a228c1f40d9bee7888b">Less</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575ae78940020229f04657ac969b0af07f36">NotLess</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a3e91270e115cf238112ca315ef8ebdd4">NotGreater</a>
-, <a class="el" href="#a984c1bda11b121d475b57ff01a071575a8768a6821cd735aea4f5b0df88c1fc6a">Greater</a>
+&#160;&#160;<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a1cfdf0e8d0c87a228c1f40d9bee7888b">Less</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575ae78940020229f04657ac969b0af07f36">NotLess</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a3e91270e115cf238112ca315ef8ebdd4">NotGreater</a>
+, <a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575a8768a6821cd735aea4f5b0df88c1fc6a">Greater</a>
 <br />
  }</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:acab2248dcd95cc991b0b5b165499ebda" id="r_acab2248dcd95cc991b0b5b165499ebda"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#acab2248dcd95cc991b0b5b165499ebda">GetOriginalModuleBase</a> ()</td></tr>
-<tr class="memitem:af34c61c0579675dd1739fc38d5475c13" id="r_af34c61c0579675dd1739fc38d5475c13"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#af34c61c0579675dd1739fc38d5475c13">GetProtectionFlags</a> (<a class="el" href="#a411d938cf234ebc9e04abf0149dabf54">PageProtection</a> in_protection)</td></tr>
-<tr class="memitem:ab408ac16a607339dbf96e5b1439c5c26" id="r_ab408ac16a607339dbf96e5b1439c5c26"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ab408ac16a607339dbf96e5b1439c5c26">Protect</a> (void *in_pAddress, size_t in_length, uint32_t in_newProtectionFlags, uint32_t *out_pOldProtectionFlags=nullptr)</td></tr>
-<tr class="memitem:a138d62d2434bc221a7cbd3249f778ab2" id="r_a138d62d2434bc221a7cbd3249f778ab2"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#a138d62d2434bc221a7cbd3249f778ab2">ToASLR</a> (void *in_pAddress, void *in_pBaseAddress=nullptr)</td></tr>
-<tr class="memitem:a245d3563fc81989639c2a316a023cfe8" id="r_a245d3563fc81989639c2a316a023cfe8"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#a245d3563fc81989639c2a316a023cfe8">FromASLR</a> (void *in_pAddress, void *in_pBaseAddress=nullptr)</td></tr>
-<tr class="memitem:a58095e16b61801b1bebfab684aa997bb" id="r_a58095e16b61801b1bebfab684aa997bb"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a58095e16b61801b1bebfab684aa997bb">IsNop</a> (void *in_pAddress)</td></tr>
+<tr class="memitem:acab2248dcd95cc991b0b5b165499ebda" id="r_acab2248dcd95cc991b0b5b165499ebda"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_acab2248dcd95cc991b0b5b165499ebda.html#acab2248dcd95cc991b0b5b165499ebda">GetOriginalModuleBase</a> ()</td></tr>
+<tr class="memitem:af34c61c0579675dd1739fc38d5475c13" id="r_af34c61c0579675dd1739fc38d5475c13"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_af34c61c0579675dd1739fc38d5475c13.html#af34c61c0579675dd1739fc38d5475c13">GetProtectionFlags</a> (<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54">PageProtection</a> in_protection)</td></tr>
+<tr class="memitem:ab408ac16a607339dbf96e5b1439c5c26" id="r_ab408ac16a607339dbf96e5b1439c5c26"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_ab408ac16a607339dbf96e5b1439c5c26.html#ab408ac16a607339dbf96e5b1439c5c26">Protect</a> (void *in_pAddress, size_t in_length, uint32_t in_newProtectionFlags, uint32_t *out_pOldProtectionFlags=nullptr)</td></tr>
+<tr class="memitem:a138d62d2434bc221a7cbd3249f778ab2" id="r_a138d62d2434bc221a7cbd3249f778ab2"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a138d62d2434bc221a7cbd3249f778ab2.html#a138d62d2434bc221a7cbd3249f778ab2">ToASLR</a> (void *in_pAddress, void *in_pBaseAddress=nullptr)</td></tr>
+<tr class="memitem:a245d3563fc81989639c2a316a023cfe8" id="r_a245d3563fc81989639c2a316a023cfe8"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a245d3563fc81989639c2a316a023cfe8.html#a245d3563fc81989639c2a316a023cfe8">FromASLR</a> (void *in_pAddress, void *in_pBaseAddress=nullptr)</td></tr>
+<tr class="memitem:a58095e16b61801b1bebfab684aa997bb" id="r_a58095e16b61801b1bebfab684aa997bb"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a58095e16b61801b1bebfab684aa997bb.html#a58095e16b61801b1bebfab684aa997bb">IsNop</a> (void *in_pAddress)</td></tr>
 <tr class="memitem:afaf0183a130febe52b163a5209abb170" id="r_afaf0183a130febe52b163a5209abb170"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:afaf0183a130febe52b163a5209abb170 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="#afaf0183a130febe52b163a5209abb170">Read</a> (void *in_pAddress)</td></tr>
+<tr class="memitem:afaf0183a130febe52b163a5209abb170 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_afaf0183a130febe52b163a5209abb170.html#afaf0183a130febe52b163a5209abb170">Read</a> (void *in_pAddress)</td></tr>
 <tr class="memitem:a3ed0c2fd0c87948a76e748881e231f8a" id="r_a3ed0c2fd0c87948a76e748881e231f8a"><td class="memTemplParams" colspan="2">template&lt;typename T, size_t Count&gt; </td></tr>
-<tr class="memitem:a3ed0c2fd0c87948a76e748881e231f8a template"><td class="memItemLeft">std::array&lt; T, Count &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3ed0c2fd0c87948a76e748881e231f8a">Read</a> (void *in_pAddress)</td></tr>
-<tr class="memitem:ab3c19a7978feb7ef287fad9066787227" id="r_ab3c19a7978feb7ef287fad9066787227"><td class="memItemLeft"><a class="el" href="../../d8/d9c/structhedgedev_1_1csl_1_1mem_1_1BranchInfo.html">BranchInfo</a>&#160;</td><td class="memItemRight"><a class="el" href="#ab3c19a7978feb7ef287fad9066787227">GetBranchInfo</a> (void *in_pAddress)</td></tr>
+<tr class="memitem:a3ed0c2fd0c87948a76e748881e231f8a template"><td class="memItemLeft">std::array&lt; T, Count &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a3ed0c2fd0c87948a76e748881e231f8a.html#a3ed0c2fd0c87948a76e748881e231f8a">Read</a> (void *in_pAddress)</td></tr>
+<tr class="memitem:ab3c19a7978feb7ef287fad9066787227" id="r_ab3c19a7978feb7ef287fad9066787227"><td class="memItemLeft"><a class="el" href="../../d8/d9c/structhedgedev_1_1csl_1_1mem_1_1BranchInfo.html">BranchInfo</a>&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_ab3c19a7978feb7ef287fad9066787227.html#ab3c19a7978feb7ef287fad9066787227">GetBranchInfo</a> (void *in_pAddress)</td></tr>
 <tr class="memitem:a6f75804131cfe9e0a6c486a09dade516" id="r_a6f75804131cfe9e0a6c486a09dade516"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a6f75804131cfe9e0a6c486a09dade516 template"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#a6f75804131cfe9e0a6c486a09dade516">ReadInstructionAddress</a> (void *in_pAddress, size_t in_offset, size_t in_stride)</td></tr>
-<tr class="memitem:ade01b25a648be2c6555775df11d85fa9" id="r_ade01b25a648be2c6555775df11d85fa9"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#ade01b25a648be2c6555775df11d85fa9">ReadCall</a> (void *in_pAddress)</td></tr>
-<tr class="memitem:ae228a790be18e70c0d5a8bf5c451b87a" id="r_ae228a790be18e70c0d5a8bf5c451b87a"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="#ae228a790be18e70c0d5a8bf5c451b87a">ReadJump</a> (void *in_pAddress)</td></tr>
+<tr class="memitem:a6f75804131cfe9e0a6c486a09dade516 template"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a6f75804131cfe9e0a6c486a09dade516.html#a6f75804131cfe9e0a6c486a09dade516">ReadInstructionAddress</a> (void *in_pAddress, size_t in_offset, size_t in_stride)</td></tr>
+<tr class="memitem:ade01b25a648be2c6555775df11d85fa9" id="r_ade01b25a648be2c6555775df11d85fa9"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_ade01b25a648be2c6555775df11d85fa9.html#ade01b25a648be2c6555775df11d85fa9">ReadCall</a> (void *in_pAddress)</td></tr>
+<tr class="memitem:ae228a790be18e70c0d5a8bf5c451b87a" id="r_ae228a790be18e70c0d5a8bf5c451b87a"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_ae228a790be18e70c0d5a8bf5c451b87a.html#ae228a790be18e70c0d5a8bf5c451b87a">ReadJump</a> (void *in_pAddress)</td></tr>
 <tr class="memitem:a29f876487043b31d08e995a5b58d3a64" id="r_a29f876487043b31d08e995a5b58d3a64"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a29f876487043b31d08e995a5b58d3a64 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a29f876487043b31d08e995a5b58d3a64">Write</a> (void *in_pAddress, const T &amp;in_rData, size_t in_count=1)</td></tr>
+<tr class="memitem:a29f876487043b31d08e995a5b58d3a64 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a29f876487043b31d08e995a5b58d3a64.html#a29f876487043b31d08e995a5b58d3a64">Write</a> (void *in_pAddress, const T &amp;in_rData, size_t in_count=1)</td></tr>
 <tr class="memitem:a180e94953795c07cfe9438b033f798c3" id="r_a180e94953795c07cfe9438b033f798c3"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:a180e94953795c07cfe9438b033f798c3 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a180e94953795c07cfe9438b033f798c3">Write</a> (void *in_pAddress, const std::vector&lt; T &gt; &amp;in_rData)</td></tr>
-<tr class="memitem:a881e2d8d7f742316057853b0ddb65511" id="r_a881e2d8d7f742316057853b0ddb65511"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a881e2d8d7f742316057853b0ddb65511">WriteCall</a> (void *in_pAddress, void *in_pDestination)</td></tr>
-<tr class="memitem:aa45d52a8175b5c923caa954e656089e3" id="r_aa45d52a8175b5c923caa954e656089e3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa45d52a8175b5c923caa954e656089e3">WriteJump</a> (void *in_pAddress, void *in_pDestination, bool in_isCall=false)</td></tr>
-<tr class="memitem:a746804ef4cb9cfe66f3794ef7f642402" id="r_a746804ef4cb9cfe66f3794ef7f642402"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a746804ef4cb9cfe66f3794ef7f642402">WriteNop</a> (void *in_pAddress, size_t in_count=1)</td></tr>
+<tr class="memitem:a180e94953795c07cfe9438b033f798c3 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a180e94953795c07cfe9438b033f798c3.html#a180e94953795c07cfe9438b033f798c3">Write</a> (void *in_pAddress, const std::vector&lt; T &gt; &amp;in_rData)</td></tr>
+<tr class="memitem:a881e2d8d7f742316057853b0ddb65511" id="r_a881e2d8d7f742316057853b0ddb65511"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a881e2d8d7f742316057853b0ddb65511.html#a881e2d8d7f742316057853b0ddb65511">WriteCall</a> (void *in_pAddress, void *in_pDestination)</td></tr>
+<tr class="memitem:aa45d52a8175b5c923caa954e656089e3" id="r_aa45d52a8175b5c923caa954e656089e3"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aa45d52a8175b5c923caa954e656089e3.html#aa45d52a8175b5c923caa954e656089e3">WriteJump</a> (void *in_pAddress, void *in_pDestination, bool in_isCall=false)</td></tr>
+<tr class="memitem:a746804ef4cb9cfe66f3794ef7f642402" id="r_a746804ef4cb9cfe66f3794ef7f642402"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402.html#a746804ef4cb9cfe66f3794ef7f642402">WriteNop</a> (void *in_pAddress, size_t in_count=1)</td></tr>
 <tr class="memitem:a88791fcffbad85a4252a81387098fb1b" id="r_a88791fcffbad85a4252a81387098fb1b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html">hedgedev::csl::ut::expr::AnyString</a> T&gt; </td></tr>
-<tr class="memitem:a88791fcffbad85a4252a81387098fb1b template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a88791fcffbad85a4252a81387098fb1b">WriteString</a> (void *in_pAddress, const T &amp;in_rStr)</td></tr>
+<tr class="memitem:a88791fcffbad85a4252a81387098fb1b template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a88791fcffbad85a4252a81387098fb1b.html#a88791fcffbad85a4252a81387098fb1b">WriteString</a> (void *in_pAddress, const T &amp;in_rStr)</td></tr>
 <tr class="memitem:aa9f75c149acac15e0f86b84a849f204e" id="r_aa9f75c149acac15e0f86b84a849f204e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html">hedgedev::csl::ut::expr::AnyString</a> T&gt; </td></tr>
-<tr class="memitem:aa9f75c149acac15e0f86b84a849f204e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#aa9f75c149acac15e0f86b84a849f204e">WriteStringFixedLength</a> (void *in_pAddress, const T &amp;in_rStr, size_t in_length=0)</td></tr>
+<tr class="memitem:aa9f75c149acac15e0f86b84a849f204e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aa9f75c149acac15e0f86b84a849f204e.html#aa9f75c149acac15e0f86b84a849f204e">WriteStringFixedLength</a> (void *in_pAddress, const T &amp;in_rStr, size_t in_length=0)</td></tr>
 </table>
-<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
-<a id="a984c1bda11b121d475b57ff01a071575" name="a984c1bda11b121d475b57ff01a071575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a984c1bda11b121d475b57ff01a071575">&#9670;&#160;</a></span>BranchCondition</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a984c1bda11b121d475b57ff01a071575">hedgedev::csl::mem::BranchCondition</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a129e8109f319870e328cc7a1d5b5cae3" name="a984c1bda11b121d475b57ff01a071575a129e8109f319870e328cc7a1d5b5cae3"></a>Overflow&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575aa860d404a2986728569a8cdb40bbc9aa" name="a984c1bda11b121d475b57ff01a071575aa860d404a2986728569a8cdb40bbc9aa"></a>NotOverflow&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575ae59dd8d25c0b6bb6697eac0617ccd412" name="a984c1bda11b121d475b57ff01a071575ae59dd8d25c0b6bb6697eac0617ccd412"></a>Below&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a31bf13c125663308f543e04359ad9012" name="a984c1bda11b121d475b57ff01a071575a31bf13c125663308f543e04359ad9012"></a>NotBelow&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575af5f286e73bda105e538310b3190f75c5" name="a984c1bda11b121d475b57ff01a071575af5f286e73bda105e538310b3190f75c5"></a>Equal&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a19bb0af2c3c530538cb41aff7f235b96" name="a984c1bda11b121d475b57ff01a071575a19bb0af2c3c530538cb41aff7f235b96"></a>NotEqual&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a0aae713fcecfd89bc467c4a32d04146a" name="a984c1bda11b121d475b57ff01a071575a0aae713fcecfd89bc467c4a32d04146a"></a>BelowOrEqual&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a5b469fd01889ec12f1e84c6e66829fc1" name="a984c1bda11b121d475b57ff01a071575a5b469fd01889ec12f1e84c6e66829fc1"></a>Above&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a31c6b3fdfaaa80dba2dbf92a4600524c" name="a984c1bda11b121d475b57ff01a071575a31c6b3fdfaaa80dba2dbf92a4600524c"></a>Sign&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a5f199360bafe45abb18d21c8f78fffe1" name="a984c1bda11b121d475b57ff01a071575a5f199360bafe45abb18d21c8f78fffe1"></a>NotSign&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575aa91d6e31a7e409defa6beb8f1311ef98" name="a984c1bda11b121d475b57ff01a071575aa91d6e31a7e409defa6beb8f1311ef98"></a>Parity&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575aed698868644fe6260ce8df47301f7d7c" name="a984c1bda11b121d475b57ff01a071575aed698868644fe6260ce8df47301f7d7c"></a>NotParity&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a1cfdf0e8d0c87a228c1f40d9bee7888b" name="a984c1bda11b121d475b57ff01a071575a1cfdf0e8d0c87a228c1f40d9bee7888b"></a>Less&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575ae78940020229f04657ac969b0af07f36" name="a984c1bda11b121d475b57ff01a071575ae78940020229f04657ac969b0af07f36"></a>NotLess&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a3e91270e115cf238112ca315ef8ebdd4" name="a984c1bda11b121d475b57ff01a071575a3e91270e115cf238112ca315ef8ebdd4"></a>NotGreater&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a984c1bda11b121d475b57ff01a071575a8768a6821cd735aea4f5b0df88c1fc6a" name="a984c1bda11b121d475b57ff01a071575a8768a6821cd735aea4f5b0df88c1fc6a"></a>Greater&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="aab1fb6c4fb11964b04f4a19a285076e7" name="aab1fb6c4fb11964b04f4a19a285076e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab1fb6c4fb11964b04f4a19a285076e7">&#9670;&#160;</a></span>BranchDistance</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#aab1fb6c4fb11964b04f4a19a285076e7">hedgedev::csl::mem::BranchDistance</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aab1fb6c4fb11964b04f4a19a285076e7a30bb747c98bccdd11b3f89e644c4d0ad" name="aab1fb6c4fb11964b04f4a19a285076e7a30bb747c98bccdd11b3f89e644c4d0ad"></a>Short&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aab1fb6c4fb11964b04f4a19a285076e7aa535711d028372f87fdbce03cd43b25d" name="aab1fb6c4fb11964b04f4a19a285076e7aa535711d028372f87fdbce03cd43b25d"></a>Near&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aab1fb6c4fb11964b04f4a19a285076e7acfcd41f0c1804fb7778f8f01301223f6" name="aab1fb6c4fb11964b04f4a19a285076e7acfcd41f0c1804fb7778f8f01301223f6"></a>Far&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a475e1d9b3b66b3a4922cd89232f8926e" name="a475e1d9b3b66b3a4922cd89232f8926e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a475e1d9b3b66b3a4922cd89232f8926e">&#9670;&#160;</a></span>BranchType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a475e1d9b3b66b3a4922cd89232f8926e">hedgedev::csl::mem::BranchType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a475e1d9b3b66b3a4922cd89232f8926ea9d3afea73e90192d96dda8d38c87a4fe" name="a475e1d9b3b66b3a4922cd89232f8926ea9d3afea73e90192d96dda8d38c87a4fe"></a>Conditional&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a475e1d9b3b66b3a4922cd89232f8926ea101f693f72287a2819a364f64ca1c0ed" name="a475e1d9b3b66b3a4922cd89232f8926ea101f693f72287a2819a364f64ca1c0ed"></a>Jump&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a475e1d9b3b66b3a4922cd89232f8926eac3755e61202abd74da5885d2e9c9160e" name="a475e1d9b3b66b3a4922cd89232f8926eac3755e61202abd74da5885d2e9c9160e"></a>Call&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a411d938cf234ebc9e04abf0149dabf54" name="a411d938cf234ebc9e04abf0149dabf54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a411d938cf234ebc9e04abf0149dabf54">&#9670;&#160;</a></span>PageProtection</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class <a class="el" href="#a411d938cf234ebc9e04abf0149dabf54">hedgedev::csl::mem::PageProtection</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="3">Enumerator</th></tr><tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a88a12f09800c497f30b98781952b50f2" name="a411d938cf234ebc9e04abf0149dabf54a88a12f09800c497f30b98781952b50f2"></a>NoAccess&#160;</td><td class="fieldinit">0 &lt;&lt; 0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a7a1a5f3e79fdc91edf2f5ead9d66abb4" name="a411d938cf234ebc9e04abf0149dabf54a7a1a5f3e79fdc91edf2f5ead9d66abb4"></a>Read&#160;</td><td class="fieldinit">1 &lt;&lt; 0&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a1129c0e4d43f2d121652a7302712cff6" name="a411d938cf234ebc9e04abf0149dabf54a1129c0e4d43f2d121652a7302712cff6"></a>Write&#160;</td><td class="fieldinit">1 &lt;&lt; 1&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a40cd014b7b6251e3a22e6a45a73a64e1" name="a411d938cf234ebc9e04abf0149dabf54a40cd014b7b6251e3a22e6a45a73a64e1"></a>Execute&#160;</td><td class="fieldinit">1 &lt;&lt; 2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a70a2a84088d405a2e3f1e3accaa16723" name="a411d938cf234ebc9e04abf0149dabf54a70a2a84088d405a2e3f1e3accaa16723"></a>ReadWrite&#160;</td><td class="fieldinit">Read | Write&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a847478398fca6833e50a3ba5255eb2bf" name="a411d938cf234ebc9e04abf0149dabf54a847478398fca6833e50a3ba5255eb2bf"></a>ReadExecute&#160;</td><td class="fieldinit">Read | Execute&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a68fbe19a33b2eec8657b4ec31a38ad94" name="a411d938cf234ebc9e04abf0149dabf54a68fbe19a33b2eec8657b4ec31a38ad94"></a>ReadWriteExecute&#160;</td><td class="fieldinit">Read | Write | Execute&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54ae1e1d3d40573127e9ee0480caf1283d6" name="a411d938cf234ebc9e04abf0149dabf54ae1e1d3d40573127e9ee0480caf1283d6"></a>R&#160;</td><td class="fieldinit">Read&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a61e9c06ea9a85a5088a499df6458d276" name="a411d938cf234ebc9e04abf0149dabf54a61e9c06ea9a85a5088a499df6458d276"></a>W&#160;</td><td class="fieldinit">Write&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a02129bb861061d1a052c592e2dc6b383" name="a411d938cf234ebc9e04abf0149dabf54a02129bb861061d1a052c592e2dc6b383"></a>X&#160;</td><td class="fieldinit">Execute&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a5c6dc3d436504b7a65191cafe28212ee" name="a411d938cf234ebc9e04abf0149dabf54a5c6dc3d436504b7a65191cafe28212ee"></a>RW&#160;</td><td class="fieldinit">ReadWrite&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54af9c24782c24c237d16e79f18e2fa9046" name="a411d938cf234ebc9e04abf0149dabf54af9c24782c24c237d16e79f18e2fa9046"></a>RX&#160;</td><td class="fieldinit">ReadExecute&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a411d938cf234ebc9e04abf0149dabf54a49dc2567d6031753c6f564f2a5c3fa8b" name="a411d938cf234ebc9e04abf0149dabf54a49dc2567d6031753c6f564f2a5c3fa8b"></a>RWX&#160;</td><td class="fieldinit">ReadWriteExecute&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a245d3563fc81989639c2a316a023cfe8" name="a245d3563fc81989639c2a316a023cfe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a245d3563fc81989639c2a316a023cfe8">&#9670;&#160;</a></span>FromASLR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::mem::FromASLR </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pBaseAddress</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Transforms a virtual address from the current module's ASLR base.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to transform. </td></tr>
-    <tr><td class="paramname">in_pBaseAddress</td><td>The original base address of the module containing the address (optional).</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The input address transformed from the ASLR base. </dd></dl>
-
-</div>
-</div>
-<a id="ab3c19a7978feb7ef287fad9066787227" name="ab3c19a7978feb7ef287fad9066787227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3c19a7978feb7ef287fad9066787227">&#9670;&#160;</a></span>GetBranchInfo()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d8/d9c/structhedgedev_1_1csl_1_1mem_1_1BranchInfo.html">BranchInfo</a> hedgedev::csl::mem::GetBranchInfo </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Gets information about a branch instruction in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address of the branch instruction.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A structure containing information about the branch. </dd></dl>
-
-</div>
-</div>
-<a id="acab2248dcd95cc991b0b5b165499ebda" name="acab2248dcd95cc991b0b5b165499ebda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acab2248dcd95cc991b0b5b165499ebda">&#9670;&#160;</a></span>GetOriginalModuleBase()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::mem::GetOriginalModuleBase </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Gets the original base address of the current module. </p>
-
-</div>
-</div>
-<a id="af34c61c0579675dd1739fc38d5475c13" name="af34c61c0579675dd1739fc38d5475c13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af34c61c0579675dd1739fc38d5475c13">&#9670;&#160;</a></span>GetProtectionFlags()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t hedgedev::csl::mem::GetProtectionFlags </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a411d938cf234ebc9e04abf0149dabf54">PageProtection</a></td>          <td class="paramname"><span class="paramname"><em>in_protection</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Gets the system flags for the specified page protection. </p>
-
-</div>
-</div>
-<a id="a58095e16b61801b1bebfab684aa997bb" name="a58095e16b61801b1bebfab684aa997bb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58095e16b61801b1bebfab684aa997bb">&#9670;&#160;</a></span>IsNop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::IsNop </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Checks if the instruction at the given memory address is a no-operation (NOP) instruction.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to check.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the instruction is no-operation (NOP). Otherwise, <span class="tt">false</span>. </dd></dl>
-
-</div>
-</div>
-<a id="ab408ac16a607339dbf96e5b1439c5c26" name="ab408ac16a607339dbf96e5b1439c5c26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab408ac16a607339dbf96e5b1439c5c26">&#9670;&#160;</a></span>Protect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::Protect </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_length</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>in_newProtectionFlags</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>out_pOldProtectionFlags</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Sets the protection of a page of memory. </p>
-
-</div>
-</div>
-<a id="a3ed0c2fd0c87948a76e748881e231f8a" name="a3ed0c2fd0c87948a76e748881e231f8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ed0c2fd0c87948a76e748881e231f8a">&#9670;&#160;</a></span>Read() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T, size_t Count&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::array&lt; T, Count &gt; hedgedev::csl::mem::Read </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads an array of values in memory.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type to read. </td></tr>
-    <tr><td class="paramname">Count</td><td>The total number of values to read.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to read from.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An array of instances of the type read from memory. </dd></dl>
-
-</div>
-</div>
-<a id="afaf0183a130febe52b163a5209abb170" name="afaf0183a130febe52b163a5209abb170"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaf0183a130febe52b163a5209abb170">&#9670;&#160;</a></span>Read() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">T hedgedev::csl::mem::Read </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads a value in memory.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type to read.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to read from.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An instance of the type read from memory. </dd></dl>
-
-</div>
-</div>
-<a id="ade01b25a648be2c6555775df11d85fa9" name="ade01b25a648be2c6555775df11d85fa9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade01b25a648be2c6555775df11d85fa9">&#9670;&#160;</a></span>ReadCall()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::mem::ReadCall </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads the address of a call instruction in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address of the call instruction to read.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The address referenced by the call instruction. </dd></dl>
-
-</div>
-</div>
-<a id="a6f75804131cfe9e0a6c486a09dade516" name="a6f75804131cfe9e0a6c486a09dade516"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f75804131cfe9e0a6c486a09dade516">&#9670;&#160;</a></span>ReadInstructionAddress()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::mem::ReadInstructionAddress </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_offset</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_stride</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads the address of an instruction in memory.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type to read.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address of the instruction to read. </td></tr>
-    <tr><td class="paramname">in_offset</td><td>The offset of the address after in_pAddress. </td></tr>
-    <tr><td class="paramname">in_stride</td><td>The length of the instruction that was read.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The address referenced by the instruction. </dd></dl>
-
-</div>
-</div>
-<a id="ae228a790be18e70c0d5a8bf5c451b87a" name="ae228a790be18e70c0d5a8bf5c451b87a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae228a790be18e70c0d5a8bf5c451b87a">&#9670;&#160;</a></span>ReadJump()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::mem::ReadJump </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads the address of a jump instruction in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address of the jump instruction to read.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The address referenced by the jump instruction. </dd></dl>
-
-</div>
-</div>
-<a id="a138d62d2434bc221a7cbd3249f778ab2" name="a138d62d2434bc221a7cbd3249f778ab2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a138d62d2434bc221a7cbd3249f778ab2">&#9670;&#160;</a></span>ToASLR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * hedgedev::csl::mem::ToASLR </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pBaseAddress</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Transforms a virtual address to the current module's ASLR base.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to transform. </td></tr>
-    <tr><td class="paramname">in_pBaseAddress</td><td>The original base address of the module containing the address (optional).</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The input address transformed into the ASLR base. </dd></dl>
-
-</div>
-</div>
-<a id="a180e94953795c07cfe9438b033f798c3" name="a180e94953795c07cfe9438b033f798c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a180e94953795c07cfe9438b033f798c3">&#9670;&#160;</a></span>Write() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::Write </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rData</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes an array of values in memory.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type to write.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_rData</td><td>The collection of values to write. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a29f876487043b31d08e995a5b58d3a64" name="a29f876487043b31d08e995a5b58d3a64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29f876487043b31d08e995a5b58d3a64">&#9670;&#160;</a></span>Write() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::Write </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rData</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_count</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes a value in memory.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T</td><td>The type to write.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_rData</td><td>The data to write. </td></tr>
-    <tr><td class="paramname">in_count</td><td>The total number of values to write. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a881e2d8d7f742316057853b0ddb65511" name="a881e2d8d7f742316057853b0ddb65511"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a881e2d8d7f742316057853b0ddb65511">&#9670;&#160;</a></span>WriteCall()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::WriteCall </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pDestination</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes a call instruction in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_pDestination</td><td>The address of the function to call. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa45d52a8175b5c923caa954e656089e3" name="aa45d52a8175b5c923caa954e656089e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa45d52a8175b5c923caa954e656089e3">&#9670;&#160;</a></span>WriteJump()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::WriteJump </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pDestination</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>in_isCall</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes a jump instruction in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_pDestination</td><td>The address of the address to jump to. </td></tr>
-    <tr><td class="paramname">in_isCall</td><td>Determines whether the jump should be encoded as a call instruction. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a746804ef4cb9cfe66f3794ef7f642402" name="a746804ef4cb9cfe66f3794ef7f642402"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a746804ef4cb9cfe66f3794ef7f642402">&#9670;&#160;</a></span>WriteNop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::WriteNop </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_count</em></span><span class="paramdefsep"> = </span><span class="paramdefval">1</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes a no-operation (NOP) instruction in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_count</td><td>The total number of no-operation (NOP) instructions to write. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a88791fcffbad85a4252a81387098fb1b" name="a88791fcffbad85a4252a81387098fb1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88791fcffbad85a4252a81387098fb1b">&#9670;&#160;</a></span>WriteString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="../../d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html">hedgedev::csl::ut::expr::AnyString</a> T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::WriteString </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rStr</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes a string in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_rStr</td><td>The string to write. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa9f75c149acac15e0f86b84a849f204e" name="aa9f75c149acac15e0f86b84a849f204e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9f75c149acac15e0f86b84a849f204e">&#9670;&#160;</a></span>WriteStringFixedLength()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;<a class="el" href="../../d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html">hedgedev::csl::ut::expr::AnyString</a> T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool hedgedev::csl::mem::WriteStringFixedLength </td>
-          <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rStr</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_length</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes a string of fixed length in memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_pAddress</td><td>The address to write to. </td></tr>
-    <tr><td class="paramname">in_rStr</td><td>The string to write. </td></tr>
-    <tr><td class="paramname">in_length</td><td>The length of the string to write. If zero, the length will be determined by the length of an existing string located at in_pAddress. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div id="page-nav" class="page-nav-panel">
-<div id="page-nav-resize-handle"></div>
-<div id="page-nav-tree">
-<div id="page-nav-contents">
-</div><!-- page-nav-contents -->
-</div><!-- page-nav-tree -->
-</div><!-- page-nav -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

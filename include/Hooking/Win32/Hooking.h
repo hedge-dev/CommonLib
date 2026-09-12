@@ -1,9 +1,3 @@
-///
-/// \file HookingWin32.h
-/// 
-/// Macros for creating hooks for Microsoft Windows on x86 and x64.
-///
-
 #pragma once
 
 #include <functional>

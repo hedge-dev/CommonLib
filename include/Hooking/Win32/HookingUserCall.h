@@ -1,9 +1,3 @@
-///
-/// \file HookingUserCall.h
-/// 
-/// Macros for creating hooks for optimised functions on x86.
-///
-
 #pragma once
 
 #include <bit>
@@ -67,7 +61,7 @@
 /// \param FUNCTION_NAME      The name of the function.
 /// \param ADDRESS            The address of the function.
 /// \param REGISTERS          The registers used by the return value and parameters.
-/// \param PARAM_COUNT        The total number of parameters in \ref __VA_ARGS__.
+/// \param PARAM_COUNT        The total number of parameters in `__VA_ARGS__`.
 /// \param __VA_ARGS__        The parameters of the function.
 ///
 #define USER_FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                          \
@@ -83,7 +77,7 @@
 /// \param FUNCTION_NAME      The name of the function.
 /// \param ADDRESS            The address of the function.
 /// \param REGISTERS          The registers used by the return value and parameters.
-/// \param PARAM_COUNT        The total number of parameters in \ref __VA_ARGS__.
+/// \param PARAM_COUNT        The total number of parameters in `__VA_ARGS__`.
 /// \param __VA_ARGS__        The parameters of the function.
 ///
 #define USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                  \
@@ -100,7 +94,7 @@
 /// \param FUNCTION_NAME      The name of the function.
 /// \param ADDRESS            The address of the function.
 /// \param REGISTERS          The registers used by the return value and parameters.
-/// \param PARAM_COUNT        The total number of parameters in \ref __VA_ARGS__.
+/// \param PARAM_COUNT        The total number of parameters in `__VA_ARGS__`.
 /// \param __VA_ARGS__        The parameters of the function.
 ///
 #define STATIC_USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...) \

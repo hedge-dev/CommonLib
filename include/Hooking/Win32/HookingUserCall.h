@@ -6,7 +6,7 @@
 #include <vector>
 
 ///
-/// A custom calling convention that stores arguments in optimised locations
+/// A custom calling convention that stores arguments in optimised locations,
 /// before falling back to using the stack, similar to `__fastcall`.
 ///
 /// This calling convention puts the responsibility of cleaning up stack
@@ -17,7 +17,7 @@
 #define __usercall 0
 
 ///
-/// A custom calling convention that stores arguments in optimised locations
+/// A custom calling convention that stores arguments in optimised locations,
 /// before falling back to using the stack, similar to `__fastcall`.
 ///
 /// This calling convention puts the responsibility of cleaning up stack
@@ -54,15 +54,39 @@
     (USER_REGISTER(REGISTER) << ((INDEX + 1) * hedgedev::csl::hook::g_kUserRegisterSize))
 
 ///
-/// Declares a pointer to a function with custom calling convention in memory.
+/// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON_PARAMS
 /// 
 /// \param RETURN_TYPE        The return type of the function.
 /// \param CALLING_CONVENTION The calling convention of the function, such as `__usercall` or `__userpurge`.
 /// \param FUNCTION_NAME      The name of the function.
 /// \param ADDRESS            The address of the function.
-/// \param REGISTERS          The registers used by the return value and parameters.
+/// \param REGISTERS          The registers used by the return value and parameters. If a parameter has an
+///                           unspecified register, it'll automatically be put on the stack.
 /// \param PARAM_COUNT        The total number of parameters in `__VA_ARGS__`.
 /// \param __VA_ARGS__        The parameters of the function.
+///
+
+///
+/// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON_PROTOTYPE
+/// 
+/// For an optimised function with the following prototype:
+/// \code{.cpp}
+/// int __usercall MyOptimisedFunction@<eax>(int in_firstArg@<eax>, float in_secondArg@<xmm0>, int in_thirdArg)
+/// \endcode
+///
+
+///
+/// Declares a pointer to a function with custom calling convention in memory.
+/// 
+/// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PARAMS
+/// 
+/// ## Examples
+/// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PROTOTYPE
+/// 
+/// A function pointer should be set up like the following:
+/// \code{.cpp}
+/// USER_FUNCTION_PTR(int, __usercall, fpMyOptimisedFunction, 0xDEADBEEF, USER_RETURN(EAX) | USER_PARAM(0, EAX) | USER_PARAM(1, XMM0), 3, int in_firstArg, float in_secondArg, int in_thirdArg);
+/// \endcode
 ///
 #define USER_FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                          \
     hedgedev::csl::hook::UserCallInfo info_##FUNCTION_NAME { typeid(RETURN_TYPE), sizeof(RETURN_TYPE), CALLING_CONVENTION, (void*)(ADDRESS), (void*)(ADDRESS), REGISTERS, PARAM_COUNT }; \
@@ -70,15 +94,26 @@
     FUNCTION_PTR(RETURN_TYPE, __cdecl, FUNCTION_NAME, trampoline_##FUNCTION_NAME, __VA_ARGS__)
 
 ///
+/// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON
+/// 
+/// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PARAMS
+/// 
+/// ## Examples
+/// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PROTOTYPE
+/// 
+/// A hook should be set up like the following:
+/// \code{.cpp}
+/// USER_HOOK(int, __usercall, MyOptimisedFunctionHook, 0xDEADBEEF, USER_RETURN(EAX) | USER_PARAM(0, EAX) | USER_PARAM(1, XMM0), 3, int in_firstArg, float in_secondArg, int in_thirdArg)
+/// {
+///     return original_MyOptimisedFunctionHook(in_firstArg, in_secondArg, in_thirdArg);
+/// }
+/// \endcode
+///
+
+///
 /// Defines the body of a hook for a function with custom calling convention in memory.
 /// 
-/// \param RETURN_TYPE        The return type of the function.
-/// \param CALLING_CONVENTION The calling convention of the function, such as `__usercall` or `__userpurge`.
-/// \param FUNCTION_NAME      The name of the function.
-/// \param ADDRESS            The address of the function.
-/// \param REGISTERS          The registers used by the return value and parameters.
-/// \param PARAM_COUNT        The total number of parameters in `__VA_ARGS__`.
-/// \param __VA_ARGS__        The parameters of the function.
+/// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON
 ///
 #define USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                  \
     hedgedev::csl::hook::UserCallInfo info_##FUNCTION_NAME { typeid(RETURN_TYPE), sizeof(RETURN_TYPE), CALLING_CONVENTION, (void*)(ADDRESS), (void*)(ADDRESS), REGISTERS, PARAM_COUNT }; \
@@ -89,13 +124,9 @@
 ///
 /// Defines the body of a hook for a function with custom calling convention in memory, and installs it upon initialisation.
 /// 
-/// \param RETURN_TYPE        The return type of the function.
-/// \param CALLING_CONVENTION The calling convention of the function, such as `__usercall` or `__userpurge`.
-/// \param FUNCTION_NAME      The name of the function.
-/// \param ADDRESS            The address of the function.
-/// \param REGISTERS          The registers used by the return value and parameters.
-/// \param PARAM_COUNT        The total number of parameters in `__VA_ARGS__`.
-/// \param __VA_ARGS__        The parameters of the function.
+/// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON
+/// 
+/// \returns Use \ref GET_STATIC_HOOK_RESULT.
 ///
 #define STATIC_USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...) \
     USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, __VA_ARGS__);   \

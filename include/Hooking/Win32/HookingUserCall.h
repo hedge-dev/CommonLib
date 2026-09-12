@@ -1,9 +1,3 @@
-///
-/// \file HookingUserCall.h
-/// 
-/// Macros for creating hooks for optimised functions on x86.
-///
-
 #pragma once
 
 #include <bit>

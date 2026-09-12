@@ -11,7 +11,10 @@ var searchData=
   ['configuration_2eh_8',['Configuration.h',['../d3/d59/Configuration_8h.html',1,'']]],
   ['contains_9',['Contains',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0b7192821ef455141a6cfed1f4868ec7',1,'hedgedev::csl::ut::string']]],
   ['convert_10',['Convert',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ad61fa3e14214dc4e4b7be00930af1c64',1,'hedgedev::csl::ut::string']]],
-  ['count_11',['Count',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a30fb4da95328479a477e60de481e0ebfae93f994f01c537c4e2f7d8528c3eb5e9',1,'hedgedev::csl::hook::Count()'],['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a94329e8402e75aa7f9c60331cc5ace82ae93f994f01c537c4e2f7d8528c3eb5e9',1,'hedgedev::csl::hook::Count()']]],
+  ['count_11',['Count',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a30fb4da95328479a477e60de481e0ebfae93f994f01c537c4e2f7d8528c3eb5e9',1,'hedgedev::csl::hook::Count'],['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a94329e8402e75aa7f9c60331cc5ace82ae93f994f01c537c4e2f7d8528c3eb5e9',1,'hedgedev::csl::hook::Count']]],
   ['createinferredstring_12',['CreateInferredString',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a60be0b4ad31727647aac45a11a3c8072',1,'hedgedev::csl::ut::expr']]],
-  ['cx_13',['CX',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a94329e8402e75aa7f9c60331cc5ace82a833e36d1a5a93dedb10c85f50ced9ce7',1,'hedgedev::csl::hook']]]
+  ['cstring_13',['CString',['../df/d52/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1CString.html',1,'hedgedev::csl::ut::expr']]],
+  ['cstringa_14',['CStringA',['../d2/d02/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1CStringA.html',1,'hedgedev::csl::ut::expr']]],
+  ['cstringw_15',['CStringW',['../d4/dc0/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1CStringW.html',1,'hedgedev::csl::ut::expr']]],
+  ['cx_16',['CX',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a94329e8402e75aa7f9c60331cc5ace82a833e36d1a5a93dedb10c85f50ced9ce7',1,'hedgedev::csl::hook']]]
 ];

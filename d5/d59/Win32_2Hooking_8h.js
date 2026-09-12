@@ -13,5 +13,5 @@ var Win32_2Hooking_8h =
     [ "UNINSTALL_HOOK", "d5/d59/Win32_2Hooking_8h.html#acef4b077f32af31b49bf763d86c7ef5a", null ],
     [ "UNINSTALL_VFTABLE_HOOK", "d5/d59/Win32_2Hooking_8h.html#ab96ccc9b28a5b5f0cd92a641854bff05", null ],
     [ "VFTABLE_HOOK", "d5/d59/Win32_2Hooking_8h.html#aba854ba06319e53c487f60db02d79529", null ],
-    [ "GetPostHookAddress", "d5/d59/Win32_2Hooking_8h.html#a348b8a7054e9222082b188d75757b835", null ]
+    [ "hedgedev::csl::hook::GetPostHookAddress", "d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a348b8a7054e9222082b188d75757b835", null ]
 ];

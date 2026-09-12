@@ -60,9 +60,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d5/d04/x86_2Memory_8inl.html#ae228a790be18e70c0d5a8bf5c451b87a",
-"db/d6b/HookingUserCall_8h.html#a2d42f7df6db194599f99ce8b12fd0b30a5fc53fc8197865c63285f74b1e147013"
+"d6/d45/Win32_2ThisProcess_8inl.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

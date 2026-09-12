@@ -17,14 +17,14 @@ var annotated_dup =
         [ "ut", "dc/d62/namespacehedgedev_1_1csl_1_1ut.html", [
           [ "expr", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html", [
             [ "GetCharType", "d5/db9/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType.html", null ],
-            [ "GetCharType< std::basic_string< TChar, TTraits > >", "d8/d50/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string_3_01TChar_00_01TTraits_01_4_01_4.html", "d8/d50/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string_3_01TChar_00_01TTraits_01_4_01_4" ],
-            [ "GetCharType< std::basic_string_view< TChar, TTraits > >", "db/dd7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string__view_3_01TChar_00_01TTraits_01_4_01_4.html", "db/dd7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string__view_3_01TChar_00_01TTraits_01_4_01_4" ],
-            [ "GetCharType< T * >", "de/d9c/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_01_5_01_4.html", "de/d9c/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_01_5_01_4" ],
-            [ "GetCharType< T(&)[Count]>", "d7/db0/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_07_6_08_0fCount_0e_4.html", "d7/db0/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_07_6_08_0fCount_0e_4" ],
+            [ "GetCharType&lt; std::basic_string&lt; TChar, TTraits &gt; &gt;", "d8/d50/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string_3_01TChar_00_01TTraits_01_4_01_4.html", "d8/d50/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string_3_01TChar_00_01TTraits_01_4_01_4" ],
+            [ "GetCharType&lt; std::basic_string_view&lt; TChar, TTraits &gt; &gt;", "db/dd7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string__view_3_01TChar_00_01TTraits_01_4_01_4.html", "db/dd7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01std_1_1basic__string__view_3_01TChar_00_01TTraits_01_4_01_4" ],
+            [ "GetCharType&lt; T * &gt;", "de/d9c/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_01_5_01_4.html", "de/d9c/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_01_5_01_4" ],
+            [ "GetCharType&lt; T(&amp;)[Count]&gt;", "d7/db0/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_07_6_08_0fCount_0e_4.html", "d7/db0/structhedgedev_1_1csl_1_1ut_1_1expr_1_1GetCharType_3_01T_07_6_08_0fCount_0e_4" ],
             [ "IsBasicString", "d4/de3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicString.html", null ],
-            [ "IsBasicString< std::basic_string< TChar, TTraits > >", "d3/db1/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicString_3_01std_1_1basic__string_3_01TChar_00_01TTraits_01_4_01_4.html", null ],
+            [ "IsBasicString&lt; std::basic_string&lt; TChar, TTraits &gt; &gt;", "d3/db1/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicString_3_01std_1_1basic__string_3_01TChar_00_01TTraits_01_4_01_4.html", null ],
             [ "IsBasicStringView", "dc/d94/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicStringView.html", null ],
-            [ "IsBasicStringView< std::basic_string_view< TChar, TTraits > >", "d9/da2/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicStringView_3_01std_1_1basic__string__view_3_01TChar_00_01TTraits_01_4_01_4.html", null ]
+            [ "IsBasicStringView&lt; std::basic_string_view&lt; TChar, TTraits &gt; &gt;", "d9/da2/structhedgedev_1_1csl_1_1ut_1_1expr_1_1IsBasicStringView_3_01std_1_1basic__string__view_3_01TChar_00_01TTraits_01_4_01_4.html", null ]
           ] ]
         ] ]
       ] ]

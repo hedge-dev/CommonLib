@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os; os.chdir(os.path.dirname(os.path.abspath(__file__)))
 import argparse, commands, sys
 
 parser = argparse.ArgumentParser("CommonLib")

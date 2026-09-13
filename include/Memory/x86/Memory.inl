@@ -149,7 +149,7 @@ namespace hedgedev::csl::mem
         if (!in_pAddress)
             return false;
 
-        const auto length = size_t(in_pDestination) - size_t(in_pAddress);
+        const auto length = intptr_t(in_pDestination) - intptr_t(in_pAddress);
 
         if (length - 2 <= 0x7F && !in_isCall)
         {

@@ -25,14 +25,15 @@ namespace hedgedev::csl::mem
         if (!in_pAddress)
             return false;
 
+        const auto length = sizeof(in_rData) * in_count;
         uint32_t oldProtectionFlags{};
 
-        ASSERT_RETURN_FALSE(Protect(in_pAddress, sizeof(in_rData), GetProtectionFlags(PageProtection::RW), &oldProtectionFlags));
+        ASSERT_RETURN_FALSE(Protect(in_pAddress, length, GetProtectionFlags(PageProtection::RW), &oldProtectionFlags));
 
         for (size_t i = 0; i < in_count; i++)
             ((T*)in_pAddress)[i] = in_rData;
         
-        ASSERT_RETURN_FALSE(Protect(in_pAddress, sizeof(in_rData), oldProtectionFlags));
+        ASSERT_RETURN_FALSE(Protect(in_pAddress, length, oldProtectionFlags));
 
         return true;
     }

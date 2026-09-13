@@ -17,10 +17,11 @@ namespace hedgedev::csl::mem
     
     inline uint32_t GetProtectionFlags(PageProtection in_protection)
     {
-        if (in_protection == PageProtection::NoAccess)
-            return PAGE_NOACCESS;
+        uint32_t result = PAGE_NOACCESS;
 
-        uint32_t result{};
+        if (in_protection == PageProtection::NoAccess)
+            return result;
+
         uint32_t shift{};
 
         const auto hasRead = hedgedev::csl::ut::expr::HasFlag(in_protection, PageProtection::Read);
@@ -46,7 +47,14 @@ namespace hedgedev::csl::mem
 
     inline bool Protect(void* in_pAddress, size_t in_length, uint32_t in_newProtectionFlags, uint32_t* out_pOldProtectionFlags)
     {
-        return VirtualProtect(in_pAddress, in_length, in_newProtectionFlags, (PDWORD)out_pOldProtectionFlags);
+        uint32_t oldProtectionFlags{};
+
+        const auto result = VirtualProtect(in_pAddress, in_length, in_newProtectionFlags, (PDWORD)&oldProtectionFlags);
+
+        if (out_pOldProtectionFlags)
+            *out_pOldProtectionFlags = oldProtectionFlags;
+
+        return result;
     }
 
     inline void* ToASLR(void* in_pAddress, void* in_pBaseAddress)

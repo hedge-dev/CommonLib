@@ -106,8 +106,15 @@ class configure(command):
             self.parser.add_argument("--target_generator", help = "the generator to target (ignored if using preset)", default = config.generators[0], choices = config.generators)
         
         if utility.has_attr_and_value(config, "architectures"):
-            self.parser.add_argument("--target_arch", help = "the architecture to target (ignored if using preset)", default = config.architectures[0], choices = config.architectures)
-        
+        #
+            choices = list(config.architectures)
+
+            if utility.has_attr_and_value(config, "arch_aliases"):
+                choices.extend(config.arch_aliases.keys())
+
+            self.parser.add_argument("--target_arch", help = "the architecture to target (ignored if using preset)", default = config.architectures[0], choices = choices)
+        #
+
         if utility.has_attr_and_value(config, "configurations"):
             self.parser.add_argument("--target_config", help = "the configuration to target (ignored if using preset)", default = config.configurations[0], choices = config.configurations)
 
@@ -147,8 +154,17 @@ class configure(command):
         #
 
         if utility.has_attr_and_value(args, "target_arch"):
+        #
+            if utility.has_attr_and_value(config, "arch_aliases"):
+            #
+                # Swap target architecture with alias, if found.
+                if args.target_arch in config.arch_aliases:
+                    args.target_arch = config.arch_aliases[args.target_arch]
+            #
+            
             preset = f"{preset}-{args.target_arch}"
-        
+        #
+
         return preset
     #
 

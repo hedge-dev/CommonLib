@@ -181,7 +181,7 @@ class configure(command):
 
     def get_preset(self, args):
     #
-        if args.preset:
+        if utility.has_attr_and_value(args, "preset"):
             return args.preset
 
         preset = ""

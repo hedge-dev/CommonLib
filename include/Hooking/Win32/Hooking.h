@@ -56,7 +56,7 @@
     typedef RETURN_TYPE CALLING_CONVENTION FUNCTION_NAME(__VA_ARGS__);     \
     FUNCTION_NAME* x_##FUNCTION_NAME = (FUNCTION_NAME*)(ADDRESS);          \
     FUNCTION_NAME* original_##FUNCTION_NAME = x_##FUNCTION_NAME;           \
-    FUNCTION_NAME* post_##FUNCTION_NAME{};                                 \
+    void* post_##FUNCTION_NAME{};                                          \
     RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)
 
 ///

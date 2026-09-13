@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/d59/Win32_2
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> RETURN_TYPE CALLING_CONVENTION FUNCTION_NAME(__VA_ARGS__);     \</div>
 <div class="line">FUNCTION_NAME* x_##FUNCTION_NAME = (FUNCTION_NAME*)(ADDRESS);          \</div>
 <div class="line">FUNCTION_NAME* original_##FUNCTION_NAME = x_##FUNCTION_NAME;           \</div>
-<div class="line">FUNCTION_NAME* post_##FUNCTION_NAME{};                                 \</div>
+<div class="line"><span class="keywordtype">void</span>* post_##FUNCTION_NAME{};                                          \</div>
 <div class="line">RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)</div>
 </div><!-- fragment --><p>Defines the body of a hook for a function in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>

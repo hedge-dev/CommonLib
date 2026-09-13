@@ -15,3 +15,5 @@ configurations = [ "Release", "Debug" ]
 
 bin_dir = "bin"
 lib_dir = "lib"
+
+additional_clean_dirs = [ "thirdparty/Detours/src/obj.*" ]

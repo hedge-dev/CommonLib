@@ -36,7 +36,7 @@ if(WIN32)
                 CONFIGURE_COMMAND ""
                 INSTALL_COMMAND   ""
                 BUILD_IN_SOURCE   1
-                BUILD_COMMAND     CALL ${DEVCMD_PATH} ${DEVCMD_ARCH} && ${NMAKE} /NOLOGO ${DETOURS_BUILD_ARGS} $<$<CONFIG:Debug>:DETOURS_DEBUG=1>
+                BUILD_COMMAND     CALL ${DEVCMD_PATH} ${DEVCMD_ARCH} && ${NMAKE} /NOLOGO ${DETOURS_BUILD_ARGS}
                 BUILD_BYPRODUCTS  ${DETOURS_LIB}
             )
         else()

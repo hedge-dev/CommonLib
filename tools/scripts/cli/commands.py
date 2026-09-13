@@ -5,6 +5,7 @@ from common.base import base
 from common.error import error
 from common.version import version, version_pattern
 from contextlib import contextmanager
+from glob import glob
 from types import SimpleNamespace
 
 g_step_depth = 0
@@ -400,7 +401,7 @@ class clean(configure):
                         if preset := base(configure, self).get_preset(args):
                         #
                             # Delete preset binary directory only.
-                            clean_dirs.append(f"{config.bin_dir}/{preset}")
+                            clean_dirs.append(f"{work}/{config.bin_dir}/{preset}")
                         #
                     #
 
@@ -411,13 +412,22 @@ class clean(configure):
                             utility.has_attr_and_value(args, "target_config")):
                         #
                             # Delete specified library directory only.
-                            clean_dirs.append(f"{config.lib_dir}/{args.target_os}/{args.target_arch}/{args.target_config}")
+                            clean_dirs.append(f"{work}/{config.lib_dir}/{args.target_os}/{args.target_arch}/{args.target_config}")
+                        #
+                    #
+
+                    if utility.has_attr_and_value(config, "additional_clean_dirs"):
+                    #
+                        for dir in config.additional_clean_dirs:
+                        #
+                            for match in glob(f"{work}/{dir}"):
+                                clean_dirs.append(match)
                         #
                     #
                     
                     for dir in clean_dirs:
                     #
-                        path = os.path.normpath(f"{work}/{dir}")
+                        path = os.path.normpath(dir)
 
                         if utility.delete_dir(path):
                         #

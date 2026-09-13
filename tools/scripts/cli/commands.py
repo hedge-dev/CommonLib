@@ -1,4 +1,4 @@
-import config, os, time
+import config, os, shutil, time
 import sys; sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 from common import cmake, git, utility, vs
 from common.base import base
@@ -52,6 +52,43 @@ def git_submodule_update_step(args):
     #
         if not git.submodule_update():
             print("WARNING: Git is missing, or this is not a repository. Dependencies may be missing.")
+    #
+#
+
+def copy_to_target_dir_step(source_dir: str, target_dir: str, preset_name: str = None):
+#
+    if not target_dir:
+        return
+    
+    source_dir_parts = os.path.normpath(source_dir).split(os.sep)
+    source_dir_root = source_dir_parts[0]
+
+    # Search for root directory attribute in config.
+    # "bin_dir" and "lib_dir" should be found here.
+    if utility.has_attr_and_value(config, source_dir_root):
+    #
+        # Replace root with real path in config.
+        source_dir_parts[0] = getattr(config, source_dir_root)
+
+        # Replace source directory with real path.
+        source_dir = os.sep.join(source_dir_parts)
+    #
+
+    if preset_name:
+        source_dir = f"{source_dir}/{preset_name}"
+
+    source_dir = os.path.normpath(source_dir)
+    target_dir = os.path.normpath(target_dir)
+    
+    with step(f"Copying \"{source_dir}\" to \"{target_dir}\"...") as start_time:
+    #
+        if not source_dir:
+        #
+            print("Failed to locate source directory to copy.")
+            return
+        #
+
+        shutil.copytree(source_dir, target_dir, symlinks = True, dirs_exist_ok = True)
     #
 #
 
@@ -120,11 +157,30 @@ class configure(command):
 
         if self.is_windows:
             self.parser.add_argument("--target_vs", help = "the major version number of Visual Studio to target (use \"latest\" to auto-detect) (ignored if using preset)", default = None)
+
+        self.parser.add_argument("--configure_target_dir", help = "the directory to copy the configure output to", default = None)
+    #
+
+    def get_target_arch(self, args):
+    #
+        if not utility.has_attr_and_value(args, "target_arch"):
+            return None
+
+        result = str(args.target_arch)
+        
+        if utility.has_attr_and_value(config, "arch_aliases"):
+        #
+            # Swap target architecture with alias, if found.
+            if result in config.arch_aliases:
+                result = config.arch_aliases[result]
+        #
+        
+        return result
     #
 
     def get_preset(self, args):
     #
-        if utility.has_attr_and_value(args, "preset"):
+        if args.preset:
             return args.preset
 
         preset = ""
@@ -153,17 +209,8 @@ class configure(command):
             preset = f"{preset}-{args.target_generator}"
         #
 
-        if utility.has_attr_and_value(args, "target_arch"):
-        #
-            if utility.has_attr_and_value(config, "arch_aliases"):
-            #
-                # Swap target architecture with alias, if found.
-                if args.target_arch in config.arch_aliases:
-                    args.target_arch = config.arch_aliases[args.target_arch]
-            #
-            
-            preset = f"{preset}-{args.target_arch}"
-        #
+        if (target_arch := self.get_target_arch(args)):
+            preset = f"{preset}-{target_arch}"
 
         return preset
     #
@@ -182,6 +229,8 @@ class configure(command):
             
             with step(f"Configuring \"{preset}\"...") as start_time:
                 cmake.configure(preset)
+
+            copy_to_target_dir_step("bin_dir", args.configure_target_dir, preset)
         #
 
         return error.SUCCESS
@@ -230,6 +279,32 @@ class build(configure):
         base(command, self).__init__(subparsers, "build", "build the project")
     #
 
+    def init_args(self):
+    #
+        base(configure, self).init_args()
+        
+        self.parser.add_argument("--build_target_dir", help = "the directory to copy the build output to", default = None)
+    #
+
+    def get_lib_path(self, args):
+    #
+        path = ""
+
+        if args.preset:
+            return path
+        
+        if utility.has_attr_and_value(args, "target_os"):
+            path = args.target_os
+
+        if (target_arch := self.get_target_arch(args)):
+            path = f"{path}/{target_arch}"
+
+        if utility.has_attr_and_value(args, "target_config"):
+            path = f"{path}/{args.target_config}"
+
+        return path
+    #
+
     def execute(self, args):
     #
         if (configure_result := base(configure, self).execute(args)) != error.SUCCESS:
@@ -250,6 +325,8 @@ class build(configure):
                 with step(f"Building \"{preset}\"...") as start_time:
                     cmake.build(preset)
             #
+
+            copy_to_target_dir_step(f"lib_dir/{self.get_lib_path(args)}", args.build_target_dir)
         #
 
         return error.SUCCESS

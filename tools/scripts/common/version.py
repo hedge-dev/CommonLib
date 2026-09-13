@@ -4,6 +4,7 @@ from types import SimpleNamespace
 
 class version_pattern(StrEnum):
 #
+    ANY    = r"(\d+)"
     SEMVER = r"(\d+)\.(\d+)\.(\d+)"
     MSVER  = r"(\d+)\.(\d+)\.(\d+)\.(\d+)"
 #

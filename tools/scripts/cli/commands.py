@@ -3,6 +3,7 @@ import sys; sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
 from common import cmake, git, utility, vs
 from common.base import base
 from common.error import error
+from common.version import version, version_pattern
 from contextlib import contextmanager
 from types import SimpleNamespace
 
@@ -201,7 +202,7 @@ class configure(command):
             #
             else:
             #
-                preset += str(args.target_vs)
+                preset += str(version.from_str(args.target_vs, version_pattern.ANY).digits[0])
             #
         #
         elif utility.has_attr_and_value(args, "target_generator"):

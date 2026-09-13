@@ -5,7 +5,7 @@ function(MergeStaticLibrary DST SRC)
     if(WIN32)
         find_program(LIB lib REQUIRED)
         add_custom_command(TARGET ${DST} POST_BUILD
-            COMMAND ${LIB} /NOLOGO /OUT:$<TARGET_FILE:${DST}> $<TARGET_FILE:${DST}> "${SRC}"
+            COMMAND ${LIB} /NOLOGO /IGNORE:4006 /OUT:$<TARGET_FILE:${DST}> $<TARGET_FILE:${DST}> "${SRC}"
             COMMENT "Merging static library ${SRC} into ${DST}..."
         )
     else()

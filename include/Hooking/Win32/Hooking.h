@@ -284,11 +284,11 @@
 
 #ifdef CMNLIB_X64
 
-#define ASM_HOOK(NAME, ADDRESS)                         \
-    extern "C" uint64_t x_##NAME = (uint64_t)(ADDRESS); \
-    extern "C" uint64_t original_##NAME = x_##NAME;     \
-    extern "C" uint64_t post_##NAME{};                  \
-    extern "C" void* impl_##NAME;                       \
+#define ASM_HOOK(NAME, ADDRESS)                          \
+    extern "C" uintptr_t x_##NAME = (uint64_t)(ADDRESS); \
+    extern "C" uintptr_t original_##NAME = x_##NAME;     \
+    extern "C" uintptr_t post_##NAME{};                  \
+    extern "C" void* impl_##NAME;                        \
     extern "C"
 
 #define STATIC_ASM_HOOK(NAME, ADDRESS)                               \
@@ -428,7 +428,7 @@ namespace hedgedev::csl::hook
         
         const auto branchInfo = mem::GetBranchInfo(in_pHookStart);
 
-        auto pPostHook = (uint8_t*)(size_t(in_pHookStart) + branchInfo.InstrLength);
+        auto pPostHook = (uint8_t*)(uintptr_t(in_pHookStart) + branchInfo.InstrLength);
 
         while (*pPostHook == 0xCC)
             pPostHook++;

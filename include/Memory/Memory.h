@@ -146,7 +146,7 @@ namespace hedgedev::csl::mem
     /// \returns The address referenced by the instruction.
     ///
     template <typename T>
-    inline void* ReadInstructionAddress(void* in_pAddress, size_t in_offset, size_t in_stride);
+    inline void* ReadInstructionAddress(void* in_pAddress, ptrdiff_t in_offset, size_t in_stride);
 
     ///
     /// Reads the address of a call instruction in memory.

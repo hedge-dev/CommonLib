@@ -520,7 +520,7 @@ namespace hedgedev::csl::ut::string
 			{
 				auto upBuffer = std::make_unique<wchar_t[]>(size + sizeof(wchar_t));
 #ifdef WIN32
-				size_t chars = MultiByteToWideChar(CP_UTF8, 0, view.data(), size, (LPWSTR)upBuffer.get(), size);
+				size_t chars = MultiByteToWideChar(CP_UTF8, 0, view.data(), int(size), (LPWSTR)upBuffer.get(), int(size));
 				if (chars < size)
 					return false;
 #else

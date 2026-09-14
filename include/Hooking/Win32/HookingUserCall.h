@@ -90,7 +90,7 @@
 ///
 #define USER_FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                          \
     hedgedev::csl::hook::UserCallInfo info_##FUNCTION_NAME { typeid(RETURN_TYPE), sizeof(RETURN_TYPE), CALLING_CONVENTION, (void*)(ADDRESS), (void*)(ADDRESS), REGISTERS, PARAM_COUNT }; \
-    void* trampoline_##FUNCTION_NAME = hedgedev::csl::hook::EmitUserTrampoline(info_##FUNCTION_NAME, size_t(&info_##FUNCTION_NAME.fpOriginal), true);                                    \
+    void* trampoline_##FUNCTION_NAME = hedgedev::csl::hook::EmitUserTrampoline(info_##FUNCTION_NAME, &info_##FUNCTION_NAME.fpOriginal, true);                                            \
     FUNCTION_PTR(RETURN_TYPE, __cdecl, FUNCTION_NAME, trampoline_##FUNCTION_NAME, __VA_ARGS__)
 
 ///
@@ -118,7 +118,7 @@
 #define USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                  \
     hedgedev::csl::hook::UserCallInfo info_##FUNCTION_NAME { typeid(RETURN_TYPE), sizeof(RETURN_TYPE), CALLING_CONVENTION, (void*)(ADDRESS), (void*)(ADDRESS), REGISTERS, PARAM_COUNT }; \
     RETURN_TYPE __cdecl impl_##FUNCTION_NAME(__VA_ARGS__);                                                                                                                               \
-    void* trampolineToHook_##FUNCTION_NAME = hedgedev::csl::hook::EmitUserTrampoline(info_##FUNCTION_NAME, size_t(&impl_##FUNCTION_NAME));                                               \
+    void* trampolineToHook_##FUNCTION_NAME = hedgedev::csl::hook::EmitUserTrampoline(info_##FUNCTION_NAME, &impl_##FUNCTION_NAME);                                                       \
     HOOK(RETURN_TYPE, __cdecl, FUNCTION_NAME, nullptr, __VA_ARGS__)
 
 ///
@@ -151,25 +151,25 @@
 /// 
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
-#define INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                                  \
-    std::invoke([&]()                                                                                                       \
-    {                                                                                                                       \
-        const auto& rInfo = info_##FUNCTION_NAME;                                                                           \
-                                                                                                                            \
-        if (!rInfo.fpDetour && !(ADDRESS))                                                                                  \
-            return false;                                                                                                   \
-                                                                                                                            \
-        *(void**)&rInfo.fpDetour = (void*)(ADDRESS);                                                                        \
-                                                                                                                            \
-        DetourTransactionBegin();                                                                                           \
-        DetourUpdateThread(GetCurrentThread());                                                                             \
-        DetourAttach((void**)&rInfo.fpDetour, trampolineToHook_##FUNCTION_NAME);                                            \
-                                                                                                                            \
-        const auto result = DetourTransactionCommit() == NO_ERROR;                                                          \
-                                                                                                                            \
-        *(void**)&original_##FUNCTION_NAME = hedgedev::csl::hook::EmitUserTrampoline(rInfo, size_t(&rInfo.fpDetour), true); \
-                                                                                                                            \
-        return result;                                                                                                      \
+#define INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                          \
+    std::invoke([&]()                                                                                               \
+    {                                                                                                               \
+        const auto& rInfo = info_##FUNCTION_NAME;                                                                   \
+                                                                                                                    \
+        if (!rInfo.fpDetour && !(ADDRESS))                                                                          \
+            return false;                                                                                           \
+                                                                                                                    \
+        *(void**)&rInfo.fpDetour = (void*)(ADDRESS);                                                                \
+                                                                                                                    \
+        DetourTransactionBegin();                                                                                   \
+        DetourUpdateThread(GetCurrentThread());                                                                     \
+        DetourAttach((void**)&rInfo.fpDetour, trampolineToHook_##FUNCTION_NAME);                                    \
+                                                                                                                    \
+        const auto result = DetourTransactionCommit() == NO_ERROR;                                                  \
+                                                                                                                    \
+        *(void**)&original_##FUNCTION_NAME = hedgedev::csl::hook::EmitUserTrampoline(rInfo, &rInfo.fpDetour, true); \
+                                                                                                                    \
+        return result;                                                                                              \
     })
 
 ///
@@ -434,12 +434,12 @@ namespace hedgedev::csl::hook
     /// `__cdecl` function in a hook defined with \ref USER_HOOK.
     /// 
     /// \param in_rInfo        The info about the hook.
-    /// \param in_address      The address of the `__cdecl` function to trampoline to.
+    /// \param in_pAddress     The address of the `__cdecl` function to trampoline to.
     /// \param in_isToOriginal Determines whether this trampoline is going back to the original function.
     /// 
     /// \returns A pointer to the trampoline that was emitted.
     ///
-    inline void* EmitUserTrampoline(const UserCallInfo& in_rInfo, const size_t in_address, bool in_isToOriginal = false)
+    inline void* EmitUserTrampoline(const UserCallInfo& in_rInfo, void* in_pAddress, bool in_isToOriginal = false)
     {
         std::vector<uint8_t> result{};
 
@@ -941,17 +941,17 @@ namespace hedgedev::csl::hook
             return emitImm32(0);
         };
 
-        const auto emitBranchAddr = [&](void* in_pStart, size_t in_branchOffset, size_t in_target, bool in_isAbsolute)
+        const auto emitBranchAddr = [&](void* in_pStart, ptrdiff_t in_branchOffset, void* in_pTarget, bool in_isAbsolute)
         {
-            const auto offset = size_t(in_pStart) + in_branchOffset;
+            const auto offset = uintptr_t(in_pStart) + in_branchOffset;
 
             if (in_isAbsolute)
             {
-                *(uint32_t*)offset = uint32_t(in_target);
+                *(uint32_t*)offset = uint32_t(in_pTarget);
             }
             else
             {
-                *(uint32_t*)offset = uint32_t((in_target - offset) - sizeof(uint32_t));
+                *(uint32_t*)offset = uint32_t(uintptr_t(in_pTarget) - offset - sizeof(uint32_t));
             }
         };
 
@@ -1117,8 +1117,10 @@ namespace hedgedev::csl::hook
         const auto size = result.size();
 
         auto pTrampoline = _aligned_malloc(size, sizeof(void*));
+
         memcpy_s(pTrampoline, size, result.data(), size);
-        emitBranchAddr(pTrampoline, branchOffset, in_address, in_isToOriginal);
+
+        emitBranchAddr(pTrampoline, branchOffset, in_pAddress, in_isToOriginal);
         
         mem::Protect(pTrampoline, size, mem::GetProtectionFlags(mem::PageProtection::RWX));
 

@@ -62,7 +62,7 @@ namespace hedgedev::csl::mem
         if (!in_pBaseAddress && !g_pOrigModuleBase)
             g_pOrigModuleBase = in_pBaseAddress = GetOriginalModuleBase();
 
-        return (void*)(size_t(g_khModule) + size_t(in_pAddress) - size_t(in_pBaseAddress));
+        return (void*)(uintptr_t(g_khModule) + uintptr_t(in_pAddress) - uintptr_t(in_pBaseAddress));
     }
 
     inline void* FromASLR(void* in_pAddress, void* in_pBaseAddress)
@@ -70,6 +70,6 @@ namespace hedgedev::csl::mem
         if (!in_pBaseAddress && !g_pOrigModuleBase)
             g_pOrigModuleBase = in_pBaseAddress = GetOriginalModuleBase();
         
-        return (void*)(size_t(in_pAddress) + size_t(in_pBaseAddress) - size_t(g_khModule));
+        return (void*)(uintptr_t(in_pAddress) + uintptr_t(in_pBaseAddress) - uintptr_t(g_khModule));
     }
 }

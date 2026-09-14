@@ -148,9 +148,9 @@ namespace hedgedev::csl::diag::this_process
 		MODULEINFO mainModuleInfo{};
 		GetModuleInformation(GetCurrentProcess(), hMainModule, &mainModuleInfo, sizeof(MODULEINFO));
 
-		const auto addr = size_t(in_pAddr);
-		const auto start = size_t(mainModuleInfo.lpBaseOfDll);
-		const auto end = size_t(start + mainModuleInfo.SizeOfImage);
+		const auto addr = uintptr_t(in_pAddr);
+		const auto start = uintptr_t(mainModuleInfo.lpBaseOfDll);
+		const auto end = uintptr_t(start + mainModuleInfo.SizeOfImage);
 
 		return addr >= start && addr < end;
 	}

@@ -98,35 +98,36 @@ namespace hedgedev::csl::mem
             }
         }
 
-        auto rva = size_t(in_pAddress) + result.OpcodeLength;
+        const auto immOffset = uintptr_t(in_pAddress) + result.OpcodeLength;
+        ptrdiff_t rva{};
 
         switch (result.Distance)
         {
             case BranchDistance::Short:
-                rva = *(int8_t*)rva;
+                rva = *(int8_t*)immOffset;
                 break;
 
             case BranchDistance::Near:
-                rva = *(int32_t*)rva;
+                rva = *(int32_t*)immOffset;
                 break;
 
             case BranchDistance::Far:
-                rva = *(size_t*)rva;
-                break;
+                result.pDestination = (void*)(*(uintptr_t*)immOffset);
+                return result;
         }
 
-        result.pDestination = (void*)((size_t(in_pAddress) + rva) + result.InstrLength);
+        result.pDestination = (void*)(uintptr_t(in_pAddress) + rva + result.InstrLength);
 
         return result;
     }
 
     template <typename T>
-    inline void* ReadInstructionAddress(void* in_pAddress, size_t in_offset, size_t in_stride)
+    inline void* ReadInstructionAddress(void* in_pAddress, ptrdiff_t in_offset, size_t in_stride)
     {
         if (!in_pAddress)
             return nullptr;
 
-        return (void*)((size_t(in_pAddress) + *(T*)(size_t(in_pAddress) + in_offset)) + in_stride);
+        return (void*)((uintptr_t(in_pAddress) + *(T*)(uintptr_t(in_pAddress) + in_offset)) + in_stride);
     }
 
     inline void* ReadCall(void* in_pAddress)
@@ -149,30 +150,32 @@ namespace hedgedev::csl::mem
         if (!in_pAddress)
             return false;
 
-        const auto length = intptr_t(in_pDestination) - intptr_t(in_pAddress);
+        const auto rva = ptrdiff_t(in_pDestination) - ptrdiff_t(in_pAddress);
 
-        if (length - 2 <= 0x7F && !in_isCall)
+        if (rva - 2 <= 0x7F && !in_isCall)
         {
             ASSERT_RETURN_FALSE(Write<uint8_t>(in_pAddress, 0xEB));
-            ASSERT_RETURN_FALSE(Write<int8_t>(((uint8_t*)in_pAddress) + 1, int8_t(length - 2)));
+            ASSERT_RETURN_FALSE(Write<int8_t>((uint8_t*)in_pAddress + 1, int8_t(rva - 2)));
         }
         else
         {
-            if (length - 5 <= 0x7FFFFFFF)
+            if (rva - 5 <= 0x7FFFFFFF)
             {
                 ASSERT_RETURN_FALSE(Write<uint8_t>(in_pAddress, in_isCall ? 0xE8 : 0xE9));
-                ASSERT_RETURN_FALSE(Write<int32_t>(((uint8_t*)in_pAddress) + 1, int32_t(length - 5)));
+                ASSERT_RETURN_FALSE(Write<int32_t>((uint8_t*)in_pAddress + 1, int32_t(rva - 5)));
             }
             else
             {
                 ASSERT_RETURN_FALSE(Write<uint8_t>(in_pAddress, 0xFF));
-                ASSERT_RETURN_FALSE(Write<uint8_t>(((uint8_t*)in_pAddress) + 1, in_isCall ? 0x15 : 0x25));
+                ASSERT_RETURN_FALSE(Write<uint8_t>((uint8_t*)in_pAddress + 1, in_isCall ? 0x15 : 0x25));
 #ifdef CMNLIB_X64
-                ASSERT_RETURN_FALSE(Write<int32_t>(((uint8_t*)in_pAddress) + 2, 0));
-                ASSERT_RETURN_FALSE(Write<int64_t>(((uint8_t*)in_pAddress) + 6, int64_t(length - 14)));
+                ASSERT_RETURN_FALSE(Write<uint32_t>((uint8_t*)in_pAddress + 2, 0));
+
+                const auto immOffset = 6;
 #else
-                ASSERT_RETURN_FALSE(Write<int32_t>(((uint8_t*)in_pAddress) + 2, int32_t(length - 6)));
+                const auto immOffset = 2;
 #endif
+                ASSERT_RETURN_FALSE(Write<uintptr_t>((uint8_t*)in_pAddress + immOffset, uintptr_t(in_pDestination)));
             }
         }
 

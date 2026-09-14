@@ -131,41 +131,975 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5df0fa730a138522d87019c6b4d1c76c" id="r_a5df0fa730a138522d87019c6b4d1c76c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a5df0fa730a138522d87019c6b4d1c76c.html#a5df0fa730a138522d87019c6b4d1c76c">FUNCTION_PTR</a>(RETURN_TYPE,  CALLING_CONVENTION,  FUNCTION_NAME,  ADDRESS, ...)</td></tr>
-<tr class="memitem:a9e1f1b84f7dbb8b6fdac78be2745833c" id="r_a9e1f1b84f7dbb8b6fdac78be2745833c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a9e1f1b84f7dbb8b6fdac78be2745833c.html#a9e1f1b84f7dbb8b6fdac78be2745833c">IMPORT_FUNCTION_PTR</a>(RETURN_TYPE,  LIBRARY_NAME,  FUNCTION_NAME, ...)</td></tr>
-<tr class="memitem:a8e3bd1ebadef896540150b1c43a4caa2" id="r_a8e3bd1ebadef896540150b1c43a4caa2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a8e3bd1ebadef896540150b1c43a4caa2.html#a8e3bd1ebadef896540150b1c43a4caa2">HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  FUNCTION_NAME,  ADDRESS, ...)</td></tr>
-<tr class="memitem:aeb4db6a2d54313508cdce5f607f7467e" id="r_aeb4db6a2d54313508cdce5f607f7467e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_aeb4db6a2d54313508cdce5f607f7467e.html#aeb4db6a2d54313508cdce5f607f7467e">STATIC_HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  FUNCTION_NAME,  ADDRESS, ...)</td></tr>
-<tr class="memitem:a913cc20ca2622b9aa3261f9f1f00eb3e" id="r_a913cc20ca2622b9aa3261f9f1f00eb3e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a913cc20ca2622b9aa3261f9f1f00eb3e.html#a913cc20ca2622b9aa3261f9f1f00eb3e">GET_STATIC_HOOK_RESULT</a>(FUNCTION_NAME)</td></tr>
-<tr class="memitem:aa60f64bf86cf64e4aa8e3f754c52f93f" id="r_aa60f64bf86cf64e4aa8e3f754c52f93f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_aa60f64bf86cf64e4aa8e3f754c52f93f.html#aa60f64bf86cf64e4aa8e3f754c52f93f">THISCALL</a>&#160;&#160;&#160;__fastcall</td></tr>
-<tr class="memitem:a6ad077798f5ad9c878bc59241eb1be07" id="r_a6ad077798f5ad9c878bc59241eb1be07"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a6ad077798f5ad9c878bc59241eb1be07.html#a6ad077798f5ad9c878bc59241eb1be07">THISCALL_PARAMS</a>(CLASS_NAME)</td></tr>
+<tr class="memitem:a5df0fa730a138522d87019c6b4d1c76c" id="r_a5df0fa730a138522d87019c6b4d1c76c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5df0fa730a138522d87019c6b4d1c76c">FUNCTION_PTR</a>(RETURN_TYPE,  CALLING_CONVENTION,  FUNCTION_NAME,  ADDRESS, ...)</td></tr>
+<tr class="memitem:a9e1f1b84f7dbb8b6fdac78be2745833c" id="r_a9e1f1b84f7dbb8b6fdac78be2745833c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9e1f1b84f7dbb8b6fdac78be2745833c">IMPORT_FUNCTION_PTR</a>(RETURN_TYPE,  LIBRARY_NAME,  FUNCTION_NAME, ...)</td></tr>
+<tr class="memitem:a8e3bd1ebadef896540150b1c43a4caa2" id="r_a8e3bd1ebadef896540150b1c43a4caa2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8e3bd1ebadef896540150b1c43a4caa2">HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  FUNCTION_NAME,  ADDRESS, ...)</td></tr>
+<tr class="memitem:aeb4db6a2d54313508cdce5f607f7467e" id="r_aeb4db6a2d54313508cdce5f607f7467e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aeb4db6a2d54313508cdce5f607f7467e">STATIC_HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  FUNCTION_NAME,  ADDRESS, ...)</td></tr>
+<tr class="memitem:a913cc20ca2622b9aa3261f9f1f00eb3e" id="r_a913cc20ca2622b9aa3261f9f1f00eb3e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a913cc20ca2622b9aa3261f9f1f00eb3e">GET_STATIC_HOOK_RESULT</a>(FUNCTION_NAME)</td></tr>
+<tr class="memitem:aa60f64bf86cf64e4aa8e3f754c52f93f" id="r_aa60f64bf86cf64e4aa8e3f754c52f93f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa60f64bf86cf64e4aa8e3f754c52f93f">THISCALL</a>&#160;&#160;&#160;__fastcall</td></tr>
+<tr class="memitem:a6ad077798f5ad9c878bc59241eb1be07" id="r_a6ad077798f5ad9c878bc59241eb1be07"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6ad077798f5ad9c878bc59241eb1be07">THISCALL_PARAMS</a>(CLASS_NAME)</td></tr>
 <tr class="memdesc:a6ad077798f5ad9c878bc59241eb1be07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands to the necessary function parameters required by <span class="tt">__thiscall</span> calling convention.  <br /></td></tr>
-<tr class="memitem:a8fdb60cc4ccabeabf403b566802d0cb3" id="r_a8fdb60cc4ccabeabf403b566802d0cb3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a8fdb60cc4ccabeabf403b566802d0cb3.html#a8fdb60cc4ccabeabf403b566802d0cb3">THISCALL_RETURN_PARAMS</a></td></tr>
+<tr class="memitem:a8fdb60cc4ccabeabf403b566802d0cb3" id="r_a8fdb60cc4ccabeabf403b566802d0cb3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8fdb60cc4ccabeabf403b566802d0cb3">THISCALL_RETURN_PARAMS</a></td></tr>
 <tr class="memdesc:a8fdb60cc4ccabeabf403b566802d0cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands to the necessary function arguments required by <span class="tt">__thiscall</span> calling convention for calling the original function.  <br /></td></tr>
-<tr class="memitem:aba854ba06319e53c487f60db02d79529" id="r_aba854ba06319e53c487f60db02d79529"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_aba854ba06319e53c487f60db02d79529.html#aba854ba06319e53c487f60db02d79529">VFTABLE_HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  CLASS_NAME,  FUNCTION_NAME, ...)</td></tr>
-<tr class="memitem:a13f186bf125d0c0bf84d7cf2581b8d76" id="r_a13f186bf125d0c0bf84d7cf2581b8d76"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a13f186bf125d0c0bf84d7cf2581b8d76.html#a13f186bf125d0c0bf84d7cf2581b8d76">STATIC_VFTABLE_HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  CLASS_NAME,  FUNCTION_NAME, ...)</td></tr>
-<tr class="memitem:af5b3871e9ba5202585c60d5bd31df181" id="r_af5b3871e9ba5202585c60d5bd31df181"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_af5b3871e9ba5202585c60d5bd31df181.html#af5b3871e9ba5202585c60d5bd31df181">GET_STATIC_VFTABLE_HOOK_RESULT</a>(CLASS_NAME,  FUNCTION_NAME)</td></tr>
-<tr class="memitem:ad9c0fe9b7e3dd99086cb10ab9552f963" id="r_ad9c0fe9b7e3dd99086cb10ab9552f963"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_ad9c0fe9b7e3dd99086cb10ab9552f963.html#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
+<tr class="memitem:aba854ba06319e53c487f60db02d79529" id="r_aba854ba06319e53c487f60db02d79529"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aba854ba06319e53c487f60db02d79529">VFTABLE_HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  CLASS_NAME,  FUNCTION_NAME, ...)</td></tr>
+<tr class="memitem:a13f186bf125d0c0bf84d7cf2581b8d76" id="r_a13f186bf125d0c0bf84d7cf2581b8d76"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a13f186bf125d0c0bf84d7cf2581b8d76">STATIC_VFTABLE_HOOK</a>(RETURN_TYPE,  CALLING_CONVENTION,  CLASS_NAME,  FUNCTION_NAME, ...)</td></tr>
+<tr class="memitem:af5b3871e9ba5202585c60d5bd31df181" id="r_af5b3871e9ba5202585c60d5bd31df181"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af5b3871e9ba5202585c60d5bd31df181">GET_STATIC_VFTABLE_HOOK_RESULT</a>(CLASS_NAME,  FUNCTION_NAME)</td></tr>
+<tr class="memitem:ad9c0fe9b7e3dd99086cb10ab9552f963" id="r_ad9c0fe9b7e3dd99086cb10ab9552f963"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
 <tr class="memdesc:ad9c0fe9b7e3dd99086cb10ab9552f963"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an assembly hook.  <br /></td></tr>
-<tr class="memitem:a0fdec3e8b4d8ae6c8f71e1b2464d894e" id="r_a0fdec3e8b4d8ae6c8f71e1b2464d894e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a0fdec3e8b4d8ae6c8f71e1b2464d894e.html#a0fdec3e8b4d8ae6c8f71e1b2464d894e">STATIC_ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
+<tr class="memitem:a0fdec3e8b4d8ae6c8f71e1b2464d894e" id="r_a0fdec3e8b4d8ae6c8f71e1b2464d894e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0fdec3e8b4d8ae6c8f71e1b2464d894e">STATIC_ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
 <tr class="memdesc:a0fdec3e8b4d8ae6c8f71e1b2464d894e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an assembly hook, and installs it upon initialisation.  <br /></td></tr>
-<tr class="memitem:aa4f742b5d73c0de6f190cc4dc0bf0910" id="r_aa4f742b5d73c0de6f190cc4dc0bf0910"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_aa4f742b5d73c0de6f190cc4dc0bf0910.html#aa4f742b5d73c0de6f190cc4dc0bf0910">ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
+<tr class="memitem:aa4f742b5d73c0de6f190cc4dc0bf0910" id="r_aa4f742b5d73c0de6f190cc4dc0bf0910"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa4f742b5d73c0de6f190cc4dc0bf0910">ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
 <tr class="memdesc:aa4f742b5d73c0de6f190cc4dc0bf0910"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an assembly hook.  <br /></td></tr>
-<tr class="memitem:a01152d600dd939b61e9bbed6ef8560e8" id="r_a01152d600dd939b61e9bbed6ef8560e8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a01152d600dd939b61e9bbed6ef8560e8.html#a01152d600dd939b61e9bbed6ef8560e8">STATIC_ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
+<tr class="memitem:a01152d600dd939b61e9bbed6ef8560e8" id="r_a01152d600dd939b61e9bbed6ef8560e8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a01152d600dd939b61e9bbed6ef8560e8">STATIC_ASM_HOOK</a>(NAME,  ADDRESS)</td></tr>
 <tr class="memdesc:a01152d600dd939b61e9bbed6ef8560e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an assembly hook, and installs it upon initialisation.  <br /></td></tr>
-<tr class="memitem:a82f9f2f843a0e9409884e4c6c80ff9d1" id="r_a82f9f2f843a0e9409884e4c6c80ff9d1"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a82f9f2f843a0e9409884e4c6c80ff9d1.html#a82f9f2f843a0e9409884e4c6c80ff9d1">ASM_HOOK_RETURN</a>(NAME)</td></tr>
+<tr class="memitem:a82f9f2f843a0e9409884e4c6c80ff9d1" id="r_a82f9f2f843a0e9409884e4c6c80ff9d1"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a82f9f2f843a0e9409884e4c6c80ff9d1">ASM_HOOK_RETURN</a>(NAME)</td></tr>
 <tr class="memdesc:a82f9f2f843a0e9409884e4c6c80ff9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns from an assembly hook and executes the original code.  <br /></td></tr>
-<tr class="memitem:aa38a902b71c9a7ed2ad58bcc5d217f03" id="r_aa38a902b71c9a7ed2ad58bcc5d217f03"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_aa38a902b71c9a7ed2ad58bcc5d217f03.html#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a>(NAME)</td></tr>
+<tr class="memitem:aa38a902b71c9a7ed2ad58bcc5d217f03" id="r_aa38a902b71c9a7ed2ad58bcc5d217f03"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a>(NAME)</td></tr>
 <tr class="memdesc:aa38a902b71c9a7ed2ad58bcc5d217f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns from an assembly hook and skips the original code.  <br /></td></tr>
-<tr class="memitem:a32b8112f1eeab26d5e4f257d40c41116" id="r_a32b8112f1eeab26d5e4f257d40c41116"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a32b8112f1eeab26d5e4f257d40c41116.html#a32b8112f1eeab26d5e4f257d40c41116">INSTALL_HOOK</a>(FUNCTION_NAME)</td></tr>
-<tr class="memitem:af3e8cd53e478dcf3d4933f93d933084c" id="r_af3e8cd53e478dcf3d4933f93d933084c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_af3e8cd53e478dcf3d4933f93d933084c.html#af3e8cd53e478dcf3d4933f93d933084c">INSTALL_HOOK_EXPLICIT</a>(FUNCTION_NAME,  ADDRESS)</td></tr>
-<tr class="memitem:acef4b077f32af31b49bf763d86c7ef5a" id="r_acef4b077f32af31b49bf763d86c7ef5a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_acef4b077f32af31b49bf763d86c7ef5a.html#acef4b077f32af31b49bf763d86c7ef5a">UNINSTALL_HOOK</a>(FUNCTION_NAME)</td></tr>
-<tr class="memitem:a3434ef8a2fffe664992f34c5154a402f" id="r_a3434ef8a2fffe664992f34c5154a402f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_a3434ef8a2fffe664992f34c5154a402f.html#a3434ef8a2fffe664992f34c5154a402f">INSTALL_VFTABLE_HOOK</a>(CLASS_NAME,  INSTANCE,  FUNCTION_NAME,  FUNCTION_INDEX)</td></tr>
-<tr class="memitem:ab96ccc9b28a5b5f0cd92a641854bff05" id="r_ab96ccc9b28a5b5f0cd92a641854bff05"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="../../d5/d59/Win32_2Hooking_8h_ab96ccc9b28a5b5f0cd92a641854bff05.html#ab96ccc9b28a5b5f0cd92a641854bff05">UNINSTALL_VFTABLE_HOOK</a>(CLASS_NAME,  FUNCTION_NAME)</td></tr>
+<tr class="memitem:a32b8112f1eeab26d5e4f257d40c41116" id="r_a32b8112f1eeab26d5e4f257d40c41116"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a32b8112f1eeab26d5e4f257d40c41116">INSTALL_HOOK</a>(FUNCTION_NAME)</td></tr>
+<tr class="memitem:af3e8cd53e478dcf3d4933f93d933084c" id="r_af3e8cd53e478dcf3d4933f93d933084c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af3e8cd53e478dcf3d4933f93d933084c">INSTALL_HOOK_EXPLICIT</a>(FUNCTION_NAME,  ADDRESS)</td></tr>
+<tr class="memitem:acef4b077f32af31b49bf763d86c7ef5a" id="r_acef4b077f32af31b49bf763d86c7ef5a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#acef4b077f32af31b49bf763d86c7ef5a">UNINSTALL_HOOK</a>(FUNCTION_NAME)</td></tr>
+<tr class="memitem:a3434ef8a2fffe664992f34c5154a402f" id="r_a3434ef8a2fffe664992f34c5154a402f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a3434ef8a2fffe664992f34c5154a402f">INSTALL_VFTABLE_HOOK</a>(CLASS_NAME,  INSTANCE,  FUNCTION_NAME,  FUNCTION_INDEX)</td></tr>
+<tr class="memitem:ab96ccc9b28a5b5f0cd92a641854bff05" id="r_ab96ccc9b28a5b5f0cd92a641854bff05"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ab96ccc9b28a5b5f0cd92a641854bff05">UNINSTALL_VFTABLE_HOOK</a>(CLASS_NAME,  FUNCTION_NAME)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a348b8a7054e9222082b188d75757b835" id="r_a348b8a7054e9222082b188d75757b835"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a348b8a7054e9222082b188d75757b835.html#a348b8a7054e9222082b188d75757b835">hedgedev::csl::hook::GetPostHookAddress</a> (void *in_pHookStart)</td></tr>
+<tr class="memitem:a348b8a7054e9222082b188d75757b835" id="r_a348b8a7054e9222082b188d75757b835"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a348b8a7054e9222082b188d75757b835">hedgedev::csl::hook::GetPostHookAddress</a> (void *in_pHookStart)</td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="aa4f742b5d73c0de6f190cc4dc0bf0910" name="aa4f742b5d73c0de6f190cc4dc0bf0910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f742b5d73c0de6f190cc4dc0bf0910">&#9670;&#160;</a></span>ASM_HOOK <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASM_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an assembly hook. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NAME</td><td>The name of the hook. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address to hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> The body must be defined in an <span class="tt">*.asm</span> file using MASM. This macro creates a scope for members of the hook to be declared in. If no members are needed, close the scope immediately using empty braces.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Examples</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+x86</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> uint32_t g_myHookMember = 0x900DF00D;</div>
+<div class="line"> </div>
+<div class="line">    __asm</div>
+<div class="line">    {</div>
+<div class="line">        mov eax, [g_myHookMember]</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a>(MyAsmHook)</div>
+<div class="line">}</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_aa38a902b71c9a7ed2ad58bcc5d217f03"><div class="ttname"><a href="#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a></div><div class="ttdeci">#define ASM_HOOK_BRANCH(NAME)</div><div class="ttdoc">Returns from an assembly hook and skips the original code.</div><div class="ttdef"><b>Definition</b> Hooking.h:320</div></div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_ad9c0fe9b7e3dd99086cb10ab9552f963"><div class="ttname"><a href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a></div><div class="ttdeci">#define ASM_HOOK(NAME, ADDRESS)</div><div class="ttdoc">Creates an assembly hook.</div><div class="ttdef"><b>Definition</b> Hooking.h:288</div></div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+x64</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    uint64_t g_myHookMember = 0x900DF00D;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><span class="tt">MyAsmHook.asm</span> </p><div class="fragment"><div class="line">include CommonLib.masm.inc</div>
+<div class="line"> </div>
+<div class="line">EXTERN g_myHookMember : QWORD</div>
+<div class="line"> </div>
+<div class="line">ASM_HOOK_START MyAsmHook</div>
+<div class="line">    mov rax, [g_myHookMember]</div>
+<div class="line">    ASM_HOOK_BRANCH MyAsmHook</div>
+<div class="line">ASM_HOOK_END MyAsmHook</div>
+<div class="line"> </div>
+<div class="line">END</div>
+</div><!-- fragment -->    
+</div>
+</div>
+<a id="ad9c0fe9b7e3dd99086cb10ab9552f963" name="ad9c0fe9b7e3dd99086cb10ab9552f963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c0fe9b7e3dd99086cb10ab9552f963">&#9670;&#160;</a></span>ASM_HOOK <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASM_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an assembly hook. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NAME</td><td>The name of the hook. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address to hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> The body must be defined in an <span class="tt">*.asm</span> file using MASM. This macro creates a scope for members of the hook to be declared in. If no members are needed, close the scope immediately using empty braces.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Examples</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+x86</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> uint32_t g_myHookMember = 0x900DF00D;</div>
+<div class="line"> </div>
+<div class="line">    __asm</div>
+<div class="line">    {</div>
+<div class="line">        mov eax, [g_myHookMember]</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a>(MyAsmHook)</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+x64</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    uint64_t g_myHookMember = 0x900DF00D;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><span class="tt">MyAsmHook.asm</span> </p><div class="fragment"><div class="line">include CommonLib.masm.inc</div>
+<div class="line"> </div>
+<div class="line">EXTERN g_myHookMember : QWORD</div>
+<div class="line"> </div>
+<div class="line">ASM_HOOK_START MyAsmHook</div>
+<div class="line">    mov rax, [g_myHookMember]</div>
+<div class="line">    ASM_HOOK_BRANCH MyAsmHook</div>
+<div class="line">ASM_HOOK_END MyAsmHook</div>
+<div class="line"> </div>
+<div class="line">END</div>
+</div><!-- fragment -->    
+</div>
+</div>
+<a id="aa38a902b71c9a7ed2ad58bcc5d217f03" name="aa38a902b71c9a7ed2ad58bcc5d217f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38a902b71c9a7ed2ad58bcc5d217f03">&#9670;&#160;</a></span>ASM_HOOK_BRANCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASM_HOOK_BRANCH</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns from an assembly hook and skips the original code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NAME</td><td>The name of the hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> This macro can be accessed in an <span class="tt">*.asm</span> file by including <span class="tt">CommonLib.masm.inc</span>.    </dd></dl>
+
+</div>
+</div>
+<a id="a82f9f2f843a0e9409884e4c6c80ff9d1" name="a82f9f2f843a0e9409884e4c6c80ff9d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f9f2f843a0e9409884e4c6c80ff9d1">&#9670;&#160;</a></span>ASM_HOOK_RETURN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ASM_HOOK_RETURN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns from an assembly hook and executes the original code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NAME</td><td>The name of the hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> This macro can be accessed in an <span class="tt">*.asm</span> file by including <span class="tt">CommonLib.masm.inc</span>.    </dd></dl>
+
+</div>
+</div>
+<a id="a5df0fa730a138522d87019c6b4d1c76c" name="a5df0fa730a138522d87019c6b4d1c76c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5df0fa730a138522d87019c6b4d1c76c">&#9670;&#160;</a></span>FUNCTION_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUNCTION_PTR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>RETURN_TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CALLING_CONVENTION</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">RETURN_TYPE (CALLING_CONVENTION* FUNCTION_NAME)(__VA_ARGS__) = (RETURN_TYPE (CALLING_CONVENTION*)(__VA_ARGS__))(ADDRESS)</div>
+</div><!-- fragment --><p>Declares a pointer to a function in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RETURN_TYPE</td><td>The return type of the function. </td></tr>
+    <tr><td class="paramname">CALLING_CONVENTION</td><td>The calling convention of the function (e.g. <span class="tt">__cdecl</span>, <span class="tt">__stdcall</span>, <span class="tt">__fastcall</span>, etc). For custom calling conventions on x86, such as <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#aded241a65f525ecf9bfb35bebbb7db0f">__usercall</a></span> or <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#ab6d79e66b8474a6dcc34dbc80e8717a0">__userpurge</a></span>, see <a class="el" href="../../db/d6b/HookingUserCall_8h.html" title="HookingUserCall.h">HookingUserCall.h</a>. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address of the function. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The parameters of the function.    </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a913cc20ca2622b9aa3261f9f1f00eb3e" name="a913cc20ca2622b9aa3261f9f1f00eb3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a913cc20ca2622b9aa3261f9f1f00eb3e">&#9670;&#160;</a></span>GET_STATIC_HOOK_RESULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_STATIC_HOOK_RESULT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">result_##FUNCTION_NAME</div>
+</div><!-- fragment --><p>Gets the installation result of a hook defined with <a class="el" href="#aeb4db6a2d54313508cdce5f607f7467e" title="STATIC_HOOK">STATIC_HOOK</a>, <a class="el" href="../../db/d6b/HookingUserCall_8h.html#aaf4b1c20a8d9be9ecb9928cf8174309d" title="STATIC_USER_HOOK">STATIC_USER_HOOK</a> or <a class="el" href="#a0fdec3e8b4d8ae6c8f71e1b2464d894e" title="STATIC_ASM_HOOK">STATIC_ASM_HOOK</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function that was hooked.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the installation succeeeded. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="af5b3871e9ba5202585c60d5bd31df181" name="af5b3871e9ba5202585c60d5bd31df181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b3871e9ba5202585c60d5bd31df181">&#9670;&#160;</a></span>GET_STATIC_VFTABLE_HOOK_RESULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_STATIC_VFTABLE_HOOK_RESULT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CLASS_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">result_##CLASS_NAME##_##FUNCTION_NAME</div>
+</div><!-- fragment --><p>Gets the installation result of a hook defined with <a class="el" href="#a13f186bf125d0c0bf84d7cf2581b8d76" title="STATIC_VFTABLE_HOOK">STATIC_VFTABLE_HOOK</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">CLASS_NAME</td><td>The name of the class that contains the function that was hooked. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function that was hooked.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the installation succeeeded. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a8e3bd1ebadef896540150b1c43a4caa2" name="a8e3bd1ebadef896540150b1c43a4caa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3bd1ebadef896540150b1c43a4caa2">&#9670;&#160;</a></span>HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>RETURN_TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CALLING_CONVENTION</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> RETURN_TYPE CALLING_CONVENTION FUNCTION_NAME(__VA_ARGS__);     \</div>
+<div class="line">FUNCTION_NAME* x_##FUNCTION_NAME = (FUNCTION_NAME*)(ADDRESS);          \</div>
+<div class="line">FUNCTION_NAME* original_##FUNCTION_NAME = x_##FUNCTION_NAME;           \</div>
+<div class="line"><span class="keywordtype">void</span>* post_##FUNCTION_NAME{};                                          \</div>
+<div class="line">RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)</div>
+</div><!-- fragment --><p>Defines the body of a hook for a function in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RETURN_TYPE</td><td>The return type of the function. </td></tr>
+    <tr><td class="paramname">CALLING_CONVENTION</td><td>The calling convention of the function (e.g. <span class="tt">__cdecl</span>, <span class="tt">__stdcall</span>, <span class="tt">__fastcall</span>, etc). For custom calling conventions on x86, such as <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#aded241a65f525ecf9bfb35bebbb7db0f">__usercall</a></span> or <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#ab6d79e66b8474a6dcc34dbc80e8717a0">__userpurge</a></span>, see <a class="el" href="../../db/d6b/HookingUserCall_8h.html" title="HookingUserCall.h">HookingUserCall.h</a>. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address of the function. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The parameters of the function.    </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9e1f1b84f7dbb8b6fdac78be2745833c" name="a9e1f1b84f7dbb8b6fdac78be2745833c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e1f1b84f7dbb8b6fdac78be2745833c">&#9670;&#160;</a></span>IMPORT_FUNCTION_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IMPORT_FUNCTION_PTR</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>RETURN_TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>LIBRARY_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> RETURN_TYPE _##FUNCTION_NAME(__VA_ARGS__);                     \</div>
+<div class="line">_##FUNCTION_NAME* FUNCTION_NAME = (_##FUNCTION_NAME*)IMPORT_FUNC(LIBRARY_NAME, #FUNCTION_NAME);</div>
+</div><!-- fragment --><p>Loads a dynamic link library into memory and declares a pointer to an exported function from it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RETURN_TYPE</td><td>The return type of the function. </td></tr>
+    <tr><td class="paramname">LIBRARY_NAME</td><td>The name of the dynamic link library. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the exported function. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The parameters of the exported function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a32b8112f1eeab26d5e4f257d40c41116" name="a32b8112f1eeab26d5e4f257d40c41116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b8112f1eeab26d5e4f257d40c41116">&#9670;&#160;</a></span>INSTALL_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSTALL_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#af3e8cd53e478dcf3d4933f93d933084c">INSTALL_HOOK_EXPLICIT</a>(FUNCTION_NAME, original_##FUNCTION_NAME)</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_af3e8cd53e478dcf3d4933f93d933084c"><div class="ttname"><a href="#af3e8cd53e478dcf3d4933f93d933084c">INSTALL_HOOK_EXPLICIT</a></div><div class="ttdeci">#define INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)</div><div class="ttdef"><b>Definition</b> Hooking.h:342</div></div>
+</div><!-- fragment --><p>Installs a hook defined with <a class="el" href="#a8e3bd1ebadef896540150b1c43a4caa2" title="HOOK">HOOK</a> or <a class="el" href="#ad9c0fe9b7e3dd99086cb10ab9552f963" title="ASM_HOOK">ASM_HOOK</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function to call before the original.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the installation succeeeded, or if the hook was already installed. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="af3e8cd53e478dcf3d4933f93d933084c" name="af3e8cd53e478dcf3d4933f93d933084c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e8cd53e478dcf3d4933f93d933084c">&#9670;&#160;</a></span>INSTALL_HOOK_EXPLICIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSTALL_HOOK_EXPLICIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                                                   \</div>
+<div class="line">{                                                                                                   \</div>
+<div class="line">    if (!original_##FUNCTION_NAME &amp;&amp; !(ADDRESS))                                                    \</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;                                                                               \</div>
+<div class="line">                                                                                                    \</div>
+<div class="line">    *(<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME = (<span class="keywordtype">void</span>*)(ADDRESS);                                          \</div>
+<div class="line">                                                                                                    \</div>
+<div class="line">    DetourTransactionBegin();                                                                       \</div>
+<div class="line">    DetourUpdateThread(GetCurrentThread());                                                         \</div>
+<div class="line">    DetourAttach((<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME, &amp;impl_##FUNCTION_NAME);                         \</div>
+<div class="line">                                                                                                    \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> result = DetourTransactionCommit() == NO_ERROR;                                      \</div>
+<div class="line">                                                                                                    \</div>
+<div class="line">    if (result)                                                                                     \</div>
+<div class="line">        post_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a348b8a7054e9222082b188d75757b835">hedgedev::csl::hook::GetPostHookAddress</a>((<span class="keywordtype">void</span>*)(x_##FUNCTION_NAME)); \</div>
+<div class="line">                                                                                                    \</div>
+<div class="line">    <span class="keywordflow">return</span> result;                                                                                  \</div>
+<div class="line">})</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1hook_html_a348b8a7054e9222082b188d75757b835"><div class="ttname"><a href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a348b8a7054e9222082b188d75757b835">hedgedev::csl::hook::GetPostHookAddress</a></div><div class="ttdeci">void * GetPostHookAddress(void *in_pHookStart)</div><div class="ttdef"><b>Definition</b> Hooking.h:425</div></div>
+</div><!-- fragment --><p>Installs a hook defined with <a class="el" href="#a8e3bd1ebadef896540150b1c43a4caa2" title="HOOK">HOOK</a> or <a class="el" href="#ad9c0fe9b7e3dd99086cb10ab9552f963" title="ASM_HOOK">ASM_HOOK</a> at an explicit address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function to call before the original. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address of the function to hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the installation succeeeded, or if the hook was already installed. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a3434ef8a2fffe664992f34c5154a402f" name="a3434ef8a2fffe664992f34c5154a402f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3434ef8a2fffe664992f34c5154a402f">&#9670;&#160;</a></span>INSTALL_VFTABLE_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSTALL_VFTABLE_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CLASS_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>INSTANCE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_INDEX</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                                                        \</div>
+<div class="line">{                                                                                                        \</div>
+<div class="line">    if (original_##CLASS_NAME##_##FUNCTION_NAME)                                                         \</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;                                                                                     \</div>
+<div class="line">                                                                                                         \</div>
+<div class="line">    original_##CLASS_NAME##FUNCTION_NAME = (*(CLASS_NAME##_##FUNCTION_NAME***)INSTANCE)[FUNCTION_INDEX]; \</div>
+<div class="line">                                                                                                         \</div>
+<div class="line">    DetourTransactionBegin();                                                                            \</div>
+<div class="line">    DetourUpdateThread(GetCurrentThread());                                                              \</div>
+<div class="line">    DetourAttach((<span class="keywordtype">void</span>**)&amp;original##CLASS_NAME##_##FUNCTION_NAME, impl_##CLASS_NAME##_##FUNCTION_NAME);  \</div>
+<div class="line">                                                                                                         \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> result = DetourTransactionCommit() == NO_ERROR;                                           \</div>
+<div class="line">                                                                                                         \</div>
+<div class="line">    if (result)                                                                                          \</div>
+<div class="line">        post_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a348b8a7054e9222082b188d75757b835">hedgedev::csl::hook::GetPostHookAddress</a>((<span class="keywordtype">void</span>*)(x_##FUNCTION_NAME));      \</div>
+<div class="line">                                                                                                         \</div>
+<div class="line">    <span class="keywordflow">return</span> result;                                                                                       \</div>
+<div class="line">})</div>
+</div><!-- fragment --><p>Installs a hook defined with <a class="el" href="#aba854ba06319e53c487f60db02d79529" title="VFTABLE_HOOK">VFTABLE_HOOK</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">CLASS_NAME</td><td>The name of the class that contains the function being hooked. </td></tr>
+    <tr><td class="paramname">INSTANCE</td><td>A pointer to an instance of the class to extract the virtual function table pointer from. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function to call before the original. </td></tr>
+    <tr><td class="paramname">FUNCTION_INDEX</td><td>The index of the function to hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the installation succeeeded, or if the hook was already installed. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a01152d600dd939b61e9bbed6ef8560e8" name="a01152d600dd939b61e9bbed6ef8560e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01152d600dd939b61e9bbed6ef8560e8">&#9670;&#160;</a></span>STATIC_ASM_HOOK <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATIC_ASM_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an assembly hook, and installs it upon initialisation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NAME</td><td>The name of the hook. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address to hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> The body must be defined in an <span class="tt">*.asm</span> file using MASM. This macro creates a scope for members of the hook to be declared in. If no members are needed, close the scope immediately using empty braces.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Examples</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+x86</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> uint32_t g_myHookMember = 0x900DF00D;</div>
+<div class="line"> </div>
+<div class="line">    __asm</div>
+<div class="line">    {</div>
+<div class="line">        mov eax, [g_myHookMember]</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a>(MyAsmHook)</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+x64</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    uint64_t g_myHookMember = 0x900DF00D;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><span class="tt">MyAsmHook.asm</span> </p><div class="fragment"><div class="line">include CommonLib.masm.inc</div>
+<div class="line"> </div>
+<div class="line">EXTERN g_myHookMember : QWORD</div>
+<div class="line"> </div>
+<div class="line">ASM_HOOK_START MyAsmHook</div>
+<div class="line">    mov rax, [g_myHookMember]</div>
+<div class="line">    ASM_HOOK_BRANCH MyAsmHook</div>
+<div class="line">ASM_HOOK_END MyAsmHook</div>
+<div class="line"> </div>
+<div class="line">END</div>
+</div><!-- fragment -->    
+</div>
+</div>
+<a id="a0fdec3e8b4d8ae6c8f71e1b2464d894e" name="a0fdec3e8b4d8ae6c8f71e1b2464d894e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fdec3e8b4d8ae6c8f71e1b2464d894e">&#9670;&#160;</a></span>STATIC_ASM_HOOK <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATIC_ASM_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an assembly hook, and installs it upon initialisation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NAME</td><td>The name of the hook. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address to hook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> The body must be defined in an <span class="tt">*.asm</span> file using MASM. This macro creates a scope for members of the hook to be declared in. If no members are needed, close the scope immediately using empty braces.</dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Examples</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+x86</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> uint32_t g_myHookMember = 0x900DF00D;</div>
+<div class="line"> </div>
+<div class="line">    __asm</div>
+<div class="line">    {</div>
+<div class="line">        mov eax, [g_myHookMember]</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_define" href="#aa38a902b71c9a7ed2ad58bcc5d217f03">ASM_HOOK_BRANCH</a>(MyAsmHook)</div>
+<div class="line">}</div>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+x64</h3>
+<p><span class="tt">Mod.cpp</span> </p><div class="fragment"><div class="line"><a class="code hl_define" href="#ad9c0fe9b7e3dd99086cb10ab9552f963">ASM_HOOK</a>(MyAsmHook, 0xDEADBEEF)</div>
+<div class="line">{</div>
+<div class="line">    uint64_t g_myHookMember = 0x900DF00D;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><span class="tt">MyAsmHook.asm</span> </p><div class="fragment"><div class="line">include CommonLib.masm.inc</div>
+<div class="line"> </div>
+<div class="line">EXTERN g_myHookMember : QWORD</div>
+<div class="line"> </div>
+<div class="line">ASM_HOOK_START MyAsmHook</div>
+<div class="line">    mov rax, [g_myHookMember]</div>
+<div class="line">    ASM_HOOK_BRANCH MyAsmHook</div>
+<div class="line">ASM_HOOK_END MyAsmHook</div>
+<div class="line"> </div>
+<div class="line">END</div>
+</div><!-- fragment -->    
+</div>
+</div>
+<a id="aeb4db6a2d54313508cdce5f607f7467e" name="aeb4db6a2d54313508cdce5f607f7467e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb4db6a2d54313508cdce5f607f7467e">&#9670;&#160;</a></span>STATIC_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATIC_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>RETURN_TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CALLING_CONVENTION</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a8e3bd1ebadef896540150b1c43a4caa2">HOOK</a>(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, __VA_ARGS__);   \</div>
+<div class="line">__CMNLIB_INTERNAL_STATIC_HOOK_IMPL(FUNCTION_NAME, ADDRESS, <a class="code hl_define" href="#a32b8112f1eeab26d5e4f257d40c41116">INSTALL_HOOK</a>)      \</div>
+<div class="line">RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_a32b8112f1eeab26d5e4f257d40c41116"><div class="ttname"><a href="#a32b8112f1eeab26d5e4f257d40c41116">INSTALL_HOOK</a></div><div class="ttdeci">#define INSTALL_HOOK(FUNCTION_NAME)</div><div class="ttdef"><b>Definition</b> Hooking.h:331</div></div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_a8e3bd1ebadef896540150b1c43a4caa2"><div class="ttname"><a href="#a8e3bd1ebadef896540150b1c43a4caa2">HOOK</a></div><div class="ttdeci">#define HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS,...)</div><div class="ttdef"><b>Definition</b> Hooking.h:55</div></div>
+</div><!-- fragment --><p>Defines the body of a hook for a function in memory, and installs it upon initialisation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RETURN_TYPE</td><td>The return type of the function. </td></tr>
+    <tr><td class="paramname">CALLING_CONVENTION</td><td>The calling convention of the function (e.g. <span class="tt">__cdecl</span>, <span class="tt">__stdcall</span>, <span class="tt">__fastcall</span>, etc). For custom calling conventions on x86, such as <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#aded241a65f525ecf9bfb35bebbb7db0f">__usercall</a></span> or <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#ab6d79e66b8474a6dcc34dbc80e8717a0">__userpurge</a></span>, see <a class="el" href="../../db/d6b/HookingUserCall_8h.html" title="HookingUserCall.h">HookingUserCall.h</a>. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address of the function. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The parameters of the function.   </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Use <a class="el" href="#a913cc20ca2622b9aa3261f9f1f00eb3e" title="GET_STATIC_HOOK_RESULT">GET_STATIC_HOOK_RESULT</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a13f186bf125d0c0bf84d7cf2581b8d76" name="a13f186bf125d0c0bf84d7cf2581b8d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13f186bf125d0c0bf84d7cf2581b8d76">&#9670;&#160;</a></span>STATIC_VFTABLE_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATIC_VFTABLE_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>RETURN_TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CALLING_CONVENTION</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CLASS_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#aeb4db6a2d54313508cdce5f607f7467e">STATIC_HOOK</a>(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME##_##FUNCTION_NAME, <span class="keyword">nullptr</span>, __VA_ARGS__)</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_aeb4db6a2d54313508cdce5f607f7467e"><div class="ttname"><a href="#aeb4db6a2d54313508cdce5f607f7467e">STATIC_HOOK</a></div><div class="ttdeci">#define STATIC_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS,...)</div><div class="ttdef"><b>Definition</b> Hooking.h:69</div></div>
+</div><!-- fragment --><p>Defines the body of a hook for a function in a virtual function table in memory, and installs it upon initialisation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RETURN_TYPE</td><td>The return type of the function. </td></tr>
+    <tr><td class="paramname">CALLING_CONVENTION</td><td>The calling convention of the function (e.g. <span class="tt">__cdecl</span>, <span class="tt">__stdcall</span>, <span class="tt">__fastcall</span>, etc). This does not support optimised calling conventions, such as <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#aded241a65f525ecf9bfb35bebbb7db0f">__usercall</a></span> or <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#ab6d79e66b8474a6dcc34dbc80e8717a0">__userpurge</a></span>. </td></tr>
+    <tr><td class="paramname">CLASS_NAME</td><td>The name of the class that contains the function being hooked. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The parameters of the function.   </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Use <a class="el" href="#af5b3871e9ba5202585c60d5bd31df181" title="GET_STATIC_VFTABLE_HOOK_RESULT">GET_STATIC_VFTABLE_HOOK_RESULT</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aa60f64bf86cf64e4aa8e3f754c52f93f" name="aa60f64bf86cf64e4aa8e3f754c52f93f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60f64bf86cf64e4aa8e3f754c52f93f">&#9670;&#160;</a></span>THISCALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THISCALL&#160;&#160;&#160;__fastcall</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An alias for <span class="tt">__fastcall</span>.</p>
+<p>This is intended for use with the other <span class="tt"><a class="el" href="#aa60f64bf86cf64e4aa8e3f754c52f93f">THISCALL</a></span> macros to make setting up function pointers and hooks with this calling convention easier.</p>
+<p><span class="tt">__thiscall</span> is a calling convention that stores a pointer to <span class="tt">this</span> in <span class="tt">ECX</span>, before falling back to using the stack, similar to <span class="tt">__fastcall</span>.</p>
+<dl class="section note"><dt>Note</dt><dd><b>For x64:</b> This calling convention is always <span class="tt">__fastcall</span> regardless, with the class pointer stored in <span class="tt">RCX</span>. </dd></dl>
+
+</div>
+</div>
+<a id="a6ad077798f5ad9c878bc59241eb1be07" name="a6ad077798f5ad9c878bc59241eb1be07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad077798f5ad9c878bc59241eb1be07">&#9670;&#160;</a></span>THISCALL_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THISCALL_PARAMS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CLASS_NAME</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands to the necessary function parameters required by <span class="tt">__thiscall</span> calling convention. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">CLASS_NAME</td><td>The name of the class this function is from.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd><b>For x86:</b> This macro creates a discard parameter to fill in for <span class="tt">EDX</span>, allowing the rest of the arguments to be pushed onto the stack. <br  />
+ <b>For x64:</b> This macro uses standard <span class="tt">__fastcall</span> conventions.   </dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
+Examples</h2>
+<div class="fragment"><div class="line"><a class="code hl_define" href="#a5df0fa730a138522d87019c6b4d1c76c">FUNCTION_PTR</a>(<span class="keywordtype">int</span>, <a class="code hl_define" href="#aa60f64bf86cf64e4aa8e3f754c52f93f">THISCALL</a>, fpMyClassFunction, 0xDEADBEEF, <a class="code hl_define" href="#a6ad077798f5ad9c878bc59241eb1be07">THISCALL_PARAMS</a>(MyClassName), <span class="keywordtype">int</span> in_secondParam);</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_a5df0fa730a138522d87019c6b4d1c76c"><div class="ttname"><a href="#a5df0fa730a138522d87019c6b4d1c76c">FUNCTION_PTR</a></div><div class="ttdeci">#define FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS,...)</div><div class="ttdef"><b>Definition</b> Hooking.h:35</div></div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_a6ad077798f5ad9c878bc59241eb1be07"><div class="ttname"><a href="#a6ad077798f5ad9c878bc59241eb1be07">THISCALL_PARAMS</a></div><div class="ttdeci">#define THISCALL_PARAMS(CLASS_NAME)</div><div class="ttdoc">Expands to the necessary function parameters required by __thiscall calling convention.</div><div class="ttdef"><b>Definition</b> Hooking.h:141</div></div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_aa60f64bf86cf64e4aa8e3f754c52f93f"><div class="ttname"><a href="#aa60f64bf86cf64e4aa8e3f754c52f93f">THISCALL</a></div><div class="ttdeci">#define THISCALL</div><div class="ttdef"><b>Definition</b> Hooking.h:97</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a8fdb60cc4ccabeabf403b566802d0cb3" name="a8fdb60cc4ccabeabf403b566802d0cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fdb60cc4ccabeabf403b566802d0cb3">&#9670;&#160;</a></span>THISCALL_RETURN_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define THISCALL_RETURN_PARAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Expands to the necessary function arguments required by <span class="tt">__thiscall</span> calling convention for calling the original function. </p>
+<dl class="section note"><dt>Note</dt><dd><b>For x86:</b> This macro creates a discard parameter to fill in for <span class="tt">EDX</span>, allowing the rest of the arguments to be pushed onto the stack. <br  />
+ <b>For x64:</b> This macro uses standard <span class="tt">__fastcall</span> conventions.   </dd></dl>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Examples</h2>
+<div class="fragment"><div class="line"><a class="code hl_define" href="#a8e3bd1ebadef896540150b1c43a4caa2">HOOK</a>(<span class="keywordtype">int</span>, <a class="code hl_define" href="#aa60f64bf86cf64e4aa8e3f754c52f93f">THISCALL</a>, MyClassFunctionHook, 0xDEADBEEF, <a class="code hl_define" href="#a6ad077798f5ad9c878bc59241eb1be07">THISCALL_PARAMS</a>(MyClassName), <span class="keywordtype">int</span> in_secondParam)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">return</span> original_MyClassFunctionHook(<a class="code hl_define" href="#a8fdb60cc4ccabeabf403b566802d0cb3">THISCALL_RETURN_PARAMS</a>, in_secondParam);</div>
+<div class="line">}</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_a8fdb60cc4ccabeabf403b566802d0cb3"><div class="ttname"><a href="#a8fdb60cc4ccabeabf403b566802d0cb3">THISCALL_RETURN_PARAMS</a></div><div class="ttdeci">#define THISCALL_RETURN_PARAMS</div><div class="ttdoc">Expands to the necessary function arguments required by __thiscall calling convention for calling the...</div><div class="ttdef"><b>Definition</b> Hooking.h:142</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="acef4b077f32af31b49bf763d86c7ef5a" name="acef4b077f32af31b49bf763d86c7ef5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef4b077f32af31b49bf763d86c7ef5a">&#9670;&#160;</a></span>UNINSTALL_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNINSTALL_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                           \</div>
+<div class="line">{                                                                           \</div>
+<div class="line">    if (x_##FUNCTION_NAME == original_##FUNCTION_NAME)                      \</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;                                                        \</div>
+<div class="line">                                                                            \</div>
+<div class="line">    DetourTransactionBegin();                                               \</div>
+<div class="line">    DetourUpdateThread(GetCurrentThread());                                 \</div>
+<div class="line">    DetourDetach((<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME, &amp;impl_##FUNCTION_NAME); \</div>
+<div class="line">                                                                            \</div>
+<div class="line">    <span class="keywordflow">return</span> DetourTransactionCommit() == NO_ERROR;                           \</div>
+<div class="line">})</div>
+</div><!-- fragment --><p>Uninstalls a hook installed with <a class="el" href="#a32b8112f1eeab26d5e4f257d40c41116" title="INSTALL_HOOK">INSTALL_HOOK</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function to unhook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the uninstallation succeeeded, or if the hook was already uninstalled. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="ab96ccc9b28a5b5f0cd92a641854bff05" name="ab96ccc9b28a5b5f0cd92a641854bff05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab96ccc9b28a5b5f0cd92a641854bff05">&#9670;&#160;</a></span>UNINSTALL_VFTABLE_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UNINSTALL_VFTABLE_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CLASS_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#acef4b077f32af31b49bf763d86c7ef5a">UNINSTALL_HOOK</a>(CLASS_NAME##_##FUNCTION_NAME)</div>
+<div class="ttc" id="aWin32_2Hooking_8h_html_acef4b077f32af31b49bf763d86c7ef5a"><div class="ttname"><a href="#acef4b077f32af31b49bf763d86c7ef5a">UNINSTALL_HOOK</a></div><div class="ttdeci">#define UNINSTALL_HOOK(FUNCTION_NAME)</div><div class="ttdef"><b>Definition</b> Hooking.h:369</div></div>
+</div><!-- fragment --><p>Uninstalls a hook installed with <a class="el" href="#a3434ef8a2fffe664992f34c5154a402f" title="INSTALL_VFTABLE_HOOK">INSTALL_VFTABLE_HOOK</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">CLASS_NAME</td><td>The name of the class that contains the function that was hooked. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function to unhook.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the uninstallation succeeeded, or if the hook was already uninstalled. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
+<a id="aba854ba06319e53c487f60db02d79529" name="aba854ba06319e53c487f60db02d79529"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba854ba06319e53c487f60db02d79529">&#9670;&#160;</a></span>VFTABLE_HOOK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VFTABLE_HOOK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>RETURN_TYPE</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CALLING_CONVENTION</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>CLASS_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>FUNCTION_NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#a8e3bd1ebadef896540150b1c43a4caa2">HOOK</a>(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME##_##FUNCTION_NAME, <span class="keyword">nullptr</span>, __VA_ARGS__)</div>
+</div><!-- fragment --><p>Defines the body of a hook for a function in a virtual function table in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RETURN_TYPE</td><td>The return type of the function. </td></tr>
+    <tr><td class="paramname">CALLING_CONVENTION</td><td>The calling convention of the function (e.g. <span class="tt">__cdecl</span>, <span class="tt">__stdcall</span>, <span class="tt">__fastcall</span>, etc). This does not support optimised calling conventions, such as <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#aded241a65f525ecf9bfb35bebbb7db0f">__usercall</a></span> or <span class="tt"><a class="el" href="../../db/d6b/HookingUserCall_8h.html#ab6d79e66b8474a6dcc34dbc80e8717a0">__userpurge</a></span>. </td></tr>
+    <tr><td class="paramname">CLASS_NAME</td><td>The name of the class that contains the function being hooked. </td></tr>
+    <tr><td class="paramname">FUNCTION_NAME</td><td>The name of the function. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The parameters of the function.    </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

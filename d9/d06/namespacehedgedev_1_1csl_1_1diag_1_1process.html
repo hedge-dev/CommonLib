@@ -119,8 +119,55 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d06/namespa
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af5f6600d565ecd7513e6c8677393e356" id="r_af5f6600d565ecd7513e6c8677393e356"><td class="memTemplParams" colspan="2">template&lt;typename TString = std::wstring_view&gt; </td></tr>
-<tr class="memitem:af5f6600d565ecd7513e6c8677393e356 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process_af5f6600d565ecd7513e6c8677393e356.html#af5f6600d565ecd7513e6c8677393e356">Start</a> (const std::filesystem::path &amp;in_rPath, const std::vector&lt; TString &gt; &amp;in_rArgs, std::optional&lt; std::filesystem::path &gt; in_work)</td></tr>
+<tr class="memitem:af5f6600d565ecd7513e6c8677393e356 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af5f6600d565ecd7513e6c8677393e356">Start</a> (const std::filesystem::path &amp;in_rPath, const std::vector&lt; TString &gt; &amp;in_rArgs, std::optional&lt; std::filesystem::path &gt; in_work)</td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="af5f6600d565ecd7513e6c8677393e356" name="af5f6600d565ecd7513e6c8677393e356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5f6600d565ecd7513e6c8677393e356">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TString = std::wstring_view&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hedgedev::csl::diag::process::Start </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; TString &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rArgs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; std::filesystem::path &gt;</td>          <td class="paramname"><span class="paramname"><em>in_work</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Starts a process.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_rPath</td><td>The path to the executable to start. </td></tr>
+    <tr><td class="paramname">in_rArgs</td><td>The command line arguments to pass into the process. </td></tr>
+    <tr><td class="paramname">in_work</td><td>The working directory of the process.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the process was started successfully. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

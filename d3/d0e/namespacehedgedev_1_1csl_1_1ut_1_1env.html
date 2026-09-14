@@ -118,10 +118,91 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d0e/namespa
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7364630b23e0f03067b5f0ba501ed3c0" id="r_a7364630b23e0f03067b5f0ba501ed3c0"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env_a7364630b23e0f03067b5f0ba501ed3c0.html#a7364630b23e0f03067b5f0ba501ed3c0">GetFile</a> (const std::filesystem::path &amp;in_rFileName)</td></tr>
+<tr class="memitem:a7364630b23e0f03067b5f0ba501ed3c0" id="r_a7364630b23e0f03067b5f0ba501ed3c0"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a7364630b23e0f03067b5f0ba501ed3c0">GetFile</a> (const std::filesystem::path &amp;in_rFileName)</td></tr>
 <tr class="memitem:a86c1b2aad4440703f71eef895fb19ece" id="r_a86c1b2aad4440703f71eef895fb19ece"><td class="memTemplParams" colspan="2">template&lt;typename TOut, expr::AnyString TName&gt; </td></tr>
-<tr class="memitem:a86c1b2aad4440703f71eef895fb19ece template"><td class="memItemLeft">std::optional&lt; TOut &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env_a86c1b2aad4440703f71eef895fb19ece.html#a86c1b2aad4440703f71eef895fb19ece">GetVariable</a> (const TName &amp;in_rName, std::optional&lt; TOut &gt; in_defaultValue=std::nullopt)</td></tr>
+<tr class="memitem:a86c1b2aad4440703f71eef895fb19ece template"><td class="memItemLeft">std::optional&lt; TOut &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a86c1b2aad4440703f71eef895fb19ece">GetVariable</a> (const TName &amp;in_rName, std::optional&lt; TOut &gt; in_defaultValue=std::nullopt)</td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a7364630b23e0f03067b5f0ba501ed3c0" name="a7364630b23e0f03067b5f0ba501ed3c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7364630b23e0f03067b5f0ba501ed3c0">&#9670;&#160;</a></span>GetFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; std::filesystem::path &gt; hedgedev::csl::ut::env::GetFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rFileName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a file in the system environment.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_rFileName</td><td>The file to search for.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The path to the file, if found. </dd></dl>
+
+</div>
+</div>
+<a id="a86c1b2aad4440703f71eef895fb19ece" name="a86c1b2aad4440703f71eef895fb19ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c1b2aad4440703f71eef895fb19ece">&#9670;&#160;</a></span>GetVariable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TOut, expr::AnyString TName&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; TOut &gt; hedgedev::csl::ut::env::GetVariable </td>
+          <td>(</td>
+          <td class="paramtype">const TName &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::optional&lt; TOut &gt;</td>          <td class="paramname"><span class="paramname"><em>in_defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets a variable in the system environment.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TOut</td><td>The value type to parse. </td></tr>
+    <tr><td class="paramname">TName</td><td>The name string type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_rName</td><td>The variable to search for. </td></tr>
+    <tr><td class="paramname">in_defaultValue</td><td>The default value to use, if the variable could not be found.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the variable, if found. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: hedgedev::csl::diag::this_process::HasAddress</title>
+<title>CommonLib: hedgedev::csl::diag::this_process::GetModulePathFromAddress</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process_ac7855a60a70951a4ec8cf9ca42a16a07.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process_af5e4f363311cad6d00538fadc5061daa.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespa
 </div>
 
 <div class="contents">
-<a id="ac7855a60a70951a4ec8cf9ca42a16a07" name="ac7855a60a70951a4ec8cf9ca42a16a07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7855a60a70951a4ec8cf9ca42a16a07">&#9670;&#160;</a></span>HasAddress()</h2>
+<a id="af5e4f363311cad6d00538fadc5061daa" name="af5e4f363311cad6d00538fadc5061daa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e4f363311cad6d00538fadc5061daa">&#9670;&#160;</a></span>GetModulePathFromAddress()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,9 +120,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespa
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool hedgedev::csl::diag::this_process::HasAddress </td>
+          <td class="memname">std::filesystem::path hedgedev::csl::diag::this_process::GetModulePathFromAddress </td>
           <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddr</em></span></td><td>)</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -132,10 +132,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespa
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Checks if this process is the owner of the specified address.</p>
+<p>Gets the path to the module containing the specified address.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_pAddr</td><td>The address to search for. </td></tr>
+    <tr><td class="paramname">in_pAddress</td><td>The address to search for. </td></tr>
   </table>
   </dd>
 </dl>

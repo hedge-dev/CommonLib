@@ -129,8 +129,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d5c/Memory_
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a881e2d8d7f742316057853b0ddb65511.html#a881e2d8d7f742316057853b0ddb65511">hedgedev::csl::mem::WriteCall</a>((<span class="keywordtype">void</span>*)(ADDRESS), (<span class="keywordtype">void</span>*)(DESTINATION)))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_a881e2d8d7f742316057853b0ddb65511_html_a881e2d8d7f742316057853b0ddb65511"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a881e2d8d7f742316057853b0ddb65511.html#a881e2d8d7f742316057853b0ddb65511">hedgedev::csl::mem::WriteCall</a></div><div class="ttdeci">bool WriteCall(void *in_pAddress, void *in_pDestination)</div><div class="ttdef"><b>Definition</b> Memory.inl:142</div></div>
-</div><!-- fragment -->
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_a881e2d8d7f742316057853b0ddb65511_html_a881e2d8d7f742316057853b0ddb65511"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a881e2d8d7f742316057853b0ddb65511.html#a881e2d8d7f742316057853b0ddb65511">hedgedev::csl::mem::WriteCall</a></div><div class="ttdeci">bool WriteCall(void *in_pAddress, void *in_pDestination)</div><div class="ttdef"><b>Definition</b> Memory.inl:143</div></div>
+</div><!-- fragment --><p>Writes a call instruction in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ADDRESS</td><td>The address to write to. </td></tr>
+    <tr><td class="paramname">DESTINATION</td><td>The address of the function to call.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the call was written successfully. Otherwise, <span class="tt">false</span>. </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->

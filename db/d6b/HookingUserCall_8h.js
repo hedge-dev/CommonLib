@@ -91,7 +91,7 @@ var HookingUserCall_8h =
       [ "hedgedev::csl::hook::UserRegisterFamily::FPU", "d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30a11e4d339cb835db9884cd4a4e0c3dbb7", null ],
       [ "hedgedev::csl::hook::UserRegisterFamily::SSE", "d1/d58/namespacehedgedev_1_1csl_1_1hook_a2d42f7df6db194599f99ce8b12fd0b30.html#a2d42f7df6db194599f99ce8b12fd0b30a5fc53fc8197865c63285f74b1e147013", null ]
     ] ],
-    [ "hedgedev::csl::hook::EmitUserTrampoline", "d1/d58/namespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6.html#a91e4d1bec89b0c38b410f4a07e9fd9d6", null ],
+    [ "hedgedev::csl::hook::EmitUserTrampoline", "d1/d58/namespacehedgedev_1_1csl_1_1hook_aa04601a2c62b38672c833db164046bbb.html#aa04601a2c62b38672c833db164046bbb", null ],
     [ "hedgedev::csl::hook::GetRegisterFamily", "d1/d58/namespacehedgedev_1_1csl_1_1hook_a5ebd40da4eabdb39e143b34df2b4033c.html#a5ebd40da4eabdb39e143b34df2b4033c", null ],
     [ "hedgedev::csl::hook::GetRegisterID", "d1/d58/namespacehedgedev_1_1csl_1_1hook_a5768a9babda227735a921773a359ee26.html#a5768a9babda227735a921773a359ee26", null ]
 ];

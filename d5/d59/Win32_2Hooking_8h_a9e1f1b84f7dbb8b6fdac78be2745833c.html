@@ -139,8 +139,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d5/d59/Win32_2
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keyword">typedef</span> RETURN_TYPE _##FUNCTION_NAME(__VA_ARGS__);                     \</div>
-<div class="line">_##FUNCTION_NAME* FUNCTION_NAME = (_##FUNCTION_NAME*)<a class="code hl_define" href="../../d3/d3f/Win32_2Preprocessor_8h_a17f4b4b03a2e46142c2a21375d427453.html#a17f4b4b03a2e46142c2a21375d427453">IMPORT_FUNC</a>(LIBRARY_NAME, #FUNCTION_NAME);</div>
-<div class="ttc" id="aWin32_2Preprocessor_8h_a17f4b4b03a2e46142c2a21375d427453_html_a17f4b4b03a2e46142c2a21375d427453"><div class="ttname"><a href="../../d3/d3f/Win32_2Preprocessor_8h_a17f4b4b03a2e46142c2a21375d427453.html#a17f4b4b03a2e46142c2a21375d427453">IMPORT_FUNC</a></div><div class="ttdeci">#define IMPORT_FUNC(LIBRARY_NAME, FUNCTION_NAME)</div><div class="ttdef"><b>Definition</b> Preprocessor.h:3</div></div>
+<div class="line">_##FUNCTION_NAME* FUNCTION_NAME = (_##FUNCTION_NAME*)IMPORT_FUNC(LIBRARY_NAME, #FUNCTION_NAME);</div>
 </div><!-- fragment --><p>Loads a dynamic link library into memory and declares a pointer to an exported function from it.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

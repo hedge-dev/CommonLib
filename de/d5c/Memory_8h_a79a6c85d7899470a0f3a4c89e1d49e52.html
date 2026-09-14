@@ -135,7 +135,17 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d5c/Memory_
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aa9f75c149acac15e0f86b84a849f204e.html#aa9f75c149acac15e0f86b84a849f204e">hedgedev::csl::mem::WriteStringFixedLength</a>((<span class="keywordtype">void</span>*)(ADDRESS), STR, __VA_ARGS__))</div>
 <div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_aa9f75c149acac15e0f86b84a849f204e_html_aa9f75c149acac15e0f86b84a849f204e"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_aa9f75c149acac15e0f86b84a849f204e.html#aa9f75c149acac15e0f86b84a849f204e">hedgedev::csl::mem::WriteStringFixedLength</a></div><div class="ttdeci">bool WriteStringFixedLength(void *in_pAddress, const T &amp;in_rStr, size_t in_length=0)</div><div class="ttdef"><b>Definition</b> Memory.inl:71</div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><p>Writes a string of fixed length in memory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ADDRESS</td><td>The address to write to. </td></tr>
+    <tr><td class="paramname">STR</td><td>The string to write. </td></tr>
+    <tr><td class="paramname">__VA_ARGS__</td><td>The length of the string to write. If zero or unspecified, the length will be determined by the length of an existing string located at <span class="tt">ADDRESS</span>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the string was written successfully. Otherwise, <span class="tt">false</span>. </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->

@@ -1,6 +1,7 @@
 var Win32_2Preprocessor_8h =
 [
-    [ "EXPORT_FUNC", "d3/d3f/Win32_2Preprocessor_8h_a846f8d29dd5a1cf780eef4c433775576.html#a846f8d29dd5a1cf780eef4c433775576", null ],
-    [ "IMPORT_FUNC", "d3/d3f/Win32_2Preprocessor_8h_a17f4b4b03a2e46142c2a21375d427453.html#a17f4b4b03a2e46142c2a21375d427453", null ],
-    [ "NAKED_FUNC", "d3/d3f/Win32_2Preprocessor_8h_af09335657c11696e2d85d1052d9c88e7.html#af09335657c11696e2d85d1052d9c88e7", null ]
+    [ "DLL_EXPORT", "d3/d3f/Win32_2Preprocessor_8h_a1ca888bd091694c05472e1b91df1a97b.html#a1ca888bd091694c05472e1b91df1a97b", null ],
+    [ "DLL_IMPORT", "d3/d3f/Win32_2Preprocessor_8h_a14d005bd653c82f4e705b4ded2a4fc07.html#a14d005bd653c82f4e705b4ded2a4fc07", null ],
+    [ "DLL_IMPORT_EXPLICIT", "d3/d3f/Win32_2Preprocessor_8h_aa3807a5233a27316e889af89c87f1506.html#aa3807a5233a27316e889af89c87f1506", null ],
+    [ "NAKED", "d3/d3f/Win32_2Preprocessor_8h_a7a18c4884994b9b520ae535b6d9579d3.html#a7a18c4884994b9b520ae535b6d9579d3", null ]
 ];

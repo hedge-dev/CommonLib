@@ -6,5 +6,8 @@ var searchData=
   ['displacement_3',['Displacement',['../d9/d2f/structhedgedev_1_1csl_1_1diag_1_1SymbolInfo_a400e63225ab263732f40d646183bfb09.html#a400e63225ab263732f40d646183bfb09',1,'hedgedev::csl::diag::SymbolInfo']]],
   ['distance_4',['Distance',['../d8/d9c/structhedgedev_1_1csl_1_1mem_1_1BranchInfo_a53bc3ad069d125bc70ff8c62c9bc1a00.html#a53bc3ad069d125bc70ff8c62c9bc1a00',1,'hedgedev::csl::mem::BranchInfo']]],
   ['dl_5',['DL',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82af5ce9f5cb682a1f863d5a8c51ac28683',1,'hedgedev::csl::hook']]],
-  ['dx_6',['DX',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a72a530b2433264cef373d8fcca5662c1',1,'hedgedev::csl::hook']]]
+  ['dll_5fexport_6',['DLL_EXPORT',['../d3/d3f/Win32_2Preprocessor_8h_a1ca888bd091694c05472e1b91df1a97b.html#a1ca888bd091694c05472e1b91df1a97b',1,'Preprocessor.h']]],
+  ['dll_5fimport_7',['DLL_IMPORT',['../d3/d3f/Win32_2Preprocessor_8h_a14d005bd653c82f4e705b4ded2a4fc07.html#a14d005bd653c82f4e705b4ded2a4fc07',1,'Preprocessor.h']]],
+  ['dll_5fimport_5fexplicit_8',['DLL_IMPORT_EXPLICIT',['../d3/d3f/Win32_2Preprocessor_8h_aa3807a5233a27316e889af89c87f1506.html#aa3807a5233a27316e889af89c87f1506',1,'Preprocessor.h']]],
+  ['dx_9',['DX',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a72a530b2433264cef373d8fcca5662c1',1,'hedgedev::csl::hook']]]
 ];

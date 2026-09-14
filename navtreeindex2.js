@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"globals_defs.html":[3,1,1],
 "hierarchy.html":[2,2],
 "index.html":[],
 "namespacemembers.html":[0,1,0],

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: WRITE_NOP</title>
+<title>CommonLib: hedgedev::csl::mem::ReadInstructionAddress</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d5c/Memory_8h_ae4278a40c0977893d650143b2ee94d75.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/deb/namespacehedgedev_1_1csl_1_1mem_afc815c98bb0dbe1f5ff432ed12017628.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -110,27 +110,56 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d5c/Memory_
 </div>
 
 <div class="contents">
-<a id="ae4278a40c0977893d650143b2ee94d75" name="ae4278a40c0977893d650143b2ee94d75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4278a40c0977893d650143b2ee94d75">&#9670;&#160;</a></span>WRITE_NOP</h2>
+<a id="afc815c98bb0dbe1f5ff432ed12017628" name="afc815c98bb0dbe1f5ff432ed12017628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc815c98bb0dbe1f5ff432ed12017628">&#9670;&#160;</a></span>ReadInstructionAddress()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">#define WRITE_NOP</td>
+          <td class="memname">void * hedgedev::csl::mem::ReadInstructionAddress </td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>, </td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddress</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>LENGTH</em></span>&#160;)</td>
+          <td class="paramtype">ptrdiff_t</td>          <td class="paramname"><span class="paramname"><em>in_offset</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>in_stride</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402.html#a746804ef4cb9cfe66f3794ef7f642402">hedgedev::csl::mem::WriteNop</a>((<span class="keywordtype">void</span>*)(ADDRESS), LENGTH))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402_html_a746804ef4cb9cfe66f3794ef7f642402"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402.html#a746804ef4cb9cfe66f3794ef7f642402">hedgedev::csl::mem::WriteNop</a></div><div class="ttdeci">bool WriteNop(void *in_pAddress, size_t in_count=1)</div><div class="ttdef"><b>Definition</b> Memory.inl:182</div></div>
-</div><!-- fragment -->
+<p>Reads the address of an instruction in memory.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type to read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_pAddress</td><td>The address of the instruction to read. </td></tr>
+    <tr><td class="paramname">in_offset</td><td>The offset of the address after <span class="tt">in_pAddress</span>. </td></tr>
+    <tr><td class="paramname">in_stride</td><td>The length of the instruction that was read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The address referenced by the instruction. </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -139,7 +168,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d5c/Memory_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="../../dir_070447d6bdf00ab4f8fc4d5a6ae47702.html">Memory</a></li><li class="navelem"><a href="../../de/d5c/Memory_8h.html">Memory.h</a></li>
+    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html">mem</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

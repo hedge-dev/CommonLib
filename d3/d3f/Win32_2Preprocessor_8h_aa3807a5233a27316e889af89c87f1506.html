@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: hedgedev::csl::hook::EmitUserTrampoline</title>
+<title>CommonLib: DLL_IMPORT_EXPLICIT</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d58/namespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d3f/Win32_2Preprocessor_8h_aa3807a5233a27316e889af89c87f1506.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -110,47 +110,34 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d58/namespa
 </div>
 
 <div class="contents">
-<a id="a91e4d1bec89b0c38b410f4a07e9fd9d6" name="a91e4d1bec89b0c38b410f4a07e9fd9d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91e4d1bec89b0c38b410f4a07e9fd9d6">&#9670;&#160;</a></span>EmitUserTrampoline()</h2>
+<a id="aa3807a5233a27316e889af89c87f1506" name="aa3807a5233a27316e889af89c87f1506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3807a5233a27316e889af89c87f1506">&#9670;&#160;</a></span>DLL_IMPORT_EXPLICIT</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void * hedgedev::csl::hook::EmitUserTrampoline </td>
+          <td class="memname">#define DLL_IMPORT_EXPLICIT</td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">UserCallInfo</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rInfo</em></span>, </td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>LIBRARY_NAME</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const size_t</td>          <td class="paramname"><span class="paramname"><em>in_address</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>in_isToOriginal</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>MEMBER_NAME</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Emits a trampoline that forwards arguments from a function with custom calling convention to a <span class="tt">__cdecl</span> function in a hook defined with <a class="el" href="../../db/d6b/HookingUserCall_8h_a07a15f7e0401b5a1617755ac474849b3.html#a07a15f7e0401b5a1617755ac474849b3" title="USER_HOOK">USER_HOOK</a>.</p>
+<b>Value:</b><div class="fragment"><div class="line">GetProcAddress(LoadLibrary(TEXT(LIBRARY_NAME)), MEMBER_NAME)</div>
+</div><!-- fragment --><p>Loads a dynamic link library and imports a member from it.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_rInfo</td><td>The info about the hook. </td></tr>
-    <tr><td class="paramname">in_address</td><td>The address of the <span class="tt">__cdecl</span> function to trampoline to. </td></tr>
-    <tr><td class="paramname">in_isToOriginal</td><td>Determines whether this trampoline is going back to the original function.</td></tr>
+    <tr><td class="paramname">LIBRARY_NAME</td><td>The name of the dynamic link library to load. </td></tr>
+    <tr><td class="paramname">MEMBER_NAME</td><td>The name of the exported member to import.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the trampoline that was emitted. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the imported member. Use <a class="el" href="../../d5/d59/Win32_2Hooking_8h_a5df0fa730a138522d87019c6b4d1c76c.html#a5df0fa730a138522d87019c6b4d1c76c" title="FUNCTION_PTR">FUNCTION_PTR</a> to call imported function pointers. </dd></dl>
 
 </div>
 </div>
@@ -160,7 +147,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d58/namespa
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html">hook</a></li>
+    <li class="navelem"><a href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="../../dir_b647303d7dac632cf2e2685370b563a8.html">Utility</a></li><li class="navelem"><a href="../../dir_8bb6ac02859c54f2b748be301fab1672.html">Win32</a></li><li class="navelem"><a href="../../d3/d3f/Win32_2Preprocessor_8h.html">Preprocessor.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: hedgedev::csl::diag::this_process::GetModulePathFromAddress</title>
+<title>CommonLib: WRITE_NOP</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process_a6d83adfc2056423eb610856a09397901.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('de/d5c/Memory_8h_a38dcb5b866717d8cecedf1ee0f684cf2.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -110,35 +110,35 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespa
 </div>
 
 <div class="contents">
-<a id="a6d83adfc2056423eb610856a09397901" name="a6d83adfc2056423eb610856a09397901"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d83adfc2056423eb610856a09397901">&#9670;&#160;</a></span>GetModulePathFromAddress()</h2>
+<a id="a38dcb5b866717d8cecedf1ee0f684cf2" name="a38dcb5b866717d8cecedf1ee0f684cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38dcb5b866717d8cecedf1ee0f684cf2">&#9670;&#160;</a></span>WRITE_NOP</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path hedgedev::csl::diag::this_process::GetModulePathFromAddress </td>
+          <td class="memname">#define WRITE_NOP</td>
           <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>in_pAddr</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>ADDRESS</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>COUNT</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Gets the path to the module containing the specified address.</p>
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402.html#a746804ef4cb9cfe66f3794ef7f642402">hedgedev::csl::mem::WriteNop</a>((<span class="keywordtype">void</span>*)(ADDRESS), COUNT))</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402_html_a746804ef4cb9cfe66f3794ef7f642402"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem_a746804ef4cb9cfe66f3794ef7f642402.html#a746804ef4cb9cfe66f3794ef7f642402">hedgedev::csl::mem::WriteNop</a></div><div class="ttdeci">bool WriteNop(void *in_pAddress, size_t in_count=1)</div><div class="ttdef"><b>Definition</b> Memory.inl:185</div></div>
+</div><!-- fragment --><p>Writes a no-operation (NOP) instruction in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_pAddr</td><td>The address to search for. </td></tr>
+    <tr><td class="paramname">ADDRESS</td><td>The address to write to. </td></tr>
+    <tr><td class="paramname">COUNT</td><td>The total number of no-operation (NOP) instructions to write.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the no-operation (NOP) instruction was written successfully. Otherwise, <span class="tt">false</span>. </dd></dl>
 
 </div>
 </div>
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/df1/namespa
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../d5/d84/namespacehedgedev_1_1csl_1_1diag.html">diag</a></li><li class="navelem"><a href="../../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html">this_process</a></li>
+    <li class="navelem"><a href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="../../dir_070447d6bdf00ab4f8fc4d5a6ae47702.html">Memory</a></li><li class="navelem"><a href="../../de/d5c/Memory_8h.html">Memory.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

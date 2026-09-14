@@ -6,7 +6,7 @@ var searchData=
   ['ecx_3',['ECX',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfaf4f316d9e3af74567e781129ce9b384c',1,'hedgedev::csl::hook::ECX'],['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82af4f316d9e3af74567e781129ce9b384c',1,'hedgedev::csl::hook::ECX']]],
   ['edi_4',['EDI',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa4d2e27158ca5f1c109c99624b7ee9092',1,'hedgedev::csl::hook::EDI'],['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a4d2e27158ca5f1c109c99624b7ee9092',1,'hedgedev::csl::hook::EDI']]],
   ['edx_5',['EDX',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa22b5dc1e93a77a0361aaf220517c1fa1',1,'hedgedev::csl::hook::EDX'],['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a22b5dc1e93a77a0361aaf220517c1fa1',1,'hedgedev::csl::hook::EDX']]],
-  ['emitusertrampoline_6',['EmitUserTrampoline',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6.html#a91e4d1bec89b0c38b410f4a07e9fd9d6',1,'hedgedev::csl::hook']]],
+  ['emitusertrampoline_6',['EmitUserTrampoline',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_aa04601a2c62b38672c833db164046bbb.html#aa04601a2c62b38672c833db164046bbb',1,'hedgedev::csl::hook']]],
   ['environment_2eh_7',['Environment.h',['../d7/dfb/Environment_8h.html',1,'']]],
   ['environment_2einl_8',['Environment.inl',['../d5/d04/Environment_8inl.html',1,'']]],
   ['equal_9',['Equal',['../d1/deb/namespacehedgedev_1_1csl_1_1mem_a984c1bda11b121d475b57ff01a071575.html#a984c1bda11b121d475b57ff01a071575af5f286e73bda105e538310b3190f75c5',1,'hedgedev::csl::mem']]],
@@ -15,7 +15,6 @@ var searchData=
   ['esp_12',['ESP',['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a30fb4da95328479a477e60de481e0ebf.html#a30fb4da95328479a477e60de481e0ebfa3e30ce90c5b1d89ae09b7d4c73d8e172',1,'hedgedev::csl::hook::ESP'],['../d1/d58/namespacehedgedev_1_1csl_1_1hook_a94329e8402e75aa7f9c60331cc5ace82.html#a94329e8402e75aa7f9c60331cc5ace82a3e30ce90c5b1d89ae09b7d4c73d8e172',1,'hedgedev::csl::hook::ESP']]],
   ['examples_13',['Examples',['../d5/d59/Win32_2Hooking_8h_a6ad077798f5ad9c878bc59241eb1be07.html#autotoc_md0',1,'Examples'],['../d5/d59/Win32_2Hooking_8h_a8fdb60cc4ccabeabf403b566802d0cb3.html#autotoc_md1',1,'Examples'],['../dc/dd7/class____CMNLIB__INTERNAL__ASM__HOOK__COMMON.html#autotoc_md2',1,'Examples'],['../db/d6b/HookingUserCall_8h_a047cb3a99858c0d06fb26241977cedb8.html#autotoc_md5',1,'Examples'],['../de/da4/class____CMNLIB__INTERNAL__USER__HOOK__COMMON.html#autotoc_md6',1,'Examples']]],
   ['execute_14',['Execute',['../d1/deb/namespacehedgedev_1_1csl_1_1mem_a411d938cf234ebc9e04abf0149dabf54.html#a411d938cf234ebc9e04abf0149dabf54a40cd014b7b6251e3a22e6a45a73a64e1',1,'hedgedev::csl::mem']]],
-  ['export_5ffunc_15',['EXPORT_FUNC',['../d3/d3f/Win32_2Preprocessor_8h_a846f8d29dd5a1cf780eef4c433775576.html#a846f8d29dd5a1cf780eef4c433775576',1,'Preprocessor.h']]],
-  ['expressions_2eh_16',['Expressions.h',['../d0/d91/Expressions_8h.html',1,'']]],
-  ['expressions_2einl_17',['Expressions.inl',['../d6/d15/Expressions_8inl.html',1,'']]]
+  ['expressions_2eh_15',['Expressions.h',['../d0/d91/Expressions_8h.html',1,'']]],
+  ['expressions_2einl_16',['Expressions.inl',['../d6/d15/Expressions_8inl.html',1,'']]]
 ];

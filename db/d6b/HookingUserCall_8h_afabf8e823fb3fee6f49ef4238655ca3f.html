@@ -128,26 +128,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d6b/Hooking
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                                                                       \</div>
-<div class="line">{                                                                                                                       \</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rInfo = info_##FUNCTION_NAME;                                                                           \</div>
-<div class="line">                                                                                                                        \</div>
-<div class="line">    if (!rInfo.fpDetour &amp;&amp; !(ADDRESS))                                                                                  \</div>
-<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;                                                                                                   \</div>
-<div class="line">                                                                                                                        \</div>
-<div class="line">    *(<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour = (<span class="keywordtype">void</span>*)(ADDRESS);                                                                        \</div>
-<div class="line">                                                                                                                        \</div>
-<div class="line">    DetourTransactionBegin();                                                                                           \</div>
-<div class="line">    DetourUpdateThread(GetCurrentThread());                                                                             \</div>
-<div class="line">    DetourAttach((<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour, trampolineToHook_##FUNCTION_NAME);                                            \</div>
-<div class="line">                                                                                                                        \</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> result = DetourTransactionCommit() == NO_ERROR;                                                          \</div>
-<div class="line">                                                                                                                        \</div>
-<div class="line">    *(<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6.html#a91e4d1bec89b0c38b410f4a07e9fd9d6">hedgedev::csl::hook::EmitUserTrampoline</a>(rInfo, <span class="keywordtype">size_t</span>(&amp;rInfo.fpDetour), <span class="keyword">true</span>); \</div>
-<div class="line">                                                                                                                        \</div>
-<div class="line">    <span class="keywordflow">return</span> result;                                                                                                      \</div>
+<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                                                               \</div>
+<div class="line">{                                                                                                               \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rInfo = info_##FUNCTION_NAME;                                                                   \</div>
+<div class="line">                                                                                                                \</div>
+<div class="line">    if (!rInfo.fpDetour &amp;&amp; !(ADDRESS))                                                                          \</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;                                                                                           \</div>
+<div class="line">                                                                                                                \</div>
+<div class="line">    *(<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour = (<span class="keywordtype">void</span>*)(ADDRESS);                                                                \</div>
+<div class="line">                                                                                                                \</div>
+<div class="line">    DetourTransactionBegin();                                                                                   \</div>
+<div class="line">    DetourUpdateThread(GetCurrentThread());                                                                     \</div>
+<div class="line">    DetourAttach((<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour, trampolineToHook_##FUNCTION_NAME);                                    \</div>
+<div class="line">                                                                                                                \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> result = DetourTransactionCommit() == NO_ERROR;                                                  \</div>
+<div class="line">                                                                                                                \</div>
+<div class="line">    *(<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_aa04601a2c62b38672c833db164046bbb.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(rInfo, &amp;rInfo.fpDetour, <span class="keyword">true</span>); \</div>
+<div class="line">                                                                                                                \</div>
+<div class="line">    <span class="keywordflow">return</span> result;                                                                                              \</div>
 <div class="line">})</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6_html_a91e4d1bec89b0c38b410f4a07e9fd9d6"><div class="ttname"><a href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_a91e4d1bec89b0c38b410f4a07e9fd9d6.html#a91e4d1bec89b0c38b410f4a07e9fd9d6">hedgedev::csl::hook::EmitUserTrampoline</a></div><div class="ttdeci">void * EmitUserTrampoline(const UserCallInfo &amp;in_rInfo, const size_t in_address, bool in_isToOriginal=false)</div><div class="ttdef"><b>Definition</b> HookingUserCall.h:442</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1hook_aa04601a2c62b38672c833db164046bbb_html_aa04601a2c62b38672c833db164046bbb"><div class="ttname"><a href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook_aa04601a2c62b38672c833db164046bbb.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a></div><div class="ttdeci">void * EmitUserTrampoline(const UserCallInfo &amp;in_rInfo, void *in_pAddress, bool in_isToOriginal=false)</div><div class="ttdef"><b>Definition</b> HookingUserCall.h:442</div></div>
 </div><!-- fragment --><p>Installs a hook defined with <a class="el" href="../../db/d6b/HookingUserCall_8h_a07a15f7e0401b5a1617755ac474849b3.html#a07a15f7e0401b5a1617755ac474849b3" title="USER_HOOK">USER_HOOK</a> at an explicit address.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

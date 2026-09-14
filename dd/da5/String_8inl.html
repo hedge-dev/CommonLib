@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dd/da5/String_
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;charconv&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;regex&gt;</code><br />
 </div>
@@ -146,6 +147,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a037c95d2081a4d97ffa2c196ea231037 template"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="../../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a037c95d2081a4d97ffa2c196ea231037.html#a037c95d2081a4d97ffa2c196ea231037">hedgedev::csl::ut::string::GetWidth</a> (const TString &amp;in_rStr)</td></tr>
 <tr class="memitem:a4710a1a0594537caa9fb13cc98a8fd93" id="r_a4710a1a0594537caa9fb13cc98a8fd93"><td class="memTemplParams" colspan="2">template&lt;expr::AnyString TString, expr::AnyString TUrl, typename TOut = expr::PrecedentInferredString&lt;TString, TUrl&gt;&gt; </td></tr>
 <tr class="memitem:a4710a1a0594537caa9fb13cc98a8fd93 template"><td class="memItemLeft">TOut&#160;</td><td class="memItemRight"><a class="el" href="../../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a4710a1a0594537caa9fb13cc98a8fd93.html#a4710a1a0594537caa9fb13cc98a8fd93">hedgedev::csl::ut::string::Hyperlink</a> (const TString &amp;in_rStr, const TUrl &amp;in_rUrl)</td></tr>
+<tr class="memitem:abe78acdcbcb573a00d79b6d60eb99d16" id="r_abe78acdcbcb573a00d79b6d60eb99d16"><td class="memTemplParams" colspan="2">template&lt;expr::AnyString TString&gt; </td></tr>
+<tr class="memitem:abe78acdcbcb573a00d79b6d60eb99d16 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_abe78acdcbcb573a00d79b6d60eb99d16.html#abe78acdcbcb573a00d79b6d60eb99d16">hedgedev::csl::ut::string::IsNullOrEmpty</a> (const TString &amp;in_rStr)</td></tr>
+<tr class="memitem:aa2f68bcc667a9189c077b68541387a3a" id="r_aa2f68bcc667a9189c077b68541387a3a"><td class="memTemplParams" colspan="2">template&lt;expr::AnyString TString&gt; </td></tr>
+<tr class="memitem:aa2f68bcc667a9189c077b68541387a3a template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_aa2f68bcc667a9189c077b68541387a3a.html#aa2f68bcc667a9189c077b68541387a3a">hedgedev::csl::ut::string::IsNullOrWhiteSpace</a> (const TString &amp;in_rStr)</td></tr>
 <tr class="memitem:a5dff100bc29660d1d5eb45b1cc8753ac" id="r_a5dff100bc29660d1d5eb45b1cc8753ac"><td class="memTemplParams" colspan="2">template&lt;expr::AnyString TDelimiter, expr::AnyString TCollection&gt; </td></tr>
 <tr class="memitem:a5dff100bc29660d1d5eb45b1cc8753ac template"><td class="memItemLeft"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac285ae73debe031a609e0806855a35a6.html#ac285ae73debe031a609e0806855a35a6">expr::InferredString</a>&lt; TCollection &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a5dff100bc29660d1d5eb45b1cc8753ac.html#a5dff100bc29660d1d5eb45b1cc8753ac">hedgedev::csl::ut::string::Join</a> (const TDelimiter &amp;in_rDelimiter, const std::vector&lt; TCollection &gt; &amp;in_rStrings)</td></tr>
 <tr class="memitem:a789205ee873baaf457b4efb1bab9345b" id="r_a789205ee873baaf457b4efb1bab9345b"><td class="memTemplParams" colspan="2">template&lt;expr::AnyString TDelimiter, expr::AnyString... TArgs, typename TOut = expr::PrecedentInferredString&lt;TDelimiter, TArgs...&gt;&gt; </td></tr>

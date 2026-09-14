@@ -2,6 +2,7 @@ var dir_b647303d7dac632cf2e2685370b563a8 =
 [
     [ "Expressions", "dir_16ef7717de6f4127195958ab52c7d6f1.html", "dir_16ef7717de6f4127195958ab52c7d6f1" ],
     [ "Win32", "dir_8bb6ac02859c54f2b748be301fab1672.html", "dir_8bb6ac02859c54f2b748be301fab1672" ],
+    [ "Environment.h", "d7/dfb/Environment_8h.html", "d7/dfb/Environment_8h" ],
     [ "FileSystem.h", "d2/d7a/FileSystem_8h.html", "d2/d7a/FileSystem_8h" ],
     [ "FileSystem.inl", "d7/dbc/FileSystem_8inl.html", "d7/dbc/FileSystem_8inl" ],
     [ "Preprocessor.h", "d5/d5c/Preprocessor_8h.html", "d5/d5c/Preprocessor_8h" ],

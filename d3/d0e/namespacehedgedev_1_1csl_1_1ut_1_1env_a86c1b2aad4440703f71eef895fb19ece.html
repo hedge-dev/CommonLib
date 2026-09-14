@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: hedgedev::csl::ut::filesystem::FindInEnvironment</title>
+<title>CommonLib: hedgedev::csl::ut::env::GetVariable</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem_ad1297cf3184bb9855b6e986c1568df96.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env_a86c1b2aad4440703f71eef895fb19ece.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -110,20 +110,26 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d34/namespa
 </div>
 
 <div class="contents">
-<a id="ad1297cf3184bb9855b6e986c1568df96" name="ad1297cf3184bb9855b6e986c1568df96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1297cf3184bb9855b6e986c1568df96">&#9670;&#160;</a></span>FindInEnvironment()</h2>
+<a id="a86c1b2aad4440703f71eef895fb19ece" name="a86c1b2aad4440703f71eef895fb19ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c1b2aad4440703f71eef895fb19ece">&#9670;&#160;</a></span>GetVariable()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;typename TOut, expr::AnyString TName&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::filesystem::path hedgedev::csl::ut::filesystem::FindInEnvironment </td>
+          <td class="memname">std::optional&lt; TOut &gt; hedgedev::csl::ut::env::GetVariable </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rFileName</em></span></td><td>)</td>
+          <td class="paramtype">const TName &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::optional&lt; TOut &gt;</td>          <td class="paramname"><span class="paramname"><em>in_defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -132,14 +138,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d34/namespa
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Finds a file in the system environment.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_rFileName</td><td>The file to search for.</td></tr>
+<p>Gets a variable in the system environment.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TOut</td><td>The value type to parse. </td></tr>
+    <tr><td class="paramname">TName</td><td>The name string type.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>If found, the path to the file. Otherwise, an empty path. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_rName</td><td>The variable to search for. </td></tr>
+    <tr><td class="paramname">in_defaultValue</td><td>The default value to use, if the variable could not be found.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the variable, if found. </dd></dl>
 
 </div>
 </div>
@@ -149,7 +163,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d34/namespa
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../dc/d62/namespacehedgedev_1_1csl_1_1ut.html">ut</a></li><li class="navelem"><a href="../../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html">filesystem</a></li>
+    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../dc/d62/namespacehedgedev_1_1csl_1_1ut.html">ut</a></li><li class="navelem"><a href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html">env</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

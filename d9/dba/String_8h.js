@@ -7,6 +7,8 @@ var String_8h =
     [ "hedgedev::csl::ut::string::Format", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_ac2b59e83c19e482c4cde3085df942ce3.html#ac2b59e83c19e482c4cde3085df942ce3", null ],
     [ "hedgedev::csl::ut::string::GetWidth", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a037c95d2081a4d97ffa2c196ea231037.html#a037c95d2081a4d97ffa2c196ea231037", null ],
     [ "hedgedev::csl::ut::string::Hyperlink", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a4710a1a0594537caa9fb13cc98a8fd93.html#a4710a1a0594537caa9fb13cc98a8fd93", null ],
+    [ "hedgedev::csl::ut::string::IsNullOrEmpty", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_abe78acdcbcb573a00d79b6d60eb99d16.html#abe78acdcbcb573a00d79b6d60eb99d16", null ],
+    [ "hedgedev::csl::ut::string::IsNullOrWhiteSpace", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_aa2f68bcc667a9189c077b68541387a3a.html#aa2f68bcc667a9189c077b68541387a3a", null ],
     [ "hedgedev::csl::ut::string::Join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a5dff100bc29660d1d5eb45b1cc8753ac.html#a5dff100bc29660d1d5eb45b1cc8753ac", null ],
     [ "hedgedev::csl::ut::string::Join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a789205ee873baaf457b4efb1bab9345b.html#a789205ee873baaf457b4efb1bab9345b", null ],
     [ "hedgedev::csl::ut::string::Pad", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a4521657cb43fc51793bc17cf5b028f64.html#a4521657cb43fc51793bc17cf5b028f64", null ],

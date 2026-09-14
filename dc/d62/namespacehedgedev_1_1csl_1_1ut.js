@@ -1,8 +1,11 @@
 var namespacehedgedev_1_1csl_1_1ut =
 [
+    [ "env", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html", [
+      [ "GetFile", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env_a7364630b23e0f03067b5f0ba501ed3c0.html#a7364630b23e0f03067b5f0ba501ed3c0", null ],
+      [ "GetVariable", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env_a86c1b2aad4440703f71eef895fb19ece.html#a86c1b2aad4440703f71eef895fb19ece", null ]
+    ] ],
     [ "expr", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr" ],
     [ "filesystem", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html", [
-      [ "FindInEnvironment", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem_ad1297cf3184bb9855b6e986c1568df96.html#ad1297cf3184bb9855b6e986c1568df96", null ],
       [ "IsNeighbour", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem_ab70247481a6f3cabca868631311a4e8a.html#ab70247481a6f3cabca868631311a4e8a", null ],
       [ "TruncateFiles", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem_a1d362547f49cef5b8055efa0b7e7f6ce.html#a1d362547f49cef5b8055efa0b7e7f6ce", null ],
       [ "TruncateFilesByAge", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem_a0ac6308c029a64de26e771f8e72cca00.html#a0ac6308c029a64de26e771f8e72cca00", null ]
@@ -15,6 +18,8 @@ var namespacehedgedev_1_1csl_1_1ut =
       [ "Format", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_ac2b59e83c19e482c4cde3085df942ce3.html#ac2b59e83c19e482c4cde3085df942ce3", null ],
       [ "GetWidth", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a037c95d2081a4d97ffa2c196ea231037.html#a037c95d2081a4d97ffa2c196ea231037", null ],
       [ "Hyperlink", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a4710a1a0594537caa9fb13cc98a8fd93.html#a4710a1a0594537caa9fb13cc98a8fd93", null ],
+      [ "IsNullOrEmpty", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_abe78acdcbcb573a00d79b6d60eb99d16.html#abe78acdcbcb573a00d79b6d60eb99d16", null ],
+      [ "IsNullOrWhiteSpace", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_aa2f68bcc667a9189c077b68541387a3a.html#aa2f68bcc667a9189c077b68541387a3a", null ],
       [ "Join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a5dff100bc29660d1d5eb45b1cc8753ac.html#a5dff100bc29660d1d5eb45b1cc8753ac", null ],
       [ "Join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a789205ee873baaf457b4efb1bab9345b.html#a789205ee873baaf457b4efb1bab9345b", null ],
       [ "Pad", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string_a4521657cb43fc51793bc17cf5b028f64.html#a4521657cb43fc51793bc17cf5b028f64", null ],

@@ -9,7 +9,8 @@ var concepts =
             [ "CString", "df/d52/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1CString.html", null ],
             [ "BasicString", "dd/d5b/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1BasicString.html", null ],
             [ "BasicStringView", "dc/daa/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1BasicStringView.html", null ],
-            [ "AnyString", "d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html", null ]
+            [ "AnyString", "d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html", null ],
+            [ "WideString", "da/dd7/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1WideString.html", null ]
           ] ]
         ] ]
       ] ]

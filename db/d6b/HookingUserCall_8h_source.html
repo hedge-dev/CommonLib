@@ -1288,7 +1288,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('db/d6b/Hooking
 <div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>        memcpy_s(pTrampoline, size, result.data(), size);</div>
 <div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>        emitBranchAddr(pTrampoline, branchOffset, in_address, in_isToOriginal);</div>
 <div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span> </div>
-<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>        hedgedev::csl::mem::Protect(pTrampoline, size, hedgedev::csl::mem::GetProtectionFlags(hedgedev::csl::mem::PageProtection::RWX));</div>
+<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>        mem::Protect(pTrampoline, size, mem::GetProtectionFlags(mem::PageProtection::RWX));</div>
 <div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span> </div>
 <div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>        <span class="keywordflow">return</span> pTrampoline;</div>
 <div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>    }</div>

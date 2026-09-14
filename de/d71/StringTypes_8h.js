@@ -14,6 +14,7 @@ var StringTypes_8h =
     [ "hedgedev::csl::ut::expr::BasicString", "dd/d5b/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1BasicString.html", null ],
     [ "hedgedev::csl::ut::expr::BasicStringView", "dc/daa/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1BasicStringView.html", null ],
     [ "hedgedev::csl::ut::expr::AnyString", "d7/d44/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1AnyString.html", null ],
+    [ "hedgedev::csl::ut::expr::WideString", "da/dd7/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1WideString.html", null ],
     [ "hedgedev::csl::ut::expr::GetCharType_t", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a0d7ba58c14ed666f7c6fba553b2d15b5.html#a0d7ba58c14ed666f7c6fba553b2d15b5", null ],
     [ "hedgedev::csl::ut::expr::InferredString", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_ac285ae73debe031a609e0806855a35a6.html#ac285ae73debe031a609e0806855a35a6", null ],
     [ "hedgedev::csl::ut::expr::InferredStringOrView", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr_a5b56149962ae61b32ebb1a5f91fe5727.html#a5b56149962ae61b32ebb1a5f91fe5727", null ],

@@ -18,7 +18,7 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_HOOK_COMMON_PARAMS
-/// 
+///
 /// \param RETURN_TYPE        The return type of the function.
 /// \param CALLING_CONVENTION The calling convention of the function (e.g. `__cdecl`, `__stdcall`, `__fastcall`, etc).
 ///                           For custom calling conventions on x86, such as `__usercall` or `__userpurge`, see \ref HookingUserCall.h.
@@ -29,7 +29,7 @@
 
 ///
 /// Declares a pointer to a function in memory.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_HOOK_COMMON_PARAMS
 ///
 #define FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, ...) \
@@ -37,7 +37,7 @@
 
 ///
 /// Loads a dynamic link library into memory and declares a pointer to an exported function from it.
-/// 
+///
 /// \param RETURN_TYPE        The return type of the function.
 /// \param LIBRARY_NAME       The name of the dynamic link library.
 /// \param FUNCTION_NAME      The name of the exported function.
@@ -49,7 +49,7 @@
 
 ///
 /// Defines the body of a hook for a function in memory.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_HOOK_COMMON_PARAMS
 ///
 #define HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, ...) \
@@ -61,9 +61,9 @@
 
 ///
 /// Defines the body of a hook for a function in memory, and installs it upon initialisation.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_HOOK_COMMON_PARAMS
-/// 
+///
 /// \returns Use \ref GET_STATIC_HOOK_RESULT.
 ///
 #define STATIC_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, ...) \
@@ -73,9 +73,9 @@
 
 ///
 /// Gets the installation result of a hook defined with \ref STATIC_HOOK, \ref STATIC_USER_HOOK or \ref STATIC_ASM_HOOK.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function that was hooked.
-/// 
+///
 /// \returns `true` if the installation succeeeded. Otherwise, `false`.
 ///
 #define GET_STATIC_HOOK_RESULT(FUNCTION_NAME) \
@@ -83,13 +83,13 @@
 
 ///
 /// An alias for `__fastcall`.
-/// 
+///
 /// This is intended for use with the other `THISCALL` macros to make
 /// setting up function pointers and hooks with this calling convention easier.
-/// 
+///
 /// `__thiscall` is a calling convention that stores a pointer to `this` in `ECX`, before falling
 /// back to using the stack, similar to `__fastcall`.
-/// 
+///
 /// > [!NOTE]
 /// > **For x64:** This calling convention is always `__fastcall` regardless, with the class pointer
 /// > stored in `RCX`.
@@ -98,7 +98,7 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_THISCALL_PARAMS_COMMON
-/// 
+///
 /// > [!NOTE]
 /// > **For x86:** This macro creates a discard parameter to fill in for `EDX`, allowing the rest
 /// > of the arguments to be pushed onto the stack.  
@@ -109,11 +109,11 @@
 /// \def   THISCALL_PARAMS
 /// \brief Expands to the necessary function parameters required by `__thiscall` calling convention.
 /// \hideinitializer
-/// 
+///
 /// \param CLASS_NAME The name of the class this function is from.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_THISCALL_PARAMS_COMMON
-/// 
+///
 /// ## Examples
 /// \code{.cpp}
 /// FUNCTION_PTR(int, THISCALL, fpMyClassFunction, 0xDEADBEEF, THISCALL_PARAMS(MyClassName), int in_secondParam);
@@ -125,9 +125,9 @@
 /// \brief Expands to the necessary function arguments required by `__thiscall` calling convention
 ///        for calling the original function.
 /// \hideinitializer
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_THISCALL_PARAMS_COMMON
-/// 
+///
 /// ## Examples
 /// \code{.cpp}
 /// HOOK(int, THISCALL, MyClassFunctionHook, 0xDEADBEEF, THISCALL_PARAMS(MyClassName), int in_secondParam)
@@ -146,28 +146,29 @@
 #endif
 
 ///
-/// Defines the body of a hook for a function in a virtual function table in memory.
-/// 
+/// \class __CMNLIB_INTERNAL_VFTABLE_HOOK_COMMON_PARAMS
+///
 /// \param RETURN_TYPE        The return type of the function.
 /// \param CALLING_CONVENTION The calling convention of the function (e.g. `__cdecl`, `__stdcall`, `__fastcall`, etc).
 ///                           This does not support optimised calling conventions, such as `__usercall` or `__userpurge`.
 /// \param CLASS_NAME         The name of the class that contains the function being hooked.
 /// \param FUNCTION_NAME      The name of the function.
 /// \param __VA_ARGS__        The parameters of the function.
+///
+
+///
+/// Defines the body of a hook for a function in a virtual function table in memory.
+///
+/// \copydoc __CMNLIB_INTERNAL_VFTABLE_HOOK_COMMON_PARAMS
 ///
 #define VFTABLE_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME, FUNCTION_NAME, ...) \
     HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME##_##FUNCTION_NAME, nullptr, __VA_ARGS__)
 
 ///
 /// Defines the body of a hook for a function in a virtual function table in memory, and installs it upon initialisation.
-/// 
-/// \param RETURN_TYPE        The return type of the function.
-/// \param CALLING_CONVENTION The calling convention of the function (e.g. `__cdecl`, `__stdcall`, `__fastcall`, etc).
-///                           This does not support optimised calling conventions, such as `__usercall` or `__userpurge`.
-/// \param CLASS_NAME         The name of the class that contains the function being hooked.
-/// \param FUNCTION_NAME      The name of the function.
-/// \param __VA_ARGS__        The parameters of the function.
-/// 
+///
+/// \copydoc __CMNLIB_INTERNAL_VFTABLE_HOOK_COMMON_PARAMS
+///
 /// \returns Use \ref GET_STATIC_VFTABLE_HOOK_RESULT.
 ///
 #define STATIC_VFTABLE_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME, FUNCTION_NAME, ...) \
@@ -175,10 +176,10 @@
 
 ///
 /// Gets the installation result of a hook defined with \ref STATIC_VFTABLE_HOOK.
-/// 
+///
 /// \param CLASS_NAME    The name of the class that contains the function that was hooked.
 /// \param FUNCTION_NAME The name of the function that was hooked.
-/// 
+///
 /// \returns `true` if the installation succeeeded. Otherwise, `false`.
 ///
 #define GET_STATIC_VFTABLE_HOOK_RESULT(CLASS_NAME, FUNCTION_NAME) \
@@ -186,12 +187,12 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_ASM_HOOK_COMMON
-/// 
+///
 /// > [!NOTE]
 /// > **For x64:** The body must be defined in an `*.asm` file using MASM. This macro
 /// > creates a scope for members of the hook to be declared in. If no members are needed,
 /// > close the scope immediately using empty braces.
-/// 
+///
 /// ## Examples
 /// ### x86
 /// `Mod.cpp`
@@ -208,7 +209,7 @@
 ///     ASM_HOOK_BRANCH(MyAsmHook)
 /// }
 /// \endcode
-/// 
+///
 /// ### x64
 /// `Mod.cpp`
 /// \code{.cpp}
@@ -217,7 +218,7 @@
 ///     uint64_t g_myHookMember = 0x900DF00D;
 /// }
 /// \endcode
-/// 
+///
 /// `MyAsmHook.asm`
 /// \code{.asm}
 /// include CommonLib.masm.inc
@@ -235,7 +236,7 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_ASM_HOOK_RETURN_BRANCH_COMMON
-/// 
+///
 /// > [!NOTE]
 /// > **For x64:** This macro can be accessed in an `*.asm` file by including `CommonLib.masm.inc`.
 ///
@@ -244,10 +245,10 @@
 /// \def   ASM_HOOK
 /// \brief Creates an assembly hook.
 /// \hideinitializer
-/// 
+///
 /// \param NAME    The name of the hook.
 /// \param ADDRESS The address to hook.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_ASM_HOOK_COMMON
 ///
 
@@ -255,10 +256,10 @@
 /// \def   STATIC_ASM_HOOK
 /// \brief Creates an assembly hook, and installs it upon initialisation.
 /// \hideinitializer
-/// 
+///
 /// \param NAME    The name of the hook.
 /// \param ADDRESS The address to hook.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_ASM_HOOK_COMMON
 ///
 
@@ -266,9 +267,9 @@
 /// \def   ASM_HOOK_RETURN
 /// \brief Returns from an assembly hook and executes the original code.
 /// \hideinitializer
-/// 
+///
 /// \param NAME The name of the hook.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_ASM_HOOK_RETURN_BRANCH_COMMON
 ///
 
@@ -276,9 +277,9 @@
 /// \def   ASM_HOOK_BRANCH
 /// \brief Returns from an assembly hook and skips the original code.
 /// \hideinitializer
-/// 
+///
 /// \param NAME The name of the hook.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_ASM_HOOK_RETURN_BRANCH_COMMON
 ///
 
@@ -296,7 +297,7 @@
     __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALL_HOOK); \
     extern "C"
 
-#endif
+#endif // CMNLIB_X64
 
 #ifdef CMNLIB_X86
 
@@ -304,7 +305,7 @@
     void* x_##NAME = (void*)(ADDRESS); \
     void* original_##NAME = x_##NAME;  \
     void* post_##NAME{};               \
-    void NAKED_FUNC impl_##NAME()
+    void NAKED impl_##NAME()
 
 #define STATIC_ASM_HOOK(NAME, ADDRESS)                               \
     void* x_##NAME = (void*)(ADDRESS);                               \
@@ -312,19 +313,19 @@
     void* post_##NAME{};                                             \
     void impl_##NAME();                                              \
     __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALL_HOOK); \
-    void NAKED_FUNC impl_##NAME()
+    void NAKED impl_##NAME()
 
 #define ASM_HOOK_RETURN(NAME) __asm jmp original_##NAME
 
 #define ASM_HOOK_BRANCH(NAME) __asm jmp post_##NAME
 
-#endif
+#endif // CMNLIB_X86
 
 ///
 /// Installs a hook defined with \ref HOOK or \ref ASM_HOOK.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function to call before the original.
-/// 
+///
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
 #define INSTALL_HOOK(FUNCTION_NAME) \
@@ -332,10 +333,10 @@
 
 ///
 /// Installs a hook defined with \ref HOOK or \ref ASM_HOOK at an explicit address.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function to call before the original.
 /// \param ADDRESS       The address of the function to hook.
-/// 
+///
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
 #define INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                   \
@@ -360,9 +361,9 @@
 
 ///
 /// Uninstalls a hook installed with \ref INSTALL_HOOK.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function to unhook.
-/// 
+///
 /// \returns `true` if the uninstallation succeeeded, or if the hook was already uninstalled. Otherwise, `false`.
 ///
 #define UNINSTALL_HOOK(FUNCTION_NAME)                                           \
@@ -380,12 +381,12 @@
 
 ///
 /// Installs a hook defined with \ref VFTABLE_HOOK.
-/// 
+///
 /// \param CLASS_NAME     The name of the class that contains the function being hooked.
 /// \param INSTANCE       A pointer to an instance of the class to extract the virtual function table pointer from.
 /// \param FUNCTION_NAME  The name of the function to call before the original.
 /// \param FUNCTION_INDEX The index of the function to hook.
-/// 
+///
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
 #define INSTALL_VFTABLE_HOOK(CLASS_NAME, INSTANCE, FUNCTION_NAME, FUNCTION_INDEX)                            \
@@ -410,10 +411,10 @@
 
 ///
 /// Uninstalls a hook installed with \ref INSTALL_VFTABLE_HOOK.
-/// 
+///
 /// \param CLASS_NAME    The name of the class that contains the function that was hooked.
 /// \param FUNCTION_NAME The name of the function to unhook.
-/// 
+///
 /// \returns `true` if the uninstallation succeeeded, or if the hook was already uninstalled. Otherwise, `false`.
 ///
 #define UNINSTALL_VFTABLE_HOOK(CLASS_NAME, FUNCTION_NAME) \

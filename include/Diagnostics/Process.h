@@ -12,7 +12,7 @@ namespace hedgedev::csl::diag::process
     /// \param in_rPath The path to the executable to start.
     /// \param in_rArgs The command line arguments to pass into the process.
     /// \param in_work  The working directory of the process.
-    /// 
+    ///
     /// \returns `true` if the process was started successfully. Otherwise, `false`.
     ///
     template <typename TString>

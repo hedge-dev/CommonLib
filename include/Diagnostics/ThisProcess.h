@@ -26,9 +26,9 @@ namespace hedgedev::csl::diag::this_process
     ///
     /// Gets the path to the module containing the specified address.
     ///
-    /// \param in_pAddr The address to search for.
+    /// \param in_pAddress The address to search for.
     ///
-    inline std::filesystem::path GetModulePathFromAddress(const void* in_pAddr);
+    inline std::filesystem::path GetModulePathFromAddress(const void* in_pAddress);
 
     ///
     /// Gets the working directory of this process.
@@ -48,15 +48,17 @@ namespace hedgedev::csl::diag::this_process
     ///
     /// Checks if this process is the owner of the specified address.
     ///
-    /// \param in_pAddr The address to search for.
+    /// \param in_pAddress The address to search for.
     ///
-    inline bool HasAddress(const void* in_pAddr);
+    /// \returns `true` if the address is inside this process' memory. Otherwise, `false`.
+    ///
+    inline bool HasAddress(const void* in_pAddress);
 
     ///
     /// Checks if a path is in the same directory as the executable this process started from.
     ///
     /// \param in_rPath The path to check.
-    /// 
+    ///
     /// \returns `true` if both paths are in the same directory. Otherwise, `false`.
     ///
     inline bool IsNeighbour(const std::filesystem::path& in_rPath);
@@ -65,7 +67,7 @@ namespace hedgedev::csl::diag::this_process
     /// Restarts this process.
     ///
     /// \param in_rArgs The command line arguments to pass into the new process.
-    /// 
+    ///
     /// \returns `true` if this process was terminated successfully. Otherwise, `false`.
     ///
     template <typename TString>
@@ -73,7 +75,7 @@ namespace hedgedev::csl::diag::this_process
 
     ///
     /// Restarts this process.
-    /// 
+    ///
     /// \returns `true` if this process was terminated successfully. Otherwise, `false`.
     ///
     inline bool Restart();

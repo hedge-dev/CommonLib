@@ -38,7 +38,7 @@
 
 ///
 /// Specify the register to use for the return value.
-/// 
+///
 /// \param REGISTER The register to use for the return value.
 ///
 #define USER_RETURN(REGISTER) \
@@ -46,7 +46,7 @@
 
 ///
 /// Specify the register to use for a specific parameter.
-/// 
+///
 /// \param INDEX    The index of the parameter.
 /// \param REGISTER The register to use for the parameter.
 ///
@@ -55,7 +55,7 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON_PARAMS
-/// 
+///
 /// \param RETURN_TYPE        The return type of the function.
 /// \param CALLING_CONVENTION The calling convention of the function, such as `__usercall` or `__userpurge`.
 /// \param FUNCTION_NAME      The name of the function.
@@ -68,7 +68,7 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON_PROTOTYPE
-/// 
+///
 /// For an optimised function with the following prototype:
 /// \code{.cpp}
 /// int __usercall MyOptimisedFunction@<eax>(int in_firstArg@<eax>, float in_secondArg@<xmm0>, int in_thirdArg)
@@ -77,12 +77,12 @@
 
 ///
 /// Declares a pointer to a function with custom calling convention in memory.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PARAMS
-/// 
+///
 /// ## Examples
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PROTOTYPE
-/// 
+///
 /// A function pointer should be set up like the following:
 /// \code{.cpp}
 /// USER_FUNCTION_PTR(int, __usercall, fpMyOptimisedFunction, 0xDEADBEEF, USER_RETURN(EAX) | USER_PARAM(0, EAX) | USER_PARAM(1, XMM0), 3, int in_firstArg, float in_secondArg, int in_thirdArg);
@@ -95,12 +95,12 @@
 
 ///
 /// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PARAMS
-/// 
+///
 /// ## Examples
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON_PROTOTYPE
-/// 
+///
 /// A hook should be set up like the following:
 /// \code{.cpp}
 /// USER_HOOK(int, __usercall, MyOptimisedFunctionHook, 0xDEADBEEF, USER_RETURN(EAX) | USER_PARAM(0, EAX) | USER_PARAM(1, XMM0), 3, int in_firstArg, float in_secondArg, int in_thirdArg)
@@ -112,7 +112,7 @@
 
 ///
 /// Defines the body of a hook for a function with custom calling convention in memory.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON
 ///
 #define USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                  \
@@ -123,9 +123,9 @@
 
 ///
 /// Defines the body of a hook for a function with custom calling convention in memory, and installs it upon initialisation.
-/// 
+///
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON
-/// 
+///
 /// \returns Use \ref GET_STATIC_HOOK_RESULT.
 ///
 #define STATIC_USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...) \
@@ -135,9 +135,9 @@
 
 ///
 /// Installs a hook defined with \ref USER_HOOK.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function to call before the original.
-/// 
+///
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
 #define INSTALL_USER_HOOK(FUNCTION_NAME) \
@@ -145,10 +145,10 @@
 
 ///
 /// Installs a hook defined with \ref USER_HOOK at an explicit address.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function to call before the original.
 /// \param ADDRESS       The address of the function to hook.
-/// 
+///
 /// \returns `true` if the installation succeeeded, or if the hook was already installed. Otherwise, `false`.
 ///
 #define INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                          \
@@ -174,9 +174,9 @@
 
 ///
 /// Uninstalls a hook installed with \ref INSTALL_USER_HOOK.
-/// 
+///
 /// \param FUNCTION_NAME The name of the function to unhook.
-/// 
+///
 /// \returns `true` if the uninstallation succeeeded, or if the hook was already uninstalled. Otherwise, `false`.
 ///
 #define UNINSTALL_USER_HOOK(FUNCTION_NAME)                                       \
@@ -198,7 +198,7 @@ namespace hedgedev::csl::hook
 {
     ///
     /// Registers used for `__usercall`/`__userpurge` calling conventions.
-    /// 
+    ///
     /// These registers have been ordered in an specific way that line up with
     /// register IDs used for encoding instructions.
     ///
@@ -398,7 +398,7 @@ namespace hedgedev::csl::hook
 
     ///
     /// Gets the family a register belongs to.
-    /// 
+    ///
     /// \param in_register The register to check.
     ///
     inline UserRegisterFamily GetRegisterFamily(UserRegister in_register)
@@ -421,7 +421,7 @@ namespace hedgedev::csl::hook
 
     ///
     /// Gets the ID of a register.
-    /// 
+    ///
     /// \param in_register The register to get the ID for.
     ///
     inline int GetRegisterID(UserRegister in_register)
@@ -432,11 +432,11 @@ namespace hedgedev::csl::hook
     ///
     /// Emits a trampoline that forwards arguments from a function with custom calling convention to a
     /// `__cdecl` function in a hook defined with \ref USER_HOOK.
-    /// 
+    ///
     /// \param in_rInfo        The info about the hook.
     /// \param in_pAddress     The address of the `__cdecl` function to trampoline to.
     /// \param in_isToOriginal Determines whether this trampoline is going back to the original function.
-    /// 
+    ///
     /// \returns A pointer to the trampoline that was emitted.
     ///
     inline void* EmitUserTrampoline(const UserCallInfo& in_rInfo, void* in_pAddress, bool in_isToOriginal = false)

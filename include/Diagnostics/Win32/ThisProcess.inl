@@ -34,14 +34,14 @@ namespace hedgedev::csl::diag::this_process
 		return buffer;
 	}
 
-	inline std::filesystem::path GetModulePathFromAddress(const void* in_pAddr)
+	inline std::filesystem::path GetModulePathFromAddress(const void* in_pAddress)
 	{
-		if (HasAddress(in_pAddr))
+		if (HasAddress(in_pAddress))
 			return GetExecutablePath();
 
 		HMODULE hModule{};
 
-		if (GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (LPCWSTR)in_pAddr, &hModule))
+		if (GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT, (LPCWSTR)in_pAddress, &hModule))
 		{
 			WCHAR buffer[MAX_PATH]{};
 
@@ -138,7 +138,7 @@ namespace hedgedev::csl::diag::this_process
 		return result;
 	}
 
-	inline bool HasAddress(const void* in_pAddr)
+	inline bool HasAddress(const void* in_pAddress)
 	{
 		const auto hMainModule = GetModuleHandle(NULL);
 
@@ -148,7 +148,7 @@ namespace hedgedev::csl::diag::this_process
 		MODULEINFO mainModuleInfo{};
 		GetModuleInformation(GetCurrentProcess(), hMainModule, &mainModuleInfo, sizeof(MODULEINFO));
 
-		const auto addr = uintptr_t(in_pAddr);
+		const auto addr = uintptr_t(in_pAddress);
 		const auto start = uintptr_t(mainModuleInfo.lpBaseOfDll);
 		const auto end = uintptr_t(start + mainModuleInfo.SizeOfImage);
 

@@ -9,7 +9,7 @@ namespace hedgedev::csl::ut::env
     /// Gets a file in the system environment.
     ///
     /// \param in_rFileName The file to search for.
-    /// 
+    ///
     /// \returns The path to the file, if found.
     ///
     inline std::optional<std::filesystem::path> GetFile(const std::filesystem::path& in_rFileName);
@@ -19,10 +19,10 @@ namespace hedgedev::csl::ut::env
     ///
     /// \tparam TOut  The value type to parse.
     /// \tparam TName The name string type.
-    /// 
+    ///
     /// \param in_rName        The variable to search for.
     /// \param in_defaultValue The default value to use, if the variable could not be found.
-    /// 
+    ///
     /// \returns The value of the variable, if found.
     ///
     template<typename TOut, expr::AnyString TName>

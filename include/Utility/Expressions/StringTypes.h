@@ -114,7 +114,7 @@ namespace hedgedev::csl::ut::expr
 
     ///
     /// An `std::basic_string` or `std::basic_string_view` inferred from the string type.
-    /// 
+    ///
     /// \returns `std::basic_string_view` if the type is a C string. Otherwise, `std::basic_string`.
     ///
     template <AnyString T>
@@ -122,12 +122,12 @@ namespace hedgedev::csl::ut::expr
 
     ///
     /// Creates a string inferred from a string literal at compile time.
-    /// 
+    ///
     /// \tparam TDst The string type to create.
     /// \tparam TSrc The string type to convert from.
     ///
     /// \param in_rStr The string to create.
-    /// 
+    ///
     /// \returns The input string in the destination format.
     ///
     template <AnyString TDst, AnyString TSrc>
@@ -135,7 +135,7 @@ namespace hedgedev::csl::ut::expr
 
     ///
     /// Determines which string type has the largest character size.
-    /// 
+    ///
     /// \returns The index of the string type with the largest character size.
     ///
     template <AnyString... TArgs>
@@ -161,7 +161,7 @@ namespace hedgedev::csl::ut::expr
 
     ///
     /// An `std::basic_string` or `std::basic_string_view` inferred from the string type with the largest character size.
-    /// 
+    ///
     /// \returns `std::basic_string_view` if all types are C strings. Otherwise, `std::basic_string`.
     ///
     template <AnyString... TArgs>

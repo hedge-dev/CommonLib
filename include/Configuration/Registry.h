@@ -10,7 +10,7 @@ namespace hedgedev::csl::cfg::registry
     /// \param in_rPath      The path to the registry key containing the value.
     /// \param in_rValueName The name of the registry value.
     /// \param out_rData     The value to set.
-    /// 
+    ///
     /// \returns `true` if the value was read successfully. Otherwise, `false`.
     ///
     template <typename T>
@@ -21,7 +21,7 @@ namespace hedgedev::csl::cfg::registry
     ///
     /// \param in_rPath  The path to the registry value.
     /// \param out_rData The value to set.
-    /// 
+    ///
     /// \returns `true` if the value was read successfully. Otherwise, `false`.
     ///
     template <typename T>
@@ -33,7 +33,7 @@ namespace hedgedev::csl::cfg::registry
     /// \param in_rPath      The path to the registry key containing the value.
     /// \param in_rValueName The name of the registry value.
     /// \param in_rData      The value to write.
-    /// 
+    ///
     /// \returns `true` if the value was written successfully. Otherwise, `false`.
     ///
     template <typename T>
@@ -44,7 +44,7 @@ namespace hedgedev::csl::cfg::registry
     ///
     /// \param in_rPath The path to the registry value.
     /// \param in_rData The value to write.
-    /// 
+    ///
     /// \returns `true` if the value was written successfully. Otherwise, `false`.
     ///
     template <typename T>

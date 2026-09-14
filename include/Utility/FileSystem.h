@@ -9,7 +9,7 @@ namespace hedgedev::csl::ut::filesystem
     ///
     /// \param in_rPathA The first path.
     /// \param in_rPathB The second path.
-    /// 
+    ///
     /// \returns `true` if both paths are in the same directory. Otherwise, `false`.
     ///
     inline bool IsNeighbour(const std::filesystem::path& in_rPathA, const std::filesystem::path& in_rPathB);

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef __CMNLIB_H__
+#define __CMNLIB_H__
+
 #ifdef CMNLIB_NO_NAMESPACE_ALIASES
 #define __CMNLIB_INTERNAL_MAKE_NAMESPACE_ALIAS(PARENT, NAME, ALIAS)
 #else
@@ -33,6 +36,7 @@
 #include "Hooking/Hooking.h"
 
 #if !defined(CMNLIB_HEADER_ONLY) && defined(__CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)
-#pragma message("CommonLib must be statically linked. " __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)
 #pragma comment(lib, "CommonLib.lib")
 #endif
+
+#endif // __CMNLIB_H__

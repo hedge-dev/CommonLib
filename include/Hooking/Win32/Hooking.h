@@ -3,7 +3,7 @@
 #include <functional>
 #include <../thirdparty/Detours/src/detours.h>
 
-#define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT "Hooking macros on Windows use Detours."
+#define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
 
 #define __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALLER) \
     static bool result_##NAME{};                                     \

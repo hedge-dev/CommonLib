@@ -98,6 +98,32 @@ namespace hedgedev::csl::ut::string
     inline TOut Hyperlink(const TString& in_rStr, const TUrl& in_rUrl);
 
     ///
+    /// Checks if a string of any type is null or empty.
+    /// 
+    /// \tparam TString The input string type.
+    /// 
+    /// \param in_rStr The string to check.
+    /// 
+    /// \returns `true` if the string is null or empty. Otherwise, `false`.
+    ///
+    template <expr::AnyString TString>
+    inline bool IsNullOrEmpty(const TString& in_rStr);
+
+    ///
+    /// Checks if a string of any type is null, empty, or consists only of
+    /// white-space characters.
+    /// 
+    /// \tparam TString The input string type.
+    /// 
+    /// \param in_rStr The string to check.
+    /// 
+    /// \returns `true` if the string is null or empty, or if the string
+    ///          consists only of white-space characters. Otherwise, `false`.
+    ///
+    template <expr::AnyString TString>
+    inline bool IsNullOrWhiteSpace(const TString& in_rStr);
+
+    ///
     /// Joins a collection of strings together using a delimiter.
     /// 
     /// \tparam TDelimiter  The delimiter string type.

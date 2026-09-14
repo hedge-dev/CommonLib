@@ -5,15 +5,6 @@
 namespace hedgedev::csl::ut::filesystem
 {
     ///
-    /// Finds a file in the system environment.
-    ///
-    /// \param in_rFileName The file to search for.
-    /// 
-    /// \returns If found, the path to the file. Otherwise, an empty path.
-    ///
-    inline std::filesystem::path FindInEnvironment(const std::filesystem::path& in_rFileName);
-
-    ///
     /// Checks if a path is in the same directory as another.
     ///
     /// \param in_rPathA The first path.
@@ -45,9 +36,5 @@ namespace hedgedev::csl::ut::filesystem
 }
 
 #include "FileSystem.inl"
-
-#ifdef WIN32
-#include "Win32/FileSystem.inl"
-#endif
 
 __CMNLIB_INTERNAL_MAKE_NAMESPACE_ALIAS(hedgedev::csl::ut, filesystem, fs);

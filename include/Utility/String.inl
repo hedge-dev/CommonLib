@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <charconv>
+#include <filesystem>
 #include <iomanip>
 #include <regex>
 
@@ -161,6 +162,32 @@ namespace hedgedev::csl::ut::string
 			   << rStr << expr::CreateInferredString<TOut>("</a>");
 		
 		return result.str();
+	}
+
+	template <expr::AnyString TString>
+	inline bool IsNullOrEmpty(const TString& in_rStr)
+	{
+		if constexpr (std::is_pointer_v<std::remove_cvref_t<TString>>)
+		{
+			if (!in_rStr)
+				return true;
+		}
+
+		return expr::InferredStringView<TString>(in_rStr).empty();
+	}
+
+	template <expr::AnyString TString>
+	inline bool IsNullOrWhiteSpace(const TString& in_rStr)
+	{
+		if (IsNullOrEmpty(in_rStr))
+			return true;
+
+		const auto view = expr::InferredStringView<TString>(in_rStr);
+
+		return std::all_of(view.begin(), view.end(), [](expr::GetCharType_t<TString> c)
+		{
+			return std::isspace(c);
+		});
 	}
 
 	template <expr::AnyString TDelimiter, expr::AnyString TCollection>
@@ -476,7 +503,7 @@ namespace hedgedev::csl::ut::string
 				auto upBuffer = std::make_unique<char[]>(size + sizeof(char));
 #ifdef WIN32
 				char defaultChar = '?';
-				size_t chars = WideCharToMultiByte(CP_UTF8, 0, view.data(), size, (LPSTR)upBuffer.get(), size, &defaultChar, NULL);
+				size_t chars = WideCharToMultiByte(CP_UTF8, 0, view.data(), int(size), (LPSTR)upBuffer.get(), int(size), &defaultChar, NULL);
 				if (chars < size)
 					return false;
 #else
@@ -515,27 +542,55 @@ namespace hedgedev::csl::ut::string
 	template <typename TOut, expr::AnyString TString>
 	inline bool TryParse(const TString& in_rStr, TOut& out_rValue)
 	{
-		const auto str = Trim(in_rStr);
+		if (IsNullOrWhiteSpace(in_rStr))
+			return false;
 
-		if constexpr (std::is_same_v<TOut, bool>)
+		if constexpr (std::is_same_v<TString, TOut>)
 		{
-			out_rValue = ToLower(str) == expr::CreateInferredString<expr::InferredString<TString>>("true") ||
-						 str == expr::CreateInferredString<expr::InferredString<TString>>("1");
-
+			out_rValue = in_rStr;
 			return true;
 		}
-		else if constexpr (std::is_same_v<TOut, float> || std::is_same_v<TOut, double>)
+		else if constexpr (std::is_same_v<TOut, std::filesystem::path>)
+		{
+			out_rValue = std::filesystem::path(in_rStr);
+			return true;
+		}
+		else if constexpr (expr::AnyString<TOut>)
 		{
 			TOut result{};
-			std::from_chars(str.data(), str.data() + str.size(), result);
+
+			if (!TryConvert<TOut>(in_rStr, result))
+				return false;
 
 			out_rValue = result;
 
 			return true;
 		}
-		else if constexpr (std::is_integral_v<TOut> || std::is_enum_v<TOut>)
+
+		const auto trim = Trim(in_rStr);
+
+		if constexpr (std::is_same_v<TOut, bool>)
 		{
-			out_rValue = static_cast<TOut>(std::atoll(str.data()));
+			const auto lower = ToLower(trim);
+
+			out_rValue = lower == expr::CreateInferredString<expr::InferredString<TString>>("true") ||
+						 lower == expr::CreateInferredString<expr::InferredString<TString>>("1");
+
+			return true;
+		}
+		else if constexpr (std::is_integral_v<TOut> || std::is_enum_v<TOut> || std::is_same_v<TOut, float> || std::is_same_v<TOut, double>)
+		{
+			typename std::conditional_t<std::is_enum_v<TOut>, std::underlying_type<TOut>, std::type_identity<TOut>>::type result{};
+			std::string chars{};
+
+			if (!TryConvert<std::string>(trim, chars))
+				return false;
+
+			if (std::from_chars(chars.data(), chars.data() + chars.size(), result).ec != std::errc{})
+				return false;
+
+			out_rValue = TOut(result);
+
 			return true;
 		}
 

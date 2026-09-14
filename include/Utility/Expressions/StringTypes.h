@@ -89,6 +89,12 @@ namespace hedgedev::csl::ut::expr
     concept AnyString = CString<T> || BasicString<T> || BasicStringView<T>;
 
     ///
+    /// A wide C string or `std::wstring` type.
+    ///
+    template <typename T>
+    concept WideString = CStringW<T> || std::is_same_v<T, std::wstring>;
+
+    ///
     /// Checks if the underlying type of two given string types are the same.
     ///
     template <AnyString T1, AnyString T2>

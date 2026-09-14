@@ -335,24 +335,24 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                                                               \</div>
-<div class="line">{                                                                                                               \</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rInfo = info_##FUNCTION_NAME;                                                                   \</div>
-<div class="line">                                                                                                                \</div>
-<div class="line">    if (!rInfo.fpDetour &amp;&amp; !(ADDRESS))                                                                          \</div>
-<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;                                                                                           \</div>
-<div class="line">                                                                                                                \</div>
-<div class="line">    *(<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour = (<span class="keywordtype">void</span>*)(ADDRESS);                                                                \</div>
-<div class="line">                                                                                                                \</div>
-<div class="line">    DetourTransactionBegin();                                                                                   \</div>
-<div class="line">    DetourUpdateThread(GetCurrentThread());                                                                     \</div>
-<div class="line">    DetourAttach((<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour, trampolineToHook_##FUNCTION_NAME);                                    \</div>
-<div class="line">                                                                                                                \</div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> result = DetourTransactionCommit() == NO_ERROR;                                                  \</div>
-<div class="line">                                                                                                                \</div>
-<div class="line">    *(<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(rInfo, &amp;rInfo.fpDetour, <span class="keyword">true</span>); \</div>
-<div class="line">                                                                                                                \</div>
-<div class="line">    <span class="keywordflow">return</span> result;                                                                                              \</div>
+<b>Value:</b><div class="fragment"><div class="line">std::invoke([&amp;]()                                                                                                      \</div>
+<div class="line">{                                                                                                                      \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; rInfo = info_##FUNCTION_NAME;                                                                          \</div>
+<div class="line">                                                                                                                       \</div>
+<div class="line">    if (!rInfo.fpDetour &amp;&amp; !(ADDRESS))                                                                                 \</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;                                                                                                  \</div>
+<div class="line">                                                                                                                       \</div>
+<div class="line">    *(<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour = (<span class="keywordtype">void</span>*)(ADDRESS);                                                                       \</div>
+<div class="line">                                                                                                                       \</div>
+<div class="line">    DetourTransactionBegin();                                                                                          \</div>
+<div class="line">    DetourUpdateThread(GetCurrentThread());                                                                            \</div>
+<div class="line">    DetourAttach((<span class="keywordtype">void</span>**)&amp;rInfo.fpDetour, trampolineToHook_##FUNCTION_NAME);                                           \</div>
+<div class="line">                                                                                                                       \</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">auto</span> result = DetourTransactionCommit() == NO_ERROR;                                                         \</div>
+<div class="line">                                                                                                                       \</div>
+<div class="line">    *(<span class="keywordtype">void</span>**)&amp;original_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(rInfo, (<span class="keywordtype">void</span>*)&amp;rInfo.fpDetour, <span class="keyword">true</span>); \</div>
+<div class="line">                                                                                                                       \</div>
+<div class="line">    <span class="keywordflow">return</span> result;                                                                                                     \</div>
 <div class="line">})</div>
 <div class="ttc" id="anamespacehedgedev_1_1csl_1_1hook_html_aa04601a2c62b38672c833db164046bbb"><div class="ttname"><a href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a></div><div class="ttdeci">void * EmitUserTrampoline(const UserCallInfo &amp;in_rInfo, void *in_pAddress, bool in_isToOriginal=false)</div><div class="ttdef"><b>Definition</b> HookingUserCall.h:442</div></div>
 </div><!-- fragment --><p>Installs a hook defined with <a class="el" href="#a07a15f7e0401b5a1617755ac474849b3" title="USER_HOOK">USER_HOOK</a> at an explicit address.</p>
@@ -524,7 +524,7 @@ Examples</h2>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_struct" href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">hedgedev::csl::hook::UserCallInfo</a> info_##FUNCTION_NAME { <span class="keyword">typeid</span>(RETURN_TYPE), <span class="keyword">sizeof</span>(RETURN_TYPE), CALLING_CONVENTION, (<span class="keywordtype">void</span>*)(ADDRESS), (<span class="keywordtype">void</span>*)(ADDRESS), REGISTERS, PARAM_COUNT }; \</div>
-<div class="line"><span class="keywordtype">void</span>* trampoline_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(info_##FUNCTION_NAME, &amp;info_##FUNCTION_NAME.fpOriginal, <span class="keyword">true</span>);                                            \</div>
+<div class="line"><span class="keywordtype">void</span>* trampoline_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(info_##FUNCTION_NAME, (<span class="keywordtype">void</span>*)&amp;info_##FUNCTION_NAME.fpOriginal, <span class="keyword">true</span>);                                     \</div>
 <div class="line">FUNCTION_PTR(RETURN_TYPE, __cdecl, FUNCTION_NAME, trampoline_##FUNCTION_NAME, __VA_ARGS__)</div>
 <div class="ttc" id="astructhedgedev_1_1csl_1_1hook_1_1UserCallInfo_html"><div class="ttname"><a href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">hedgedev::csl::hook::UserCallInfo</a></div><div class="ttdef"><b>Definition</b> HookingUserCall.h:330</div></div>
 </div><!-- fragment --><p>Declares a pointer to a function with custom calling convention in memory.</p>
@@ -593,7 +593,7 @@ Examples</h2>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><a class="code hl_struct" href="../../d7/db2/structhedgedev_1_1csl_1_1hook_1_1UserCallInfo.html">hedgedev::csl::hook::UserCallInfo</a> info_##FUNCTION_NAME { <span class="keyword">typeid</span>(RETURN_TYPE), <span class="keyword">sizeof</span>(RETURN_TYPE), CALLING_CONVENTION, (<span class="keywordtype">void</span>*)(ADDRESS), (<span class="keywordtype">void</span>*)(ADDRESS), REGISTERS, PARAM_COUNT }; \</div>
 <div class="line">RETURN_TYPE __cdecl impl_##FUNCTION_NAME(__VA_ARGS__);                                                                                                                               \</div>
-<div class="line"><span class="keywordtype">void</span>* trampolineToHook_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(info_##FUNCTION_NAME, &amp;impl_##FUNCTION_NAME);                                                       \</div>
+<div class="line"><span class="keywordtype">void</span>* trampolineToHook_##FUNCTION_NAME = <a class="code hl_function" href="../../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#aa04601a2c62b38672c833db164046bbb">hedgedev::csl::hook::EmitUserTrampoline</a>(info_##FUNCTION_NAME, (<span class="keywordtype">void</span>*)&amp;impl_##FUNCTION_NAME);                                                \</div>
 <div class="line">HOOK(RETURN_TYPE, __cdecl, FUNCTION_NAME, <span class="keyword">nullptr</span>, __VA_ARGS__)</div>
 </div><!-- fragment --><p>Defines the body of a hook for a function with custom calling convention in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>

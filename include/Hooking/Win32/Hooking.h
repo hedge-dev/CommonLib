@@ -426,7 +426,7 @@ namespace hedgedev::csl::hook
         if (!in_pHookStart)
             return nullptr;
         
-        const auto branchInfo = hedgedev::csl::mem::GetBranchInfo(in_pHookStart);
+        const auto branchInfo = mem::GetBranchInfo(in_pHookStart);
 
         auto pPostHook = (uint8_t*)(size_t(in_pHookStart) + branchInfo.InstrLength);
 

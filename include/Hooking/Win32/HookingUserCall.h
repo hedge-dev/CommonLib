@@ -1120,7 +1120,7 @@ namespace hedgedev::csl::hook
         memcpy_s(pTrampoline, size, result.data(), size);
         emitBranchAddr(pTrampoline, branchOffset, in_address, in_isToOriginal);
         
-        hedgedev::csl::mem::Protect(pTrampoline, size, hedgedev::csl::mem::GetProtectionFlags(hedgedev::csl::mem::PageProtection::RWX));
+        mem::Protect(pTrampoline, size, mem::GetProtectionFlags(mem::PageProtection::RWX));
 
         return pTrampoline;
     }

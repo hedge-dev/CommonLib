@@ -26,6 +26,7 @@ namespace hedgedev::csl::mem
             return false;
 
         const auto length = sizeof(in_rData) * in_count;
+        
         uint32_t oldProtectionFlags{};
 
         ASSERT_RETURN_FALSE(Protect(in_pAddress, length, GetProtectionFlags(PageProtection::RW), &oldProtectionFlags));
@@ -55,24 +56,24 @@ namespace hedgedev::csl::mem
         return true;
     }
 
-    template <hedgedev::csl::ut::expr::AnyString T>
+    template <ut::expr::AnyString T>
     inline bool WriteString(void* in_pAddress, const T& in_rStr)
     {
         if (!in_pAddress)
             return false;
 
-        using TChar = hedgedev::csl::ut::expr::GetCharType_t<T>;
+        using TChar = ut::expr::GetCharType_t<T>;
 
         return WriteStringFixedLength(in_pAddress, in_rStr, std::basic_string_view<TChar>(in_rStr).size());
     }
 
-    template <hedgedev::csl::ut::expr::AnyString T>
+    template <ut::expr::AnyString T>
     inline bool WriteStringFixedLength(void* in_pAddress, const T& in_rStr, size_t in_length)
     {
         if (!in_pAddress)
             return false;
 
-        using TChar = hedgedev::csl::ut::expr::GetCharType_t<T>;
+        using TChar = ut::expr::GetCharType_t<T>;
 
         auto view = std::basic_string_view<TChar>(in_rStr);
 

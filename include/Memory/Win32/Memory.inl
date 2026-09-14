@@ -24,10 +24,10 @@ namespace hedgedev::csl::mem
 
         uint32_t shift{};
 
-        const auto hasRead = hedgedev::csl::ut::expr::HasFlag(in_protection, PageProtection::Read);
-        const auto hasWrite = hedgedev::csl::ut::expr::HasFlag(in_protection, PageProtection::Write);
+        const auto hasRead = ut::expr::HasFlag(in_protection, PageProtection::Read);
+        const auto hasWrite = ut::expr::HasFlag(in_protection, PageProtection::Write);
         
-        if (hedgedev::csl::ut::expr::HasFlag(in_protection, PageProtection::Execute))
+        if (ut::expr::HasFlag(in_protection, PageProtection::Execute))
         {
             result = PAGE_EXECUTE;
             shift = 4;

@@ -75,7 +75,7 @@ namespace hedgedev::csl::cfg::registry
 
                 if (result == ERROR_SUCCESS)
                 {
-                    result = hedgedev::csl::ut::string::TryConvert(buffer.data(), out_rData)
+                    result = ut::string::TryConvert(buffer.data(), out_rData)
                         ? ERROR_SUCCESS
                         : -1;
                 }
@@ -137,9 +137,9 @@ namespace hedgedev::csl::cfg::registry
         DWORD dataType{};
         std::wstring strData{};
         
-        if constexpr (hedgedev::csl::ut::expr::AnyString<T> || std::is_same_v<T, std::filesystem::path>)
+        if constexpr (ut::expr::AnyString<T> || std::is_same_v<T, std::filesystem::path>)
         {
-            if (hedgedev::csl::ut::string::TryConvert(in_rData, strData))
+            if (ut::string::TryConvert(in_rData, strData))
             {
                 pData = (BYTE*)strData.c_str();
                 dataSize = (strData.size() + 1) * sizeof(wchar_t);

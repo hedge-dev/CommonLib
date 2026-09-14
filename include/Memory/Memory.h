@@ -220,7 +220,7 @@ namespace hedgedev::csl::mem
     /// \param in_pAddress The address to write to.
     /// \param in_rStr     The string to write.
     ///
-    template <hedgedev::csl::ut::expr::AnyString T>
+    template <ut::expr::AnyString T>
     inline bool WriteString(void* in_pAddress, const T& in_rStr);
 
     ///
@@ -232,7 +232,7 @@ namespace hedgedev::csl::mem
     ///                    If zero, the length will be determined by the length of an existing
     ///                    string located at \ref in_pAddress.
     ///
-    template <hedgedev::csl::ut::expr::AnyString T>
+    template <ut::expr::AnyString T>
     inline bool WriteStringFixedLength(void* in_pAddress, const T& in_rStr, size_t in_length = 0);
 }
 

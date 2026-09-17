@@ -10,7 +10,7 @@
     - example.masm.inc
 ```
 
-- Platform abstractions must be put under `arch` and `os` subdirectories. These should be included in the main header file they branch from using preprocessor rules.
+- Platform abstractions must be put under `arch` and `os` subdirectories. These must be included in the main header file they branch from using preprocessor rules.
 
 ```
 - source/
@@ -54,14 +54,14 @@ int example_function(int in_example_param)
 ```
 
 ### Scope Hints
-These hints should not be chained, rather they should follow the order below for which prefix takes precedence:
+These hints must not be chained, rather they must follow the order below for which prefix takes precedence:
 - Internal macros must use the `__CMNLIB_INTERNAL_` prefix.
 - Global variables must use the `g_` prefix.
 - Private variables must use the `m_` prefix.
 - Private functions must use the `_` prefix.
 - Constant variables (`const` and `constexpr`) must use the `k_` prefix. This does not include expressions.
 - Function parameters must use the `in_` prefix for input parameters, and `out_` for output parameters. If a parameter may be treated as both input and output, use the `io_` prefix.
-- Template parameters must use the `T_` prefix for type parameters, and `K_` for variable parameters. If a type parameter corresponds to a specific function parameter, then it should use the same identifier with the `T_` prefix (e.g. `T_param_a` for `in_param_a`). Type parameters may be specified as `T`, if there is only one of them.
+- Template parameters must use the `T_` prefix for type parameters, and `K_` for variable parameters. If a type parameter corresponds to a specific function parameter, then it must use the same identifier with the `T_` prefix (e.g. `T_param_a` for `in_param_a`). Type parameters may be specified as `T`, if there is only one of them.
 
 ```cpp
 int g_global = 123;
@@ -154,8 +154,8 @@ void example_function_b(size_t in_param)
 ```
 
 ## Includes
-- If a compilation unit (`*.cpp`) has a header (`*.h`), it should be the first include at the top above any other.
-- If a header (`*.h`) contains inline declarations, it should include the inline definitions (`*.inl`) at the bottom.
+- If a compilation unit (`*.cpp`) has a header (`*.h`), it must be the first include at the top above any other.
+- If a header (`*.h`) contains inline declarations, it must include the inline definitions (`*.inl`) at the bottom.
 - Includes must be in alphanumeric order from 0-9 and A-Z.
 - Includes must use quotes and Unix directory separators (e.g. `#include "example/example_header.h"`).
 - Third-party includes must be relative to the `include` directory (e.g. `#include "../thirdparty/example.h"`).
@@ -288,7 +288,7 @@ const auto example_lambda = []() -> size_t
 // tempor incididunt.
 ```
 
-- Comments for reminders may be used with `TODO`, `FIXME`, `NOTE`, `WARNING` or `HACK` prefixes. These should be attributed to the author that wrote them.
+- Comments for reminders may be used with `TODO`, `FIXME`, `NOTE`, `WARNING` or `HACK` prefixes. These must be attributed to the author that wrote them.
 
 ```cpp
 // FIXME (Hyper): This will crash, oh my god!!
@@ -296,7 +296,7 @@ const auto example_lambda = []() -> size_t
 ```
 
 - Doxygen comments must use `///` blocks, with blank ones above and below the documentation.
-- Doxygen comments should use backslashes for keywords.
+- Doxygen comments must use backslashes for keywords.
 
 ```cpp
 ///
@@ -314,13 +314,20 @@ template <typename T, size_t K_example>
 int example_function(int in_foo, int in_bar);
 ```
 
-- Doxygen comments that reference other identifiers should use `\ref` before the identifier.
+- Doxygen comments that reference other identifiers must use `\ref` before the identifier, if possible. Otherwise, use single backticks either side of the identifier.
 
 ```cpp
 void example_function_a();
 
 ///
 /// A function that might call \ref example_function_a().
+///
+void example_function_b();
+
+// -- OR -- (only if the identifier cannot be referenced)
+
+///
+/// A function that might call `example_function_a()`.
 ///
 void example_function_b();
 ```
@@ -472,7 +479,7 @@ auto selection = condition ? another_condition ? a : yet_another_condition ? b :
 auto selection = (condition ? (another_condition ? a : (yet_another_condition ? b : c)) : d);
 ```
 
-- Function declarations that have parameters exceeding ~128 characters should be split onto new lines.
+- Function declarations that have parameters exceeding ~128 characters must be split onto new lines.
 
 ```cpp
 // Good
@@ -499,7 +506,7 @@ void example_function(int in_param_a, int in_param_b, int in_param_c, int in_par
 }
 ```
 
-- Checking pointer validity should be done via the `!` operator, rather than explicitly comparing against `nullptr`.
+- Pointer validity must be checked via the `!` operator, rather than explicitly comparing against `nullptr`.
 
 ```cpp
 void example_function(int* in_param)
@@ -595,7 +602,7 @@ bool example_function_b()
 
 ## Return Values
 - Functions that return a value must start with a `result` variable for storing the return value.
-- The `result` variable should be mutated until the end of the function where it is returned.
+- The `result` variable must be mutated until the end of the function where it is returned, if possible.
 - If the function early returns, return the `result` variable.
 
 ```cpp

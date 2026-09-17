@@ -68,27 +68,18 @@ int g_global = 123;
 
 constexpr int k_constant = 456;
 
-// Good
 template <typename T>
 constexpr bool is_boolean_v = std::is_same_v<T, bool>;
 
-// Bad
-template <typename T>
-constexpr bool k_is_boolean_v = std::is_same_v<T, bool>;
-
-// Good
 template <typename T>
 void example_template_function(T in_param);
 
-// Good
 template <typename T_param_a, typename T_param_b>
 void example_template_function(T_param_a in_param_a, T_param_b in_param_b);
 
-// Good
 template <typename T, size_t K_example>
 void example_template_function(T in_param);
 
-// Good
 template <typename T_param_a, typename T_param_b, size_t K_example>
 void example_template_function(T_param_a in_param_a, T_param_b in_param_b);
 
@@ -368,7 +359,7 @@ if (condition) {
 }
 ```
 
-- If statements with a single line must not have braces. If an if statement has an else case, put it in a scope.
+- If statements with a single line must not have braces. If an if statement has an else case, or the condition extends onto multiple lines, put it in a scope.
 
 ```cpp
 // Good
@@ -380,6 +371,18 @@ if (condition)
 {
     do_stuff();
 }
+
+// Good
+if (long_condition_that_is_on_the_left_side &&
+    long_condition_that_is_on_the_right_side)
+{
+    do_stuff();
+}
+
+// Bad
+if (long_condition_that_is_on_the_left_side &&
+    long_condition_that_is_on_the_right_side)
+    do_stuff();
 
 // Good
 if (condition)

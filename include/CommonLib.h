@@ -20,12 +20,6 @@
 #define CMNLIB_ARM
 #endif
 
-#ifdef WIN32
-#define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
-#include <Windows.h>
-#endif
-
 #include <cstdint>
 
 #include "cfg/cfg.h"

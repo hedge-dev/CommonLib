@@ -614,7 +614,7 @@ namespace hedgedev::csl::ut::string
 			typename std::conditional_t<std::is_enum_v<T_result>, std::underlying_type<T_result>, std::type_identity<T_result>>::type result{};
 			std::string chars{};
 
-			if (!try_convert<std::string>(trim, chars))
+			if (!try_convert<std::string>(str_trim, chars))
 				return false;
 
 			if (std::from_chars(chars.data(), chars.data() + chars.size(), result).ec != std::errc{})

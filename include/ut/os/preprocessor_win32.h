@@ -1,7 +1,6 @@
 #pragma once
 
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
+#include "os/win32.h"
 
 ///
 /// Marks a member to be imported from a dynamic link library.

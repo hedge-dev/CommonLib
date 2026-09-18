@@ -1,15 +1,13 @@
 #pragma once
 
+#include <DbgHelp.h>
+#pragma comment(lib, "dbghelp.lib")
+
 #include <sstream>
 #include <string>
 
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-#include <DbgHelp.h>
-
-#pragma comment(lib, "dbghelp.lib")
-
 #include "diag/stack_frame.h"
+#include "os/win32.h"
 
 namespace hedgedev::csl::diag
 {

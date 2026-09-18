@@ -1,6 +1,4 @@
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-
+#include "os/win32.h"
 #include "ut/expr/expr.h"
 
 namespace hedgedev::csl::mem

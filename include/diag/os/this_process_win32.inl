@@ -1,12 +1,12 @@
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
 #include <DbgHelp.h>
-#include <Psapi.h>
-
 #pragma comment(lib, "dbghelp.lib")
 
-#include "stack_frame_win32.h"
+#include <Psapi.h>
+#include <shellapi.h>
+
+#include "os/win32.h"
 #include "ut/expr/string_types.h"
+#include "stack_frame_win32.h"
 
 namespace hedgedev::csl::diag::this_process
 {

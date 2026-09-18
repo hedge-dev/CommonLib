@@ -2,11 +2,9 @@
 
 #include <functional>
 
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-
 #include "../thirdparty/Detours/src/detours.h"
 #include "mem/mem.h"
+#include "os/win32.h"
 
 #define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
 

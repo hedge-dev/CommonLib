@@ -1,9 +1,7 @@
 #include <filesystem>
 #include <optional>
 
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-
+#include "os/win32.h"
 #include "ut/expr/string_types.h"
 
 namespace hedgedev::csl::ut::env

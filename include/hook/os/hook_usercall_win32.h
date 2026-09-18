@@ -6,11 +6,9 @@
 #include <typeindex>
 #include <vector>
 
-#define WIN32_LEAN_AND_MEAN
-#include <Windows.h>
-
 #include "../thirdparty/Detours/src/detours.h"
 #include "mem/mem.h"
+#include "os/win32.h"
 
 ///
 /// A custom calling convention that stores arguments in optimised locations,

@@ -5,6 +5,15 @@
 #include <regex>
 #include <type_traits>
 
+#ifdef WIN32
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
+#include <Windows.h>
+#endif
+
+#include "expr/expr.h"
+#include "expr/string_types.h"
+
 namespace hedgedev::csl::ut::string
 {
     template <expr::any_string_t T_left, expr::any_string_t T_right>
@@ -261,13 +270,13 @@ namespace hedgedev::csl::ut::string
 		const auto args = std::make_tuple(in_args...);
 		constexpr auto precedence = expr::get_string_type_precedence<T_args...>();
 
-		[&] <size_t... Index>(std::index_sequence<Index...>)
+		[&] <size_t... K_index>(std::index_sequence<K_index...>)
 		{
-			const auto convert = [&] <expr::any_string_t t>(const size_t in_index, const t& in_str)
+			const auto convert_arg = [&] <expr::any_string_t T>(const size_t in_index, const T& in_str)
 			{
 				if constexpr (expr::is_all_same_v<T_args...>)
 				{
-					if constexpr (expr::raw_string_t<t>)
+					if constexpr (expr::raw_string_t<T>)
 					{
 						// Create inferred string from C string.
 						result[in_index] = T_result(in_str);
@@ -280,20 +289,20 @@ namespace hedgedev::csl::ut::string
 				}
 				else
 				{
-					if constexpr (std::is_same_v<t, T_result>)
+					if constexpr (std::is_same_v<T, T_result>)
 					{
 						// Copy original string.
 						result[in_index] = in_str;
 					}
 					else
 					{
-						// convert string to precedent type.
+						// Convert string to precedent type.
 						result[in_index] = convert<T_result>(in_str);
 					}
 				}
 			};
 
-			(convert(Index, std::get<Index>(args)), ...);
+			(convert_arg(K_index, std::get<K_index>(args)), ...);
 		}
 		(std::make_index_sequence<sizeof...(T_args)>{});
 
@@ -463,9 +472,9 @@ namespace hedgedev::csl::ut::string
 				else
 				{
 					if (in_ellipsis)
-						result += ellipsis;
+						result = ellipsis;
 
-					result = inferred_string_t(str_sv.substr(str_sv.length() - length, length));
+					result += inferred_string_t(str_sv.substr(str_sv.length() - length, length));
 				}
 			}
 		}
@@ -589,14 +598,14 @@ namespace hedgedev::csl::ut::string
 			return true;
 		}
 
-		const auto trim = string::trim(in_str);
+		const auto str_trim = trim(in_str);
 
 		if constexpr (std::is_same_v<T_result, bool>)
 		{
-			const auto lower = string::lower(trim);
+			const auto str_trim_lower = lower(str_trim);
 
-			out_result = lower == expr::create_inferred_string<expr::inferred_string_t<T_str>>("true") ||
-						 lower == expr::create_inferred_string<expr::inferred_string_t<T_str>>("1");
+			out_result = str_trim_lower == expr::create_inferred_string<expr::inferred_string_t<T_str>>("true") ||
+						 str_trim_lower == expr::create_inferred_string<expr::inferred_string_t<T_str>>("1");
 
 			return true;
 		}

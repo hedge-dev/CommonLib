@@ -389,14 +389,6 @@ namespace hedgedev::csl::hook
             return get_register(in_index + 1);
         }
 
-        bool is_protected_register(user_register in_register) const
-        {
-            return in_register == user_register::EBX ||
-                   in_register == user_register::EBP ||
-                   in_register == user_register::ESI ||
-                   in_register == user_register::EDI;
-        }
-
         template <typename T>
         bool is_return_type() const
         {
@@ -441,7 +433,21 @@ namespace hedgedev::csl::hook
     {
         return int(in_register) - int(get_register_family(in_register));
     }
-    
+
+    ///
+    /// Checks if a register is protected and should be restored after calling the
+    /// original function.
+    ///
+    /// \param in_register The register to check.
+    ///
+    inline bool is_protected_register(user_register in_register)
+    {
+        return in_register == user_register::EBX ||
+               in_register == user_register::EBP ||
+               in_register == user_register::ESI ||
+               in_register == user_register::EDI;
+    }
+
     ///
     /// Emits a trampoline that forwards arguments from a function with custom calling
     /// convention to a `__cdecl` function in a hook defined with \ref USER_HOOK.
@@ -783,8 +789,6 @@ namespace hedgedev::csl::hook
 
         const auto emit_move_register_fpu = [&](user_register in_dst, user_register in_src, int in_float_size = sizeof(float))
         {
-            const auto dst_register_id = get_register_id(in_dst);
-            const auto src_register_id = get_register_id(in_src);
             const auto dst_register_family = get_register_family(in_dst);
             const auto src_register_family = get_register_family(in_src);
 
@@ -1001,7 +1005,7 @@ namespace hedgedev::csl::hook
             {
                 const auto current_register = in_info.get_register(i);
 
-                if (!in_info.is_protected_register(current_register))
+                if (!is_protected_register(current_register))
                     continue;
                 
                 emit_push(current_register);
@@ -1050,7 +1054,7 @@ namespace hedgedev::csl::hook
             {
                 const auto current_register = in_info.get_register(i);
 
-                if (!in_info.is_protected_register(current_register))
+                if (!is_protected_register(current_register))
                     continue;
                 
                 emit_pop(current_register);

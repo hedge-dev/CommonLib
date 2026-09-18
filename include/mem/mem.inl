@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 
+#include "ut/expr/string_types.h"
 #include "ut/preprocessor.h"
 
 namespace hedgedev::csl::mem
@@ -66,9 +67,7 @@ namespace hedgedev::csl::mem
         if (!in_address)
             return false;
 
-        using str_char_t = ut::expr::get_char_type_t<T>;
-
-        return write_string_fixed_length(in_address, in_str, std::basic_string_view<str_char_t>(in_str).size());
+        return write_string_fixed_length(in_address, in_str, ut::expr::inferred_string_view_t<T>(in_str).size());
     }
 
     template <ut::expr::any_string_t T>
@@ -79,18 +78,18 @@ namespace hedgedev::csl::mem
 
         using str_char_t = ut::expr::get_char_type_t<T>;
 
-        auto str_sv = std::basic_string_view<str_char_t>(in_str);
+        auto str_sv = ut::expr::inferred_string_view_t<T>(in_str);
 
         auto src_length = in_length;
         auto dst_length = src_length;
 
-        if (dst_length <= 0)
+        if (!dst_length)
         {
             // Started at null terminator, abort.
             if (!*(str_char_t*)in_address)
                 return false;
 
-            dst_length = std::basic_string_view<str_char_t>((const str_char_t*)in_address).size() * sizeof(str_char_t);
+            dst_length = ut::expr::inferred_string_view_t<T>((const str_char_t*)in_address).size() * sizeof(str_char_t);
 
             if (!dst_length)
                 return false;

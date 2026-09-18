@@ -1,5 +1,7 @@
 #include <filesystem>
 
+#include "ut/string.h"
+
 namespace hedgedev::csl::ut::filesystem
 {
 	inline bool is_neighbour(const std::filesystem::path& in_left, const std::filesystem::path& in_right)

@@ -4,6 +4,8 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
+#include "ut/expr/string_types.h"
+
 namespace hedgedev::csl::ut::env
 {
 	inline std::optional<std::filesystem::path> get_file(const std::filesystem::path& in_filename)

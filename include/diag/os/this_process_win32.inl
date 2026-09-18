@@ -5,7 +5,7 @@
 
 #pragma comment(lib, "dbghelp.lib")
 
-#include "diag/os/stack_frame_win32.h"
+#include "stack_frame_win32.h"
 #include "ut/expr/string_types.h"
 
 namespace hedgedev::csl::diag::this_process

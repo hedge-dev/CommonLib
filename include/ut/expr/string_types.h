@@ -50,7 +50,7 @@ namespace hedgedev::csl::ut::expr
     /// Checks if the type is an `std::basic_string_view`.
     ///
     template <typename T>
-    inline constexpr bool is_basic_string_v = is_basic_string_view<std::remove_cvref_t<std::decay_t<T>>>::value;
+    inline constexpr bool is_basic_string_view_v = is_basic_string_view<std::remove_cvref_t<std::decay_t<T>>>::value;
 
     ///
     /// A multibyte C string type.

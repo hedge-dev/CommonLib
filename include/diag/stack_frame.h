@@ -2,8 +2,8 @@
 
 #include <filesystem>
 
-#include "diag/line_info.h"
-#include "diag/symbol_info.h"
+#include "line_info.h"
+#include "symbol_info.h"
 
 namespace hedgedev::csl::diag
 {

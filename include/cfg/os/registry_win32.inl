@@ -4,6 +4,10 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 
+#include "ut/expr/expr.h"
+#include "ut/expr/string_types.h"
+#include "ut/string.h"
+
 namespace hedgedev::csl::cfg::registry
 {
     inline bool _try_parse_registry_path(const std::filesystem::path& in_path, HKEY& out_key, std::wstring& out_sub_key)

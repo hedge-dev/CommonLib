@@ -3,6 +3,8 @@
 #include <array>
 #include <vector>
 
+#include "ut/expr/string_types.h"
+
 ///
 /// Transforms a virtual address to the current module's ASLR base.
 ///

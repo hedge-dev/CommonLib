@@ -5,6 +5,8 @@
 #include <type_traits>
 #include <vector>
 
+#include "expr/string_types.h"
+
 namespace hedgedev::csl::ut::string
 {
     ///

@@ -3,6 +3,8 @@
 #include <filesystem>
 #include <optional>
 
+#include "ut/expr/string_types.h"
+
 namespace hedgedev::csl::ut::env
 {
     ///

@@ -520,8 +520,15 @@ class validate(command):
         base(command, self).__init__(subparsers, "validate", "validate the source code for errors")
     #
 
+    def init_args(self):
+    #
+        self.parser.add_argument("--skip_submodules", help = "skip the submodule update step", action = "store_true")
+    #
+
     def execute(self, args):
     #
+        git_submodule_update_step(args)
+
         with step("Validating...") as start_time:
         #
             if not (cppcheck_bin := cppcheck.get_cppcheck()):
@@ -553,6 +560,7 @@ class validate(command):
                 [
                     "--check-level=exhaustive",
                     "--enable=all",
+                    "--error-exitcode=1",
                     "--force",
                     "--language=c++",
                     "--quiet",

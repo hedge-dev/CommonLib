@@ -8,11 +8,11 @@ namespace hedgedev::csl::ut::expr
     ///
     /// Gets the type of an element inside a parameter pack.
     ///
-    /// \tparam K_index The index of the element.
-    /// \tparam T_args  The parameter pack.
+    /// \tparam index  The index of the element.
+    /// \tparam T_args The parameter pack.
     ///
-    template <size_t K_index, typename... T_args>
-    using get_pack_type_t = std::tuple_element_t<K_index, std::tuple<T_args...>>;
+    template <size_t index, typename... T_args>
+    using get_pack_type_t = std::tuple_element_t<index, std::tuple<T_args...>>;
 
     ///
     /// Checks if an enum instance has a bit flag set.

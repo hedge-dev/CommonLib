@@ -59,9 +59,10 @@ These hints must not be chained, rather they must follow the order below for whi
 - Global variables must use the `g_` prefix.
 - Private variables must use the `m_` prefix.
 - Private functions must use the `_` prefix.
-- Constant variables (`const` and `constexpr`) must use the `k_` prefix. This does not include expressions.
+- Constant variables (`const`/`constexpr`) in global scopes, classes or structs must use the `k_` prefix. This does not include expressions.
 - Function parameters must use the `in_` prefix for input parameters, and `out_` for output parameters. If a parameter may be treated as both input and output, use the `io_` prefix.
-- Template parameters must use the `T_` prefix for type parameters, and `K_` for variable parameters. If a type parameter corresponds to a specific function parameter, then it must use the same identifier with the `T_` prefix (e.g. `T_param_a` for `in_param_a`). Type parameters may be specified as `T`, if there is only one of them.
+- Template type parameters must use the `T_` prefix. If a type parameter corresponds to a specific function parameter, then it must use the same identifier with the `T_` prefix (e.g. `T_param_a` for `in_param_a`). Type parameters may be specified as `T`, if there is only one of them.
+- Template constant parameters use standard function scope naming conventions (`snake_case` without prefixes or suffixes).
 
 ```cpp
 int g_global = 123;
@@ -77,10 +78,10 @@ void example_template_function(T in_param);
 template <typename T_param_a, typename T_param_b>
 void example_template_function(T_param_a in_param_a, T_param_b in_param_b);
 
-template <typename T, size_t K_example>
+template <typename T, size_t example>
 void example_template_function(T in_param);
 
-template <typename T_param_a, typename T_param_b, size_t K_example>
+template <typename T_param_a, typename T_param_b, size_t example>
 void example_template_function(T_param_a in_param_a, T_param_b in_param_b);
 
 class example_class
@@ -109,8 +110,8 @@ public:
 ```cpp
 using char_string_t = std::basic_string<char>;
 
-template <typename t>
-constexpr bool is_boolean_v = std::is_same_v<t, bool>;
+template <typename T>
+constexpr bool is_boolean_v = std::is_same_v<T, bool>;
 ```
 
 ### Variable Suffixes
@@ -179,26 +180,26 @@ void example_function_c(const int in_param)
 
     // Good: const qualifier specified.
     // Bad: Integral type is ambiguous.
-    const auto k_example_a = 1;
+    const auto example_a = 1;
 
-    // Bad: Remove const qualifier and "k_" prefix.
-    k_example_a = 2;
+    // Bad: Remove const qualifier.
+    example_a = 2;
 
     // Good: const qualifier specified and integral type explicitly specified
     //       for clarity.
-    const size_t k_example_b = 1;
+    const size_t example_b = 1;
 
     // Good: Explicit cast from size_t to int with a function style cast.
-    example_function_a(int(k_example_b));
+    example_function_a(int(example_b));
 
     // Bad: Implicit cast from size_t to int. Use a function style cast.
-    example_function_a(k_example_b);
+    example_function_a(example_b);
 
     // Good: const qualifier specified, type is not ambiguous.
-    const auto k_example_c = std::vector<uint8_t>();
+    const auto example_c = std::vector<uint8_t>();
 
     // Bad: const passed into function that can mutate it by reference.
-    example_function_b(k_example_c);
+    example_function_b(example_c);
 }
 ```
 
@@ -293,15 +294,15 @@ const auto example_lambda = []() -> size_t
 ///
 /// A function that does things.
 ///
-/// \tparam T         The type.
-/// \tparam K_example The example.
+/// \tparam T       The type.
+/// \tparam example The example.
 ///
 /// \param in_foo The foo.
 /// \param in_bar The bar.
 ///
 /// \returns An integer of some kind.
 ///
-template <typename T, size_t K_example>
+template <typename T, size_t example>
 int example_function(int in_foo, int in_bar);
 ```
 

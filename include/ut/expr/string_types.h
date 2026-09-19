@@ -19,8 +19,8 @@ namespace hedgedev::csl::ut::expr
     template <typename T>
     struct get_char_type<T*> { using type = std::remove_cv_t<T>; };
     
-    template <typename T, size_t K_count>
-    struct get_char_type<T(&)[K_count]> { using type = std::remove_cv_t<T>; };
+    template <typename T, size_t count>
+    struct get_char_type<T(&)[count]> { using type = std::remove_cv_t<T>; };
 
     template <typename T>
     struct is_basic_string : std::false_type {};

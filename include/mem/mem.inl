@@ -13,12 +13,12 @@ namespace hedgedev::csl::mem
         return *reinterpret_cast<T*>(in_address);
     }
 
-    template <typename T, size_t K_count>
-    inline std::array<T, K_count> read(void* in_address)
+    template <typename T, size_t count>
+    inline std::array<T, count> read(void* in_address)
     {
-        std::array<T, K_count> result{};
+        std::array<T, count> result{};
 
-        for (size_t i = 0; i < K_count; i++)
+        for (size_t i = 0; i < count; i++)
             result[i] = reinterpret_cast<T*>(in_address)[i];
 
         return result;

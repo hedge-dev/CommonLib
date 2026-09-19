@@ -264,15 +264,15 @@ namespace hedgedev::csl::mem
     ///
     /// Reads an array of values in memory.
     ///
-    /// \tparam T       The type to read.
-    /// \tparam K_count The total number of values to read.
+    /// \tparam T     The type to read.
+    /// \tparam count The total number of values to read.
     ///
     /// \param in_address The address to read from.
     ///
     /// \returns An array of instances of the type read from memory.
     ///
-    template <typename T, size_t K_count>
-    inline std::array<T, K_count> read(void* in_address);
+    template <typename T, size_t count>
+    inline std::array<T, count> read(void* in_address);
 
     ///
     /// Gets information about a branch instruction in memory.

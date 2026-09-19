@@ -270,7 +270,7 @@ namespace hedgedev::csl::ut::string
 		const auto args = std::make_tuple(in_args...);
 		constexpr auto precedence = expr::get_string_type_precedence<T_args...>();
 
-		[&] <size_t... K_index>(std::index_sequence<K_index...>)
+		[&] <size_t... index>(std::index_sequence<index...>)
 		{
 			const auto convert_arg = [&] <expr::any_string_t T>(const size_t in_index, const T& in_str)
 			{
@@ -302,7 +302,7 @@ namespace hedgedev::csl::ut::string
 				}
 			};
 
-			(convert_arg(K_index, std::get<K_index>(args)), ...);
+			(convert_arg(index, std::get<index>(args)), ...);
 		}
 		(std::make_index_sequence<sizeof...(T_args)>{});
 
@@ -637,10 +637,10 @@ namespace hedgedev::csl::ut::string
 
 		using string_char_t = expr::get_char_type_t<T_str>;
 
-		static constexpr auto k_line_break = string_char_t('\n');
-		static constexpr auto k_carriage_return = string_char_t('\r');
+		static constexpr auto line_break = string_char_t('\n');
+		static constexpr auto carriage_return = string_char_t('\r');
 
-		static constexpr string_char_t k_word_chars[] =
+		static constexpr string_char_t word_chars[] =
 		{
 			'.', ',', ';', '!', '?', '\"', '\\', '/'
 		};
@@ -660,7 +660,7 @@ namespace hedgedev::csl::ut::string
 
 			if (std::iscntrl(c))
 			{
-				if (c == k_line_break)
+				if (c == line_break)
 				{
 					result.append(last_line_start, next_pos);
 
@@ -674,7 +674,7 @@ namespace hedgedev::csl::ut::string
 					continue;
 				}
 
-				if (c == k_carriage_return)
+				if (c == carriage_return)
 				{
 					pos = next_pos;
 					continue;
@@ -682,7 +682,7 @@ namespace hedgedev::csl::ut::string
 			}
 
 			is_inside_word = !std::isspace(c) &&
-				std::find(std::begin(k_word_chars), std::end(k_word_chars), c) != std::end(k_word_chars);
+				std::find(std::begin(word_chars), std::end(word_chars), c) != std::end(word_chars);
 
 			if (!is_inside_word)
 				last_word_start = pos;
@@ -693,7 +693,7 @@ namespace hedgedev::csl::ut::string
 				{
 					// Wrap to last word boundary.
 					result.append(last_line_start, last_word_start);
-					result.push_back(k_line_break);
+					result.push_back(line_break);
 
 					last_line_start = last_word_start;
 					last_word_start = nullptr;
@@ -702,7 +702,7 @@ namespace hedgedev::csl::ut::string
 				{
 					// Wrap immediately.
 					result.append(last_line_start, pos);
-					result.push_back(k_line_break);
+					result.push_back(line_break);
 
 					last_line_start = pos;
 				}

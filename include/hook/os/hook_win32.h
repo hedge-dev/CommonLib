@@ -10,15 +10,15 @@
 #define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
 
 #define __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALLER) \
-    static bool result_##NAME{};                                     \
+    static bool g_result_##NAME{};                                   \
     static bool install_##NAME()                                     \
     {                                                                \
         if (!ADDRESS)                                                \
-            return result_##NAME = false;                            \
+            return g_result_##NAME = false;                          \
                                                                      \
-        return result_##NAME = INSTALLER(NAME);                      \
+        return g_result_##NAME = INSTALLER(NAME);                    \
     }                                                                \
-    static bool runner_##NAME = install_##NAME();
+    static bool g_runner_##NAME = install_##NAME();
 
 ///
 /// \class __CMNLIB_INTERNAL_HOOK_COMMON_PARAMS
@@ -60,11 +60,11 @@
 ///
 /// \copydoc __CMNLIB_INTERNAL_HOOK_COMMON_PARAMS
 ///
-#define HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, ...) \
-    typedef RETURN_TYPE CALLING_CONVENTION FUNCTION_NAME(__VA_ARGS__);     \
-    FUNCTION_NAME* x_##FUNCTION_NAME = (FUNCTION_NAME*)(ADDRESS);          \
-    FUNCTION_NAME* original_##FUNCTION_NAME = x_##FUNCTION_NAME;           \
-    void* post_##FUNCTION_NAME{};                                          \
+#define HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, ...)                                 \
+    void* g_address_##FUNCTION_NAME = reinterpret_cast<void*>(ADDRESS);                                    \
+    void* g_address_post_hook_##FUNCTION_NAME{};                                                           \
+    typedef RETURN_TYPE CALLING_CONVENTION FUNCTION_NAME(__VA_ARGS__);                                     \
+    FUNCTION_NAME* original_##FUNCTION_NAME = reinterpret_cast<FUNCTION_NAME*>(g_address_##FUNCTION_NAME); \
     RETURN_TYPE CALLING_CONVENTION impl_##FUNCTION_NAME(__VA_ARGS__)
 
 ///
@@ -89,7 +89,7 @@
 /// \returns `true` if the installation succeeeded. Otherwise, `false`.
 ///
 #define GET_STATIC_HOOK_RESULT(FUNCTION_NAME) \
-    result_##FUNCTION_NAME
+    g_result_##FUNCTION_NAME
 
 ///
 /// An alias for `__fastcall`.
@@ -302,11 +302,11 @@
 
 #ifdef CMNLIB_X64
 
-#define ASM_HOOK(NAME, ADDRESS)                          \
-    extern "C" uintptr_t x_##NAME = (uint64_t)(ADDRESS); \
-    extern "C" uintptr_t original_##NAME = x_##NAME;     \
-    extern "C" uintptr_t post_##NAME{};                  \
-    extern "C" void* impl_##NAME;                        \
+#define ASM_HOOK(NAME, ADDRESS)                                 \
+    extern "C" uintptr_t g_address_##NAME = uintptr_t(ADDRESS); \
+    extern "C" uintptr_t g_address_post_hook_##NAME{};          \
+    extern "C" uintptr_t original_##NAME = g_address_##NAME;    \
+    extern "C" void* impl_##NAME{};                             \
     extern "C"
 
 #define STATIC_ASM_HOOK(NAME, ADDRESS)                               \
@@ -318,83 +318,86 @@
 
 #ifdef CMNLIB_X86
 
-#define ASM_HOOK(NAME, ADDRESS)        \
-    void* x_##NAME = (void*)(ADDRESS); \
-    void* original_##NAME = x_##NAME;  \
-    void* post_##NAME{};               \
+#define ASM_HOOK(NAME, ADDRESS)                                \
+    void* g_address_##NAME = reinterpret_cast<void*>(ADDRESS); \
+    void* g_address_post_hook_##NAME{};                        \
+    void* original_##NAME = g_address_##NAME;                  \
     void NAKED impl_##NAME()
 
 #define STATIC_ASM_HOOK(NAME, ADDRESS)                               \
-    void* x_##NAME = (void*)(ADDRESS);                               \
-    void* original_##NAME = x_##NAME;                                \
-    void* post_##NAME{};                                             \
+    void* g_address_##NAME = reinterpret_cast<void*>(ADDRESS);       \
+    void* g_address_post_hook_##NAME{};                              \
+    void* original_##NAME = g_address_##NAME;                        \
     void impl_##NAME();                                              \
     __CMNLIB_INTERNAL_STATIC_HOOK_IMPL(NAME, ADDRESS, INSTALL_HOOK); \
     void NAKED impl_##NAME()
 
 #define ASM_HOOK_RETURN(NAME) __asm jmp original_##NAME
 
-#define ASM_HOOK_BRANCH(NAME) __asm jmp post_##NAME
+#define ASM_HOOK_BRANCH(NAME) __asm jmp g_address_post_hook_##NAME
 
 #endif // CMNLIB_X86
 
 ///
 /// Installs a hook defined with \ref HOOK or \ref ASM_HOOK.
 ///
-/// \param FUNCTION_NAME The name of the function to call before the original.
+/// \param NAME The name of the hook to install.
 ///
 /// \returns `true` if the installation succeeeded, or if the hook was already
 ///          installed. Otherwise, `false`.
 ///
-#define INSTALL_HOOK(FUNCTION_NAME) \
-    INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, original_##FUNCTION_NAME)
+#define INSTALL_HOOK(NAME) \
+    INSTALL_HOOK_EXPLICIT(NAME, original_##NAME)
 
 ///
 /// Installs a hook defined with \ref HOOK or \ref ASM_HOOK at an explicit address.
 ///
-/// \param FUNCTION_NAME The name of the function to call before the original.
-/// \param ADDRESS       The address of the function to hook.
+/// \param NAME    The name of the hook to install.
+/// \param ADDRESS The address to install the hook to.
 ///
 /// \returns `true` if the installation succeeeded, or if the hook was already
 ///          installed. Otherwise, `false`.
 ///
-#define INSTALL_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                       \
-    std::invoke([&]() -> bool                                                                               \
-    {                                                                                                       \
-        if (!original_##FUNCTION_NAME && !(ADDRESS))                                                        \
-            return false;                                                                                   \
-                                                                                                            \
-        *(void**)&original_##FUNCTION_NAME = (void*)(ADDRESS);                                              \
-                                                                                                            \
-        DetourTransactionBegin();                                                                           \
-        DetourUpdateThread(GetCurrentThread());                                                             \
-        DetourAttach((void**)&original_##FUNCTION_NAME, &impl_##FUNCTION_NAME);                             \
-                                                                                                            \
-        const auto result = DetourTransactionCommit() == NO_ERROR;                                          \
-                                                                                                            \
-        if (result)                                                                                         \
-            post_##FUNCTION_NAME = hedgedev::csl::hook::_get_post_hook_address((void*)(x_##FUNCTION_NAME)); \
-                                                                                                            \
-        return result;                                                                                      \
+#define INSTALL_HOOK_EXPLICIT(NAME, ADDRESS)                                                            \
+    std::invoke([&]() -> bool                                                                           \
+    {                                                                                                   \
+        if (!original_##NAME && !(ADDRESS))                                                             \
+            return false;                                                                               \
+                                                                                                        \
+        *reinterpret_cast<void**>(&original_##NAME) = reinterpret_cast<void*>(ADDRESS);                 \
+                                                                                                        \
+        DetourTransactionBegin();                                                                       \
+        DetourUpdateThread(GetCurrentThread());                                                         \
+        DetourAttach(reinterpret_cast<void**>(&original_##NAME), &impl_##NAME);                         \
+                                                                                                        \
+        const auto result = DetourTransactionCommit() == NO_ERROR;                                      \
+                                                                                                        \
+        if (result)                                                                                     \
+        {                                                                                               \
+            g_address_post_hook_##NAME =                                                                \
+                hedgedev::csl::hook::_get_post_hook_address(reinterpret_cast<void*>(g_address_##NAME)); \
+        }                                                                                               \
+                                                                                                        \
+        return result;                                                                                  \
     })
 
 ///
 /// Uninstalls a hook installed with \ref INSTALL_HOOK.
 ///
-/// \param FUNCTION_NAME The name of the function to unhook.
+/// \param NAME The name of the hook to uninstall.
 ///
 /// \returns `true` if the uninstallation succeeeded, or if the hook was already
 ///          uninstalled. Otherwise, `false`.
 ///
-#define UNINSTALL_HOOK(FUNCTION_NAME)                                           \
+#define UNINSTALL_HOOK(NAME)                                                    \
     std::invoke([&]() -> bool                                                   \
     {                                                                           \
-        if (x_##FUNCTION_NAME == original_##FUNCTION_NAME)                      \
+        if (g_address_##NAME == original_##NAME)                                \
             return true;                                                        \
                                                                                 \
         DetourTransactionBegin();                                               \
         DetourUpdateThread(GetCurrentThread());                                 \
-        DetourDetach((void**)&original_##FUNCTION_NAME, &impl_##FUNCTION_NAME); \
+        DetourDetach(reinterpret_cast<void**>(&original_##NAME), &impl_##NAME); \
                                                                                 \
         return DetourTransactionCommit() == NO_ERROR;                           \
     })

@@ -19,5 +19,5 @@ ASM_HOOK_RETURN MACRO NAME
 ENDM
 
 ASM_HOOK_BRANCH MACRO NAME
-    jmp post_&NAME&
+    jmp g_address_post_hook_&NAME&
 ENDM

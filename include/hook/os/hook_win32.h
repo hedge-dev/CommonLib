@@ -157,7 +157,7 @@
 #endif
 
 ///
-/// \class __CMNLIB_INTERNAL_VFTABLE_HOOK_COMMON_PARAMS
+/// Defines the body of a hook for a function in a virtual function table in memory.
 ///
 /// \param RETURN_TYPE        The return type of the function.
 /// \param CALLING_CONVENTION The calling convention of the function (e.g.
@@ -167,39 +167,13 @@
 /// \param CLASS_NAME         The name of the class that contains the function
 ///                           being hooked.
 /// \param FUNCTION_NAME      The name of the function.
+/// \param FUNCTION_INDEX     The index of the function in the virtual
+///                           function table.
 /// \param __VA_ARGS__        The parameters of the function.
 ///
-
-///
-/// Defines the body of a hook for a function in a virtual function table in memory.
-///
-/// \copydoc __CMNLIB_INTERNAL_VFTABLE_HOOK_COMMON_PARAMS
-///
-#define VFTABLE_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME, FUNCTION_NAME, ...) \
+#define VFTABLE_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME, FUNCTION_NAME, FUNCTION_INDEX, ...) \
+    const size_t k_index_of_##CLASS_NAME##_##FUNCTION_NAME = size_t(FUNCTION_INDEX);                  \
     HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME##_##FUNCTION_NAME, nullptr, __VA_ARGS__)
-
-///
-/// Defines the body of a hook for a function in a virtual function table in memory,
-/// and installs it upon initialisation.
-///
-/// \copydoc __CMNLIB_INTERNAL_VFTABLE_HOOK_COMMON_PARAMS
-///
-/// \returns Use \ref GET_STATIC_VFTABLE_HOOK_RESULT.
-///
-#define STATIC_VFTABLE_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME, FUNCTION_NAME, ...) \
-    STATIC_HOOK(RETURN_TYPE, CALLING_CONVENTION, CLASS_NAME##_##FUNCTION_NAME, nullptr, __VA_ARGS__)
-
-///
-/// Gets the installation result of a hook defined with \ref STATIC_VFTABLE_HOOK.
-///
-/// \param CLASS_NAME    The name of the class that contains the function that
-///                      was hooked.
-/// \param FUNCTION_NAME The name of the function that was hooked.
-///
-/// \returns `true` if the installation succeeeded. Otherwise, `false`.
-///
-#define GET_STATIC_VFTABLE_HOOK_RESULT(CLASS_NAME, FUNCTION_NAME) \
-    result_##CLASS_NAME##_##FUNCTION_NAME
 
 ///
 /// \class __CMNLIB_INTERNAL_ASM_HOOK_COMMON
@@ -405,40 +379,56 @@
 ///
 /// Installs a hook defined with \ref VFTABLE_HOOK.
 ///
-/// \param CLASS_NAME     The name of the class that contains the function
-///                       being hooked.
 /// \param INSTANCE       A pointer to an instance of the class to extract the
 ///                       virtual function table pointer from.
-/// \param FUNCTION_NAME  The name of the function to call before the original.
-/// \param FUNCTION_INDEX The index of the function to hook.
+/// \param CLASS_NAME     The name of the class that owns the function being hooked.
+/// \param FUNCTION_NAME  The name of the function being hooked.
 ///
 /// \returns `true` if the installation succeeeded, or if the hook was already
 ///          installed. Otherwise, `false`.
 ///
-#define INSTALL_VFTABLE_HOOK(CLASS_NAME, INSTANCE, FUNCTION_NAME, FUNCTION_INDEX)                               \
-    std::invoke([&]() -> bool                                                                                   \
-    {                                                                                                           \
-        if (original_##CLASS_NAME##_##FUNCTION_NAME)                                                            \
-            return true;                                                                                        \
-                                                                                                                \
-        original_##CLASS_NAME##_##FUNCTION_NAME = (*(CLASS_NAME##_##FUNCTION_NAME***)INSTANCE)[FUNCTION_INDEX]; \
-                                                                                                                \
-        DetourTransactionBegin();                                                                               \
-        DetourUpdateThread(GetCurrentThread());                                                                 \
-        DetourAttach((void**)&original_##CLASS_NAME##_##FUNCTION_NAME, impl_##CLASS_NAME##_##FUNCTION_NAME);    \
-                                                                                                                \
-        const auto result = DetourTransactionCommit() == NO_ERROR;                                              \
-                                                                                                                \
-        if (result)                                                                                             \
-            post_##FUNCTION_NAME = hedgedev::csl::hook::_get_post_hook_address((void*)(x_##FUNCTION_NAME));     \
-                                                                                                                \
-        return result;                                                                                          \
+#define INSTALL_VFTABLE_HOOK(INSTANCE, CLASS_NAME, FUNCTION_NAME) \
+    INSTALL_VFTABLE_HOOK_EXPLICIT(INSTANCE, CLASS_NAME, FUNCTION_NAME, k_index_of_##CLASS_NAME##_##FUNCTION_NAME)
+
+///
+/// Installs a hook defined with \ref VFTABLE_HOOK at an explicit index.
+///
+/// \param INSTANCE       A pointer to an instance of the class to extract the
+///                       virtual function table pointer from.
+/// \param CLASS_NAME     The name of the class that owns the function being hooked.
+/// \param FUNCTION_NAME  The name of the function being hooked.
+/// \param FUNCTION_INDEX The index of the function in the virtual function table.
+///
+/// \returns `true` if the installation succeeeded, or if the hook was already
+///          installed. Otherwise, `false`.
+///
+#define INSTALL_VFTABLE_HOOK_EXPLICIT(INSTANCE, CLASS_NAME, FUNCTION_NAME, FUNCTION_INDEX)                                      \
+    std::invoke([&]() -> bool                                                                                                   \
+    {                                                                                                                           \
+        if (original_##CLASS_NAME##_##FUNCTION_NAME)                                                                            \
+            return true;                                                                                                        \
+                                                                                                                                \
+        original_##CLASS_NAME##_##FUNCTION_NAME = *reinterpret_cast<CLASS_NAME##_##FUNCTION_NAME***>(INSTANCE)[FUNCTION_INDEX]; \
+                                                                                                                                \
+        DetourTransactionBegin();                                                                                               \
+        DetourUpdateThread(GetCurrentThread());                                                                                 \
+        DetourAttach(reinterpret_cast<void**>(&original_##CLASS_NAME##_##FUNCTION_NAME), impl_##CLASS_NAME##_##FUNCTION_NAME);  \
+                                                                                                                                \
+        const auto result = DetourTransactionCommit() == NO_ERROR;                                                              \
+                                                                                                                                \
+        if (result)                                                                                                             \
+        {                                                                                                                       \
+            g_address_post_hook_##CLASS_NAME##_##FUNCTION_NAME =                                                                \
+                hedgedev::csl::hook::_get_post_hook_address(reinterpret_cast<void*>(g_address_##CLASS_NAME##_##FUNCTION_NAME)); \
+        }                                                                                                                       \
+                                                                                                                                \
+        return result;                                                                                                          \
     })
 
 ///
 /// Uninstalls a hook installed with \ref INSTALL_VFTABLE_HOOK.
 ///
-/// \param CLASS_NAME    The name of the class that contains the function that
+/// \param CLASS_NAME    The name of the class that owns the function that
 ///                      was hooked.
 /// \param FUNCTION_NAME The name of the function to unhook.
 ///

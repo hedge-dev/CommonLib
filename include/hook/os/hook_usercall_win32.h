@@ -4,11 +4,15 @@
 #include <functional>
 #include <optional>
 #include <typeindex>
+#include <type_traits>
 #include <vector>
 
 #include "../thirdparty/Detours/src/detours.h"
 #include "mem/mem.h"
 #include "os/win32.h"
+
+#define __CMNLIB_INTERNAL_USER_SIZE_OF(RETURN_TYPE) \
+    sizeof(typename std::conditional_t<std::is_void_v<RETURN_TYPE>, RETURN_TYPE*, RETURN_TYPE>)
 
 ///
 /// A custom calling convention that stores arguments in optimised locations,
@@ -33,13 +37,7 @@
 #define __userpurge 1
 
 #define USER_REGISTER(REGISTER) \
-    ((uint64_t)(hedgedev::csl::hook::user_register(hedgedev::csl::hook::user_register_alias::REGISTER)))
-
-///
-/// Specifies the hook has no return value.
-///
-#define USER_RETURN_VOID \
-    USER_REGISTER(none)
+    uint64_t(hedgedev::csl::hook::user_register(hedgedev::csl::hook::user_register_alias::REGISTER))
 
 ///
 /// Specify the register to use for the return value.
@@ -48,6 +46,12 @@
 ///
 #define USER_RETURN(REGISTER) \
     USER_REGISTER(REGISTER)
+
+///
+/// Specifies the hook has no return value.
+///
+#define USER_RETURN_VOID \
+    USER_RETURN(none)
 
 ///
 /// Specify the register to use for a specific parameter.
@@ -95,10 +99,11 @@
 /// USER_FUNCTION_PTR(int, __usercall, my_optimised_function, 0xDEADBEEF, USER_RETURN(EAX) | USER_PARAM(0, EAX) | USER_PARAM(1, XMM0), 3, int in_first_param, float in_second_param, int in_third_param);
 /// \endcode
 ///
-#define USER_FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                           \
-    hedgedev::csl::hook::usercall_info info_##FUNCTION_NAME { typeid(RETURN_TYPE), sizeof(RETURN_TYPE), CALLING_CONVENTION, (void*)(ADDRESS), (void*)(ADDRESS), REGISTERS, PARAM_COUNT }; \
-    void* trampoline_##FUNCTION_NAME = hedgedev::csl::hook::emit_user_trampoline(info_##FUNCTION_NAME, (void*)&info_##FUNCTION_NAME.original_address, true);                              \
-    FUNCTION_PTR(RETURN_TYPE, __cdecl, FUNCTION_NAME, trampoline_##FUNCTION_NAME, __VA_ARGS__)
+#define USER_FUNCTION_PTR(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                   \
+    hedgedev::csl::hook::usercall_info g_info_##FUNCTION_NAME##_fp                                                                                                                                \
+        { typeid(RETURN_TYPE), __CMNLIB_INTERNAL_USER_SIZE_OF(RETURN_TYPE), CALLING_CONVENTION, reinterpret_cast<void*>(ADDRESS), reinterpret_cast<void*>(ADDRESS), REGISTERS, PARAM_COUNT };     \
+    void* g_trampoline_to_##FUNCTION_NAME = hedgedev::csl::hook::emit_user_trampoline(g_info_##FUNCTION_NAME##_fp, reinterpret_cast<void*>(&g_info_##FUNCTION_NAME##_fp.original_address), true); \
+    FUNCTION_PTR(RETURN_TYPE, __cdecl, FUNCTION_NAME, g_trampoline_to_##FUNCTION_NAME, __VA_ARGS__)
 
 ///
 /// \class __CMNLIB_INTERNAL_USER_HOOK_COMMON
@@ -123,10 +128,11 @@
 ///
 /// \copydoc __CMNLIB_INTERNAL_USER_HOOK_COMMON
 ///
-#define USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                   \
-    hedgedev::csl::hook::usercall_info info_##FUNCTION_NAME { typeid(RETURN_TYPE), sizeof(RETURN_TYPE), CALLING_CONVENTION, (void*)(ADDRESS), (void*)(ADDRESS), REGISTERS, PARAM_COUNT }; \
-    RETURN_TYPE __cdecl impl_##FUNCTION_NAME(__VA_ARGS__);                                                                                                                                \
-    void* trampoline_to_hook_##FUNCTION_NAME = hedgedev::csl::hook::emit_user_trampoline(info_##FUNCTION_NAME, (void*)&impl_##FUNCTION_NAME);                                             \
+#define USER_HOOK(RETURN_TYPE, CALLING_CONVENTION, FUNCTION_NAME, ADDRESS, REGISTERS, PARAM_COUNT, ...)                                                                                       \
+    hedgedev::csl::hook::usercall_info g_info_##FUNCTION_NAME                                                                                                                                 \
+        { typeid(RETURN_TYPE), __CMNLIB_INTERNAL_USER_SIZE_OF(RETURN_TYPE), CALLING_CONVENTION, reinterpret_cast<void*>(ADDRESS), reinterpret_cast<void*>(ADDRESS), REGISTERS, PARAM_COUNT }; \
+    RETURN_TYPE __cdecl impl_##FUNCTION_NAME(__VA_ARGS__);                                                                                                                                    \
+    void* g_trampoline_to_##FUNCTION_NAME##_hook = hedgedev::csl::hook::emit_user_trampoline(g_info_##FUNCTION_NAME, reinterpret_cast<void*>(&impl_##FUNCTION_NAME));                         \
     HOOK(RETURN_TYPE, __cdecl, FUNCTION_NAME, nullptr, __VA_ARGS__)
 
 ///
@@ -151,7 +157,7 @@
 ///          installed. Otherwise, `false`.
 ///
 #define INSTALL_USER_HOOK(FUNCTION_NAME) \
-    INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, info_##FUNCTION_NAME.detour_address)
+    INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, g_info_##FUNCTION_NAME.detour_address)
 
 ///
 /// Installs a hook defined with \ref USER_HOOK at an explicit address.
@@ -162,25 +168,32 @@
 /// \returns `true` if the installation succeeeded, or if the hook was already
 ///          installed. Otherwise, `false`.
 ///
-#define INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                                       \
-    std::invoke([&]() -> bool                                                                                                    \
-    {                                                                                                                            \
-        const auto& info = info_##FUNCTION_NAME;                                                                                 \
-                                                                                                                                 \
-        if (!info.detour_address && !(ADDRESS))                                                                                  \
-            return false;                                                                                                        \
-                                                                                                                                 \
-        *(void**)&info.detour_address = (void*)(ADDRESS);                                                                        \
-                                                                                                                                 \
-        DetourTransactionBegin();                                                                                                \
-        DetourUpdateThread(GetCurrentThread());                                                                                  \
-        DetourAttach((void**)&info.detour_address, trampoline_to_hook_##FUNCTION_NAME);                                          \
-                                                                                                                                 \
-        const auto result = DetourTransactionCommit() == NO_ERROR;                                                               \
-                                                                                                                                 \
-        *(void**)&original_##FUNCTION_NAME = hedgedev::csl::hook::emit_user_trampoline(info, (void*)&info.detour_address, true); \
-                                                                                                                                 \
-        return result;                                                                                                           \
+#define INSTALL_USER_HOOK_EXPLICIT(FUNCTION_NAME, ADDRESS)                                                            \
+    std::invoke([&]() -> bool                                                                                         \
+    {                                                                                                                 \
+        auto& info = g_info_##FUNCTION_NAME;                                                                          \
+                                                                                                                      \
+        if (!info.detour_address && !(ADDRESS))                                                                       \
+            return false;                                                                                             \
+                                                                                                                      \
+        *reinterpret_cast<void**>(&info.detour_address) = reinterpret_cast<void*>(ADDRESS);                           \
+                                                                                                                      \
+        DetourTransactionBegin();                                                                                     \
+        DetourUpdateThread(GetCurrentThread());                                                                       \
+        DetourAttach(reinterpret_cast<void**>(&info.detour_address), g_trampoline_to_##FUNCTION_NAME##_hook);         \
+                                                                                                                      \
+        const auto result = DetourTransactionCommit() == NO_ERROR;                                                    \
+                                                                                                                      \
+        if (result)                                                                                                   \
+        {                                                                                                             \
+            *reinterpret_cast<void**>(&original_##FUNCTION_NAME) =                                                    \
+                hedgedev::csl::hook::emit_user_trampoline(info, reinterpret_cast<void*>(&info.detour_address), true); \
+                                                                                                                      \
+            g_address_post_hook_##FUNCTION_NAME =                                                                     \
+                hedgedev::csl::hook::_get_post_hook_address(reinterpret_cast<void*>(g_address_##FUNCTION_NAME));      \
+        }                                                                                                             \
+                                                                                                                      \
+        return result;                                                                                                \
     })
 
 ///
@@ -191,19 +204,19 @@
 /// \returns `true` if the uninstallation succeeeded, or if the hook was already
 ///          uninstalled. Otherwise, `false`.
 ///
-#define UNINSTALL_USER_HOOK(FUNCTION_NAME)                                              \
-    std::invoke([&]() -> bool                                                           \
-    {                                                                                   \
-        const auto& info = info_##FUNCTION_NAME;                                        \
-                                                                                        \
-        if (info.original_address == info.detour_address)                               \
-            return true;                                                                \
-                                                                                        \
-        DetourTransactionBegin();                                                       \
-        DetourUpdateThread(GetCurrentThread());                                         \
-        DetourDetach((void**)&info.detour_address, trampoline_to_hook_##FUNCTION_NAME); \
-                                                                                        \
-        return DetourTransactionCommit() == NO_ERROR;                                   \
+#define UNINSTALL_USER_HOOK(FUNCTION_NAME)                                                                    \
+    std::invoke([&]() -> bool                                                                                 \
+    {                                                                                                         \
+        auto& info = g_info_##FUNCTION_NAME;                                                                  \
+                                                                                                              \
+        if (info.original_address == info.detour_address)                                                     \
+            return true;                                                                                      \
+                                                                                                              \
+        DetourTransactionBegin();                                                                             \
+        DetourUpdateThread(GetCurrentThread());                                                               \
+        DetourDetach(reinterpret_cast<void**>(&info.detour_address), g_trampoline_to_##FUNCTION_NAME##_hook); \
+                                                                                                              \
+        return DetourTransactionCommit() == NO_ERROR;                                                         \
     })
 
 namespace hedgedev::csl::hook
@@ -1061,7 +1074,7 @@ namespace hedgedev::csl::hook
 
         const auto return_register = in_info.get_return_register();
         
-        if (return_register != user_register::none)
+        if (return_register != user_register::none || in_info.is_return_type<void>())
         {
             // Move __cdecl return value into __usercall return register and vice-versa.
             if ((in_info.is_return_type<float>() || in_info.is_return_type<double>()))

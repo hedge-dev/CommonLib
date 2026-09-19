@@ -31,4 +31,4 @@ jobs:
 
     - name: Validate
       working-directory: ${{github.workspace}}/tools/scripts/cli
-      run: py ./main.py validate --skip_submodules
+      run: python3 ./main.py validate --skip_submodules

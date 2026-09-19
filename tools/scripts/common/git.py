@@ -11,7 +11,7 @@ def is_repository():
     if not has_git():
         return False
     
-    return subprocess.call("git rev-parse --is-inside-work-tree", stdout = subprocess.DEVNULL) == 0
+    return subprocess.call("git rev-parse --is-inside-work-tree", shell = True, stdout = subprocess.DEVNULL) == 0
 #
 
 def submodule_update():
@@ -19,7 +19,7 @@ def submodule_update():
     if not is_repository():
         return False
     
-    subprocess.call("git -c fetch.recurseSubmodules=on-demand submodule update --init")
+    subprocess.call("git -c fetch.recurseSubmodules=on-demand submodule update --init", shell = True)
 
     return True
 #
@@ -30,7 +30,7 @@ def get_repo_dir():
 
     if is_repository():
     #
-        if result := subprocess.run("git rev-parse --show-toplevel", capture_output = True, text = True):
+        if result := subprocess.run("git rev-parse --show-toplevel", shell = True, capture_output = True, text = True):
             return os.path.normpath(result.stdout.strip())
     #
     else:

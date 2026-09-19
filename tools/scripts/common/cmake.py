@@ -131,7 +131,7 @@ def configure(preset_name, args: list[str] = None, presets_path = DEFAULT_PRESET
     if args:
         cmd = f"{cmd} {" ".join(args)}"
 
-    subprocess.call(cmd)
+    subprocess.call(cmd, shell = True)
 
     return True
 #
@@ -146,7 +146,7 @@ def build(preset_name, args: list[str] = None, presets_path = DEFAULT_PRESETS_FI
     if args:
         cmd = f"{cmd} {" ".join(args)}"
 
-    subprocess.call(cmd)
+    subprocess.call(cmd, shell = True)
 
     return True
 #

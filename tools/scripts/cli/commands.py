@@ -564,6 +564,7 @@ class validate(command):
                     "--force",
                     "--language=c++",
                     "--quiet",
+                    "--suppress=checkersReport",
                     "--suppress=missingIncludeSystem",
                     "--suppress=unusedFunction",
                     "--suppress=unusedStructMember",

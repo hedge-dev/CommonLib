@@ -19,9 +19,9 @@ namespace hedgedev::csl::diag
             if (!in_symbol_info)
                 return;
 
-            module_base = (void*)in_symbol_info->ModBase;
+            module_base = reinterpret_cast<void*>(in_symbol_info->ModBase);
 
-            symbol_info.address = (void*)in_symbol_info->Address;
+            symbol_info.address = reinterpret_cast<void*>(in_symbol_info->Address);
 
             if (in_symbol_info->NameLen > 0)
                 symbol_info.name = std::string(in_symbol_info->Name, in_symbol_info->NameLen);
@@ -38,7 +38,7 @@ namespace hedgedev::csl::diag
                 return;
 
             line_info.source_file_path = in_line_info->FileName;
-            line_info.address = (void*)in_line_info->Address;
+            line_info.address = reinterpret_cast<void*>(in_line_info->Address);
             line_info.row = in_line_info->LineNumber;
 
             m_has_line_info = true;

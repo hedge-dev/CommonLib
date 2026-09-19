@@ -81,7 +81,7 @@ namespace hedgedev::csl::diag::this_process
 	{
 		std::vector<stack_frame> result{};
 
-		auto context = *(CONTEXT*)in_context;
+		auto context = *reinterpret_cast<const CONTEXT*>(in_context);
 
 		DWORD machine_type{};
 		const auto current_process = GetCurrentProcess();
@@ -109,7 +109,7 @@ namespace hedgedev::csl::diag::this_process
 #endif
 
 		auto symbol_info_buffer = std::make_unique<uint8_t[]>(sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(CHAR));
-		auto symbol_info = (SYMBOL_INFO*)symbol_info_buffer.get();
+		auto symbol_info = reinterpret_cast<SYMBOL_INFO*>(symbol_info_buffer.get());
 		symbol_info->SizeOfStruct = sizeof(SYMBOL_INFO);
 		symbol_info->MaxNameLen = MAX_SYM_NAME;
 
@@ -130,8 +130,8 @@ namespace hedgedev::csl::diag::this_process
 
 			stack_frame_win32 current_frame{};
 
-			current_frame.set_module_path(get_module_path_from_address((void*)stack_frame.AddrPC.Offset));
-			current_frame.program_counter = (void*)stack_frame.AddrPC.Offset;
+			current_frame.program_counter = reinterpret_cast<void*>(stack_frame.AddrPC.Offset);
+			current_frame.set_module_path(get_module_path_from_address(current_frame.program_counter));
 
 			uint64_t displacement{};
 

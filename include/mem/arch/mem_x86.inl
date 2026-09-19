@@ -49,7 +49,7 @@ namespace hedgedev::csl::mem
             return result;
         
         const auto b0 = read<uint8_t>(in_address);
-        const auto b1 = read<uint8_t>((uint8_t*)in_address + 1);
+        const auto b1 = read<uint8_t>(reinterpret_cast<uint8_t*>(in_address) + 1);
 
         if ((b0 & 0xF0) == 0x70 || b0 == 0x0F)
         {
@@ -107,19 +107,19 @@ namespace hedgedev::csl::mem
         switch (result.distance)
         {
             case branch_distance::short_branch:
-                rva = *(int8_t*)imm_offset;
+                rva = *reinterpret_cast<int8_t*>(imm_offset);
                 break;
 
             case branch_distance::near_branch:
-                rva = *(int32_t*)imm_offset;
+                rva = *reinterpret_cast<int32_t*>(imm_offset);
                 break;
 
             case branch_distance::far_branch:
-                result.destination = (void*)(*(uintptr_t*)imm_offset);
+                result.destination = reinterpret_cast<void*>(*reinterpret_cast<uintptr_t*>(imm_offset));
                 return result;
         }
 
-        result.destination = (void*)(uintptr_t(in_address) + rva + result.instr_length);
+        result.destination = reinterpret_cast<void*>(uintptr_t(in_address) + rva + result.instr_length);
 
         return result;
     }
@@ -130,7 +130,7 @@ namespace hedgedev::csl::mem
         if (!in_address)
             return nullptr;
 
-        return (void*)((uintptr_t(in_address) + *(T*)(uintptr_t(in_address) + in_offset)) + in_stride);
+        return reinterpret_cast<void*>((uintptr_t(in_address) + *reinterpret_cast<T*>(uintptr_t(in_address) + in_offset)) + in_stride);
     }
 
     inline void* read_call(void* in_address)
@@ -158,27 +158,27 @@ namespace hedgedev::csl::mem
         if (rva - 2 <= 0x7F && !in_isCall)
         {
             ASSERT_RETURN_FALSE(write<uint8_t>(in_address, 0xEB));
-            ASSERT_RETURN_FALSE(write<int8_t>((uint8_t*)in_address + 1, int8_t(rva - 2)));
+            ASSERT_RETURN_FALSE(write<int8_t>(reinterpret_cast<uint8_t*>(in_address) + 1, int8_t(rva - 2)));
         }
         else
         {
             if (rva - 5 <= 0x7FFFFFFF)
             {
                 ASSERT_RETURN_FALSE(write<uint8_t>(in_address, in_isCall ? 0xE8 : 0xE9));
-                ASSERT_RETURN_FALSE(write<int32_t>((uint8_t*)in_address + 1, int32_t(rva - 5)));
+                ASSERT_RETURN_FALSE(write<int32_t>(reinterpret_cast<uint8_t*>(in_address) + 1, int32_t(rva - 5)));
             }
             else
             {
                 ASSERT_RETURN_FALSE(write<uint8_t>(in_address, 0xFF));
-                ASSERT_RETURN_FALSE(write<uint8_t>((uint8_t*)in_address + 1, in_isCall ? 0x15 : 0x25));
+                ASSERT_RETURN_FALSE(write<uint8_t>(reinterpret_cast<uint8_t*>(in_address) + 1, in_isCall ? 0x15 : 0x25));
 #ifdef CMNLIB_X64
-                ASSERT_RETURN_FALSE(write<uint32_t>((uint8_t*)in_address + 2, 0));
+                ASSERT_RETURN_FALSE(write<uint32_t>(reinterpret_cast<uint8_t*>(in_address) + 2, 0));
 
                 const ptrdiff_t imm_offset = 6;
 #else
                 const ptrdiff_t imm_offset = 2;
 #endif
-                ASSERT_RETURN_FALSE(write<uintptr_t>((uint8_t*)in_address + imm_offset, uintptr_t(in_destination)));
+                ASSERT_RETURN_FALSE(write<uintptr_t>(reinterpret_cast<uint8_t*>(in_address) + imm_offset, uintptr_t(in_destination)));
             }
         }
 

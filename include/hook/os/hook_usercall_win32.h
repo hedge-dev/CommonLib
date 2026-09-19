@@ -963,11 +963,11 @@ namespace hedgedev::csl::hook
 
             if (in_absolute)
             {
-                *(uint32_t*)offset = uint32_t(in_target);
+                *reinterpret_cast<uint32_t*>(offset) = uint32_t(in_target);
             }
             else
             {
-                *(uint32_t*)offset = uint32_t(uintptr_t(in_target) - offset - sizeof(uint32_t));
+                *reinterpret_cast<uint32_t*>(offset) = uint32_t(uintptr_t(in_target) - offset - sizeof(uint32_t));
             }
         };
 

@@ -104,11 +104,11 @@ namespace hedgedev::csl::cfg::registry
         }
         else if constexpr (std::is_same_v<T, int32_t> || std::is_same_v<T, uint32_t>)
         {
-            result = RegGetValueW(key, NULL, in_value_name.c_str(), RRF_RT_DWORD, NULL, (BYTE*)&out_result, &buffer_size);
+            result = RegGetValueW(key, NULL, in_value_name.c_str(), RRF_RT_DWORD, NULL, reinterpret_cast<PVOID>(&out_result), &buffer_size);
         }
         else if constexpr (std::is_same_v<T, int64_t> || std::is_same_v<T, uint64_t>)
         {
-            result = RegGetValueW(key, NULL, in_value_name.c_str(), RRF_RT_QWORD, NULL, (BYTE*)&out_result, &buffer_size);
+            result = RegGetValueW(key, NULL, in_value_name.c_str(), RRF_RT_QWORD, NULL, reinterpret_cast<PVOID>(&out_result), &buffer_size);
         }
         else
         {
@@ -149,7 +149,7 @@ namespace hedgedev::csl::cfg::registry
         {
             if (ut::string::try_convert(in_value, str_data))
             {
-                data = (BYTE*)str_data.c_str();
+                data = reinterpret_cast<BYTE*>(str_data.c_str());
                 data_size = (str_data.size() + 1) * sizeof(wchar_t);
                 data_type = REG_SZ;
             }
@@ -161,13 +161,13 @@ namespace hedgedev::csl::cfg::registry
         }
         else if constexpr (std::is_same_v<T, int32_t> || std::is_same_v<T, uint32_t>)
         {
-            data = (BYTE*)&in_value;
+            data = reinterpret_cast<BYTE*>(&in_value);
             data_size = sizeof(T);
             data_type = REG_DWORD;
         }
         else if constexpr (std::is_same_v<T, int64_t> || std::is_same_v<T, uint64_t>)
         {
-            data = (BYTE*)&in_value;
+            data = reinterpret_cast<BYTE*>(&in_value);
             data_size = sizeof(T);
             data_type = REG_QWORD;
         }

@@ -10,7 +10,7 @@ namespace hedgedev::csl::mem
     template <typename T>
     inline T read(void* in_address)
     {
-        return *(T*)in_address;
+        return *reinterpret_cast<T*>(in_address);
     }
 
     template <typename T, size_t K_count>
@@ -19,7 +19,7 @@ namespace hedgedev::csl::mem
         std::array<T, K_count> result{};
 
         for (size_t i = 0; i < K_count; i++)
-            result[i] = ((T*)in_address)[i];
+            result[i] = reinterpret_cast<T*>(in_address)[i];
 
         return result;
     }
@@ -37,7 +37,7 @@ namespace hedgedev::csl::mem
         ASSERT_RETURN_FALSE(protect(in_address, length, get_protect_flags(page_protection::rw), &old_protect_flags));
 
         for (size_t i = 0; i < in_count; i++)
-            ((T*)in_address)[i] = in_data;
+            reinterpret_cast<T*>(in_address)[i] = in_data;
         
         ASSERT_RETURN_FALSE(protect(in_address, length, old_protect_flags));
 
@@ -86,10 +86,10 @@ namespace hedgedev::csl::mem
         if (!dst_length)
         {
             // Started at null terminator, abort.
-            if (!*(str_char_t*)in_address)
+            if (!*reinterpret_cast<str_char_t*>(in_address))
                 return false;
 
-            dst_length = ut::expr::inferred_string_view_t<T>((const str_char_t*)in_address).size() * sizeof(str_char_t);
+            dst_length = ut::expr::inferred_string_view_t<T>(reinterpret_cast<str_char_t*>(in_address)).size() * sizeof(str_char_t);
 
             if (!dst_length)
                 return false;
@@ -108,7 +108,7 @@ namespace hedgedev::csl::mem
 
         ASSERT_RETURN_FALSE(protect(in_address, dst_length, get_protect_flags(page_protection::rw), &old_protect_flags));
         ASSERT_RETURN_FALSE(memcpy_s(in_address, dst_length, str_sv.data(), src_length) == 0);
-        memset((char*)(size_t(in_address) + src_length), 0, sizeof(str_char_t));
+        memset(reinterpret_cast<char*>(uintptr_t(in_address) + src_length), 0, sizeof(str_char_t));
         ASSERT_RETURN_FALSE(protect(in_address, dst_length, old_protect_flags));
 
         return true;

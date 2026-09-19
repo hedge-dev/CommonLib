@@ -13,7 +13,7 @@
 /// \returns The input address transformed into the ASLR base.
 ///
 #define ASLR(ADDRESS) \
-    (hedgedev::csl::mem::to_aslr((void*)(ADDRESS)))
+    (hedgedev::csl::mem::to_aslr(reinterpret_cast<void*>(ADDRESS)))
 
 ///
 /// Checks if the instruction at the given memory address is a
@@ -24,7 +24,7 @@
 /// \returns `true` if the instruction is no-operation (NOP). Otherwise, `false`.
 ///
 #define IS_NOP(ADDRESS) \
-    (hedgedev::csl::mem::is_nop((void*)(ADDRESS)))
+    (hedgedev::csl::mem::is_nop(reinterpret_cast<void*>(ADDRESS)))
 
 ///
 /// Reads a value in memory.
@@ -35,7 +35,7 @@
 /// \returns An instance of the type read from memory.
 ///
 #define READ(ADDRESS, TYPE) \
-    (hedgedev::csl::mem::read<TYPE>((void*)(ADDRESS)))
+    (hedgedev::csl::mem::read<TYPE>(reinterpret_cast<void*>(ADDRESS)))
 
 ///
 /// Reads an array of values in memory.
@@ -47,7 +47,7 @@
 /// \returns An array of instances of the type read from memory.
 ///
 #define READ_ARRAY(ADDRESS, TYPE, COUNT) \
-    (hedgedev::csl::mem::read<TYPE, COUNT>((void*)(ADDRESS)))
+    (hedgedev::csl::mem::read<TYPE, COUNT>(reinterpret_cast<void*>(ADDRESS)))
 
 ///
 /// Reads the address of an instruction in memory.
@@ -60,7 +60,7 @@
 /// \returns The address referenced by the instruction.
 ///
 #define READ_INSTR_ADDRESS(ADDRESS, TYPE, OFFSET, STRIDE) \
-    (hedgedev::csl::mem::read_instr_address<TYPE>((void*)(ADDRESS), OFFSET, STRIDE))
+    (hedgedev::csl::mem::read_instr_address<TYPE>(reinterpret_cast<void*>(ADDRESS), OFFSET, STRIDE))
 
 ///
 /// Reads the address of a call instruction in memory.
@@ -70,7 +70,7 @@
 /// \returns The address referenced by the call instruction.
 ///
 #define READ_CALL(ADDRESS) \
-    (hedgedev::csl::mem::read_call((void*)(ADDRESS)))
+    (hedgedev::csl::mem::read_call(reinterpret_cast<void*>(ADDRESS)))
 
 ///
 /// Reads the address of a jump instruction in memory.
@@ -80,7 +80,7 @@
 /// \returns The address referenced by the jump instruction.
 ///
 #define READ_JUMP(ADDRESS) \
-    (hedgedev::csl::mem::read_jump((void*)(ADDRESS)))
+    (hedgedev::csl::mem::read_jump(reinterpret_cast<void*>(ADDRESS)))
 
 ///
 /// Writes any number of values in memory.
@@ -92,7 +92,7 @@
 /// \returns `true` if the data was written successfully. Otherwise, `false`.
 ///
 #define WRITE(ADDRESS, TYPE, ...) \
-    (hedgedev::csl::mem::write<TYPE>((void*)(ADDRESS), { __VA_ARGS__ }))
+    (hedgedev::csl::mem::write<TYPE>(reinterpret_cast<void*>(ADDRESS), { __VA_ARGS__ }))
 
 ///
 /// Writes an array of values in memory.
@@ -104,7 +104,7 @@
 /// \returns `true` if the data was written successfully. Otherwise, `false`.
 ///
 #define WRITE_ARRAY(ADDRESS, TYPE, DATA) \
-    (hedgedev::csl::mem::write<TYPE>((void*)(ADDRESS), DATA))
+    (hedgedev::csl::mem::write<TYPE>(reinterpret_cast<void*>(ADDRESS), DATA))
 
 ///
 /// Writes a call instruction in memory.
@@ -115,7 +115,7 @@
 /// \returns `true` if the call was written successfully. Otherwise, `false`.
 ///
 #define WRITE_CALL(ADDRESS, DESTINATION) \
-    (hedgedev::csl::mem::write_call((void*)(ADDRESS), (void*)(DESTINATION)))
+    (hedgedev::csl::mem::write_call(reinterpret_cast<void*>(ADDRESS), reinterpret_cast<void*>(DESTINATION)))
 
 ///
 /// Writes a jump instruction in memory.
@@ -126,7 +126,7 @@
 /// \returns `true` if the jump was written successfully. Otherwise, `false`.
 ///
 #define WRITE_JUMP(ADDRESS, DESTINATION) \
-    (hedgedev::csl::mem::write_jump((void*)(ADDRESS), (void*)(DESTINATION)))
+    (hedgedev::csl::mem::write_jump(reinterpret_cast<void*>(ADDRESS), reinterpret_cast<void*>(DESTINATION)))
 
 ///
 /// Writes a no-operation (NOP) instruction in memory.
@@ -138,7 +138,7 @@
 ///          Otherwise, `false`.
 ///
 #define WRITE_NOP(ADDRESS, COUNT) \
-    (hedgedev::csl::mem::write_nop((void*)(ADDRESS), COUNT))
+    (hedgedev::csl::mem::write_nop(reinterpret_cast<void*>(ADDRESS), COUNT))
 
 ///
 /// Writes a string in memory.
@@ -149,7 +149,7 @@
 /// \returns `true` if the string was written successfully. Otherwise, `false`.
 ///
 #define WRITE_STRING(ADDRESS, STR) \
-    (hedgedev::csl::mem::write_string((void*)(ADDRESS), STR))
+    (hedgedev::csl::mem::write_string(reinterpret_cast<void*>(ADDRESS), STR))
 
 ///
 /// Writes a string of fixed length in memory.
@@ -163,7 +163,7 @@
 /// \returns `true` if the string was written successfully. Otherwise, `false`.
 ///
 #define WRITE_STRING_FIXED(ADDRESS, STR, ...) \
-    (hedgedev::csl::mem::write_string_fixed_length((void*)(ADDRESS), STR, __VA_ARGS__))
+    (hedgedev::csl::mem::write_string_fixed_length(reinterpret_cast<void*>(ADDRESS), STR, __VA_ARGS__))
 
 namespace hedgedev::csl::mem
 {

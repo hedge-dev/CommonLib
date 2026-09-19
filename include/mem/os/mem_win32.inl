@@ -11,11 +11,11 @@ namespace hedgedev::csl::mem
         if (!k_module)
             return nullptr;
 
-        const auto module_base = (uint8_t*)k_module;
-        const auto dos_header = (IMAGE_DOS_HEADER*)module_base;
-        const auto nt_headers = (IMAGE_NT_HEADERS*)(module_base + dos_header->e_lfanew);
+        const auto module_base = reinterpret_cast<uint8_t*>(k_module);
+        const auto dos_header = reinterpret_cast<IMAGE_DOS_HEADER const*>(module_base);
+        const auto nt_headers = reinterpret_cast<IMAGE_NT_HEADERS*>(module_base + dos_header->e_lfanew);
 
-        return (void*)nt_headers->OptionalHeader.ImageBase;
+        return reinterpret_cast<void*>(nt_headers->OptionalHeader.ImageBase);
     }
     
     inline uint32_t get_protect_flags(page_protection in_protection)
@@ -52,7 +52,7 @@ namespace hedgedev::csl::mem
     {
         uint32_t old_protect_flags{};
 
-        const auto result = VirtualProtect(in_address, in_length, in_new_protect_flags, (PDWORD)&old_protect_flags);
+        const auto result = VirtualProtect(in_address, in_length, in_new_protect_flags, reinterpret_cast<PDWORD>(&old_protect_flags));
 
         if (out_old_protect_flags)
             *out_old_protect_flags = old_protect_flags;
@@ -65,7 +65,7 @@ namespace hedgedev::csl::mem
         if (!in_base_address && !g_original_module_base)
             g_original_module_base = in_base_address = get_original_module_base();
 
-        return (void*)(uintptr_t(k_module) + uintptr_t(in_address) - uintptr_t(in_base_address));
+        return reinterpret_cast<void*>(uintptr_t(k_module) + uintptr_t(in_address) - uintptr_t(in_base_address));
     }
 
     inline void* from_aslr(void* in_address, void* in_base_address)
@@ -73,6 +73,6 @@ namespace hedgedev::csl::mem
         if (!in_base_address && !g_original_module_base)
             g_original_module_base = in_base_address = get_original_module_base();
         
-        return (void*)(uintptr_t(in_address) + uintptr_t(in_base_address) - uintptr_t(k_module));
+        return reinterpret_cast<void*>(uintptr_t(in_address) + uintptr_t(in_base_address) - uintptr_t(k_module));
     }
 }

@@ -455,7 +455,7 @@ namespace hedgedev::csl::hook
         
         const auto branch_info = mem::get_branch_info(in_hook);
 
-        result = (uint8_t*)(uintptr_t(in_hook) + branch_info.instr_length);
+        result = reinterpret_cast<uint8_t*>(uintptr_t(in_hook) + branch_info.instr_length);
 
         while (*result == 0xCC)
             result++;

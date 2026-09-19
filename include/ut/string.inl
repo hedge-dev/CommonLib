@@ -539,10 +539,10 @@ namespace hedgedev::csl::ut::string
 					return false;
 #else
 				size_t chars{};
-				if (wcstombs_s(&chars, (char*)buffer.get(), str_size + sizeof(char), str_sv.data(), str_size) != 0)
+				if (wcstombs_s(&chars, reinterpret_cast<char*>(buffer.get()), str_size + sizeof(char), str_sv.data(), str_size) != 0)
 					return false;
 #endif
-				out_result = std::string((char*)buffer.get(), str_size);
+				out_result = std::string(buffer.get(), str_size);
 			}
 		}
 		else if constexpr (std::is_same_v<T_result, std::wstring>)
@@ -556,10 +556,10 @@ namespace hedgedev::csl::ut::string
 					return false;
 #else
 				size_t chars{};
-				if (mbstowcs_s(&chars, (wchar_t*)buffer.get(), str_size + sizeof(wchar_t), str_sv.data(), str_size) != 0)
+				if (mbstowcs_s(&chars, reinterpret_cast<wchar_t*>(buffer.get()), str_size + sizeof(wchar_t), str_sv.data(), str_size) != 0)
 					return false;
 #endif
-				out_result = std::wstring((wchar_t*)buffer.get(), str_size);
+				out_result = std::wstring(buffer.get(), str_size);
 			}
 		}
 		else

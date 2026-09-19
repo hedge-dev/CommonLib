@@ -5,6 +5,7 @@
 #include "../thirdparty/Detours/src/detours.h"
 #include "mem/mem.h"
 #include "os/win32.h"
+#include "ut/os/preprocessor_win32.h"
 
 #define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
 
@@ -45,14 +46,14 @@
 /// Loads a dynamic link library into memory and declares a pointer to an exported
 /// function from it.
 ///
-/// \param RETURN_TYPE        The return type of the function.
-/// \param LIBRARY_NAME       The name of the dynamic link library.
-/// \param FUNCTION_NAME      The name of the exported function.
-/// \param __VA_ARGS__        The parameters of the exported function.
+/// \param RETURN_TYPE   The return type of the function.
+/// \param LIBRARY_NAME  The name of the dynamic link library.
+/// \param FUNCTION_NAME The name of the exported function.
+/// \param __VA_ARGS__   The parameters of the exported function.
 ///
-#define IMPORT_FUNCTION_PTR(RETURN_TYPE, LIBRARY_NAME, FUNCTION_NAME, ...) \
-    typedef RETURN_TYPE _##FUNCTION_NAME(__VA_ARGS__);                     \
-    _##FUNCTION_NAME* FUNCTION_NAME = (_##FUNCTION_NAME*)IMPORT_FUNC(LIBRARY_NAME, #FUNCTION_NAME);
+#define DLL_IMPORT_FUNCTION_PTR(RETURN_TYPE, LIBRARY_NAME, FUNCTION_NAME, ...) \
+    typedef RETURN_TYPE FUNCTION_NAME##_t(__VA_ARGS__);                        \
+    FUNCTION_NAME##_t* FUNCTION_NAME = reinterpret_cast<FUNCTION_NAME##_t*>(DLL_IMPORT_EXPLICIT(LIBRARY_NAME, #FUNCTION_NAME));
 
 ///
 /// Defines the body of a hook for a function in memory.

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['branchcondition_0',['BranchCondition',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a984c1bda11b121d475b57ff01a071575',1,'hedgedev::csl::mem']]],
-  ['branchdistance_1',['BranchDistance',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aab1fb6c4fb11964b04f4a19a285076e7',1,'hedgedev::csl::mem']]],
-  ['branchtype_2',['BranchType',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a475e1d9b3b66b3a4922cd89232f8926e',1,'hedgedev::csl::mem']]]
+  ['branch_5fcondition_0',['branch_condition',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcd',1,'hedgedev::csl::mem']]],
+  ['branch_5fdistance_1',['branch_distance',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a882e650acf2da2a6471e5c4fd5b3135e',1,'hedgedev::csl::mem']]],
+  ['branch_5ftype_2',['branch_type',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#affb24618981b3a7a6f3b2bd67b93bba3',1,'hedgedev::csl::mem']]]
 ];

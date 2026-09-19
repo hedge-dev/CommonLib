@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['format_0',['Format',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ac2b59e83c19e482c4cde3085df942ce3',1,'hedgedev::csl::ut::string']]],
-  ['fromaslr_1',['FromASLR',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a245d3563fc81989639c2a316a023cfe8',1,'hedgedev::csl::mem']]]
+  ['emit_5fuser_5ftrampoline_0',['emit_user_trampoline',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a80947333a3a478ba1f874c6a6e2ec450',1,'hedgedev::csl::hook']]],
+  ['escape_1',['escape',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#aab5453d5e2dba4c95c7b2466e171a597',1,'hedgedev::csl::ut::string']]]
 ];

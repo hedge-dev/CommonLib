@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['wrap_0',['Wrap',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ab8cdf64ffcd64bba6ba289c2669285cb',1,'hedgedev::csl::ut::string']]],
-  ['write_1',['Write',['../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#aa7f8094af3d1b10b17c0f2645b2f9932',1,'hedgedev::csl::cfg::registry::Write(const std::filesystem::path &amp;in_rPath, const std::filesystem::path &amp;in_rValueName, const T &amp;in_rData)'],['../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#a5b371b791cccdb35788584d5be08bf1e',1,'hedgedev::csl::cfg::registry::Write(const std::filesystem::path &amp;in_rPath, const T &amp;in_rData)'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a29f876487043b31d08e995a5b58d3a64',1,'hedgedev::csl::mem::Write(void *in_pAddress, const T &amp;in_rData, size_t in_count=1)'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a180e94953795c07cfe9438b033f798c3',1,'hedgedev::csl::mem::Write(void *in_pAddress, const std::vector&lt; T &gt; &amp;in_rData)']]],
-  ['writecall_2',['WriteCall',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a881e2d8d7f742316057853b0ddb65511',1,'hedgedev::csl::mem']]],
-  ['writejump_3',['WriteJump',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aa45d52a8175b5c923caa954e656089e3',1,'hedgedev::csl::mem']]],
-  ['writenop_4',['WriteNop',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a746804ef4cb9cfe66f3794ef7f642402',1,'hedgedev::csl::mem']]],
-  ['writestring_5',['WriteString',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a88791fcffbad85a4252a81387098fb1b',1,'hedgedev::csl::mem']]],
-  ['writestringfixedlength_6',['WriteStringFixedLength',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aa9f75c149acac15e0f86b84a849f204e',1,'hedgedev::csl::mem']]]
+  ['set_5fline_5finfo_0',['set_line_info',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#afbbff9fb3d58416c6ad753d512dd56b7',1,'hedgedev::csl::diag::stack_frame_win32']]],
+  ['set_5fmodule_5fpath_1',['set_module_path',['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#a22f7f69b60e9c04d965a616fe9c96957',1,'hedgedev::csl::diag::stack_frame']]],
+  ['set_5fsymbol_5finfo_2',['set_symbol_info',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#ab59809432b60707ba3988587eade5db2',1,'hedgedev::csl::diag::stack_frame_win32']]],
+  ['split_3',['split',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a749d7e61e1b652fddeab5ea7763b28fa',1,'hedgedev::csl::ut::string']]],
+  ['start_4',['start',['../d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process.html#a036b9d30fb93d15d6fc6f100358e56f5',1,'hedgedev::csl::diag::process']]],
+  ['str_5',['str',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#a7ee8cf68e4fa9461acb9cdc773f47b19',1,'hedgedev::csl::diag::stack_frame_win32']]]
 ];

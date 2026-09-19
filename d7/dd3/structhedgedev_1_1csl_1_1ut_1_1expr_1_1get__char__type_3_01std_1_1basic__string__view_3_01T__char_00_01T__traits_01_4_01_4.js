@@ -1,0 +1,4 @@
+var structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01std_1_1basic__string__view_3_01T__char_00_01T__traits_01_4_01_4 =
+[
+    [ "type", "d7/dd3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01std_1_1basic__string__view_3_01T__char_00_01T__traits_01_4_01_4.html#af3ae002e28596bda641914bdacd27413", null ]
+];

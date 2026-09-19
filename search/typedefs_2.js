@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['precedentinferredstring_0',['PrecedentInferredString',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a58843fad18552e245606a7a11a80a980',1,'hedgedev::csl::ut::expr']]],
-  ['precedentinferredstringorview_1',['PrecedentInferredStringOrView',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#af2d855d93ad41a6e6ff71996b780edcc',1,'hedgedev::csl::ut::expr']]],
-  ['precedentinferredstringview_2',['PrecedentInferredStringView',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a523e9595ee56b4ed79c28c23e9eb3749',1,'hedgedev::csl::ut::expr']]],
-  ['precedentstring_3',['PrecedentString',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ac99e09c1643eeb1d9dcef1a1390ab898',1,'hedgedev::csl::ut::expr']]]
+  ['pi_5fstring_5ft_0',['pi_string_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a21f7a6aefcd47467bad135fe8f46f6de',1,'hedgedev::csl::ut::expr']]],
+  ['pi_5fstring_5fview_5ft_1',['pi_string_view_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#aecc9692e437c2313537a38e22984caa3',1,'hedgedev::csl::ut::expr']]],
+  ['precedent_5fstring_5ft_2',['precedent_string_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a6d4c2c495fb665e16f5072adf70ce12e',1,'hedgedev::csl::ut::expr']]]
 ];

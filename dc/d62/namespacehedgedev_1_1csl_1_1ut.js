@@ -1,41 +1,41 @@
 var namespacehedgedev_1_1csl_1_1ut =
 [
     [ "env", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html", [
-      [ "GetFile", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#a7364630b23e0f03067b5f0ba501ed3c0", null ],
-      [ "GetVariable", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#a86c1b2aad4440703f71eef895fb19ece", null ]
+      [ "get_file", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#a326ec608d465631366ab92bb9a06a53c", null ],
+      [ "get_variable", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#af7257f614ae65894ca23796fb2e8b2ce", null ]
     ] ],
     [ "expr", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr" ],
     [ "filesystem", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html", [
-      [ "IsNeighbour", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ab70247481a6f3cabca868631311a4e8a", null ],
-      [ "TruncateFiles", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#a1d362547f49cef5b8055efa0b7e7f6ce", null ],
-      [ "TruncateFilesByAge", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#a0ac6308c029a64de26e771f8e72cca00", null ]
+      [ "is_neighbour", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ac85f9567cc70dd507a1f575b15f50707", null ],
+      [ "truncate_files", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ad0d5e16de07a6d3a66eedb6f7842ba88", null ],
+      [ "truncate_files_by_age", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#a89a99c0d1f68fbdba76627c8cab9dcc3", null ]
     ] ],
     [ "string", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html", [
-      [ "Compare", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a793ee2595203c42f54e7ba36f54f575b", null ],
-      [ "Contains", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0b7192821ef455141a6cfed1f4868ec7", null ],
-      [ "Convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ad61fa3e14214dc4e4b7be00930af1c64", null ],
-      [ "Escape", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2d3091b5b81dfbbde83a6ec3d9a3f970", null ],
-      [ "Format", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ac2b59e83c19e482c4cde3085df942ce3", null ],
-      [ "GetWidth", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a037c95d2081a4d97ffa2c196ea231037", null ],
-      [ "Hyperlink", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a4710a1a0594537caa9fb13cc98a8fd93", null ],
-      [ "IsNullOrEmpty", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#abe78acdcbcb573a00d79b6d60eb99d16", null ],
-      [ "IsNullOrWhiteSpace", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#aa2f68bcc667a9189c077b68541387a3a", null ],
-      [ "Join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5dff100bc29660d1d5eb45b1cc8753ac", null ],
-      [ "Join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a789205ee873baaf457b4efb1bab9345b", null ],
-      [ "Pad", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a4521657cb43fc51793bc17cf5b028f64", null ],
-      [ "Parse", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a46ea987ee8f8d5685b37f1ee4d238859", null ],
-      [ "PrecedentConvert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0ea96c3d43be09a9c0098a10cd7b2e74", null ],
-      [ "RemoveXmlTags", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a952265d41821dc0e6e1e273034360399", null ],
-      [ "Split", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0d093a1a0d6dd727dc8160886257e357", null ],
-      [ "ToHex", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0b7a00202c0c5ddc72b85a4664d4467a", null ],
-      [ "ToLower", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#abc5c2d27a1c327cd9fef689911953fe7", null ],
-      [ "ToUpper", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#aee2969f812dbcd2328579b8797567da9", null ],
-      [ "Trim", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#afa0c678b22fea9a5f33523ddb0139426", null ],
-      [ "TrimEnd", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a405565bebbfc52417c8314f604c8c323", null ],
-      [ "TrimStart", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ad69ade3a18b7179a3ad4489b07d9f7c0", null ],
-      [ "Truncate", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a930702f7a5f1c3d636a97a26cc2df74b", null ],
-      [ "TryConvert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ae205e42daa83177d4df8c5878b408c3f", null ],
-      [ "TryParse", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a68bafd9514f2eb9a8cb4a629c9417d5a", null ],
-      [ "Wrap", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ab8cdf64ffcd64bba6ba289c2669285cb", null ]
+      [ "compare", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a688efe494840e2d6ebae2fe9d37023ec", null ],
+      [ "contains", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ab17f4f618017f4f654d4b389f931eacd", null ],
+      [ "convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a408fbe867e899f76dc1c4565e7bd7ef9", null ],
+      [ "escape", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#aab5453d5e2dba4c95c7b2466e171a597", null ],
+      [ "format", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a260cd2631d7775b51811a675cea945a5", null ],
+      [ "get_width", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#add7eee0acafe85160946038b08984791", null ],
+      [ "hex", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ac7a591559bca8025ae93a2cb45693d77", null ],
+      [ "hyperlink", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a551013e755e3883447d73b1936509b74", null ],
+      [ "is_null_or_empty", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a49e32e0f1041c87f1112e6490cb34497", null ],
+      [ "is_null_or_whitespace", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5774db2f912051185c49a57c52dd2d1d", null ],
+      [ "join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#aed6addab4f1f987997d1991d737f1402", null ],
+      [ "join", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a6ba7beb4511bea5e90163f81424c2bb9", null ],
+      [ "lower", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2ee3d362b444077b06fdea36dcac50e7", null ],
+      [ "pad", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#abb7927a7c867fd312b6d6988c3deeda6", null ],
+      [ "parse", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ad5f6db5ebe903c3faaed4061bda1f437", null ],
+      [ "precedent_convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2516b94fea0b36f11fe8d671f42ef330", null ],
+      [ "remove_xml_tags", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5716cf8a520029b8243f409f81f705b4", null ],
+      [ "split", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a749d7e61e1b652fddeab5ea7763b28fa", null ],
+      [ "trim", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2fdd49ea33498d8535e8935df5525e07", null ],
+      [ "trim_end", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5e793ea552575a0b1a06e5877a9df0aa", null ],
+      [ "trim_start", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a18d93d07ed81865f7a08bada98fd90b5", null ],
+      [ "truncate", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ae639ec6a7fd213d8c7bcb32a53a2dc63", null ],
+      [ "try_convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0f15e1f0cf461d71f360a898739c7617", null ],
+      [ "try_parse", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a9df036a8cf2df874eab2b32a9c7d750b", null ],
+      [ "upper", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a7a42760e9a2bfcd422cef8abe943de18", null ],
+      [ "wrap", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a602d7cb7989748104f61ccd3391fa956", null ]
     ] ]
 ];

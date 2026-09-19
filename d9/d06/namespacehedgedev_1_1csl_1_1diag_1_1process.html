@@ -118,30 +118,30 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d06/namespa
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af5f6600d565ecd7513e6c8677393e356" id="r_af5f6600d565ecd7513e6c8677393e356"><td class="memTemplParams" colspan="2">template&lt;typename TString = std::wstring_view&gt; </td></tr>
-<tr class="memitem:af5f6600d565ecd7513e6c8677393e356 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af5f6600d565ecd7513e6c8677393e356">Start</a> (const std::filesystem::path &amp;in_rPath, const std::vector&lt; TString &gt; &amp;in_rArgs, std::optional&lt; std::filesystem::path &gt; in_work)</td></tr>
+<tr class="memitem:a036b9d30fb93d15d6fc6f100358e56f5" id="r_a036b9d30fb93d15d6fc6f100358e56f5"><td class="memTemplParams" colspan="2">template&lt;typename T_args = std::wstring_view&gt; </td></tr>
+<tr class="memitem:a036b9d30fb93d15d6fc6f100358e56f5 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a036b9d30fb93d15d6fc6f100358e56f5">start</a> (const std::filesystem::path &amp;in_path, const std::vector&lt; T_args &gt; &amp;in_args, std::optional&lt; std::filesystem::path &gt; in_work)</td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="af5f6600d565ecd7513e6c8677393e356" name="af5f6600d565ecd7513e6c8677393e356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5f6600d565ecd7513e6c8677393e356">&#9670;&#160;</a></span>Start()</h2>
+<a id="a036b9d30fb93d15d6fc6f100358e56f5" name="a036b9d30fb93d15d6fc6f100358e56f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a036b9d30fb93d15d6fc6f100358e56f5">&#9670;&#160;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TString = std::wstring_view&gt; </div>
+template&lt;typename T_args = std::wstring_view&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool hedgedev::csl::diag::process::Start </td>
+          <td class="memname">bool hedgedev::csl::diag::process::start </td>
           <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rPath</em></span>, </td>
+          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>in_path</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::vector&lt; TString &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>in_rArgs</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
+          <td class="paramtype">const std::vector&lt; T_args &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>in_args</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -156,10 +156,16 @@ template&lt;typename TString = std::wstring_view&gt; </div>
 </table>
 </div><div class="memdoc">
 <p>Starts a process.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T_args</td><td>The string type for the arguments.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_rPath</td><td>The path to the executable to start. </td></tr>
-    <tr><td class="paramname">in_rArgs</td><td>The command line arguments to pass into the process. </td></tr>
+    <tr><td class="paramname">in_path</td><td>The path to the executable to start. </td></tr>
+    <tr><td class="paramname">in_args</td><td>The command line arguments to pass into the process. </td></tr>
     <tr><td class="paramname">in_work</td><td>The working directory of the process.</td></tr>
   </table>
   </dd>

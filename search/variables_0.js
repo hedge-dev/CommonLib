@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['column_0',['Column',['../d1/d19/structhedgedev_1_1csl_1_1diag_1_1LineInfo.html#ad85876651aa2dfd3d5aa2e1cba23401d',1,'hedgedev::csl::diag::LineInfo']]],
-  ['condition_1',['Condition',['../d8/d9c/structhedgedev_1_1csl_1_1mem_1_1BranchInfo.html#afa8e4ef08b1b25bfd23934f741a2cef4',1,'hedgedev::csl::mem::BranchInfo']]]
+  ['address_0',['address',['../d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info.html#a1ad5566820558e111fdcf01f41b55f8f',1,'hedgedev::csl::diag::line_info::address'],['../d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info.html#a1fe426e3045ccff723641f10dc0cebb0',1,'hedgedev::csl::diag::symbol_info::address']]]
 ];

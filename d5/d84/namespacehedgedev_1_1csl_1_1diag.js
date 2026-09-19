@@ -1,22 +1,22 @@
 var namespacehedgedev_1_1csl_1_1diag =
 [
     [ "process", "d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process.html", [
-      [ "Start", "d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process.html#af5f6600d565ecd7513e6c8677393e356", null ]
+      [ "start", "d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process.html#a036b9d30fb93d15d6fc6f100358e56f5", null ]
     ] ],
     [ "this_process", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html", [
-      [ "GetCommandLineArguments", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a4ae52500f3df3b40ae7919c60bfbfc14", null ],
-      [ "GetExecutablePath", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#aa69b871ee82ba9f503630a68f075e973", null ],
-      [ "GetExecutableRoot", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#acbb205a77830b8f997d3f58dae23f96c", null ],
-      [ "GetModulePathFromAddress", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#af5e4f363311cad6d00538fadc5061daa", null ],
-      [ "GetStackTrace", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a1bd38f79ccfec2836e0af370b4cd5462", null ],
-      [ "GetWorkingDirectory", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a23a05ee46154f01539710673470acabc", null ],
-      [ "HasAddress", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#aa8032de979e6600b4be814cb37f6de9a", null ],
-      [ "IsNeighbour", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a40b681cd1e3254c3808bc9cd4fc3b396", null ],
-      [ "Restart", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a407f0223bf8159147c1d69fb77354f70", null ],
-      [ "Restart", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a52d7168b78d4881a8ac4d26351bfeed4", null ]
+      [ "get_command_line", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a2f5ef7afb25eaa67b9de72cbc6aebe85", null ],
+      [ "get_executable_path", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#af12e3a79cddbddc4fdc5141b14868c90", null ],
+      [ "get_executable_root", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a1e46898645046727f01f34c5f28a89a8", null ],
+      [ "get_module_path_from_address", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#ac3b97e66a602447c52575413aef9492b", null ],
+      [ "get_stack_trace", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#aa393d20ea6be7f2e220b5b87fee32a1f", null ],
+      [ "get_working_directory", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a67304a774c97706c69c50ac6fb90ccc5", null ],
+      [ "has_address", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#ab1d817b30c1daa97d5a0ba864e96654d", null ],
+      [ "is_neighbour", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a4cf94b9261bed65c8a3c54fa96bebc82", null ],
+      [ "restart", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a7676e5b094da240102bc55164ab0f8e5", null ],
+      [ "restart", "d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a4dd632185b1e74dbf6d3352dac063ece", null ]
     ] ],
-    [ "LineInfo", "d1/d19/structhedgedev_1_1csl_1_1diag_1_1LineInfo.html", "d1/d19/structhedgedev_1_1csl_1_1diag_1_1LineInfo" ],
-    [ "StackFrame", "d9/daa/classhedgedev_1_1csl_1_1diag_1_1StackFrame.html", "d9/daa/classhedgedev_1_1csl_1_1diag_1_1StackFrame" ],
-    [ "StackFrameWin32", "d1/d0c/classhedgedev_1_1csl_1_1diag_1_1StackFrameWin32.html", "d1/d0c/classhedgedev_1_1csl_1_1diag_1_1StackFrameWin32" ],
-    [ "SymbolInfo", "d9/d2f/structhedgedev_1_1csl_1_1diag_1_1SymbolInfo.html", "d9/d2f/structhedgedev_1_1csl_1_1diag_1_1SymbolInfo" ]
+    [ "line_info", "d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info.html", "d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info" ],
+    [ "stack_frame", "d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html", "d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame" ],
+    [ "stack_frame_win32", "df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html", "df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32" ],
+    [ "symbol_info", "d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info.html", "d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info" ]
 ];

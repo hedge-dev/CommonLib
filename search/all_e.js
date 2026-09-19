@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['opcodelength_0',['OpcodeLength',['../d8/d9c/structhedgedev_1_1csl_1_1mem_1_1BranchInfo.html#a81929ef39564b66f2604aabeabd80924',1,'hedgedev::csl::mem::BranchInfo']]],
-  ['overflow_1',['Overflow',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a984c1bda11b121d475b57ff01a071575a129e8109f319870e328cc7a1d5b5cae3',1,'hedgedev::csl::mem']]]
+  ['opcode_5flength_0',['opcode_length',['../d3/d38/structhedgedev_1_1csl_1_1mem_1_1branch__info.html#aee35e9d446eaf9173f74fa59b428ae89',1,'hedgedev::csl::mem::branch_info']]],
+  ['original_5faddress_1',['original_address',['../d4/d60/structhedgedev_1_1csl_1_1hook_1_1usercall__info.html#a09d4e3459bf1dc052ae83c286949f0f7',1,'hedgedev::csl::hook::usercall_info']]],
+  ['overflow_2',['overflow',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcda0bd9f6dd716003f3818d15d2e211ee73',1,'hedgedev::csl::mem']]]
 ];

@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['hasaddress_0',['HasAddress',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#aa8032de979e6600b4be814cb37f6de9a',1,'hedgedev::csl::diag::this_process']]],
-  ['hasflag_1',['HasFlag',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a05a5a33c30be4824bbcad5c30f2c5805',1,'hedgedev::csl::ut::expr']]],
-  ['haslineinfo_2',['HasLineInfo',['../d9/daa/classhedgedev_1_1csl_1_1diag_1_1StackFrame.html#aee463b9cf89e36cc18e3406059597a11',1,'hedgedev::csl::diag::StackFrame']]],
-  ['hassymbolinfo_3',['HasSymbolInfo',['../d9/daa/classhedgedev_1_1csl_1_1diag_1_1StackFrame.html#a0c77fe004b9a942d7b4556a07a1a3196',1,'hedgedev::csl::diag::StackFrame']]],
+  ['has_5faddress_0',['has_address',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#ab1d817b30c1daa97d5a0ba864e96654d',1,'hedgedev::csl::diag::this_process']]],
+  ['has_5fflag_1',['has_flag',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#afaffcacb2ef96f96786aa83ff3ffc577',1,'hedgedev::csl::ut::expr']]],
+  ['has_5fline_5finfo_2',['has_line_info',['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#a12871d416663ce771db2c3f844a9e625',1,'hedgedev::csl::diag::stack_frame']]],
+  ['has_5fsymbol_5finfo_3',['has_symbol_info',['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#aa45e459f6c158e7ba07ae111ad125785',1,'hedgedev::csl::diag::stack_frame']]],
   ['hedgedev_4',['hedgedev',['../d8/d4d/namespacehedgedev.html',1,'']]],
   ['hedgedev_3a_3acsl_5',['csl',['../d3/d56/namespacehedgedev_1_1csl.html',1,'hedgedev']]],
   ['hedgedev_3a_3acsl_3a_3acfg_6',['cfg',['../d3/d5a/namespacehedgedev_1_1csl_1_1cfg.html',1,'hedgedev::csl']]],
@@ -18,8 +18,10 @@ var searchData=
   ['hedgedev_3a_3acsl_3a_3aut_3a_3aexpr_15',['expr',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html',1,'hedgedev::csl::ut']]],
   ['hedgedev_3a_3acsl_3a_3aut_3a_3afilesystem_16',['filesystem',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html',1,'hedgedev::csl::ut']]],
   ['hedgedev_3a_3acsl_3a_3aut_3a_3astring_17',['string',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html',1,'hedgedev::csl::ut']]],
-  ['hook_18',['HOOK',['../d5/d59/Win32_2Hooking_8h.html#a8e3bd1ebadef896540150b1c43a4caa2',1,'Hooking.h']]],
-  ['hooking_2eh_19',['Hooking.h',['../d9/d69/Hooking_8h.html',1,'(Global Namespace)'],['../d5/d59/Win32_2Hooking_8h.html',1,'(Global Namespace)']]],
-  ['hookingusercall_2eh_20',['HookingUserCall.h',['../db/d6b/HookingUserCall_8h.html',1,'']]],
-  ['hyperlink_21',['Hyperlink',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a4710a1a0594537caa9fb13cc98a8fd93',1,'hedgedev::csl::ut::string']]]
+  ['hex_18',['hex',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ac7a591559bca8025ae93a2cb45693d77',1,'hedgedev::csl::ut::string']]],
+  ['hook_19',['HOOK',['../d4/d2d/hook__win32_8h.html#a8e3bd1ebadef896540150b1c43a4caa2',1,'hook_win32.h']]],
+  ['hook_2eh_20',['hook.h',['../d6/d34/hook_8h.html',1,'']]],
+  ['hook_5fusercall_5fwin32_2eh_21',['hook_usercall_win32.h',['../d5/d9f/hook__usercall__win32_8h.html',1,'']]],
+  ['hook_5fwin32_2eh_22',['hook_win32.h',['../d4/d2d/hook__win32_8h.html',1,'']]],
+  ['hyperlink_23',['hyperlink',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a551013e755e3883447d73b1936509b74',1,'hedgedev::csl::ut::string']]]
 ];

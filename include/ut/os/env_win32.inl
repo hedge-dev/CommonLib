@@ -21,7 +21,7 @@ namespace hedgedev::csl::ut::env
     template<typename T_result, expr::any_string_t T_name>
     inline std::optional<T_result> get_variable(const T_name& in_name, std::optional<T_result> in_default_value)
     {
-		T_result result{};
+		std::optional<T_result> result{};
 
         std::wstring name{};
 

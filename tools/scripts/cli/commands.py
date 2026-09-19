@@ -1,6 +1,6 @@
-import config, os, shutil, time
+import config, os, shutil, subprocess, time
 import sys; sys.path.append(os.path.join(os.path.dirname(__file__), os.pardir))
-from common import cmake, git, utility, vs
+from common import cppcheck, cmake, git, utility, vs
 from common.base import base
 from common.error import error
 from common.version import version, version_pattern
@@ -320,7 +320,7 @@ class build(configure):
             if utility.has_attr_and_value(args, "target_config"):
             #
                 with step(f"Building \"{preset}\" ({args.target_config})...") as start_time:
-                    cmake.build(preset, [f"--config {args.target_config}"])
+                    cmake.build(preset, [ f"--config {args.target_config}" ])
             #
             else:
             #
@@ -358,7 +358,7 @@ class build_all(configure_all):
                         for configuration in config.configurations:
                         #
                             with step(f"Building \"{preset}\" ({configuration})...") as start_time:
-                                cmake.build(preset, [f"--config {configuration}"])
+                                cmake.build(preset, [ f"--config {configuration}" ])
                         #
                     #
                     else:
@@ -513,6 +513,74 @@ class rebuild_all(build_all):
     #
 #
 
+class validate(command):
+#
+    def __init__(self, subparsers = None):
+    #
+        base(command, self).__init__(subparsers, "validate", "validate the source code for errors")
+    #
+
+    def init_args(self):
+    #
+        self.parser.add_argument("--skip_submodules", help = "skip the submodule update step", action = "store_true")
+    #
+
+    def execute(self, args):
+    #
+        git_submodule_update_step(args)
+
+        with step("Validating...") as start_time:
+        #
+            if not (cppcheck_bin := cppcheck.get_cppcheck()):
+            #
+                print("Cppcheck is required: https://cppcheck.sourceforge.io")
+                return error.FAILURE
+            #
+            
+            if (not utility.has_attr_and_value(config, "inc_dir") or
+                not utility.has_attr_and_value(config, "sources")):
+            #
+                return error.FAILURE
+            #
+
+            with utility.working_dir(f"{git.get_repo_dir()}/{config.inc_dir}") as work:
+            #
+                files = []
+
+                for source in config.sources:
+                    files = files + glob(f"{work}/**/{source}", recursive = True)
+
+                if not files:
+                #
+                    print("Nothing to validate.")
+                    return error.SUCCESS
+                #
+
+                cppcheck_args = \
+                [
+                    "--check-level=exhaustive",
+                    "--enable=all",
+                    "--error-exitcode=1",
+                    "--force",
+                    "--language=c++",
+                    "--quiet",
+                    "--suppress=checkersReport",
+                    "--suppress=missingIncludeSystem",
+                    "--suppress=unusedFunction",
+                    "--suppress=unusedStructMember",
+                    "-I", work
+                ]
+
+                cppcheck_args += files
+
+                subprocess.run([ cppcheck_bin ] + cppcheck_args)
+            #
+        #
+
+        return error.SUCCESS
+    #
+#
+
 def get_command_table(subparsers):
 #
     return SimpleNamespace \
@@ -524,6 +592,7 @@ def get_command_table(subparsers):
         rebuild = rebuild(subparsers),
         rebuild_all = rebuild_all(subparsers),
         clean = clean(subparsers),
-        clean_all = clean_all(subparsers)
+        clean_all = clean_all(subparsers),
+        validate = validate(subparsers)
     )
 #

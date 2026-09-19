@@ -14,6 +14,8 @@ arch_aliases = { "Win32": "x86" }
 configurations = [ "Release", "Debug" ]
 
 bin_dir = "bin"
+inc_dir = "include"
 lib_dir = "lib"
 
+sources = [ "*.h", "*.inl" ]
 additional_clean_dirs = [ "thirdparty/Detours/src/obj.*" ]

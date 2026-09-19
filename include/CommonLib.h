@@ -20,20 +20,13 @@
 #define CMNLIB_ARM
 #endif
 
-#ifdef WIN32
-#define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
-#include <Windows.h>
-#endif
-
 #include <cstdint>
 
-#include "Utility/Utility.h"
-#include "Memory/Memory.h"
-
-#include "Configuration/Configuration.h"
-#include "Diagnostics/Diagnostics.h"
-#include "Hooking/Hooking.h"
+#include "cfg/cfg.h"
+#include "diag/diag.h"
+#include "hook/hook.h"
+#include "mem/mem.h"
+#include "ut/ut.h"
 
 #if !defined(CMNLIB_HEADER_ONLY) && defined(__CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT)
 #pragma comment(lib, "CommonLib.lib")

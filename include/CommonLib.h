@@ -1,5 +1,16 @@
 #pragma once
 
+#if defined(_MSVC_LANG)
+#define __CMNLIB_INTERNAL_CPP_VERSION _MSVC_LANG
+#elif defined(__cplusplus)
+#define __CMNLIB_INTERNAL_CPP_VERSION __cplusplus
+#endif
+
+#if !defined(__CMNLIB_INTERNAL_CPP_VERSION) || __CMNLIB_INTERNAL_CPP_VERSION < 202002L
+#define __CMNLIB_H__
+static_assert(false, "CommonLib requires C++20 or later.");
+#endif
+
 #ifndef __CMNLIB_H__
 #define __CMNLIB_H__
 

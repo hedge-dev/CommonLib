@@ -1074,7 +1074,7 @@ namespace hedgedev::csl::hook
 
         const auto return_register = in_info.get_return_register();
         
-        if (return_register != user_register::none || in_info.is_return_type<void>())
+        if (return_register != user_register::none && !in_info.is_return_type<void>())
         {
             // Move __cdecl return value into __usercall return register and vice-versa.
             if ((in_info.is_return_type<float>() || in_info.is_return_type<double>()))

@@ -8,10 +8,12 @@ var searchData=
   ['hedgedev_3a_3acsl_3a_3adiag_3a_3aprocess_5',['process',['../d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process.html',1,'hedgedev::csl::diag']]],
   ['hedgedev_3a_3acsl_3a_3adiag_3a_3athis_5fprocess_6',['this_process',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html',1,'hedgedev::csl::diag']]],
   ['hedgedev_3a_3acsl_3a_3ahook_7',['hook',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html',1,'hedgedev::csl']]],
-  ['hedgedev_3a_3acsl_3a_3amem_8',['mem',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html',1,'hedgedev::csl']]],
-  ['hedgedev_3a_3acsl_3a_3aut_9',['ut',['../dc/d62/namespacehedgedev_1_1csl_1_1ut.html',1,'hedgedev::csl']]],
-  ['hedgedev_3a_3acsl_3a_3aut_3a_3aenv_10',['env',['../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html',1,'hedgedev::csl::ut']]],
-  ['hedgedev_3a_3acsl_3a_3aut_3a_3aexpr_11',['expr',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html',1,'hedgedev::csl::ut']]],
-  ['hedgedev_3a_3acsl_3a_3aut_3a_3afilesystem_12',['filesystem',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html',1,'hedgedev::csl::ut']]],
-  ['hedgedev_3a_3acsl_3a_3aut_3a_3astring_13',['string',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html',1,'hedgedev::csl::ut']]]
+  ['hedgedev_3a_3acsl_3a_3ahost_8',['host',['../d7/dbe/namespacehedgedev_1_1csl_1_1host.html',1,'hedgedev::csl']]],
+  ['hedgedev_3a_3acsl_3a_3ahost_3a_3aclipboard_9',['clipboard',['../d1/d13/namespacehedgedev_1_1csl_1_1host_1_1clipboard.html',1,'hedgedev::csl::host']]],
+  ['hedgedev_3a_3acsl_3a_3ahost_3a_3aenvironment_10',['environment',['../db/dc5/namespacehedgedev_1_1csl_1_1host_1_1environment.html',1,'hedgedev::csl::host']]],
+  ['hedgedev_3a_3acsl_3a_3amem_11',['mem',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html',1,'hedgedev::csl']]],
+  ['hedgedev_3a_3acsl_3a_3aut_12',['ut',['../dc/d62/namespacehedgedev_1_1csl_1_1ut.html',1,'hedgedev::csl']]],
+  ['hedgedev_3a_3acsl_3a_3aut_3a_3aexpr_13',['expr',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html',1,'hedgedev::csl::ut']]],
+  ['hedgedev_3a_3acsl_3a_3aut_3a_3afilesystem_14',['filesystem',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html',1,'hedgedev::csl::ut']]],
+  ['hedgedev_3a_3acsl_3a_3aut_3a_3astring_15',['string',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html',1,'hedgedev::csl::ut']]]
 ];

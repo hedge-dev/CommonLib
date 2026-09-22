@@ -152,12 +152,16 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a953b13c0879a517f514ee405f464f831 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a953b13c0879a517f514ee405f464f831">inferred_string_t</a> = std::basic_string&lt;<a class="el" href="#a5fbd19f323e25061c073a413fc455708">get_char_type_t</a>&lt;T&gt;&gt;</td></tr>
 <tr class="memitem:ab8fdee4cd01cb4f04b06277808d11c68" id="r_ab8fdee4cd01cb4f04b06277808d11c68"><td class="memTemplParams" colspan="2">template&lt;any_string_t T&gt; </td></tr>
 <tr class="memitem:ab8fdee4cd01cb4f04b06277808d11c68 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ab8fdee4cd01cb4f04b06277808d11c68">inferred_string_view_t</a> = std::basic_string_view&lt;<a class="el" href="#a5fbd19f323e25061c073a413fc455708">get_char_type_t</a>&lt;T&gt;&gt;</td></tr>
+<tr class="memitem:ad58ae1b6ee421df68fbfe017a04d3144" id="r_ad58ae1b6ee421df68fbfe017a04d3144"><td class="memTemplParams" colspan="2">template&lt;any_string_t T&gt; </td></tr>
+<tr class="memitem:ad58ae1b6ee421df68fbfe017a04d3144 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#ad58ae1b6ee421df68fbfe017a04d3144">inferred_stringstream_t</a> = std::basic_stringstream&lt;<a class="el" href="#a5fbd19f323e25061c073a413fc455708">get_char_type_t</a>&lt;T&gt;&gt;</td></tr>
 <tr class="memitem:a6d4c2c495fb665e16f5072adf70ce12e" id="r_a6d4c2c495fb665e16f5072adf70ce12e"><td class="memTemplParams" colspan="2">template&lt;any_string_t... T_args&gt; </td></tr>
 <tr class="memitem:a6d4c2c495fb665e16f5072adf70ce12e template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a6d4c2c495fb665e16f5072adf70ce12e">precedent_string_t</a> = std::tuple_element_t&lt;<a class="el" href="#a76dd938581c2257d8d530dd3c8855fe9">get_string_type_precedence</a>&lt;T_args...&gt;(), std::tuple&lt;T_args...&gt;&gt;</td></tr>
 <tr class="memitem:a21f7a6aefcd47467bad135fe8f46f6de" id="r_a21f7a6aefcd47467bad135fe8f46f6de"><td class="memTemplParams" colspan="2">template&lt;any_string_t... T_args&gt; </td></tr>
 <tr class="memitem:a21f7a6aefcd47467bad135fe8f46f6de template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#a21f7a6aefcd47467bad135fe8f46f6de">pi_string_t</a> = <a class="el" href="#a953b13c0879a517f514ee405f464f831">inferred_string_t</a>&lt;<a class="el" href="#a6d4c2c495fb665e16f5072adf70ce12e">precedent_string_t</a>&lt;T_args...&gt;&gt;</td></tr>
 <tr class="memitem:aecc9692e437c2313537a38e22984caa3" id="r_aecc9692e437c2313537a38e22984caa3"><td class="memTemplParams" colspan="2">template&lt;any_string_t... T_args&gt; </td></tr>
 <tr class="memitem:aecc9692e437c2313537a38e22984caa3 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#aecc9692e437c2313537a38e22984caa3">pi_string_view_t</a> = <a class="el" href="#ab8fdee4cd01cb4f04b06277808d11c68">inferred_string_view_t</a>&lt;<a class="el" href="#a6d4c2c495fb665e16f5072adf70ce12e">precedent_string_t</a>&lt;T_args...&gt;&gt;</td></tr>
+<tr class="memitem:acbdc22c5a2e79d6fa14c6f39bade57c7" id="r_acbdc22c5a2e79d6fa14c6f39bade57c7"><td class="memTemplParams" colspan="2">template&lt;any_string_t... T_args&gt; </td></tr>
+<tr class="memitem:acbdc22c5a2e79d6fa14c6f39bade57c7 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="#acbdc22c5a2e79d6fa14c6f39bade57c7">pi_stringstream_t</a> = <a class="el" href="#ad58ae1b6ee421df68fbfe017a04d3144">inferred_stringstream_t</a>&lt;<a class="el" href="#a6d4c2c495fb665e16f5072adf70ce12e">precedent_string_t</a>&lt;T_args...&gt;&gt;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -255,6 +259,23 @@ template&lt;any_string_t T&gt; </div>
 
 </div>
 </div>
+<a id="ad58ae1b6ee421df68fbfe017a04d3144" name="ad58ae1b6ee421df68fbfe017a04d3144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58ae1b6ee421df68fbfe017a04d3144">&#9670;&#160;</a></span>inferred_stringstream_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_string_t T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ad58ae1b6ee421df68fbfe017a04d3144">hedgedev::csl::ut::expr::inferred_stringstream_t</a> = std::basic_stringstream&lt;<a class="el" href="#a5fbd19f323e25061c073a413fc455708">get_char_type_t</a>&lt;T&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An <span class="tt">std::basic_stringstream</span> inferred from any string type. </p>
+
+</div>
+</div>
 <a id="a21f7a6aefcd47467bad135fe8f46f6de" name="a21f7a6aefcd47467bad135fe8f46f6de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21f7a6aefcd47467bad135fe8f46f6de">&#9670;&#160;</a></span>pi_string_t</h2>
 
@@ -286,6 +307,23 @@ template&lt;any_string_t... T_args&gt; </div>
       </table>
 </div><div class="memdoc">
 <p>An <span class="tt">std::basic_string_view</span> inferred from the string type with the largest character size. </p>
+
+</div>
+</div>
+<a id="acbdc22c5a2e79d6fa14c6f39bade57c7" name="acbdc22c5a2e79d6fa14c6f39bade57c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbdc22c5a2e79d6fa14c6f39bade57c7">&#9670;&#160;</a></span>pi_stringstream_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;any_string_t... T_args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#acbdc22c5a2e79d6fa14c6f39bade57c7">hedgedev::csl::ut::expr::pi_stringstream_t</a> = <a class="el" href="#ad58ae1b6ee421df68fbfe017a04d3144">inferred_stringstream_t</a>&lt;<a class="el" href="#a6d4c2c495fb665e16f5072adf70ce12e">precedent_string_t</a>&lt;T_args...&gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>An <span class="tt">std::basic_stringstream</span> inferred from the string type with the largest character size. </p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: include/ut/os/env_win32.inl File Reference</title>
+<title>CommonLib: hedgedev::csl::host::clipboard Namespace Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/ddf/env__win32_8inl.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d1/d13/namespacehedgedev_1_1csl_1_1host_1_1clipboard.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -111,36 +111,59 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/ddf/env__wi
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">env_win32.inl File Reference</div></div>
+  <div class="headertitle"><div class="title">hedgedev::csl::host::clipboard Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;filesystem&gt;</code><br />
-<code>#include &lt;optional&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../dc/db1/win32_8h_source.html">os/win32.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d1a/string__types_8h_source.html">ut/expr/string_types.h</a>&quot;</code><br />
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-namespaces" class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:hedgedev" id="r_hedgedev"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></td></tr>
-<tr class="memitem:hedgedev_3A_3Acsl" id="r_hedgedev_3A_3Acsl"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d56/namespacehedgedev_1_1csl.html">hedgedev::csl</a></td></tr>
-<tr class="memitem:hedgedev_3A_3Acsl_3A_3Aut" id="r_hedgedev_3A_3Acsl_3A_3Aut"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../dc/d62/namespacehedgedev_1_1csl_1_1ut.html">hedgedev::csl::ut</a></td></tr>
-<tr class="memitem:hedgedev_3A_3Acsl_3A_3Aut_3A_3Aenv" id="r_hedgedev_3A_3Acsl_3A_3Aut_3A_3Aenv"><td class="memItemLeft">namespace &#160;</td><td class="memItemRight"><a class="el" href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html">hedgedev::csl::ut::env</a></td></tr>
-</table><table class="memberdecls">
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a326ec608d465631366ab92bb9a06a53c" id="r_a326ec608d465631366ab92bb9a06a53c"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#a326ec608d465631366ab92bb9a06a53c">hedgedev::csl::ut::env::get_file</a> (const std::filesystem::path &amp;in_filename)</td></tr>
-<tr class="memitem:af7257f614ae65894ca23796fb2e8b2ce" id="r_af7257f614ae65894ca23796fb2e8b2ce"><td class="memTemplParams" colspan="2">template&lt;typename T_result, expr::any_string_t T_name&gt; </td></tr>
-<tr class="memitem:af7257f614ae65894ca23796fb2e8b2ce template"><td class="memItemLeft">std::optional&lt; T_result &gt;&#160;</td><td class="memItemRight"><a class="el" href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#af7257f614ae65894ca23796fb2e8b2ce">hedgedev::csl::ut::env::get_variable</a> (const T_name &amp;in_name, std::optional&lt; T_result &gt; in_default_value)</td></tr>
+<tr class="memitem:ace79acb6b07d47792c66e6341a00e85e" id="r_ace79acb6b07d47792c66e6341a00e85e"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:ace79acb6b07d47792c66e6341a00e85e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ace79acb6b07d47792c66e6341a00e85e">set_text</a> (const T &amp;in_value)</td></tr>
 </table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="ace79acb6b07d47792c66e6341a00e85e" name="ace79acb6b07d47792c66e6341a00e85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace79acb6b07d47792c66e6341a00e85e">&#9670;&#160;</a></span>set_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hedgedev::csl::host::clipboard::set_text </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;</td>          <td class="paramname"><span class="paramname"><em>in_value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the clipboard text.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_value</td><td>The value to write to the clipboard.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the clipboard was written to successfully. Otherwise, <span class="tt">false</span>. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="../../dir_3f337c93b28057d611dc1ddafacd7f76.html">ut</a></li><li class="navelem"><a href="../../dir_6ddd54c49c312374897c294081b4693f.html">os</a></li><li class="navelem"><a href="../../d3/ddf/env__win32_8inl.html">env_win32.inl</a></li>
+    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../d7/dbe/namespacehedgedev_1_1csl_1_1host.html">host</a></li><li class="navelem"><a href="../../d1/d13/namespacehedgedev_1_1csl_1_1host_1_1clipboard.html">clipboard</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

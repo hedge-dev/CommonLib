@@ -1,9 +1,5 @@
 var namespacehedgedev_1_1csl_1_1ut =
 [
-    [ "env", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html", [
-      [ "get_file", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#a326ec608d465631366ab92bb9a06a53c", null ],
-      [ "get_variable", "d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#af7257f614ae65894ca23796fb2e8b2ce", null ]
-    ] ],
     [ "expr", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr" ],
     [ "filesystem", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html", [
       [ "is_neighbour", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ac85f9567cc70dd507a1f575b15f50707", null ],

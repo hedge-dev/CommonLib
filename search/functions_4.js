@@ -4,7 +4,7 @@ var searchData=
   ['get_5fcommand_5fline_1',['get_command_line',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a2f5ef7afb25eaa67b9de72cbc6aebe85',1,'hedgedev::csl::diag::this_process']]],
   ['get_5fexecutable_5fpath_2',['get_executable_path',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#af12e3a79cddbddc4fdc5141b14868c90',1,'hedgedev::csl::diag::this_process']]],
   ['get_5fexecutable_5froot_3',['get_executable_root',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a1e46898645046727f01f34c5f28a89a8',1,'hedgedev::csl::diag::this_process']]],
-  ['get_5ffile_4',['get_file',['../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#a326ec608d465631366ab92bb9a06a53c',1,'hedgedev::csl::ut::env']]],
+  ['get_5ffile_4',['get_file',['../db/dc5/namespacehedgedev_1_1csl_1_1host_1_1environment.html#ae58af4523087b1f507d35ab46a44f946',1,'hedgedev::csl::host::environment']]],
   ['get_5fmodule_5fpath_5',['get_module_path',['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#acf6c15dac0c475f647f128fcbe0f5226',1,'hedgedev::csl::diag::stack_frame']]],
   ['get_5fmodule_5fpath_5ffrom_5faddress_6',['get_module_path_from_address',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#ac3b97e66a602447c52575413aef9492b',1,'hedgedev::csl::diag::this_process']]],
   ['get_5foriginal_5fmodule_5fbase_7',['get_original_module_base',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#add33cc37cba6d9dd825ea97489664f20',1,'hedgedev::csl::mem']]],
@@ -20,7 +20,7 @@ var searchData=
   ['get_5fstack_5fparam_5fcount_17',['get_stack_param_count',['../d4/d60/structhedgedev_1_1csl_1_1hook_1_1usercall__info.html#a33fc51e1e39f5b649507363072b09427',1,'hedgedev::csl::hook::usercall_info']]],
   ['get_5fstack_5ftrace_18',['get_stack_trace',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#aa393d20ea6be7f2e220b5b87fee32a1f',1,'hedgedev::csl::diag::this_process']]],
   ['get_5fstring_5ftype_5fprecedence_19',['get_string_type_precedence',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9',1,'hedgedev::csl::ut::expr']]],
-  ['get_5fvariable_20',['get_variable',['../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html#af7257f614ae65894ca23796fb2e8b2ce',1,'hedgedev::csl::ut::env']]],
+  ['get_5fvariable_20',['get_variable',['../db/dc5/namespacehedgedev_1_1csl_1_1host_1_1environment.html#a8c018a125872ace54fc90503838a4911',1,'hedgedev::csl::host::environment']]],
   ['get_5fwidth_21',['get_width',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#add7eee0acafe85160946038b08984791',1,'hedgedev::csl::ut::string']]],
   ['get_5fworking_5fdirectory_22',['get_working_directory',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a67304a774c97706c69c50ac6fb90ccc5',1,'hedgedev::csl::diag::this_process']]]
 ];

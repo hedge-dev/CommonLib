@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.18.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CommonLib: hedgedev::csl::ut::env Namespace Reference</title>
+<title>CommonLib: include/host/os/common_win32.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../dynsections.js"></script>
 <script type="text/javascript" src="../../codefolding.js"></script>
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', codefold.init);
   </div>
 </div>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html','../../',''); });
+document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/dea/common__win32_8h.html','../../',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -111,95 +111,45 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d3/d0e/namespa
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">hedgedev::csl::ut::env Namespace Reference</div></div>
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">common_win32.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;Windows.h&gt;</code><br />
+</div>
+<p><a href="../../d9/dea/common__win32_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a326ec608d465631366ab92bb9a06a53c" id="r_a326ec608d465631366ab92bb9a06a53c"><td class="memItemLeft">std::optional&lt; std::filesystem::path &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a326ec608d465631366ab92bb9a06a53c">get_file</a> (const std::filesystem::path &amp;in_filename)</td></tr>
-<tr class="memitem:af7257f614ae65894ca23796fb2e8b2ce" id="r_af7257f614ae65894ca23796fb2e8b2ce"><td class="memTemplParams" colspan="2">template&lt;typename T_result, expr::any_string_t T_name&gt; </td></tr>
-<tr class="memitem:af7257f614ae65894ca23796fb2e8b2ce template"><td class="memItemLeft">std::optional&lt; T_result &gt;&#160;</td><td class="memItemRight"><a class="el" href="#af7257f614ae65894ca23796fb2e8b2ce">get_variable</a> (const T_name &amp;in_name, std::optional&lt; T_result &gt; in_default_value)</td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac7bef5d85e3dcd73eef56ad39ffc84a9" id="r_ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</a></td></tr>
+<tr class="memitem:a9f918755b601cf4bffca775992e6fb90" id="r_a9f918755b601cf4bffca775992e6fb90"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9f918755b601cf4bffca775992e6fb90">NOMINMAX</a></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a326ec608d465631366ab92bb9a06a53c" name="a326ec608d465631366ab92bb9a06a53c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a326ec608d465631366ab92bb9a06a53c">&#9670;&#160;</a></span>get_file()</h2>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a9f918755b601cf4bffca775992e6fb90" name="a9f918755b601cf4bffca775992e6fb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f918755b601cf4bffca775992e6fb90">&#9670;&#160;</a></span>NOMINMAX</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; std::filesystem::path &gt; hedgedev::csl::ut::env::get_file </td>
-          <td>(</td>
-          <td class="paramtype">const std::filesystem::path &amp;</td>          <td class="paramname"><span class="paramname"><em>in_filename</em></span></td><td>)</td>
-          <td></td>
+          <td class="memname">#define NOMINMAX</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Gets a file in the system environment.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_filename</td><td>The file to search for.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The path to the file, if found. </dd></dl>
 
 </div>
 </div>
-<a id="af7257f614ae65894ca23796fb2e8b2ce" name="af7257f614ae65894ca23796fb2e8b2ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7257f614ae65894ca23796fb2e8b2ce">&#9670;&#160;</a></span>get_variable()</h2>
+<a id="ac7bef5d85e3dcd73eef56ad39ffc84a9" name="ac7bef5d85e3dcd73eef56ad39ffc84a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bef5d85e3dcd73eef56ad39ffc84a9">&#9670;&#160;</a></span>WIN32_LEAN_AND_MEAN</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename T_result, expr::any_string_t T_name&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt; T_result &gt; hedgedev::csl::ut::env::get_variable </td>
-          <td>(</td>
-          <td class="paramtype">const T_name &amp;</td>          <td class="paramname"><span class="paramname"><em>in_name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::optional&lt; T_result &gt;</td>          <td class="paramname"><span class="paramname"><em>in_default_value</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::nullopt</span>&#160;)</td>
+          <td class="memname">#define WIN32_LEAN_AND_MEAN</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Gets a variable in the system environment.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">T_result</td><td>The value type to parse. </td></tr>
-    <tr><td class="paramname">T_name</td><td>The name string type.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">in_name</td><td>The variable to search for. </td></tr>
-    <tr><td class="paramname">in_default_value</td><td>The default value to use, if the variable could not be found.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the variable, if found. </dd></dl>
 
 </div>
 </div>
@@ -209,7 +159,7 @@ template&lt;typename T_result, expr::any_string_t T_name&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="../../d8/d4d/namespacehedgedev.html">hedgedev</a></li><li class="navelem"><a href="../../d3/d56/namespacehedgedev_1_1csl.html">csl</a></li><li class="navelem"><a href="../../dc/d62/namespacehedgedev_1_1csl_1_1ut.html">ut</a></li><li class="navelem"><a href="../../d3/d0e/namespacehedgedev_1_1csl_1_1ut_1_1env.html">env</a></li>
+    <li class="navelem"><a href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a href="../../dir_10ca1476a21bdaaf8ac61d589137e864.html">host</a></li><li class="navelem"><a href="../../dir_137cbc78f95a5eacf212ac708e567d4e.html">os</a></li><li class="navelem"><a href="../../d9/dea/common__win32_8h.html">common_win32.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.18.0 </li>
   </ul>
 </div>

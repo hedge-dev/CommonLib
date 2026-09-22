@@ -3,8 +3,8 @@
 #include <functional>
 
 #include "../thirdparty/Detours/src/detours.h"
+#include "host/common.h"
 #include "mem/mem.h"
-#include "os/win32.h"
 #include "ut/os/preprocessor_win32.h"
 
 #define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT

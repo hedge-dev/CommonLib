@@ -8,8 +8,8 @@
 #include <vector>
 
 #include "../thirdparty/Detours/src/detours.h"
+#include "host/common.h"
 #include "mem/mem.h"
-#include "os/win32.h"
 
 #define __CMNLIB_INTERNAL_USER_SIZE_OF(RETURN_TYPE) \
     sizeof(typename std::conditional_t<std::is_void_v<RETURN_TYPE>, RETURN_TYPE*, RETURN_TYPE>)

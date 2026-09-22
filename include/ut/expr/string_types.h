@@ -1,6 +1,7 @@
 #pragma once
 
 #include <concepts>
+#include <sstream>
 #include <string>
 #include <tuple>
 #include <type_traits>
@@ -114,6 +115,12 @@ namespace hedgedev::csl::ut::expr
     using inferred_string_view_t = std::basic_string_view<get_char_type_t<T>>;
 
     ///
+    /// An `std::basic_stringstream` inferred from any string type.
+    ///
+    template <any_string_t T>
+    using inferred_stringstream_t = std::basic_stringstream<get_char_type_t<T>>;
+
+    ///
     /// Creates a string inferred from a string literal at compile time.
     ///
     /// \tparam T_result The string type to create.
@@ -153,6 +160,13 @@ namespace hedgedev::csl::ut::expr
     ///
     template <any_string_t... T_args>
     using pi_string_view_t = inferred_string_view_t<precedent_string_t<T_args...>>;
+
+    ///
+    /// An `std::basic_stringstream` inferred from the string type with the largest
+    /// character size.
+    ///
+    template <any_string_t... T_args>
+    using pi_stringstream_t = inferred_stringstream_t<precedent_string_t<T_args...>>;
 }
 
 #include "string_types.inl"

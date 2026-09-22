@@ -7,7 +7,7 @@
 #include <string>
 
 #include "diag/stack_frame.h"
-#include "os/win32.h"
+#include "host/common.h"
 
 namespace hedgedev::csl::diag
 {

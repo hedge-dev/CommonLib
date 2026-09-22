@@ -1,6 +1,6 @@
 #pragma once
 
-#include "os/win32.h"
+#include "host/common.h"
 
 ///
 /// Marks a member to be imported from a dynamic link library.

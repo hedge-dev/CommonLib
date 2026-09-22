@@ -4,7 +4,7 @@
 #include <Psapi.h>
 #include <shellapi.h>
 
-#include "os/win32.h"
+#include "host/common.h"
 #include "ut/expr/string_types.h"
 #include "stack_frame_win32.h"
 

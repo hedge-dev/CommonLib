@@ -36,6 +36,7 @@ static_assert(false, "CommonLib requires C++20 or later.");
 #include "cfg/cfg.h"
 #include "diag/diag.h"
 #include "hook/hook.h"
+#include "host/host.h"
 #include "mem/mem.h"
 #include "ut/ut.h"
 

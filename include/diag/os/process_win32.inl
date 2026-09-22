@@ -2,7 +2,7 @@
 #include <optional>
 #include <vector>
 
-#include "os/win32.h"
+#include "host/common.h"
 
 namespace hedgedev::csl::diag::process
 {

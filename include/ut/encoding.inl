@@ -6,6 +6,8 @@
 #include "mem/mem.h"
 #include "preprocessor.h"
 
+#define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
+
 namespace hedgedev::csl::ut::encoding
 {
 	template <expr::basic_string T_result, expr::any_string T_str>

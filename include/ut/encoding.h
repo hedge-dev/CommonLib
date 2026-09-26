@@ -57,10 +57,10 @@ namespace hedgedev::csl::ut::encoding
     ///
     /// Tries to convert a string to a different encoding format.
     ///
-    /// \tparam T_result    The string type to convert to.
-    /// \tparam T_container The string type to convert from.
+    /// \tparam T_result The string type to convert to.
+    /// \tparam T_str    The string type to convert from.
     ///
-    /// \param in_container The container with the characters to convert.
+    /// \param in_str       The string to convert.
     /// \param out_result   The output string to set.
     /// \param in_encoding  The encoding to convert to, inferred from the string type.
     ///

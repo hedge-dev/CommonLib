@@ -32,7 +32,8 @@ var NAVTREE =
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Concepts", "concepts.html", "concepts" ],
@@ -60,8 +61,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/d2d/hook__win32_8h.html#a8fdb60cc4ccabeabf403b566802d0cb3",
-"dir_6e3af380b35de1640cd4bb18f6bfc1c4.html"
+"d1/deb/namespacehedgedev_1_1csl_1_1mem.html#affb24618981b3a7a6f3b2bd67b93bba3aba535ef5a9f7b8bc875812bb081286bb",
+"d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info.html#ad7b9e0f685b57e4ecbefccceea5468e8"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

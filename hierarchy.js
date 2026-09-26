@@ -7,11 +7,14 @@ var hierarchy =
       [ "hedgedev::csl::ut::expr::is_basic_string< T >", "dd/d2f/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string.html", null ],
       [ "hedgedev::csl::ut::expr::is_basic_string_view< T >", "d7/d31/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string__view.html", null ]
     ] ],
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; T &gt;", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type.html", null ],
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; std::basic_string&lt; T_char, T_traits &gt; &gt;", "dc/da9/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01std_1_1basic__string_3_01T__char_00_01T__traits_01_4_01_4.html", null ],
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; std::basic_string_view&lt; T_char, T_traits &gt; &gt;", "d7/dd3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01std_1_1basic__string__view_3_01T__char_00_01T__traits_01_4_01_4.html", null ],
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; T * &gt;", "d4/d1b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_5_01_4.html", null ],
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; T(&amp;)[count]&gt;", "d7/da3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_07_6_08_0fcount_0e_4.html", null ],
+    [ "hedgedev::csl::ut::expr::get_char_type&lt; T, typename &gt;", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type.html", null ],
+    [ "hedgedev::csl::ut::expr::get_char_type&lt; T, std::enable_if_t&lt; std::ranges::range&lt; std::remove_cvref_t&lt; T &gt; &gt; &amp;&amp;!std::is_pointer_v&lt; std::decay_t&lt; T &gt; &gt; &gt; &gt;", "d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html", null ],
+    [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding &gt;", "d6/d38/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type.html", null ],
+    [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf16_be &gt;", "d0/dce/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__be_01_4.html", null ],
+    [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf16_le &gt;", "d2/da7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__le_01_4.html", null ],
+    [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf32_be &gt;", "d9/d1a/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf32__be_01_4.html", null ],
+    [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf32_le &gt;", "d3/d8d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf32__le_01_4.html", null ],
+    [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf8 &gt;", "db/dc7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf8_01_4.html", null ],
     [ "hedgedev::csl::diag::line_info", "d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info.html", null ],
     [ "hedgedev::csl::diag::stack_frame", "d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html", [
       [ "hedgedev::csl::diag::stack_frame_win32", "df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html", null ]

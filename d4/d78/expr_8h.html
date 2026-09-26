@@ -121,7 +121,9 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d4/d78/expr_8h
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d1/dd6/expr_8inl_source.html">expr.inl</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d1a/string__types_8h_source.html">string_types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d7f/container__expr_8h_source.html">container_expr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d66/encoding__expr_8h_source.html">encoding_expr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d7c/string__expr_8h_source.html">string_expr.h</a>&quot;</code><br />
 </div>
 <p><a href="../../d4/d78/expr_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -136,6 +138,8 @@ Namespaces</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a7d5e72f95f6abc10cc5b020fcca28440" id="r_a7d5e72f95f6abc10cc5b020fcca28440"><td class="memTemplParams" colspan="2">template&lt;size_t index, typename... T_args&gt; </td></tr>
 <tr class="memitem:a7d5e72f95f6abc10cc5b020fcca28440 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a7d5e72f95f6abc10cc5b020fcca28440">hedgedev::csl::ut::expr::get_pack_type_t</a> = std::tuple_element_t&lt;index, std::tuple&lt;T_args...&gt;&gt;</td></tr>
+<tr class="memitem:a7e5945bca3aeae115c2d22964a574308" id="r_a7e5945bca3aeae115c2d22964a574308"><td class="memTemplParams" colspan="2">template&lt;size_t size = sizeof(size_t), bool is_signed = false&gt; </td></tr>
+<tr class="memitem:a7e5945bca3aeae115c2d22964a574308 template"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a7e5945bca3aeae115c2d22964a574308">hedgedev::csl::ut::expr::inferred_size_t</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -146,6 +150,10 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a56919a465521852ffd4d81ae81aa2736" id="r_a56919a465521852ffd4d81ae81aa2736"><td class="memTemplParams" colspan="2">template&lt;typename T_first, typename... T_args&gt; </td></tr>
 <tr class="memitem:a56919a465521852ffd4d81ae81aa2736 template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a56919a465521852ffd4d81ae81aa2736">hedgedev::csl::ut::expr::is_all_same_v</a> = std::conjunction_v&lt;std::is_same&lt;std::remove_cvref_t&lt;std::decay_t&lt;T_first&gt;&gt;, std::remove_cvref_t&lt;std::decay_t&lt;T_args&gt;&gt;&gt;...&gt;</td></tr>
+<tr class="memitem:ae799a8a8c437bf05610c11650f54e5bc" id="r_ae799a8a8c437bf05610c11650f54e5bc"><td class="memTemplParams" colspan="2">template&lt;typename, template&lt; typename... &gt; class T_base&gt; </td></tr>
+<tr class="memitem:ae799a8a8c437bf05610c11650f54e5bc template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ae799a8a8c437bf05610c11650f54e5bc">hedgedev::csl::ut::expr::is_supported_template_v</a> = false</td></tr>
+<tr class="memitem:ade46d26fa86fe79dc619c34ca581582f" id="r_ade46d26fa86fe79dc619c34ca581582f"><td class="memTemplParams" colspan="2">template&lt;template&lt; typename... &gt; class T_base, typename... T_args&gt; </td></tr>
+<tr class="memitem:ade46d26fa86fe79dc619c34ca581582f template"><td class="memItemLeft">constexpr bool&#160;</td><td class="memItemRight"><a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ade46d26fa86fe79dc619c34ca581582f">hedgedev::csl::ut::expr::is_supported_template_v&lt; T_base&lt; T_args... &gt;, T_base &gt;</a> = true</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

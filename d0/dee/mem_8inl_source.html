@@ -113,141 +113,218 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d0/dee/mem_8in
   <div class="headertitle"><div class="title">mem.inl</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d0/dee/mem_8inl.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">array</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ut/expr/string_types.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ut/preprocessor.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace</span> hedgedev::csl::<a class="code hl_namespace" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html">mem</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">   11</a></span>    <span class="keyword">inline</span> T <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">read</a>(<span class="keywordtype">void</span>* in_address)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">return</span> *<span class="keyword">reinterpret_cast</span>&lt;T*&gt;(in_address);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
+<a href="../../d0/dee/mem_8inl.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">algorithm</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">array</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">type_traits</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">vector</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">_MSC_VER</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdlib</span><span class="preprocessor">.</span><span class="preprocessor">h</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ut/expr/expr.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ut/expr/string_expr.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;ut/preprocessor.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace</span> hedgedev::csl::<a class="code hl_namespace" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html">mem</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">   18</a></span>    <span class="keyword">inline</span> T <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">read</a>(<span class="keywordtype">void</span>* in_address)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> *<span class="keyword">reinterpret_cast</span>&lt;T*&gt;(in_address);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, size_t count&gt;</div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991">   17</a></span>    <span class="keyword">inline</span> std::array&lt;T, count&gt; <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991">read</a>(<span class="keywordtype">void</span>* in_address)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        std::array&lt;T, count&gt; result{};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">for</span> (size_t i = 0; i &lt; count; i++)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            result[i] = <span class="keyword">reinterpret_cast</span>&lt;T*&gt;(in_address)[i];</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, size_t count&gt;</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991">   24</a></span>    <span class="keyword">inline</span> std::array&lt;T, count&gt; <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991">read</a>(<span class="keywordtype">void</span>* in_address)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        std::array&lt;T, count&gt; result{};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">for</span> (size_t i = 0; i &lt; count; i++)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            result[i] = <span class="keyword">reinterpret_cast</span>&lt;T*&gt;(in_address)[i];</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aec9107f2d69e059e51dd71ab16d85c18">   28</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aec9107f2d69e059e51dd71ab16d85c18">write</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> T&amp; in_data, size_t in_count)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span> (!in_address)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">const</span> <span class="keyword">auto</span> length = <span class="keyword">sizeof</span>(in_data) * in_count;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        uint32_t old_protect_flags{};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, get_protect_flags(page_protection::rw), &amp;old_protect_flags));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">for</span> (size_t i = 0; i &lt; in_count; i++)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keyword">reinterpret_cast</span>&lt;T*&gt;(in_address)[i] = in_data;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, old_protect_flags));</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
-</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a7d99f8725da071ad81a4cd3d08c409b6">   35</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> T <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a7d99f8725da071ad81a4cd3d08c409b6">byteswap</a>(T in_value)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(T) == 1)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">return</span> in_value;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::is_constant_evaluated())</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keyword">auto</span> bytes = std::bit_cast&lt;std::array&lt;uint8_t, <span class="keyword">sizeof</span>(T)&gt;&gt;(in_value);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            std::reverse(bytes.begin(), bytes.end());</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">   48</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">write</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> std::vector&lt;T&gt;&amp; in_data)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (!in_address)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> std::bit_cast&lt;T&gt;(bytes);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(T) == 2 || <span class="keyword">sizeof</span>(T) == 4 || <span class="keyword">sizeof</span>(T) == 8)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            ut::expr::inferred_size_t&lt;<span class="keyword">sizeof</span>(T)&gt; buffer{};</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">const</span> <span class="keyword">auto</span> length = <span class="keyword">sizeof</span>(T) * in_data.size();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            memcpy(&amp;buffer, &amp;in_value, <span class="keyword">sizeof</span>(T));</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        uint32_t old_protect_flags{};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, get_protect_flags(page_protection::rw), &amp;old_protect_flags));</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(memcpy_s(in_address, length, in_data.data(), length) == 0);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, old_protect_flags));</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">template</span> &lt;ut::expr::any_string_t T&gt;</div>
-<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">   65</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">write_string</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> T&amp; in_str)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span> (!in_address)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span> write_string_fixed_length(in_address, in_str, ut::expr::inferred_string_view_t&lt;T&gt;(in_str).size());</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">template</span> &lt;ut::expr::any_string_t T&gt;</div>
-<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a18d561b617473eab717fdb3ab21dd15e">   74</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a18d561b617473eab717fdb3ab21dd15e">write_string_fixed_length</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> T&amp; in_str, size_t in_length)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (!in_address)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keyword">using</span> str_char_t = ut::expr::get_char_type_t&lt;T&gt;;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">auto</span> str_sv = ut::expr::inferred_string_view_t&lt;T&gt;(in_str);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">auto</span> src_length = in_length;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">auto</span> dst_length = src_length;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(T) == 2)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">_MSC_VER</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                buffer = _byteswap_ushort(buffer);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                buffer = __builtin_bswap16(buffer);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(T) == 4)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">_MSC_VER</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                buffer = _byteswap_ulong(buffer);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                buffer = __builtin_bswap32(buffer);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>(T) == 8)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#</span><span class="preprocessor">if</span> <span class="preprocessor">defined</span><span class="preprocessor">(</span><span class="preprocessor">_MSC_VER</span><span class="preprocessor">)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                buffer = _byteswap_uint64(buffer);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#</span><span class="preprocessor">else</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                buffer = __builtin_bswap64(buffer);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#</span><span class="preprocessor">endif</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            memcpy(&amp;in_value, &amp;buffer, <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keyword">auto</span> bytes = <span class="keyword">reinterpret_cast</span>&lt;uint8_t*&gt;(&amp;in_value);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (!dst_length)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="comment">// Started at null terminator, abort.</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span> (!*<span class="keyword">reinterpret_cast</span>&lt;str_char_t*&gt;(in_address))</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            dst_length = ut::expr::inferred_string_view_t&lt;T&gt;(<span class="keyword">reinterpret_cast</span>&lt;str_char_t*&gt;(in_address)).size() * <span class="keyword">sizeof</span>(str_char_t);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">if</span> (!dst_length)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            src_length = str_sv.size() * <span class="keyword">sizeof</span>(str_char_t);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (!src_length)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="comment">// Use the smallest length to fit</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="comment">// within existing string boundaries.</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            src_length = std::min(src_length, dst_length);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        uint32_t old_protect_flags{};</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, dst_length, get_protect_flags(page_protection::rw), &amp;old_protect_flags));</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(memcpy_s(in_address, dst_length, str_sv.data(), src_length) == 0);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        memset(<span class="keyword">reinterpret_cast</span>&lt;<span class="keywordtype">char</span>*&gt;(uintptr_t(in_address) + src_length), 0, <span class="keyword">sizeof</span>(str_char_t));</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, dst_length, old_protect_flags));</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            std::reverse(bytes, bytes + <span class="keyword">sizeof</span>(T));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> in_value;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
 </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html">hedgedev::csl::mem</a></div><div class="ttdef"><b>Definition</b> mem_x86.inl:4</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a18d561b617473eab717fdb3ab21dd15e"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a18d561b617473eab717fdb3ab21dd15e">hedgedev::csl::mem::write_string_fixed_length</a></div><div class="ttdeci">bool write_string_fixed_length(void *in_address, const T &amp;in_str, size_t in_length)</div><div class="ttdef"><b>Definition</b> mem.inl:74</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a2c1b9ed0c73493013e37d2d23c4244ab"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">hedgedev::csl::mem::write</a></div><div class="ttdeci">bool write(void *in_address, const std::vector&lt; T &gt; &amp;in_data)</div><div class="ttdef"><b>Definition</b> mem.inl:48</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a35ce293fe53a103ae35cbecd3760587b"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">hedgedev::csl::mem::write_string</a></div><div class="ttdeci">bool write_string(void *in_address, const T &amp;in_str)</div><div class="ttdef"><b>Definition</b> mem.inl:65</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a86ab7ebac108dc570649625ceb298991"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991">hedgedev::csl::mem::read</a></div><div class="ttdeci">std::array&lt; T, count &gt; read(void *in_address)</div><div class="ttdef"><b>Definition</b> mem.inl:17</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_ab6e2752442e23cf00ceeba1ac2704f71"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">hedgedev::csl::mem::read</a></div><div class="ttdeci">T read(void *in_address)</div><div class="ttdef"><b>Definition</b> mem.inl:11</div></div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_aec9107f2d69e059e51dd71ab16d85c18"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aec9107f2d69e059e51dd71ab16d85c18">hedgedev::csl::mem::write</a></div><div class="ttdeci">bool write(void *in_address, const T &amp;in_data, size_t in_count)</div><div class="ttdef"><b>Definition</b> mem.inl:28</div></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#afafa5f81a67b1a2b59ac635c28517381">   93</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#afafa5f81a67b1a2b59ac635c28517381">byteswap_inplace</a>(T&amp; io_value)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        io_value = byteswap(io_value);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a459c0959eec7e1c156d4c6d385ed0327">   99</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a459c0959eec7e1c156d4c6d385ed0327">write</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> T&amp; in_data, size_t in_count)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">if</span> (!in_address)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keyword">const</span> <span class="keyword">auto</span> length = <span class="keyword">sizeof</span>(in_data) * in_count;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        uint32_t old_protect_flags{};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, get_protect_flags(page_protection::rw), &amp;old_protect_flags));</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">for</span> (size_t i = 0; i &lt; in_count; i++)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            <span class="keyword">reinterpret_cast</span>&lt;T*&gt;(in_address)[i] = in_data;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, old_protect_flags));</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">  119</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">write</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> std::vector&lt;T&gt;&amp; in_data)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">if</span> (!in_address)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keyword">const</span> <span class="keyword">auto</span> length = <span class="keyword">sizeof</span>(T) * in_data.size();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        uint32_t old_protect_flags{};</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, get_protect_flags(page_protection::rw), &amp;old_protect_flags));</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(memcpy_s(in_address, length, in_data.data(), length) == 0);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, length, old_protect_flags));</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">template</span> &lt;ut::expr::any_string T&gt;</div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">  136</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">write_string</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> T&amp; in_str)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">if</span> (!in_address)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">return</span> write_string_fixed_length(in_address, in_str, ut::expr::inferred_string_view_t&lt;T&gt;(in_str).size());</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">template</span> &lt;ut::expr::any_string T&gt;</div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a14d185df9d4a422ea98470e3d8942c85">  145</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a14d185df9d4a422ea98470e3d8942c85">write_string_fixed_length</a>(<span class="keywordtype">void</span>* in_address, <span class="keyword">const</span> T&amp; in_str, size_t in_length)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">if</span> (!in_address)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keyword">using</span> str_char_t = ut::expr::get_char_type_t&lt;T&gt;;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keyword">auto</span> str_sv = ut::expr::inferred_string_view_t&lt;T&gt;(in_str);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keyword">auto</span> src_length = in_length;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keyword">auto</span> dst_length = src_length;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span> (!dst_length)</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="comment">// Started at null terminator, abort.</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">if</span> (!*<span class="keyword">reinterpret_cast</span>&lt;str_char_t*&gt;(in_address))</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            dst_length = ut::expr::inferred_string_view_t&lt;T&gt;(<span class="keyword">reinterpret_cast</span>&lt;str_char_t*&gt;(in_address)).size() * <span class="keyword">sizeof</span>(str_char_t);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            <span class="keywordflow">if</span> (!dst_length)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            src_length = str_sv.size() * <span class="keyword">sizeof</span>(str_char_t);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            <span class="keywordflow">if</span> (!src_length)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="comment">// Use the smallest length to fit</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="comment">// within existing string boundaries.</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            src_length = std::min(src_length, dst_length);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        uint32_t old_protect_flags{};</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, dst_length, get_protect_flags(page_protection::rw), &amp;old_protect_flags));</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(memcpy_s(in_address, dst_length, str_sv.data(), src_length) == 0);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        memset(<span class="keyword">reinterpret_cast</span>&lt;<span class="keywordtype">char</span>*&gt;(uintptr_t(in_address) + src_length), 0, <span class="keyword">sizeof</span>(str_char_t));</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_define" href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a>(protect(in_address, dst_length, old_protect_flags));</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>}</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html">hedgedev::csl::mem</a></div><div class="ttdef"><b>Definition</b> mem.h:169</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a14d185df9d4a422ea98470e3d8942c85"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a14d185df9d4a422ea98470e3d8942c85">hedgedev::csl::mem::write_string_fixed_length</a></div><div class="ttdeci">bool write_string_fixed_length(void *in_address, const T &amp;in_str, size_t in_length=0)</div><div class="ttdef"><b>Definition</b> mem.inl:145</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a2c1b9ed0c73493013e37d2d23c4244ab"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">hedgedev::csl::mem::write</a></div><div class="ttdeci">bool write(void *in_address, const std::vector&lt; T &gt; &amp;in_data)</div><div class="ttdef"><b>Definition</b> mem.inl:119</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a35ce293fe53a103ae35cbecd3760587b"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">hedgedev::csl::mem::write_string</a></div><div class="ttdeci">bool write_string(void *in_address, const T &amp;in_str)</div><div class="ttdef"><b>Definition</b> mem.inl:136</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a459c0959eec7e1c156d4c6d385ed0327"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a459c0959eec7e1c156d4c6d385ed0327">hedgedev::csl::mem::write</a></div><div class="ttdeci">bool write(void *in_address, const T &amp;in_data, size_t in_count=1)</div><div class="ttdef"><b>Definition</b> mem.inl:99</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a7d99f8725da071ad81a4cd3d08c409b6"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a7d99f8725da071ad81a4cd3d08c409b6">hedgedev::csl::mem::byteswap</a></div><div class="ttdeci">constexpr T byteswap(T in_value)</div><div class="ttdef"><b>Definition</b> mem.inl:35</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a86ab7ebac108dc570649625ceb298991"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991">hedgedev::csl::mem::read</a></div><div class="ttdeci">std::array&lt; T, count &gt; read(void *in_address)</div><div class="ttdef"><b>Definition</b> mem.inl:24</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_ab6e2752442e23cf00ceeba1ac2704f71"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">hedgedev::csl::mem::read</a></div><div class="ttdeci">T read(void *in_address)</div><div class="ttdef"><b>Definition</b> mem.inl:18</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_afafa5f81a67b1a2b59ac635c28517381"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#afafa5f81a67b1a2b59ac635c28517381">hedgedev::csl::mem::byteswap_inplace</a></div><div class="ttdeci">constexpr void byteswap_inplace(T &amp;io_value)</div><div class="ttdef"><b>Definition</b> mem.inl:93</div></div>
 <div class="ttc" id="apreprocessor_8h_html_a57893ab68e9e6849dbceb61c13b97bf1"><div class="ttname"><a href="../../d3/d53/preprocessor_8h.html#a57893ab68e9e6849dbceb61c13b97bf1">ASSERT_RETURN_FALSE</a></div><div class="ttdeci">#define ASSERT_RETURN_FALSE(CONDITION)</div><div class="ttdef"><b>Definition</b> preprocessor.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

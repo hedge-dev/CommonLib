@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('d9/d9a/mem_8h.
 <div class="contents">
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../de/d1a/string__types_8h_source.html">ut/expr/string_types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d7c/string__expr_8h_source.html">ut/expr/string_expr.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d0/dee/mem_8inl_source.html">mem.inl</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/df1/mem__x86_8inl_source.html">arch/mem_x86.inl</a>&quot;</code><br />
 </div>
@@ -180,9 +180,9 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:add33cc37cba6d9dd825ea97489664f20" id="r_add33cc37cba6d9dd825ea97489664f20"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#add33cc37cba6d9dd825ea97489664f20">hedgedev::csl::mem::get_original_module_base</a> ()</td></tr>
 <tr class="memitem:a70c43eb6c872ff8896cb6db3b124c5c3" id="r_a70c43eb6c872ff8896cb6db3b124c5c3"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a70c43eb6c872ff8896cb6db3b124c5c3">hedgedev::csl::mem::get_protect_flags</a> (<a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af0d2ddd0842c875f1554365fd40e2e2c">page_protection</a> in_protection)</td></tr>
-<tr class="memitem:a58124568521d797fce7ced7418f6d2d6" id="r_a58124568521d797fce7ced7418f6d2d6"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a58124568521d797fce7ced7418f6d2d6">hedgedev::csl::mem::protect</a> (void *in_address, size_t in_length, uint32_t in_new_protect_flags, uint32_t *out_old_protect_flags)</td></tr>
-<tr class="memitem:a3fdae9c467c23e2a16eece4d4883914a" id="r_a3fdae9c467c23e2a16eece4d4883914a"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a3fdae9c467c23e2a16eece4d4883914a">hedgedev::csl::mem::to_aslr</a> (void *in_address, void *in_base_address)</td></tr>
-<tr class="memitem:a83f773999972c6b614eff9716705ba51" id="r_a83f773999972c6b614eff9716705ba51"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a83f773999972c6b614eff9716705ba51">hedgedev::csl::mem::from_aslr</a> (void *in_address, void *in_base_address)</td></tr>
+<tr class="memitem:ab6ef05904a031b21a10c2b591f06cd5d" id="r_ab6ef05904a031b21a10c2b591f06cd5d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6ef05904a031b21a10c2b591f06cd5d">hedgedev::csl::mem::protect</a> (void *in_address, size_t in_length, uint32_t in_new_protect_flags, uint32_t *out_old_protect_flags=nullptr)</td></tr>
+<tr class="memitem:a149735af75cd1b86b0dd15d4c75e702e" id="r_a149735af75cd1b86b0dd15d4c75e702e"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a149735af75cd1b86b0dd15d4c75e702e">hedgedev::csl::mem::to_aslr</a> (void *in_address, void *in_base_address=nullptr)</td></tr>
+<tr class="memitem:a8d8822d77be84c7dc9f7d161388b76cc" id="r_a8d8822d77be84c7dc9f7d161388b76cc"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a8d8822d77be84c7dc9f7d161388b76cc">hedgedev::csl::mem::from_aslr</a> (void *in_address, void *in_base_address=nullptr)</td></tr>
 <tr class="memitem:ab1e0982ee482f155b48252d169c2a65d" id="r_ab1e0982ee482f155b48252d169c2a65d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab1e0982ee482f155b48252d169c2a65d">hedgedev::csl::mem::is_nop</a> (void *in_address)</td></tr>
 <tr class="memitem:ab6e2752442e23cf00ceeba1ac2704f71" id="r_ab6e2752442e23cf00ceeba1ac2704f71"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:ab6e2752442e23cf00ceeba1ac2704f71 template"><td class="memItemLeft">T&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71">hedgedev::csl::mem::read</a> (void *in_address)</td></tr>
@@ -193,17 +193,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a530e783d888caaf3ce721ee40c7577bb template"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a530e783d888caaf3ce721ee40c7577bb">hedgedev::csl::mem::read_instr_address</a> (void *in_address, ptrdiff_t in_offset, size_t in_stride)</td></tr>
 <tr class="memitem:a264882af211671935e6ebad769f4240b" id="r_a264882af211671935e6ebad769f4240b"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a264882af211671935e6ebad769f4240b">hedgedev::csl::mem::read_call</a> (void *in_address)</td></tr>
 <tr class="memitem:a1708006483e66f69739fb3086fea073f" id="r_a1708006483e66f69739fb3086fea073f"><td class="memItemLeft">void *&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a1708006483e66f69739fb3086fea073f">hedgedev::csl::mem::read_jump</a> (void *in_address)</td></tr>
-<tr class="memitem:aec9107f2d69e059e51dd71ab16d85c18" id="r_aec9107f2d69e059e51dd71ab16d85c18"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
-<tr class="memitem:aec9107f2d69e059e51dd71ab16d85c18 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aec9107f2d69e059e51dd71ab16d85c18">hedgedev::csl::mem::write</a> (void *in_address, const T &amp;in_data, size_t in_count)</td></tr>
+<tr class="memitem:a7d99f8725da071ad81a4cd3d08c409b6" id="r_a7d99f8725da071ad81a4cd3d08c409b6"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a7d99f8725da071ad81a4cd3d08c409b6 template"><td class="memItemLeft">constexpr T&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a7d99f8725da071ad81a4cd3d08c409b6">hedgedev::csl::mem::byteswap</a> (T in_value)</td></tr>
+<tr class="memitem:afafa5f81a67b1a2b59ac635c28517381" id="r_afafa5f81a67b1a2b59ac635c28517381"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:afafa5f81a67b1a2b59ac635c28517381 template"><td class="memItemLeft">constexpr void&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#afafa5f81a67b1a2b59ac635c28517381">hedgedev::csl::mem::byteswap_inplace</a> (T &amp;io_value)</td></tr>
+<tr class="memitem:a459c0959eec7e1c156d4c6d385ed0327" id="r_a459c0959eec7e1c156d4c6d385ed0327"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
+<tr class="memitem:a459c0959eec7e1c156d4c6d385ed0327 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a459c0959eec7e1c156d4c6d385ed0327">hedgedev::csl::mem::write</a> (void *in_address, const T &amp;in_data, size_t in_count=1)</td></tr>
 <tr class="memitem:a2c1b9ed0c73493013e37d2d23c4244ab" id="r_a2c1b9ed0c73493013e37d2d23c4244ab"><td class="memTemplParams" colspan="2">template&lt;typename T&gt; </td></tr>
 <tr class="memitem:a2c1b9ed0c73493013e37d2d23c4244ab template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a2c1b9ed0c73493013e37d2d23c4244ab">hedgedev::csl::mem::write</a> (void *in_address, const std::vector&lt; T &gt; &amp;in_data)</td></tr>
 <tr class="memitem:ab466acc72247212f1b1150dc64de5c3d" id="r_ab466acc72247212f1b1150dc64de5c3d"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab466acc72247212f1b1150dc64de5c3d">hedgedev::csl::mem::write_call</a> (void *in_address, void *in_destination)</td></tr>
-<tr class="memitem:a914e02bc10889f9020a3a37d3c7fb61c" id="r_a914e02bc10889f9020a3a37d3c7fb61c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a914e02bc10889f9020a3a37d3c7fb61c">hedgedev::csl::mem::write_jump</a> (void *in_address, void *in_destination, bool in_isCall)</td></tr>
-<tr class="memitem:a8e1dfd6485f955bf0d76d29936d89123" id="r_a8e1dfd6485f955bf0d76d29936d89123"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a8e1dfd6485f955bf0d76d29936d89123">hedgedev::csl::mem::write_nop</a> (void *in_address, size_t in_count)</td></tr>
-<tr class="memitem:a35ce293fe53a103ae35cbecd3760587b" id="r_a35ce293fe53a103ae35cbecd3760587b"><td class="memTemplParams" colspan="2">template&lt;ut::expr::any_string_t T&gt; </td></tr>
+<tr class="memitem:a73845e632d0754b8860915d46435db3c" id="r_a73845e632d0754b8860915d46435db3c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a73845e632d0754b8860915d46435db3c">hedgedev::csl::mem::write_jump</a> (void *in_address, void *in_destination, bool in_call=false)</td></tr>
+<tr class="memitem:a89c24d9d60feaf2f3aa1746983445140" id="r_a89c24d9d60feaf2f3aa1746983445140"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a89c24d9d60feaf2f3aa1746983445140">hedgedev::csl::mem::write_nop</a> (void *in_address, size_t in_count=1)</td></tr>
+<tr class="memitem:a35ce293fe53a103ae35cbecd3760587b" id="r_a35ce293fe53a103ae35cbecd3760587b"><td class="memTemplParams" colspan="2">template&lt;ut::expr::any_string T&gt; </td></tr>
 <tr class="memitem:a35ce293fe53a103ae35cbecd3760587b template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">hedgedev::csl::mem::write_string</a> (void *in_address, const T &amp;in_str)</td></tr>
-<tr class="memitem:a18d561b617473eab717fdb3ab21dd15e" id="r_a18d561b617473eab717fdb3ab21dd15e"><td class="memTemplParams" colspan="2">template&lt;ut::expr::any_string_t T&gt; </td></tr>
-<tr class="memitem:a18d561b617473eab717fdb3ab21dd15e template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a18d561b617473eab717fdb3ab21dd15e">hedgedev::csl::mem::write_string_fixed_length</a> (void *in_address, const T &amp;in_str, size_t in_length)</td></tr>
+<tr class="memitem:a14d185df9d4a422ea98470e3d8942c85" id="r_a14d185df9d4a422ea98470e3d8942c85"><td class="memTemplParams" colspan="2">template&lt;ut::expr::any_string T&gt; </td></tr>
+<tr class="memitem:a14d185df9d4a422ea98470e3d8942c85 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a14d185df9d4a422ea98470e3d8942c85">hedgedev::csl::mem::write_string_fixed_length</a> (void *in_address, const T &amp;in_str, size_t in_length=0)</td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="a73fcbb0092bfb95fc15462f5ee2e6f3f" name="a73fcbb0092bfb95fc15462f5ee2e6f3f"></a>
@@ -220,8 +224,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a3fdae9c467c23e2a16eece4d4883914a">hedgedev::csl::mem::to_aslr</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS)))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a3fdae9c467c23e2a16eece4d4883914a"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a3fdae9c467c23e2a16eece4d4883914a">hedgedev::csl::mem::to_aslr</a></div><div class="ttdeci">void * to_aslr(void *in_address, void *in_base_address)</div><div class="ttdef"><b>Definition</b> mem_win32.inl:63</div></div>
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a149735af75cd1b86b0dd15d4c75e702e">hedgedev::csl::mem::to_aslr</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS)))</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a149735af75cd1b86b0dd15d4c75e702e"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a149735af75cd1b86b0dd15d4c75e702e">hedgedev::csl::mem::to_aslr</a></div><div class="ttdeci">void * to_aslr(void *in_address, void *in_base_address=nullptr)</div><div class="ttdef"><b>Definition</b> mem_win32.inl:63</div></div>
 </div><!-- fragment --><p>Transforms a virtual address to the current module's ASLR base.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -552,8 +556,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a914e02bc10889f9020a3a37d3c7fb61c">hedgedev::csl::mem::write_jump</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(DESTINATION)))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a914e02bc10889f9020a3a37d3c7fb61c"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a914e02bc10889f9020a3a37d3c7fb61c">hedgedev::csl::mem::write_jump</a></div><div class="ttdeci">bool write_jump(void *in_address, void *in_destination, bool in_isCall)</div><div class="ttdef"><b>Definition</b> mem_x86.inl:151</div></div>
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a73845e632d0754b8860915d46435db3c">hedgedev::csl::mem::write_jump</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(DESTINATION)))</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a73845e632d0754b8860915d46435db3c"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a73845e632d0754b8860915d46435db3c">hedgedev::csl::mem::write_jump</a></div><div class="ttdeci">bool write_jump(void *in_address, void *in_destination, bool in_call=false)</div><div class="ttdef"><b>Definition</b> mem_x86.inl:151</div></div>
 </div><!-- fragment --><p>Writes a jump instruction in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -584,8 +588,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a8e1dfd6485f955bf0d76d29936d89123">hedgedev::csl::mem::write_nop</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), COUNT))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a8e1dfd6485f955bf0d76d29936d89123"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a8e1dfd6485f955bf0d76d29936d89123">hedgedev::csl::mem::write_nop</a></div><div class="ttdeci">bool write_nop(void *in_address, size_t in_count)</div><div class="ttdef"><b>Definition</b> mem_x86.inl:188</div></div>
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a89c24d9d60feaf2f3aa1746983445140">hedgedev::csl::mem::write_nop</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), COUNT))</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a89c24d9d60feaf2f3aa1746983445140"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a89c24d9d60feaf2f3aa1746983445140">hedgedev::csl::mem::write_nop</a></div><div class="ttdeci">bool write_nop(void *in_address, size_t in_count=1)</div><div class="ttdef"><b>Definition</b> mem_x86.inl:188</div></div>
 </div><!-- fragment --><p>Writes a no-operation (NOP) instruction in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -617,7 +621,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">hedgedev::csl::mem::write_string</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), STR))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a35ce293fe53a103ae35cbecd3760587b"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">hedgedev::csl::mem::write_string</a></div><div class="ttdeci">bool write_string(void *in_address, const T &amp;in_str)</div><div class="ttdef"><b>Definition</b> mem.inl:65</div></div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a35ce293fe53a103ae35cbecd3760587b"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a35ce293fe53a103ae35cbecd3760587b">hedgedev::csl::mem::write_string</a></div><div class="ttdeci">bool write_string(void *in_address, const T &amp;in_str)</div><div class="ttdef"><b>Definition</b> mem.inl:136</div></div>
 </div><!-- fragment --><p>Writes a string in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -653,8 +657,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a18d561b617473eab717fdb3ab21dd15e">hedgedev::csl::mem::write_string_fixed_length</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), STR, __VA_ARGS__))</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a18d561b617473eab717fdb3ab21dd15e"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a18d561b617473eab717fdb3ab21dd15e">hedgedev::csl::mem::write_string_fixed_length</a></div><div class="ttdeci">bool write_string_fixed_length(void *in_address, const T &amp;in_str, size_t in_length)</div><div class="ttdef"><b>Definition</b> mem.inl:74</div></div>
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code hl_function" href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a14d185df9d4a422ea98470e3d8942c85">hedgedev::csl::mem::write_string_fixed_length</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(ADDRESS), STR, __VA_ARGS__))</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1mem_html_a14d185df9d4a422ea98470e3d8942c85"><div class="ttname"><a href="../../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a14d185df9d4a422ea98470e3d8942c85">hedgedev::csl::mem::write_string_fixed_length</a></div><div class="ttdeci">bool write_string_fixed_length(void *in_address, const T &amp;in_str, size_t in_length=0)</div><div class="ttdef"><b>Definition</b> mem.inl:145</div></div>
 </div><!-- fragment --><p>Writes a string of fixed length in memory.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

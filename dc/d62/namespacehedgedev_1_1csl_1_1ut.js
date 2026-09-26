@@ -1,5 +1,21 @@
 var namespacehedgedev_1_1csl_1_1ut =
 [
+    [ "encoding", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html", [
+      [ "encoding_type", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508", [
+        [ "unknown", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a1c5703709dce6a7daf98fd6adc7c1528", null ],
+        [ "utf8", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a9f61fe69c83ea0ca5f71097576739826", null ],
+        [ "utf16_le", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508ab3c25324b8cdaeb4a12731945d7cdb1f", null ],
+        [ "utf16_be", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a055086058cbd0acccaf9c06aedd9f79b", null ],
+        [ "utf32_le", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a468486d90013ee43baf8b00c43c5d962", null ],
+        [ "utf32_be", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a00d3faae1934f040df931f72d3863896", null ],
+        [ "latin1", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a8856ea35f9e2ef3b5234fd918bfc1711", null ]
+      ] ],
+      [ "convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a6499aef2fd3d38eb683663d3344fab03", null ],
+      [ "convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#ae07a8034ee8087b8922a9e271c2318f1", null ],
+      [ "precedent_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a6e06f2ca067babe0f48e18668107f038", null ],
+      [ "try_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a12e768f8c57b8e945704451340d91d8c", null ],
+      [ "try_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a074e26aafd497ac66d826198fff0cd52", null ]
+    ] ],
     [ "expr", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr" ],
     [ "filesystem", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html", [
       [ "is_neighbour", "dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ac85f9567cc70dd507a1f575b15f50707", null ],
@@ -9,7 +25,6 @@ var namespacehedgedev_1_1csl_1_1ut =
     [ "string", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html", [
       [ "compare", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a688efe494840e2d6ebae2fe9d37023ec", null ],
       [ "contains", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ab17f4f618017f4f654d4b389f931eacd", null ],
-      [ "convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a408fbe867e899f76dc1c4565e7bd7ef9", null ],
       [ "escape", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#aab5453d5e2dba4c95c7b2466e171a597", null ],
       [ "format", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a260cd2631d7775b51811a675cea945a5", null ],
       [ "get_width", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#add7eee0acafe85160946038b08984791", null ],
@@ -22,14 +37,12 @@ var namespacehedgedev_1_1csl_1_1ut =
       [ "lower", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2ee3d362b444077b06fdea36dcac50e7", null ],
       [ "pad", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#abb7927a7c867fd312b6d6988c3deeda6", null ],
       [ "parse", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ad5f6db5ebe903c3faaed4061bda1f437", null ],
-      [ "precedent_convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2516b94fea0b36f11fe8d671f42ef330", null ],
       [ "remove_xml_tags", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5716cf8a520029b8243f409f81f705b4", null ],
       [ "split", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a749d7e61e1b652fddeab5ea7763b28fa", null ],
       [ "trim", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2fdd49ea33498d8535e8935df5525e07", null ],
       [ "trim_end", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5e793ea552575a0b1a06e5877a9df0aa", null ],
       [ "trim_start", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a18d93d07ed81865f7a08bada98fd90b5", null ],
       [ "truncate", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ae639ec6a7fd213d8c7bcb32a53a2dc63", null ],
-      [ "try_convert", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0f15e1f0cf461d71f360a898739c7617", null ],
       [ "try_parse", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a9df036a8cf2df874eab2b32a9c7d750b", null ],
       [ "upper", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a7a42760e9a2bfcd422cef8abe943de18", null ],
       [ "wrap", "d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a602d7cb7989748104f61ccd3391fa956", null ]

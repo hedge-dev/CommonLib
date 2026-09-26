@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['to_5faslr_0',['to_aslr',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a3fdae9c467c23e2a16eece4d4883914a',1,'hedgedev::csl::mem']]],
-  ['trim_1',['trim',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2fdd49ea33498d8535e8935df5525e07',1,'hedgedev::csl::ut::string']]],
-  ['trim_5fend_2',['trim_end',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5e793ea552575a0b1a06e5877a9df0aa',1,'hedgedev::csl::ut::string']]],
-  ['trim_5fstart_3',['trim_start',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a18d93d07ed81865f7a08bada98fd90b5',1,'hedgedev::csl::ut::string']]],
-  ['truncate_4',['truncate',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ae639ec6a7fd213d8c7bcb32a53a2dc63',1,'hedgedev::csl::ut::string']]],
-  ['truncate_5ffiles_5',['truncate_files',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ad0d5e16de07a6d3a66eedb6f7842ba88',1,'hedgedev::csl::ut::filesystem']]],
-  ['truncate_5ffiles_5fby_5fage_6',['truncate_files_by_age',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#a89a99c0d1f68fbdba76627c8cab9dcc3',1,'hedgedev::csl::ut::filesystem']]],
-  ['try_5fconvert_7',['try_convert',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a0f15e1f0cf461d71f360a898739c7617',1,'hedgedev::csl::ut::string']]],
-  ['try_5fparse_8',['try_parse',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a9df036a8cf2df874eab2b32a9c7d750b',1,'hedgedev::csl::ut::string']]]
+  ['set_5fline_5finfo_0',['set_line_info',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#afbbff9fb3d58416c6ad753d512dd56b7',1,'hedgedev::csl::diag::stack_frame_win32']]],
+  ['set_5fmodule_5fpath_1',['set_module_path',['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#a22f7f69b60e9c04d965a616fe9c96957',1,'hedgedev::csl::diag::stack_frame']]],
+  ['set_5fsymbol_5finfo_2',['set_symbol_info',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#ab59809432b60707ba3988587eade5db2',1,'hedgedev::csl::diag::stack_frame_win32']]],
+  ['set_5ftext_3',['set_text',['../d1/d13/namespacehedgedev_1_1csl_1_1host_1_1clipboard.html#ace79acb6b07d47792c66e6341a00e85e',1,'hedgedev::csl::host::clipboard']]],
+  ['split_4',['split',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a749d7e61e1b652fddeab5ea7763b28fa',1,'hedgedev::csl::ut::string']]],
+  ['start_5',['start',['../d9/d06/namespacehedgedev_1_1csl_1_1diag_1_1process.html#a036b9d30fb93d15d6fc6f100358e56f5',1,'hedgedev::csl::diag::process']]],
+  ['str_6',['str',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#a7ee8cf68e4fa9461acb9cdc773f47b19',1,'hedgedev::csl::diag::stack_frame_win32']]]
 ];

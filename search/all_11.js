@@ -5,9 +5,9 @@ var searchData=
   ['set_5fmodule_5fpath_2',['set_module_path',['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#a22f7f69b60e9c04d965a616fe9c96957',1,'hedgedev::csl::diag::stack_frame']]],
   ['set_5fsymbol_5finfo_3',['set_symbol_info',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#ab59809432b60707ba3988587eade5db2',1,'hedgedev::csl::diag::stack_frame_win32']]],
   ['set_5ftext_4',['set_text',['../d1/d13/namespacehedgedev_1_1csl_1_1host_1_1clipboard.html#ace79acb6b07d47792c66e6341a00e85e',1,'hedgedev::csl::host::clipboard']]],
-  ['short_5fbranch_5',['short_branch',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a882e650acf2da2a6471e5c4fd5b3135ea1910e5810995de9eb9cbb9196025ee0d',1,'hedgedev::csl::mem']]],
+  ['short_5fbranch_5',['short_branch',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a882e650acf2da2a6471e5c4fd5b3135ea1910e5810995de9eb9cbb9196025ee0d',1,'hedgedev::csl::mem::short_branch'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a882e650acf2da2a6471e5c4fd5b3135ea1910e5810995de9eb9cbb9196025ee0d',1,'hedgedev::csl::mem::short_branch'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a882e650acf2da2a6471e5c4fd5b3135ea1910e5810995de9eb9cbb9196025ee0d',1,'hedgedev::csl::mem::short_branch'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a882e650acf2da2a6471e5c4fd5b3135ea1910e5810995de9eb9cbb9196025ee0d',1,'hedgedev::csl::mem::short_branch']]],
   ['si_6',['SI',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a8f360dff4d05ba2b720d2b4381246b21ace774d9cab3ae0bdf522cd0839bed364',1,'hedgedev::csl::hook']]],
-  ['sign_7',['sign',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcda04b29480233f4def5c875875b6bdc3b1',1,'hedgedev::csl::mem']]],
+  ['sign_7',['sign',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcda04b29480233f4def5c875875b6bdc3b1',1,'hedgedev::csl::mem::sign'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcda04b29480233f4def5c875875b6bdc3b1',1,'hedgedev::csl::mem::sign'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcda04b29480233f4def5c875875b6bdc3b1',1,'hedgedev::csl::mem::sign'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcda04b29480233f4def5c875875b6bdc3b1',1,'hedgedev::csl::mem::sign']]],
   ['sil_8',['SIL',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a8f360dff4d05ba2b720d2b4381246b21a931956b28520f66fca597c302e66a79d',1,'hedgedev::csl::hook']]],
   ['source_5ffile_5fpath_9',['source_file_path',['../d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info.html#acb48e9d5e43246dd0553dd7a55af09ee',1,'hedgedev::csl::diag::line_info']]],
   ['sp_10',['SP',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a8f360dff4d05ba2b720d2b4381246b21a674769e3326f8cf937af4282f2815c02',1,'hedgedev::csl::hook']]],
@@ -33,8 +33,8 @@ var searchData=
   ['str_30',['str',['../df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html#a7ee8cf68e4fa9461acb9cdc773f47b19',1,'hedgedev::csl::diag::stack_frame_win32']]],
   ['string_2eh_31',['string.h',['../da/d66/string_8h.html',1,'']]],
   ['string_2einl_32',['string.inl',['../d3/d4a/string_8inl.html',1,'']]],
-  ['string_5ftypes_2eh_33',['string_types.h',['../de/d1a/string__types_8h.html',1,'']]],
-  ['string_5ftypes_2einl_34',['string_types.inl',['../d6/df9/string__types_8inl.html',1,'']]],
+  ['string_5fexpr_2eh_33',['string_expr.h',['../dc/d7c/string__expr_8h.html',1,'']]],
+  ['string_5fexpr_2einl_34',['string_expr.inl',['../dc/d17/string__expr_8inl.html',1,'']]],
   ['symbol_5finfo_35',['symbol_info',['../d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info.html',1,'hedgedev::csl::diag::symbol_info'],['../d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html#a29077d149573e5ad2b310f09f01e050a',1,'hedgedev::csl::diag::stack_frame::symbol_info']]],
   ['symbol_5finfo_2eh_36',['symbol_info.h',['../d4/dcf/symbol__info_8h.html',1,'']]]
 ];

@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['type_0',['type',['../dc/da9/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01std_1_1basic__string_3_01T__char_00_01T__traits_01_4_01_4.html#ae3cb25f08f1f6c80f073410d086a7169',1,'hedgedev::csl::ut::expr::get_char_type&lt; std::basic_string&lt; T_char, T_traits &gt; &gt;::type'],['../d7/dd3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01std_1_1basic__string__view_3_01T__char_00_01T__traits_01_4_01_4.html#af3ae002e28596bda641914bdacd27413',1,'hedgedev::csl::ut::expr::get_char_type&lt; std::basic_string_view&lt; T_char, T_traits &gt; &gt;::type'],['../d4/d1b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_5_01_4.html#ac2844d5d78748911de12ed5abd6b30bf',1,'hedgedev::csl::ut::expr::get_char_type&lt; T * &gt;::type'],['../d7/da3/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_07_6_08_0fcount_0e_4.html#a03a5b060439227c8294599c3da96a4e7',1,'hedgedev::csl::ut::expr::get_char_type&lt; T(&amp;)[count]&gt;::type']]]
+  ['pi_5fstring_5ft_0',['pi_string_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a21f7a6aefcd47467bad135fe8f46f6de',1,'hedgedev::csl::ut::expr']]],
+  ['pi_5fstring_5fview_5ft_1',['pi_string_view_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#aecc9692e437c2313537a38e22984caa3',1,'hedgedev::csl::ut::expr']]],
+  ['pi_5fstringstream_5ft_2',['pi_stringstream_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#acbdc22c5a2e79d6fa14c6f39bade57c7',1,'hedgedev::csl::ut::expr']]],
+  ['precedent_5fstring_5ft_3',['precedent_string_t',['../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a6d4c2c495fb665e16f5072adf70ce12e',1,'hedgedev::csl::ut::expr']]]
 ];

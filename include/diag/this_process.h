@@ -4,14 +4,14 @@
 #include <vector>
 
 #include "diag/stack_frame.h"
-#include "ut/expr/string_types.h"
+#include "ut/expr/string_expr.h"
 
 namespace hedgedev::csl::diag::this_process
 {
     ///
     /// Gets the command line arguments that were passed into this process at launch.
     ///
-    template <ut::expr::any_string_t T>
+    template <ut::expr::any_string T>
     inline std::vector<T> get_command_line();
 
     ///
@@ -75,7 +75,7 @@ namespace hedgedev::csl::diag::this_process
     ///
     /// \returns `true` if this process was terminated successfully. Otherwise, `false`.
     ///
-    template <ut::expr::any_string_t T>
+    template <ut::expr::any_string T>
     inline bool restart(const std::vector<T>& in_args);
 
     ///

@@ -1,8 +1,15 @@
+#include <algorithm>
 #include <array>
 #include <string>
+#include <type_traits>
 #include <vector>
 
-#include "ut/expr/string_types.h"
+#if defined(_MSC_VER)
+#include <stdlib.h>
+#endif
+
+#include "ut/expr/expr.h"
+#include "ut/expr/string_expr.h"
 #include "ut/preprocessor.h"
 
 namespace hedgedev::csl::mem
@@ -22,6 +29,70 @@ namespace hedgedev::csl::mem
             result[i] = reinterpret_cast<T*>(in_address)[i];
 
         return result;
+    }
+
+    template <typename T>
+    inline constexpr T byteswap(T in_value)
+    {
+        if constexpr (sizeof(T) == 1)
+        {
+            return in_value;
+        }
+        else if (std::is_constant_evaluated())
+        {
+            auto bytes = std::bit_cast<std::array<uint8_t, sizeof(T)>>(in_value);
+
+            std::reverse(bytes.begin(), bytes.end());
+
+            return std::bit_cast<T>(bytes);
+        }
+        else if constexpr (sizeof(T) == 2 || sizeof(T) == 4 || sizeof(T) == 8)
+        {
+            ut::expr::inferred_size_t<sizeof(T)> buffer{};
+
+            memcpy(&buffer, &in_value, sizeof(T));
+
+            if constexpr (sizeof(T) == 2)
+            {
+#if defined(_MSC_VER)
+                buffer = _byteswap_ushort(buffer);
+#else
+                buffer = __builtin_bswap16(buffer);
+#endif
+            }
+            else if constexpr (sizeof(T) == 4)
+            {
+#if defined(_MSC_VER)
+                buffer = _byteswap_ulong(buffer);
+#else
+                buffer = __builtin_bswap32(buffer);
+#endif
+            }
+            else if constexpr (sizeof(T) == 8)
+            {
+#if defined(_MSC_VER)
+                buffer = _byteswap_uint64(buffer);
+#else
+                buffer = __builtin_bswap64(buffer);
+#endif
+            }
+
+            memcpy(&in_value, &buffer, sizeof(T));
+        }
+        else
+        {
+            auto bytes = reinterpret_cast<uint8_t*>(&in_value);
+
+            std::reverse(bytes, bytes + sizeof(T));
+        }
+
+        return in_value;
+    }
+
+    template <typename T>
+    inline constexpr void byteswap_inplace(T& io_value)
+    {
+        io_value = byteswap(io_value);
     }
 
     template <typename T>
@@ -61,7 +132,7 @@ namespace hedgedev::csl::mem
         return true;
     }
 
-    template <ut::expr::any_string_t T>
+    template <ut::expr::any_string T>
     inline bool write_string(void* in_address, const T& in_str)
     {
         if (!in_address)
@@ -70,7 +141,7 @@ namespace hedgedev::csl::mem
         return write_string_fixed_length(in_address, in_str, ut::expr::inferred_string_view_t<T>(in_str).size());
     }
 
-    template <ut::expr::any_string_t T>
+    template <ut::expr::any_string T>
     inline bool write_string_fixed_length(void* in_address, const T& in_str, size_t in_length)
     {
         if (!in_address)

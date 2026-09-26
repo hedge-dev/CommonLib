@@ -57,7 +57,7 @@ int example_function(int in_example_param)
 These hints must not be chained, rather they must follow the order below for which prefix takes precedence:
 - Internal macros must use the `__CMNLIB_INTERNAL_` prefix.
 - Global variables must use the `g_` prefix.
-- Private variables must use the `m_` prefix.
+- Private variables must use the `m_` prefix. If the variable is static, use the `s_` prefix.
 - Private functions must use the `_` prefix.
 - Constant variables (`const`/`constexpr`) in global scopes, classes or structs must use the `k_` prefix. This does not include expressions.
 - Function parameters must use the `in_` prefix for input parameters, and `out_` for output parameters. If a parameter may be treated as both input and output, use the `io_` prefix.

@@ -1,0 +1,17 @@
+# Suppress messages from third-party sources.
+*:*thirdparty*
+
+# Suppress messages about checkers reports.
+checkersReport
+
+# Suppress messages about explicit condition checking.
+# This appears to be incorrect sometimes?
+knownConditionTrueFalse
+
+# Suppress messages about system includes.
+missingIncludeSystem
+
+# Suppress warnings about unused functions and members,
+# as many cannot possibly be used in a header-only library.
+unusedFunction
+unusedStructMember

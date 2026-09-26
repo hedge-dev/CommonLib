@@ -3,8 +3,8 @@
 
 #include "host/common.h"
 #include "ut/expr/expr.h"
-#include "ut/expr/string_types.h"
-#include "ut/string.h"
+#include "ut/expr/string_expr.h"
+#include "ut/encoding.h"
 
 namespace hedgedev::csl::cfg::registry
 {
@@ -83,7 +83,7 @@ namespace hedgedev::csl::cfg::registry
 
                 if (result == ERROR_SUCCESS)
                 {
-                    result = ut::string::try_convert(buffer.data(), out_result)
+                    result = ut::encoding::try_convert(buffer.data(), out_result)
                         ? ERROR_SUCCESS
                         : -1;
                 }
@@ -145,9 +145,9 @@ namespace hedgedev::csl::cfg::registry
         DWORD data_type{};
         std::wstring str_data{};
         
-        if constexpr (ut::expr::any_string_t<T> || std::is_same_v<T, std::filesystem::path>)
+        if constexpr (ut::expr::any_string<T> || std::is_same_v<T, std::filesystem::path>)
         {
-            if (ut::string::try_convert(in_value, str_data))
+            if (ut::encoding::try_convert(in_value, str_data))
             {
                 data = reinterpret_cast<BYTE*>(str_data.c_str());
                 data_size = (str_data.size() + 1) * sizeof(wchar_t);

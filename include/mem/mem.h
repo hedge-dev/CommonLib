@@ -3,7 +3,7 @@
 #include <array>
 #include <vector>
 
-#include "ut/expr/string_types.h"
+#include "ut/expr/string_expr.h"
 
 ///
 /// Transforms a virtual address to the current module's ASLR base.
@@ -316,6 +316,24 @@ namespace hedgedev::csl::mem
     inline void* read_jump(void* in_address);
 
     ///
+    /// Swaps the complete order of bytes for any type.
+    /// 
+    /// \param in_value The value to swap.
+    ///
+    /// \returns The swapped value.
+    ///
+    template <typename T>
+    inline constexpr T byteswap(T in_value);
+
+    ///
+    /// Swaps the complete order of bytes for any type by reference.
+    ///
+    /// \param io_value The value to swap.
+    ///
+    template <typename T>
+    inline constexpr void byteswap_inplace(T& io_value);
+
+    ///
     /// Writes a value in memory.
     ///
     /// \tparam T The type to write.
@@ -383,7 +401,7 @@ namespace hedgedev::csl::mem
     ///
     /// \returns `true` if the string was written successfully. Otherwise, `false`.
     ///
-    template <ut::expr::any_string_t T>
+    template <ut::expr::any_string T>
     inline bool write_string(void* in_address, const T& in_str);
 
     ///
@@ -397,7 +415,7 @@ namespace hedgedev::csl::mem
     ///
     /// \returns `true` if the string was written successfully. Otherwise, `false`.
     ///
-    template <ut::expr::any_string_t T>
+    template <ut::expr::any_string T>
     inline bool write_string_fixed_length(void* in_address, const T& in_str, size_t in_length = 0);
 }
 

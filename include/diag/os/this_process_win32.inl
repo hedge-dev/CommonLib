@@ -5,12 +5,13 @@
 #include <shellapi.h>
 
 #include "host/common.h"
-#include "ut/expr/string_types.h"
 #include "stack_frame_win32.h"
+#include "ut/expr/string_expr.h"
+#include "ut/encoding.h"
 
 namespace hedgedev::csl::diag::this_process
 {
-	template <ut::expr::any_string_t T>
+	template <ut::expr::any_string T>
 	inline std::vector<T> get_command_line()
 	{
 		std::vector<T> result{};
@@ -22,7 +23,7 @@ namespace hedgedev::csl::diag::this_process
 			if (const auto args = CommandLineToArgvW(command_line, &arg_count))
 			{
 				for (auto i = 0; i < arg_count; i++)
-					result.push_back(ut::string::convert<T>(args[i]));
+					result.push_back(ut::encoding::convert<T>(args[i]));
 			}
 		}
 
@@ -170,7 +171,7 @@ namespace hedgedev::csl::diag::this_process
 		return address >= start && address < end;
 	}
 
-	template <ut::expr::any_string_t T>
+	template <ut::expr::any_string T>
 	inline bool restart(const std::vector<T>& in_args)
 	{
 		process::start(get_executable_path(), in_args, get_working_directory());

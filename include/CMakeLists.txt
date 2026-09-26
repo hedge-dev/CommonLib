@@ -1,5 +1,3 @@
-include("../toolchains/StaticLibrary.cmake")
-
 list(APPEND CMNLIB_SOURCES "CommonLib.cpp")
 
 add_library(CommonLib STATIC ${CMNLIB_SOURCES})
@@ -14,6 +12,8 @@ if(WIN32)
         add_dependencies(CommonLib Detours)
     endif()
 endif()
+
+include("../toolchains/StaticLibrary.cmake")
 
 foreach(CMNLIB_LIB ${CMNLIB_LIBS})
     MergeStaticLibrary(CommonLib ${CMNLIB_LIB})

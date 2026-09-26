@@ -1,1 +1,1 @@
-// This is a dummy compilation unit to allow us to generate a static library for merging others into.
+#include "../thirdparty/simdutf/singleheader/simdutf.cpp"

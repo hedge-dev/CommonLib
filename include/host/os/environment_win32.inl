@@ -3,7 +3,8 @@
 #include <string>
 
 #include "host/common.h"
-#include "ut/expr/string_types.h"
+#include "ut/expr/string_expr.h"
+#include "ut/encoding.h"
 
 namespace hedgedev::csl::host::environment
 {
@@ -19,20 +20,20 @@ namespace hedgedev::csl::host::environment
 		return result;
 	}
 	
-    template<typename T_result, ut::expr::any_string_t T_name>
+    template<typename T_result, ut::expr::any_string T_name>
     inline std::optional<T_result> get_variable(const T_name& in_name, std::optional<T_result> in_default_value)
     {
 		std::optional<T_result> result{};
 
         std::wstring name{};
 
-		if constexpr (ut::expr::any_string_w_t<T_name>)
+		if constexpr (ut::expr::any_string_w<T_name>)
 		{
 			name = in_name;
 		}
 		else
 		{
-			if (!ut::string::try_convert<std::wstring>(in_name, name))
+			if (!ut::encoding::try_convert<std::wstring>(in_name, name))
 				return result = in_default_value;
 		}
 

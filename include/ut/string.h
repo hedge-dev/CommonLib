@@ -5,7 +5,7 @@
 #include <type_traits>
 #include <vector>
 
-#include "expr/string_types.h"
+#include "expr/string_expr.h"
 
 namespace hedgedev::csl::ut::string
 {
@@ -22,7 +22,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns `true` if the strings are identical. Otherwise, `false`.
     ///
-    template <expr::any_string_t T_left, expr::any_string_t T_right>
+    template <expr::any_string T_left, expr::any_string T_right>
     inline bool compare(const T_left& in_left, const T_right& in_right, bool in_case_sensitive = true);
 
     ///
@@ -38,22 +38,8 @@ namespace hedgedev::csl::ut::string
     /// \returns `true` if the input string contains the specified substring.
     ///          Otherwise, `false`.
     ///
-    template <expr::any_string_t T_str, expr::any_string_t T_substr>
+    template <expr::any_string T_str, expr::any_string T_substr>
     inline bool contains(const T_str& in_str, const T_substr& in_substr, bool in_case_sensitive = true);
-
-    ///
-    /// Converts a string to a different encoding format.
-    ///
-    /// \tparam T_result The string type to convert to.
-    /// \tparam T_str    The string type to convert from.
-    ///
-    /// \param in_str The string to convert.
-    ///
-    /// \returns If successful, the input string in the destination format.
-    ///          Otherwise, an empty string in the destination format.
-    ///
-    template <expr::any_string_t T_result, expr::any_string_t T_str>
-    inline std::conditional_t<std::is_same_v<T_result, T_str> && !std::is_pointer_v<T_str>, const T_result&, T_result> convert(const T_str& in_str);
 
     ///
     /// Escapes all instances of a character in a string with an escape sequence.
@@ -69,7 +55,7 @@ namespace hedgedev::csl::ut::string
     /// \returns The input string where all characters matching the search character
     ///          have been escaped using the escape character.
     ///
-    template <expr::any_string_t T_str, typename T_str_char = expr::get_char_type_t<T_str>>
+    template <expr::any_string T_str, typename T_str_char = expr::get_char_type_t<T_str>>
     inline expr::inferred_string_t<T_str> escape(const T_str& in_str, T_str_char in_search_char, T_str_char in_escape_char = T_str_char('\\'));
 
     ///
@@ -81,7 +67,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string with the formatters filled in.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline expr::inferred_string_t<T> format(const T in_str, ...);
 
     ///
@@ -93,7 +79,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The width of the string in characters determined by the longest line.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline size_t get_width(const T& in_str);
 
     ///
@@ -109,7 +95,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string formatted with a HTML hyperlink with a URL target.
     ///
-    template <expr::any_string_t T_str, expr::any_string_t T_url, typename T_result = expr::pi_string_t<T_str, T_url>>
+    template <expr::any_string T_str, expr::any_string T_url, typename T_result = expr::pi_string_t<T_str, T_url>>
     inline T_result hyperlink(const T_str& in_str, const T_url& in_url);
 
     ///
@@ -121,7 +107,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns `true` if the string is null or empty. Otherwise, `false`.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline bool is_null_or_empty(const T& in_str);
 
     ///
@@ -135,7 +121,7 @@ namespace hedgedev::csl::ut::string
     /// \returns `true` if the string is null or empty, or if the string consists only
     ///          of white-space characters. Otherwise, `false`.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline bool is_null_or_whitespace(const T& in_str);
 
     ///
@@ -149,7 +135,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input strings joined together, separated by the delimiter.
     ///
-    template <expr::any_string_t T_delimiter, expr::any_string_t T_strings>
+    template <expr::any_string T_delimiter, expr::any_string T_strings>
     inline expr::inferred_string_t<T_strings> join(const T_delimiter& in_delimiter, const std::vector<T_strings>& in_strings);
 
     ///
@@ -165,7 +151,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input strings joined together, separated by the delimiter.
     ///
-    template <expr::any_string_t T_delimiter, expr::any_string_t... T_args, typename T_result = expr::pi_string_t<T_delimiter, T_args...>>
+    template <expr::any_string T_delimiter, expr::any_string... T_args, typename T_result = expr::pi_string_t<T_delimiter, T_args...>>
     inline T_result join(const T_delimiter& in_delimiter, const T_args&... in_args);
 
     ///
@@ -181,7 +167,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string padded on either side with the pad string.
     ///
-    template <expr::any_string_t T_str, expr::any_string_t T_pad_str, typename T_result = expr::pi_string_t<T_str, T_pad_str>>
+    template <expr::any_string T_str, expr::any_string T_pad_str, typename T_result = expr::pi_string_t<T_str, T_pad_str>>
     inline T_result pad(const T_str& in_str, const T_pad_str& in_pad_str);
 
     ///
@@ -194,24 +180,8 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The value that was parsed.
     ///
-    template <typename T_result, expr::any_string_t T_str>
+    template <typename T_result, expr::any_string T_str>
     inline T_result parse(const T_str& in_str);
-
-    ///
-    /// Converts multiple strings to share the same encoding format.
-    ///
-    /// \tparam T_args   The string types.
-    /// \tparam T_result The string type to convert to inferred from the string with the
-    ///                  largest character size.
-    ///
-    /// \param in_args The strings to convert.
-    ///
-    /// \returns An array of strings in the same destination format.
-    ///          If a string failed to convert, an empty string will be put in
-    ///          its place.
-    ///
-    template <expr::any_string_t... T_args, typename T_result = expr::pi_string_t<T_args...>>
-    inline std::array<T_result, sizeof...(T_args)> precedent_convert(const T_args&... in_args);
 
     ///
     /// Removes XML tags from a string.
@@ -222,7 +192,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string with XML tags removed.
     ///
-    template <expr::any_string_t T_str>
+    template <expr::any_string T_str>
     inline expr::inferred_string_t<T_str> remove_xml_tags(const T_str& in_str);
 
     ///
@@ -238,7 +208,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns A collection of strings split by the delimiter.
     ///
-    template <expr::any_string_t T_str, expr::any_string_t T_delimiter, typename T_result = expr::pi_string_t<T_str, T_delimiter>>
+    template <expr::any_string T_str, expr::any_string T_delimiter, typename T_result = expr::pi_string_t<T_str, T_delimiter>>
     inline std::vector<T_result> split(const T_str& in_str, const T_delimiter& in_delimiter);
 
     ///
@@ -250,7 +220,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string as lowercase.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline expr::inferred_string_t<T> lower(const T& in_str);
 
     ///
@@ -262,7 +232,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string as uppercase.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline expr::inferred_string_t<T> upper(const T& in_str);
 
     ///
@@ -277,7 +247,7 @@ namespace hedgedev::csl::ut::string
     /// \returns The input string with all occurrences of the specified characters
     ///          removed from the start.
     ///
-    template <expr::any_string_t T_str, typename T_trim_chars = expr::get_char_type_t<T_str>>
+    template <expr::any_string T_str, typename T_trim_chars = expr::get_char_type_t<T_str>>
     inline expr::inferred_string_t<T_str> trim_start(const T_str& in_str, std::optional<std::vector<T_trim_chars>> in_trim_chars = {});
 
     ///
@@ -292,7 +262,7 @@ namespace hedgedev::csl::ut::string
     /// \returns The input string with all occurrences of the specified characters
     ///          removed from the end.
     ///
-    template <expr::any_string_t T_str, typename T_trim_chars = expr::get_char_type_t<T_str>>
+    template <expr::any_string T_str, typename T_trim_chars = expr::get_char_type_t<T_str>>
     inline expr::inferred_string_t<T_str> trim_end(const T_str& in_str, std::optional<std::vector<T_trim_chars>> in_trim_chars = {});
 
     ///
@@ -308,7 +278,7 @@ namespace hedgedev::csl::ut::string
     /// \returns The input string with all occurrences of the specified characters
     ///          removed from the start and end.
     ///
-    template <expr::any_string_t T_str, typename T_trim_chars = expr::get_char_type_t<T_str>>
+    template <expr::any_string T_str, typename T_trim_chars = expr::get_char_type_t<T_str>>
     inline expr::inferred_string_t<T_str> trim(const T_str& in_str, std::optional<std::vector<T_trim_chars>> in_trim_chars = {});
 
     ///
@@ -325,7 +295,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input string truncated to the specified length.
     ///
-    template <expr::any_string_t T>
+    template <expr::any_string T>
     inline expr::inferred_string_t<T> truncate(const T& in_str, size_t in_max_length, bool in_truncate_end = true, bool in_ellipsis = true);
 
     ///
@@ -340,22 +310,8 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns The input value represented as a hexadecimal string.
     ///
-    template <expr::basic_string_t T_result, typename T_value>
+    template <expr::basic_string T_result, typename T_value>
     inline T_result hex(T_value in_value, size_t in_max_length = sizeof(size_t) * 2, bool in_prefix = true);
-
-    ///
-    /// Tries to convert a string to a different encoding format.
-    ///
-    /// \tparam T_result The string type to convert to.
-    /// \tparam T_str    The string type to convert from.
-    ///
-    /// \param in_str     The string to convert.
-    /// \param out_result The output string to set.
-    ///
-    /// \returns `true` if the conversion was successful. Otherwise, `false`.
-    ///
-    template <expr::any_string_t T_result, expr::any_string_t T_str>
-    inline bool try_convert(const T_str& in_str, T_result& out_result);
 
     ///
     /// Tries to parse a value from a string.
@@ -368,7 +324,7 @@ namespace hedgedev::csl::ut::string
     ///
     /// \returns `true` if the parse was successful. Otherwise, `false`.
     ///
-    template <typename T_result, expr::any_string_t T_str>
+    template <typename T_result, expr::any_string T_str>
     inline bool try_parse(const T_str& in_str, T_result& out_result);
 
     ///
@@ -382,7 +338,7 @@ namespace hedgedev::csl::ut::string
     /// \returns The input string with line breaks placed around word boundaries to fit
     ///          within the maximum line width.
     ///
-    template <expr::any_string_t T_str>
+    template <expr::any_string T_str>
     inline expr::inferred_string_t<T_str> wrap(const T_str& in_str, size_t in_max_width);
 }
 

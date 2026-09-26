@@ -1,7 +1,8 @@
 #include <sstream>
 
 #include "host/common.h"
-#include "ut/expr/string_types.h"
+#include "ut/expr/string_expr.h"
+#include "ut/encoding.h"
 
 namespace hedgedev::csl::host::clipboard
 {
@@ -10,11 +11,11 @@ namespace hedgedev::csl::host::clipboard
     {
         std::wstringstream stream{};
 
-        if constexpr (ut::expr::any_string_t<T>)
+        if constexpr (ut::expr::any_string<T>)
         {
             std::wstring str{};
 
-            if (!ut::string::try_convert<std::wstring>(in_value, str))
+            if (!ut::encoding::try_convert<std::wstring>(in_value, str))
                 return false;
 
             stream << str;

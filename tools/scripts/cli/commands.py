@@ -523,6 +523,7 @@ class validate(command):
     def init_args(self):
     #
         self.parser.add_argument("--skip_submodules", help = "skip the submodule update step", action = "store_true")
+        self.parser.add_argument("--threads", help = "the amount of threads to use for processing files simultaneously", default = int(os.cpu_count() / 2))
     #
 
     def execute(self, args):
@@ -538,40 +539,52 @@ class validate(command):
             #
             
             if (not utility.has_attr_and_value(config, "inc_dir") or
-                not utility.has_attr_and_value(config, "sources")):
+                not utility.has_attr_and_value(config, "validate_includes")):
             #
                 return error.FAILURE
             #
 
-            with utility.working_dir(f"{git.get_repo_dir()}/{config.inc_dir}") as work:
+            with utility.working_dir(git.get_repo_dir()) as work:
             #
-                files = []
+                inc_dir = f"{work}/{config.inc_dir}"
 
-                for source in config.sources:
-                    files = files + glob(f"{work}/**/{source}", recursive = True)
+                includes = []
 
-                if not files:
+                for include in config.validate_includes:
+                    includes = includes + glob(f"{inc_dir}/**/{include}", recursive = True)
+
+                if not includes:
                 #
                     print("Nothing to validate.")
                     return error.SUCCESS
                 #
 
+                cppcheck_build_dir = "bin/Cppcheck"
+                os.makedirs(cppcheck_build_dir, exist_ok = True)
+                
                 cppcheck_args = \
                 [
                     "--check-level=exhaustive",
+                    f"--cppcheck-build-dir={cppcheck_build_dir}",
                     "--enable=all",
                     "--error-exitcode=1",
                     "--force",
                     "--language=c++",
                     "--quiet",
-                    "--suppress=checkersReport",
-                    "--suppress=missingIncludeSystem",
-                    "--suppress=unusedFunction",
-                    "--suppress=unusedStructMember",
-                    "-I", work
+                    "-I", inc_dir,
+                    f"-j{args.threads}"
                 ]
 
-                cppcheck_args += files
+                if os.path.exists(cppcheck_suppressions := os.path.join(git.get_repo_dir(), "Cppcheck-suppressions-list")):
+                    cppcheck_args.append(f"--suppressions-list={cppcheck_suppressions}")
+
+                if utility.has_attr_and_value(config, "validate_defines"):
+                #
+                    for define in config.validate_defines:
+                        cppcheck_args.append(f"-D{define}")
+                #
+                
+                cppcheck_args += includes
 
                 subprocess.run([ cppcheck_bin ] + cppcheck_args)
             #

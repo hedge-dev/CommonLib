@@ -5,3 +5,10 @@
 [submodule "toolchains/WindowsToolchain"]
 	path = toolchains/WindowsToolchain
 	url = https://github.com/MarkSchofield/WindowsToolchain.git
+[submodule "thirdparty/xxHash"]
+	path = thirdparty/xxHash
+	url = https://github.com/Cyan4973/xxHash.git
+[submodule "thirdparty/simdutf"]
+	path = thirdparty/simdutf
+	url = https://github.com/simdutf/simdutf.git
+	ignore = dirty

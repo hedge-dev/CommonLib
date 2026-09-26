@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ut/expr/string_types.h"
-
 namespace hedgedev::csl::host::clipboard
 {
     ///

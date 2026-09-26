@@ -47,6 +47,18 @@ if(WIN32)
     endif()
 endif()
 
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+
+execute_process(
+    COMMAND ${Python3_EXECUTABLE} "${CMNLIB_THIRDPARTY_ROOT}/simdutf/singleheader/amalgamate.py" --no-readme --no-zip --with-ascii --with-utf8 --with-utf16 --with-utf32 --with-detect-enc
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    RESULT_VARIABLE SIMDUTF_AMALGAM_RESULT
+)
+
+if(NOT SIMDUTF_AMALGAM_RESULT EQUAL 0)
+    message(FATAL_ERROR "Failed to create simdutf amalgamate header.")
+endif()
+
 set(CMNLIB_LIBS ${CMNLIB_LIBS} PARENT_SCOPE)
 set(CMNLIB_INCLUDES ${CMNLIB_INCLUDES} PARENT_SCOPE)
 set(CMNLIB_SOURCES ${CMNLIB_SOURCES} PARENT_SCOPE)

@@ -48,7 +48,7 @@
 
             "cacheVariables":
             {
-                "CMAKE_TOOLCHAIN_FILE": "toolchains/WindowsToolchain/Windows.MSVC.toolchain.cmake",
+                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/WindowsToolchain/Windows.MSVC.toolchain.cmake",
                 "CMAKE_VS_VERSION_PRERELEASE": "ON",
                 "CMAKE_VS_VERSION_RANGE": "[17.0,19.0)",
                 "CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM": "10.0.26100.0"

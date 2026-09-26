@@ -2,24 +2,22 @@
 #include <charconv>
 #include <filesystem>
 #include <iomanip>
+#include <optional>
 #include <regex>
+#include <string>
 #include <type_traits>
-
-#ifdef WIN32
-#define WIN32_LEAN_AND_MEAN
-#define NOMINMAX
-#include <Windows.h>
-#endif
+#include <vector>
 
 #include "expr/expr.h"
-#include "expr/string_types.h"
+#include "expr/string_expr.h"
+#include "encoding.h"
 
 namespace hedgedev::csl::ut::string
 {
-    template <expr::any_string_t T_left, expr::any_string_t T_right>
+    template <expr::any_string T_left, expr::any_string T_right>
     inline bool compare(const T_left& in_left, const T_right& in_right, bool in_case_sensitive)
 	{
-		const auto strings = precedent_convert(in_left, in_right);
+		const auto strings = encoding::precedent_convert(in_left, in_right);
 
 		const auto& left = strings[0];
 		const auto& right = strings[1];
@@ -33,10 +31,10 @@ namespace hedgedev::csl::ut::string
 		return left == right;
 	}
 
-    template <expr::any_string_t T_str, expr::any_string_t T_substr>
+    template <expr::any_string T_str, expr::any_string T_substr>
     inline bool contains(const T_str& in_str, const T_substr& in_substr, bool in_case_sensitive)
 	{
-		const auto strings = precedent_convert(in_str, in_substr);
+		const auto strings = encoding::precedent_convert(in_str, in_substr);
 
 		const auto& str = strings[0];
 		const auto& substr = strings[1];
@@ -64,24 +62,7 @@ namespace hedgedev::csl::ut::string
 		return str.find(substr) != pi_string_t::npos;
 	}
 
-	template <expr::any_string_t T_result, expr::any_string_t T_str>
-	inline std::conditional_t<std::is_same_v<T_result, T_str> && !std::is_pointer_v<T_str>, const T_result&, T_result> convert(const T_str& in_str)
-	{
-		if constexpr (std::is_same_v<T_result, T_str>)
-		{
-			return in_str;
-		}
-		else
-		{
-			T_result result{};
-
-			try_convert<T_result>(in_str, result);
-
-			return result;
-		}
-	}
-
-	template <expr::any_string_t T_str, typename T_str_char>
+	template <expr::any_string T_str, typename T_str_char>
 	inline expr::inferred_string_t<T_str> escape(const T_str& in_str, T_str_char in_search_char, T_str_char in_escape_char)
 	{
 		std::basic_stringstream<T_str_char> result{};
@@ -97,7 +78,7 @@ namespace hedgedev::csl::ut::string
 		return result.str();
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline expr::inferred_string_t<T> format(const T in_str, ...)
 	{
 		va_list args;
@@ -141,7 +122,7 @@ namespace hedgedev::csl::ut::string
 		return expr::inferred_string_t<T>(buffer.get(), length);
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline size_t get_width(const T& in_str)
 	{
 		size_t result{};
@@ -155,10 +136,10 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <expr::any_string_t T_str, expr::any_string_t T_url, typename T_result>
+	template <expr::any_string T_str, expr::any_string T_url, typename T_result>
 	inline T_result hyperlink(const T_str& in_str, const T_url& in_url)
 	{
-		const auto strings = precedent_convert(in_str, in_url);
+		const auto strings = encoding::precedent_convert(in_str, in_url);
 
 		const auto& str = strings[0];
 		const auto& url = strings[1];
@@ -175,7 +156,7 @@ namespace hedgedev::csl::ut::string
 		return result.str();
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline bool is_null_or_empty(const T& in_str)
 	{
 		if constexpr (std::is_pointer_v<std::remove_cvref_t<T>>)
@@ -187,7 +168,7 @@ namespace hedgedev::csl::ut::string
 		return expr::inferred_string_view_t<T>(in_str).empty();
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline bool is_null_or_whitespace(const T& in_str)
 	{
 		if (is_null_or_empty(in_str))
@@ -201,7 +182,7 @@ namespace hedgedev::csl::ut::string
 		});
 	}
 
-	template <expr::any_string_t T_delimiter, expr::any_string_t T_strings>
+	template <expr::any_string T_delimiter, expr::any_string T_strings>
 	inline expr::inferred_string_t<T_strings> join(const T_delimiter& in_delimiter, const std::vector<T_strings>& in_strings)
 	{
 		if constexpr (!expr::is_same_underlying_char_type_v<T_delimiter, T_strings>)
@@ -229,20 +210,20 @@ namespace hedgedev::csl::ut::string
 		return result.str();
 	}
 
-	template <expr::any_string_t T_delimiter, expr::any_string_t... T_args, typename T_result>
+	template <expr::any_string T_delimiter, expr::any_string... T_args, typename T_result>
 	inline T_result join(const T_delimiter& in_delimiter, const T_args&... in_args)
 	{
-		const auto strings = precedent_convert(in_delimiter, in_args...);
+		const auto strings = encoding::precedent_convert(in_delimiter, in_args...);
 
 		return join(strings[0], std::vector(strings.begin() + 1, strings.end()));
 	}
 
-	template <expr::any_string_t T_str, expr::any_string_t T_pad_str, typename T_result>
+	template <expr::any_string T_str, expr::any_string T_pad_str, typename T_result>
 	inline T_result pad(const T_str& in_str, const T_pad_str& in_pad_str)
 	{
 		std::basic_stringstream<expr::get_char_type_t<T_result>> result{};
 
-		const auto strings = precedent_convert(in_str, in_pad_str);
+		const auto strings = encoding::precedent_convert(in_str, in_pad_str);
 
 		const auto& str = strings[0];
 		const auto& pad_str = strings[1];
@@ -252,7 +233,7 @@ namespace hedgedev::csl::ut::string
 		return result.str();
 	}
 
-	template <typename T_result, expr::any_string_t T_str>
+	template <typename T_result, expr::any_string T_str>
 	inline T_result parse(const T_str& in_str)
 	{
 		T_result result{};
@@ -262,54 +243,7 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <expr::any_string_t... T_args, typename T_result>
-	inline std::array<T_result, sizeof...(T_args)> precedent_convert(const T_args&... in_args)
-	{
-		std::array<T_result, sizeof...(T_args)> result{};
-
-		const auto args = std::make_tuple(in_args...);
-		constexpr auto precedence = expr::get_string_type_precedence<T_args...>();
-
-		[&] <size_t... index>(std::index_sequence<index...>)
-		{
-			const auto convert_arg = [&] <expr::any_string_t T>(const size_t in_index, const T& in_str)
-			{
-				if constexpr (expr::is_all_same_v<T_args...>)
-				{
-					if constexpr (expr::raw_string_t<T>)
-					{
-						// Create inferred string from C string.
-						result[in_index] = T_result(in_str);
-					}
-					else
-					{
-						// Copy original string.
-						result[in_index] = in_str;
-					}
-				}
-				else
-				{
-					if constexpr (std::is_same_v<T, T_result>)
-					{
-						// Copy original string.
-						result[in_index] = in_str;
-					}
-					else
-					{
-						// Convert string to precedent type.
-						result[in_index] = convert<T_result>(in_str);
-					}
-				}
-			};
-
-			(convert_arg(index, std::get<index>(args)), ...);
-		}
-		(std::make_index_sequence<sizeof...(T_args)>{});
-
-		return result;
-	}
-
-	template <expr::any_string_t T_str>
+	template <expr::any_string T_str>
 	inline expr::inferred_string_t<T_str> remove_xml_tags(const T_str& in_str)
 	{
 		const auto xml_regex = expr::create_inferred_string<expr::inferred_string_t<T_str>>("<[^>]*>");
@@ -319,14 +253,14 @@ namespace hedgedev::csl::ut::string
 			expr::inferred_string_t<T_str>());
 	}
 
-	template <expr::any_string_t T_str, expr::any_string_t T_delimiter, typename T_result>
+	template <expr::any_string T_str, expr::any_string T_delimiter, typename T_result>
 	inline std::vector<T_result> split(const T_str& in_str, const T_delimiter& in_delimiter)
 	{
 		std::vector<T_result> result{};
 
 		using pi_string_view_t = expr::pi_string_view_t<T_str, T_delimiter>;
 
-		const auto strings = precedent_convert(in_str, in_delimiter);
+		const auto strings = encoding::precedent_convert(in_str, in_delimiter);
 
 		const auto& str = strings[0];
 		const auto& delimiter = strings[1];
@@ -350,7 +284,7 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline expr::inferred_string_t<T> lower(const T& in_str)
 	{
 		auto result = expr::inferred_string_t<T>(in_str);
@@ -369,7 +303,7 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline expr::inferred_string_t<T> upper(const T& in_str)
 	{
 		auto result = expr::inferred_string_t<T>(in_str);
@@ -388,7 +322,7 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <expr::any_string_t T_str, typename T_trim_chars>
+	template <expr::any_string T_str, typename T_trim_chars>
 	inline expr::inferred_string_t<T_str> trim_start(const T_str& in_str, std::optional<std::vector<T_trim_chars>> in_trim_chars)
 	{
 		const auto str_sv = expr::inferred_string_view_t<T_str>(in_str);
@@ -407,7 +341,7 @@ namespace hedgedev::csl::ut::string
 		return expr::inferred_string_t<T_str>(str_sv.substr(std::distance(str_sv.begin(), it)));
 	}
 
-	template <expr::any_string_t T_str, typename T_trim_chars>
+	template <expr::any_string T_str, typename T_trim_chars>
 	inline expr::inferred_string_t<T_str> trim_end(const T_str& in_str, std::optional<std::vector<T_trim_chars>> in_trim_chars)
 	{
 		const auto str_sv = expr::inferred_string_view_t<T_str>(in_str);
@@ -427,13 +361,13 @@ namespace hedgedev::csl::ut::string
 		return expr::inferred_string_t<T_str>(str_sv.substr(0, std::distance(str_sv.begin(), it)));
 	}
 
-	template <expr::any_string_t T_str, typename T_trim_chars>
+	template <expr::any_string T_str, typename T_trim_chars>
 	inline expr::inferred_string_t<T_str> trim(const T_str& in_str, const std::optional<std::vector<T_trim_chars>> in_trim_chars)
 	{
 		return trim_end(trim_start(in_str, in_trim_chars), in_trim_chars);
 	}
 
-	template <expr::any_string_t T>
+	template <expr::any_string T>
 	inline expr::inferred_string_t<T> truncate(const T& in_str, size_t in_max_length, bool in_truncate_end, bool in_ellipsis)
 	{
 		using inferred_string_t = expr::inferred_string_t<T>;
@@ -482,7 +416,7 @@ namespace hedgedev::csl::ut::string
 		return result;
 	}
 
-	template <expr::basic_string_t T_result, typename T_value>
+	template <expr::basic_string T_result, typename T_value>
 	inline T_result hex(T_value in_value, size_t in_max_length, bool in_prefix)
 	{
 		using string_char_t = expr::get_char_type_t<T_result>;
@@ -502,75 +436,7 @@ namespace hedgedev::csl::ut::string
 		return result.str();
 	}
 
-	template <expr::any_string_t T_result, expr::any_string_t T_str>
-	inline bool try_convert(const T_str& in_str, T_result& out_result)
-	{
-		using str_char_t = expr::get_char_type_t<T_str>;
-		using result_char_t = expr::get_char_type_t<T_result>;
-
-		const auto str_sv = expr::inferred_string_view_t<T_str>(in_str);
-		const auto str_size = str_sv.size();
-		
-		if (!str_size)
-		{
-			out_result = T_result();
-			return true;
-		}
-
-		if constexpr (std::is_same_v<T_str, T_result>)
-		{
-			out_result = in_str;
-			return true;
-		}
-		else if constexpr (std::is_same_v<str_char_t, result_char_t>)
-		{
-			out_result = T_result(str_sv);
-			return true;
-		}
-
-		if constexpr (std::is_same_v<T_result, std::string>)
-		{
-			if constexpr (std::is_same_v<str_char_t, wchar_t>)
-			{
-				auto buffer = std::make_unique<char[]>(str_size + sizeof(char));
-#ifdef WIN32
-				size_t chars = WideCharToMultiByte(CP_UTF8, 0, str_sv.data(), int(str_size), (LPSTR)buffer.get(), int(str_size), NULL, NULL);
-				if (chars < str_size)
-					return false;
-#else
-				size_t chars{};
-				if (wcstombs_s(&chars, reinterpret_cast<char*>(buffer.get()), str_size + sizeof(char), str_sv.data(), str_size) != 0)
-					return false;
-#endif
-				out_result = std::string(buffer.get(), str_size);
-			}
-		}
-		else if constexpr (std::is_same_v<T_result, std::wstring>)
-		{
-			if constexpr (std::is_same_v<str_char_t, char>)
-			{
-				auto buffer = std::make_unique<wchar_t[]>(str_size + sizeof(wchar_t));
-#ifdef WIN32
-				size_t chars = MultiByteToWideChar(CP_UTF8, 0, str_sv.data(), int(str_size), (LPWSTR)buffer.get(), int(str_size));
-				if (chars < str_size)
-					return false;
-#else
-				size_t chars{};
-				if (mbstowcs_s(&chars, reinterpret_cast<wchar_t*>(buffer.get()), str_size + sizeof(wchar_t), str_sv.data(), str_size) != 0)
-					return false;
-#endif
-				out_result = std::wstring(buffer.get(), str_size);
-			}
-		}
-		else
-		{
-			static_assert(false, "Unsupported destination string type.");
-		}
-
-		return true;
-	}
-
-	template <typename T_result, expr::any_string_t T_str>
+	template <typename T_result, expr::any_string T_str>
 	inline bool try_parse(const T_str& in_str, T_result& out_result)
 	{
 		if (is_null_or_whitespace(in_str))
@@ -586,7 +452,7 @@ namespace hedgedev::csl::ut::string
 			out_result = std::filesystem::path(in_str);
 			return true;
 		}
-		else if constexpr (expr::any_string_t<T_result>)
+		else if constexpr (expr::any_string<T_result>)
 		{
 			T_result result{};
 
@@ -628,7 +494,7 @@ namespace hedgedev::csl::ut::string
 		return false;
 	}
 
-	template <expr::any_string_t T_str>
+	template <expr::any_string T_str>
 	inline expr::inferred_string_t<T_str> wrap(const T_str& in_str, size_t in_max_width)
 	{
 		expr::inferred_string_t<T_str> result{};

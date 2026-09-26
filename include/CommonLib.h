@@ -8,7 +8,7 @@
 
 #if !defined(__CMNLIB_INTERNAL_CPP_VERSION) || __CMNLIB_INTERNAL_CPP_VERSION < 202002L
 #define __CMNLIB_H__
-static_assert(false, "CommonLib requires C++20 or later.");
+#error CommonLib requires C++20 or later.
 #endif
 
 #ifndef __CMNLIB_H__
@@ -32,6 +32,7 @@ static_assert(false, "CommonLib requires C++20 or later.");
 #endif
 
 #include <cstdint>
+#include <stdarg.h>
 
 #include "cfg/cfg.h"
 #include "diag/diag.h"

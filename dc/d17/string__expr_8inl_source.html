@@ -121,38 +121,47 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('dc/d17/string_
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a8d7d3ff2a76ad75fa59a5491a06b27f3">    6</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a8d7d3ff2a76ad75fa59a5491a06b27f3">T_result</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a8d7d3ff2a76ad75fa59a5491a06b27f3">create_inferred_string</a>(<span class="keyword">const</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a8d7d3ff2a76ad75fa59a5491a06b27f3">T_str</a>&amp; <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a8d7d3ff2a76ad75fa59a5491a06b27f3">in_str</a>)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        <span class="keyword">const</span> <span class="keyword">auto</span> result = inferred_string_view_t&lt;T_str&gt;(in_str);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>        T_result result{};</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keywordflow">return</span> T_result(result.begin(), result.end());</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    }</div>
-</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">template</span> &lt;any_string... T_args&gt;</div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">   14</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">size_t</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">get_string_type_precedence</a>()</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        std::tuple&lt;size_t, size_t&gt; result{ 0, 0 };</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        size_t i{};</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="keyword">const</span> <span class="keyword">auto</span> str_sv = inferred_string_view_t&lt;T_str&gt;(in_str);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        result.reserve(str_sv.size());</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        std::transform(str_sv.begin(), str_sv.end(), std::back_inserter(result), [](get_char_type_t&lt;T_str&gt; in_char)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast</span>&lt;get_char_type_t&lt;T_result&gt;&gt;(in_char);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        });</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        (</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            [&amp;]</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>                size_t size = <span class="keyword">sizeof</span>(get_char_type_t&lt;T_args&gt;);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                <span class="keywordflow">if</span> (std::get&lt;1&gt;(result) &lt; size)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                    result = { i, size };</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                i++;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            (), ...</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        );</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> std::get&lt;0&gt;(result);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
-<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a76dd938581c2257d8d530dd3c8855fe9"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">hedgedev::csl::ut::expr::get_string_type_precedence</a></div><div class="ttdeci">constexpr size_t get_string_type_precedence()</div><div class="ttdef"><b>Definition</b> string_expr.inl:14</div></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">template</span> &lt;any_string... T_args&gt;</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">   23</a></span>    <span class="keyword">inline</span> <span class="keyword">constexpr</span> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">size_t</a> <a class="code hl_function" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">get_string_type_precedence</a>()</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        std::tuple&lt;size_t, size_t&gt; result{ 0, 0 };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        size_t i{};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        (</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            [&amp;]</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                size_t size = <span class="keyword">sizeof</span>(get_char_type_t&lt;T_args&gt;);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <span class="keywordflow">if</span> (std::get&lt;1&gt;(result) &lt; size)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                    result = { i, size };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                i++;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            (), ...</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        );</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">return</span> std::get&lt;0&gt;(result);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a76dd938581c2257d8d530dd3c8855fe9"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a76dd938581c2257d8d530dd3c8855fe9">hedgedev::csl::ut::expr::get_string_type_precedence</a></div><div class="ttdeci">constexpr size_t get_string_type_precedence()</div><div class="ttdef"><b>Definition</b> string_expr.inl:23</div></div>
 <div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_1_1expr_html_a8d7d3ff2a76ad75fa59a5491a06b27f3"><div class="ttname"><a href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a8d7d3ff2a76ad75fa59a5491a06b27f3">hedgedev::csl::ut::expr::create_inferred_string</a></div><div class="ttdeci">constexpr T_result create_inferred_string(const T_str &amp;in_str)</div><div class="ttdef"><b>Definition</b> string_expr.inl:6</div></div>
 <div class="ttc" id="anamespacehedgedev_1_1csl_1_1ut_html"><div class="ttname"><a href="../../dc/d62/namespacehedgedev_1_1csl_1_1ut.html">hedgedev::csl::ut</a></div><div class="ttdef"><b>Definition</b> expr.h:7</div></div>
 </div><!-- fragment --></div><!-- contents -->

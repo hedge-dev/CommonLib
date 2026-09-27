@@ -35,4 +35,4 @@ jobs:
 
     - name: Validate
       working-directory: ${{github.workspace}}/tools/scripts/cli
-      run: python3 ./main.py validate --skip_submodules --threads 12
+      run: python3 ./main.py validate --skip_submodules --threads max

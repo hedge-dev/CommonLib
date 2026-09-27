@@ -523,7 +523,7 @@ class validate(command):
     def init_args(self):
     #
         self.parser.add_argument("--skip_submodules", help = "skip the submodule update step", action = "store_true")
-        self.parser.add_argument("--threads", help = "the amount of threads to use for processing files simultaneously", default = int(os.cpu_count() / 2))
+        self.parser.add_argument("--threads", help = "the amount of threads to use for processing files simultaneously (use \"max\" to utilise as many as possible)", default = int(os.cpu_count() / 2))
     #
 
     def execute(self, args):
@@ -561,6 +561,11 @@ class validate(command):
 
                 cppcheck_build_dir = "bin/Cppcheck"
                 os.makedirs(cppcheck_build_dir, exist_ok = True)
+
+                if str(args.threads).lower() == "max":
+                    args.threads = os.cpu_count()
+
+                print(f"- Threads: {args.threads}")
                 
                 cppcheck_args = \
                 [

@@ -14,7 +14,7 @@ def has_cmake_version(cmake_version: version):
     if not has_cmake():
         return False
     
-    if not (result := subprocess.run("cmake --version", capture_output = True, text = True)):
+    if not (result := subprocess.run("cmake --version", shell = True, capture_output = True, text = True)):
         return False
 
     return version.from_str(result.stdout).digits >= cmake_version.digits

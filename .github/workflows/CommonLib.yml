@@ -2,7 +2,7 @@ name: CommonLib
 
 on:
   push:
-    branches: [ main ]
+    branches: main
 
 jobs:
   build:
@@ -11,10 +11,10 @@ jobs:
     
     strategy:
       matrix:
-        system: [ Windows ]
-        architecture: [ x86, x64 ]
-        configuration: [ Debug, Release ]
-        image: [ windows-2025-vs2026 ]
+        system: [Windows]
+        architecture: [x86, x64]
+        configuration: [Debug, Release]
+        image: [windows-2025-vs2026]
     
     steps:
     - name: Clone

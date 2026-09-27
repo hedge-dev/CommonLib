@@ -44,7 +44,7 @@ jobs:
           include/
           lib/
           thirdparty/Detours/include/**
-          thirdparty/simdutf/singleheader/**
+          thirdparty/simdutf/singleheader/simdutf.h
           LICENSE
           !**/.*
           !**/CMake*

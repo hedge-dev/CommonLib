@@ -48,6 +48,7 @@
 
             "cacheVariables":
             {
+                "CMAKE_CXX_FLAGS": "/std:c++20",
                 "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/WindowsToolchain/Windows.MSVC.toolchain.cmake",
                 "CMAKE_VS_VERSION_PRERELEASE": "ON",
                 "CMAKE_VS_VERSION_RANGE": "[17.0,19.0)",

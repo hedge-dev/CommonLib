@@ -571,6 +571,7 @@ class validate(command):
                     "--force",
                     "--language=c++",
                     "--quiet",
+                    "--std=c++20",
                     "-I", inc_dir,
                     f"-j{args.threads}"
                 ]

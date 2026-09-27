@@ -5,9 +5,18 @@ namespace hedgedev::csl::ut::expr
     template <any_string T_result, any_string T_str>
     inline constexpr T_result create_inferred_string(const T_str& in_str)
     {
-        const auto result = inferred_string_view_t<T_str>(in_str);
+        T_result result{};
 
-        return T_result(result.begin(), result.end());
+        const auto str_sv = inferred_string_view_t<T_str>(in_str);
+
+        result.reserve(str_sv.size());
+
+        std::transform(str_sv.begin(), str_sv.end(), std::back_inserter(result), [](get_char_type_t<T_str> in_char)
+        {
+            return static_cast<get_char_type_t<T_result>>(in_char);
+        });
+
+        return result;
     }
 
     template <any_string... T_args>

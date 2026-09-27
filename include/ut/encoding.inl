@@ -127,9 +127,9 @@ namespace hedgedev::csl::ut::encoding
 
 		const auto src_data = str_sv.data();
 		const auto src_length_in_chars = str_sv.size();
-		const auto src_length_in_bytes = src_length_in_chars * sizeof(dst_char_t);
+		const auto src_length_in_bytes = src_length_in_chars * sizeof(src_char_t);
 
-		const auto transcode = [&](auto* out_buffer = nullptr) -> size_t
+		const auto transcode = [&](auto* out_buffer) -> size_t
 		{
 			if constexpr (sizeof(src_char_t) == 1)
 			{
@@ -209,19 +209,17 @@ namespace hedgedev::csl::ut::encoding
 		if (!expected_length)
 			return false;
 
-		out_result.resize(expected_length);
-
 		size_t transcode_length{};
 
+		// Matching lengths could be an attempt to endian swap instead.
 		if (expected_length == src_length_in_bytes)
 		{
+			out_result = expr::create_inferred_string<T_result>(str_sv);
 			transcode_length = expected_length;
-			out_result = T_result(str_sv.begin(), str_sv.end());
 		}
 		else
 		{
-			// Only transcode string if the length does not match.
-			// Matching lengths could be an attempt to endian swap instead.
+			out_result.resize(expected_length);
 			transcode_length = transcode(out_result.data());
 		}
 

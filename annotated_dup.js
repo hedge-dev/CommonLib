@@ -8,6 +8,10 @@ var annotated_dup =
           [ "stack_frame_win32", "df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html", "df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32" ],
           [ "symbol_info", "d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info.html", "d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info" ]
         ] ],
+        [ "hash", "de/d93/namespacehedgedev_1_1csl_1_1hash.html", [
+          [ "hash_provider", "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html", "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider" ],
+          [ "xxhash64_provider", "db/d36/classhedgedev_1_1csl_1_1hash_1_1xxhash64__provider.html", "db/d36/classhedgedev_1_1csl_1_1hash_1_1xxhash64__provider" ]
+        ] ],
         [ "hook", "d1/d58/namespacehedgedev_1_1csl_1_1hook.html", [
           [ "usercall_info", "d4/d60/structhedgedev_1_1csl_1_1hook_1_1usercall__info.html", "d4/d60/structhedgedev_1_1csl_1_1hook_1_1usercall__info" ]
         ] ],

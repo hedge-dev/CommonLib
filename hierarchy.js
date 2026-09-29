@@ -15,6 +15,10 @@ var hierarchy =
     [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf32_be &gt;", "d9/d1a/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf32__be_01_4.html", null ],
     [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf32_le &gt;", "d3/d8d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf32__le_01_4.html", null ],
     [ "hedgedev::csl::ut::expr::get_encoding_char_type&lt; encoding::utf8 &gt;", "db/dc7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf8_01_4.html", null ],
+    [ "hedgedev::csl::hash::hash_provider&lt; T &gt;", "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html", null ],
+    [ "hedgedev::csl::hash::hash_provider&lt; uint64_t &gt;", "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html", [
+      [ "hedgedev::csl::hash::xxhash64_provider", "db/d36/classhedgedev_1_1csl_1_1hash_1_1xxhash64__provider.html", null ]
+    ] ],
     [ "hedgedev::csl::diag::line_info", "d8/db4/structhedgedev_1_1csl_1_1diag_1_1line__info.html", null ],
     [ "hedgedev::csl::diag::stack_frame", "d4/d08/classhedgedev_1_1csl_1_1diag_1_1stack__frame.html", [
       [ "hedgedev::csl::diag::stack_frame_win32", "df/dd3/classhedgedev_1_1csl_1_1diag_1_1stack__frame__win32.html", null ]

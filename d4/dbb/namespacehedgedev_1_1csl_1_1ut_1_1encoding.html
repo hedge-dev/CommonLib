@@ -137,12 +137,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ae07a8034ee8087b8922a9e271c2318f1 template"><td class="memItemLeft">std::conditional_t&lt; std::is_same_v&lt; T_result, T_str &gt; &amp;&amp;!std::is_pointer_v&lt; T_str &gt;, const T_result &amp;, T_result &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae07a8034ee8087b8922a9e271c2318f1">convert</a> (const T_str &amp;in_str, <a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> in_encoding=<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a674816d0a2f600b3214939d61cd67de8">expr::get_char_encoding_type</a>&lt; T_result &gt;())</td></tr>
 <tr class="memitem:a6499aef2fd3d38eb683663d3344fab03" id="r_a6499aef2fd3d38eb683663d3344fab03"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> encoding, expr::any_string T_str, typename T_result = expr::encoded_string_t&lt;encoding&gt;&gt; </td></tr>
 <tr class="memitem:a6499aef2fd3d38eb683663d3344fab03 template"><td class="memItemLeft">std::conditional_t&lt; std::is_same_v&lt; T_result, T_str &gt; &amp;&amp;!std::is_pointer_v&lt; T_str &gt;, const T_result &amp;, T_result &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6499aef2fd3d38eb683663d3344fab03">convert</a> (const T_str &amp;in_str)</td></tr>
+<tr class="memitem:aa9443ac448b0f28daebb574e73b00af2" id="r_aa9443ac448b0f28daebb574e73b00af2"><td class="memItemLeft">std::vector&lt; uint8_t &gt;&#160;</td><td class="memItemRight"><a class="el" href="#aa9443ac448b0f28daebb574e73b00af2">get_bom</a> (<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">ut::encoding::encoding_type</a> in_encoding)</td></tr>
+<tr class="memitem:a843c7461b6a6088dff1a3bea4903e7c6" id="r_a843c7461b6a6088dff1a3bea4903e7c6"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a843c7461b6a6088dff1a3bea4903e7c6">get_bom_size</a> (<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> in_encoding)</td></tr>
+<tr class="memitem:a7f9c739f0eb56e23f1ced237516e45a2" id="r_a7f9c739f0eb56e23f1ced237516e45a2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> encoding&gt; </td></tr>
+<tr class="memitem:a7f9c739f0eb56e23f1ced237516e45a2 template"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a7f9c739f0eb56e23f1ced237516e45a2">get_bom_size</a> ()</td></tr>
 <tr class="memitem:a6e06f2ca067babe0f48e18668107f038" id="r_a6e06f2ca067babe0f48e18668107f038"><td class="memTemplParams" colspan="2">template&lt;expr::any_string... T_args, typename T_result = expr::pi_string_t&lt;T_args...&gt;&gt; </td></tr>
 <tr class="memitem:a6e06f2ca067babe0f48e18668107f038 template"><td class="memItemLeft">std::array&lt; T_result, sizeof...(T_args)&gt;&#160;</td><td class="memItemRight"><a class="el" href="#a6e06f2ca067babe0f48e18668107f038">precedent_convert</a> (const T_args &amp;... in_args)</td></tr>
 <tr class="memitem:a074e26aafd497ac66d826198fff0cd52" id="r_a074e26aafd497ac66d826198fff0cd52"><td class="memTemplParams" colspan="2">template&lt;expr::basic_string T_result, expr::any_string T_str&gt; </td></tr>
 <tr class="memitem:a074e26aafd497ac66d826198fff0cd52 template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a074e26aafd497ac66d826198fff0cd52">try_convert</a> (const T_str &amp;in_str, T_result &amp;out_result, <a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> in_encoding=<a class="el" href="../../d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a674816d0a2f600b3214939d61cd67de8">expr::get_char_encoding_type</a>&lt; T_result &gt;())</td></tr>
 <tr class="memitem:a12e768f8c57b8e945704451340d91d8c" id="r_a12e768f8c57b8e945704451340d91d8c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> encoding, expr::any_string T_str, typename T_result = expr::encoded_string_t&lt;encoding&gt;&gt; </td></tr>
 <tr class="memitem:a12e768f8c57b8e945704451340d91d8c template"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a12e768f8c57b8e945704451340d91d8c">try_convert</a> (const T_str &amp;in_str, T_result &amp;out_result)</td></tr>
+<tr class="memitem:a7f9c739f0eb56e23f1ced237516e45a2" id="r_a7f9c739f0eb56e23f1ced237516e45a2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding::encoding_type</a> encoding&gt; </td></tr>
+<tr class="memitem:a7f9c739f0eb56e23f1ced237516e45a2 template"><td class="memItemLeft">constexpr size_t&#160;</td><td class="memItemRight"><a class="el" href="#a7f9c739f0eb56e23f1ced237516e45a2">get_bom_size</a> ()</td></tr>
 </table>
 <a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="af2eb702b40ffcac48efd0da43f052508" name="af2eb702b40ffcac48efd0da43f052508"></a>
@@ -256,6 +262,142 @@ template&lt;expr::basic_string T_result, expr::any_string T_str&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If successful, the input string in the destination format. Otherwise, an empty string in the destination format. </dd></dl>
+
+</div>
+</div>
+<a id="aa9443ac448b0f28daebb574e73b00af2" name="aa9443ac448b0f28daebb574e73b00af2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9443ac448b0f28daebb574e73b00af2">&#9670;&#160;</a></span>get_bom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; uint8_t &gt; hedgedev::csl::ut::encoding::get_bom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#af2eb702b40ffcac48efd0da43f052508">ut::encoding::encoding_type</a></td>          <td class="paramname"><span class="paramname"><em>in_encoding</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the byte order mark of an encoding type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_encoding</td><td>The encoding type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An vector of bytes containing the byte order mark for the specified encoding. </dd></dl>
+
+</div>
+</div>
+<a id="a7f9c739f0eb56e23f1ced237516e45a2" name="a7f9c739f0eb56e23f1ced237516e45a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9c739f0eb56e23f1ced237516e45a2">&#9670;&#160;</a></span>get_bom_size() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a> encoding&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t hedgedev::csl::ut::encoding::get_bom_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the size of the byte order mark of an encoding type.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="../../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html">encoding</a></td><td>The encoding type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of the byte order mark. </dd></dl>
+
+</div>
+</div>
+<a id="a7f9c739f0eb56e23f1ced237516e45a2" name="a7f9c739f0eb56e23f1ced237516e45a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9c739f0eb56e23f1ced237516e45a2">&#9670;&#160;</a></span>get_bom_size() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding::encoding_type</a> encoding&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t hedgedev::csl::ut::encoding::get_bom_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the size of the byte order mark of an encoding type.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="../../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html">encoding</a></td><td>The encoding type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of the byte order mark. </dd></dl>
+
+</div>
+</div>
+<a id="a843c7461b6a6088dff1a3bea4903e7c6" name="a843c7461b6a6088dff1a3bea4903e7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a843c7461b6a6088dff1a3bea4903e7c6">&#9670;&#160;</a></span>get_bom_size() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t hedgedev::csl::ut::encoding::get_bom_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#af2eb702b40ffcac48efd0da43f052508">encoding_type</a></td>          <td class="paramname"><span class="paramname"><em>in_encoding</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the size of the byte order mark of an encoding type.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_encoding</td><td>The encoding type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of the byte order mark. </dd></dl>
 
 </div>
 </div>

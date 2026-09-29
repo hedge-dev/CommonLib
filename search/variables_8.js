@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['opcode_5flength_0',['opcode_length',['../d3/d38/structhedgedev_1_1csl_1_1mem_1_1branch__info.html#aee35e9d446eaf9173f74fa59b428ae89',1,'hedgedev::csl::mem::branch_info']]],
-  ['original_5faddress_1',['original_address',['../d4/d60/structhedgedev_1_1csl_1_1hook_1_1usercall__info.html#a09d4e3459bf1dc052ae83c286949f0f7',1,'hedgedev::csl::hook::usercall_info']]]
+  ['name_0',['name',['../d5/d73/structhedgedev_1_1csl_1_1diag_1_1symbol__info.html#a9edcad4b144e218993ba6bdcbc0f200d',1,'hedgedev::csl::diag::symbol_info']]]
 ];

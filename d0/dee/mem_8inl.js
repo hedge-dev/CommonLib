@@ -1,5 +1,7 @@
 var mem_8inl =
 [
+    [ "hedgedev::csl::mem::align", "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a7fa953b5ce70aec54ba55bd987d5cbf5", null ],
+    [ "hedgedev::csl::mem::align", "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#aa2b01cb2157a58567694bcccc3268291", null ],
     [ "hedgedev::csl::mem::byteswap", "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a7d99f8725da071ad81a4cd3d08c409b6", null ],
     [ "hedgedev::csl::mem::byteswap_inplace", "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#afafa5f81a67b1a2b59ac635c28517381", null ],
     [ "hedgedev::csl::mem::read", "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991", null ],

@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['stack_5fframe_2eh_0',['stack_frame.h',['../d8/dca/stack__frame_8h.html',1,'']]],
-  ['stack_5fframe_5fwin32_2eh_1',['stack_frame_win32.h',['../d2/d3d/stack__frame__win32_8h.html',1,'']]],
-  ['string_2eh_2',['string.h',['../da/d66/string_8h.html',1,'']]],
-  ['string_2einl_3',['string.inl',['../d3/d4a/string_8inl.html',1,'']]],
-  ['string_5fexpr_2eh_4',['string_expr.h',['../dc/d7c/string__expr_8h.html',1,'']]],
-  ['string_5fexpr_2einl_5',['string_expr.inl',['../dc/d17/string__expr_8inl.html',1,'']]],
-  ['symbol_5finfo_2eh_6',['symbol_info.h',['../d4/dcf/symbol__info_8h.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../da/ddd/README_8md.html',1,'']]],
+  ['registry_2eh_1',['registry.h',['../dc/d27/registry_8h.html',1,'']]],
+  ['registry_5fwin32_2einl_2',['registry_win32.inl',['../d8/dd9/registry__win32_8inl.html',1,'']]]
 ];

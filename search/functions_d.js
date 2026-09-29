@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['to_5faslr_0',['to_aslr',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a149735af75cd1b86b0dd15d4c75e702e',1,'hedgedev::csl::mem']]],
-  ['trim_1',['trim',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a2fdd49ea33498d8535e8935df5525e07',1,'hedgedev::csl::ut::string']]],
-  ['trim_5fend_2',['trim_end',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5e793ea552575a0b1a06e5877a9df0aa',1,'hedgedev::csl::ut::string']]],
-  ['trim_5fstart_3',['trim_start',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a18d93d07ed81865f7a08bada98fd90b5',1,'hedgedev::csl::ut::string']]],
-  ['truncate_4',['truncate',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#ae639ec6a7fd213d8c7bcb32a53a2dc63',1,'hedgedev::csl::ut::string']]],
-  ['truncate_5ffiles_5',['truncate_files',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#ad0d5e16de07a6d3a66eedb6f7842ba88',1,'hedgedev::csl::ut::filesystem']]],
-  ['truncate_5ffiles_5fby_5fage_6',['truncate_files_by_age',['../dc/d34/namespacehedgedev_1_1csl_1_1ut_1_1filesystem.html#a89a99c0d1f68fbdba76627c8cab9dcc3',1,'hedgedev::csl::ut::filesystem']]],
-  ['try_5fconvert_7',['try_convert',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a074e26aafd497ac66d826198fff0cd52',1,'hedgedev::csl::ut::encoding::try_convert(const T_str &amp;in_str, T_result &amp;out_result, encoding_type in_encoding=expr::get_char_encoding_type&lt; T_result &gt;())'],['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a12e768f8c57b8e945704451340d91d8c',1,'hedgedev::csl::ut::encoding::try_convert(const T_str &amp;in_str, T_result &amp;out_result)']]],
-  ['try_5fparse_8',['try_parse',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a9df036a8cf2df874eab2b32a9c7d750b',1,'hedgedev::csl::ut::string']]]
+  ['read_0',['read',['../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#aa5c438782f12687d4747df269e1a30e7',1,'hedgedev::csl::cfg::registry::read(const std::filesystem::path &amp;in_path, const std::filesystem::path &amp;in_value_name, T &amp;out_result)'],['../d0/da3/namespacehedgedev_1_1csl_1_1cfg_1_1registry.html#adcf9fcdedcf0626d7be5637402800f4b',1,'hedgedev::csl::cfg::registry::read(const std::filesystem::path &amp;in_path, T &amp;out_result)'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#ab6e2752442e23cf00ceeba1ac2704f71',1,'hedgedev::csl::mem::read(void *in_address)'],['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a86ab7ebac108dc570649625ceb298991',1,'hedgedev::csl::mem::read(void *in_address)']]],
+  ['read_5fall_5ftext_1',['read_all_text',['../d7/daf/namespacehedgedev_1_1csl_1_1io_1_1file.html#ac759b4e35ded1d7f14bdd58f8019cf94',1,'hedgedev::csl::io::file']]],
+  ['read_5fcall_2',['read_call',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a264882af211671935e6ebad769f4240b',1,'hedgedev::csl::mem']]],
+  ['read_5finstr_5faddress_3',['read_instr_address',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a530e783d888caaf3ce721ee40c7577bb',1,'hedgedev::csl::mem']]],
+  ['read_5fjump_4',['read_jump',['../d1/deb/namespacehedgedev_1_1csl_1_1mem.html#a1708006483e66f69739fb3086fea073f',1,'hedgedev::csl::mem']]],
+  ['remove_5fxml_5ftags_5',['remove_xml_tags',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a5716cf8a520029b8243f409f81f705b4',1,'hedgedev::csl::ut::string']]],
+  ['reset_6',['reset',['../d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html#a3dcf279f7066d337007faba47a225143',1,'hedgedev::csl::hash::hash_provider::reset()'],['../db/d36/classhedgedev_1_1csl_1_1hash_1_1xxhash64__provider.html#a35c6b75f42beb396c06005bc33cd2db6',1,'hedgedev::csl::hash::xxhash64_provider::reset()']]],
+  ['restart_7',['restart',['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a4dd632185b1e74dbf6d3352dac063ece',1,'hedgedev::csl::diag::this_process::restart(const std::vector&lt; T &gt; &amp;in_args)'],['../d0/df1/namespacehedgedev_1_1csl_1_1diag_1_1this__process.html#a7676e5b094da240102bc55164ab0f8e5',1,'hedgedev::csl::diag::this_process::restart()']]]
 ];

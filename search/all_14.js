@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['vector_5flike_0',['vector_like',['../d5/df2/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1vector__like.html',1,'hedgedev::csl::ut::expr']]],
-  ['vftable_5fhook_1',['VFTABLE_HOOK',['../d4/d2d/hook__win32_8h.html#aa76f6e78e956ed96cf7fcc33bab4e8e1',1,'hook_win32.h']]]
+  ['uninstall_5fhook_0',['UNINSTALL_HOOK',['../d4/d2d/hook__win32_8h.html#ae30fedeb08011a884794b949673f877e',1,'hook_win32.h']]],
+  ['uninstall_5fuser_5fhook_1',['UNINSTALL_USER_HOOK',['../d5/d9f/hook__usercall__win32_8h.html#aa97eb74a38367ab58b2e79bd058d038d',1,'hook_usercall_win32.h']]],
+  ['uninstall_5fvftable_5fhook_2',['UNINSTALL_VFTABLE_HOOK',['../d4/d2d/hook__win32_8h.html#ab96ccc9b28a5b5f0cd92a641854bff05',1,'hook_win32.h']]],
+  ['unknown_3',['unknown',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a1c5703709dce6a7daf98fd6adc7c1528',1,'hedgedev::csl::ut::encoding']]],
+  ['update_4',['update',['../d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html#a7c6e06bf80c5ebf7195c9aca222d8f67',1,'hedgedev::csl::hash::hash_provider::update()'],['../db/d36/classhedgedev_1_1csl_1_1hash_1_1xxhash64__provider.html#accfb4946bffc4e03cce7e79859d70a70',1,'hedgedev::csl::hash::xxhash64_provider::update()']]],
+  ['upper_5',['upper',['../d8/de0/namespacehedgedev_1_1csl_1_1ut_1_1string.html#a7a42760e9a2bfcd422cef8abe943de18',1,'hedgedev::csl::ut::string']]],
+  ['user_5ffunction_5fptr_6',['USER_FUNCTION_PTR',['../d5/d9f/hook__usercall__win32_8h.html#a047cb3a99858c0d06fb26241977cedb8',1,'hook_usercall_win32.h']]],
+  ['user_5fhook_7',['USER_HOOK',['../d5/d9f/hook__usercall__win32_8h.html#a07a15f7e0401b5a1617755ac474849b3',1,'hook_usercall_win32.h']]],
+  ['user_5fparam_8',['USER_PARAM',['../d5/d9f/hook__usercall__win32_8h.html#a7ac18b8218f0f422e90ffa4e347a5083',1,'hook_usercall_win32.h']]],
+  ['user_5fregister_9',['USER_REGISTER',['../d5/d9f/hook__usercall__win32_8h.html#a7bedd5e973424c89b48dec4163122a07',1,'hook_usercall_win32.h']]],
+  ['user_5fregister_10',['user_register',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#ae376b8ae3067668b00483414a5e45e76',1,'hedgedev::csl::hook']]],
+  ['user_5fregister_5falias_11',['user_register_alias',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a8f360dff4d05ba2b720d2b4381246b21',1,'hedgedev::csl::hook']]],
+  ['user_5fregister_5ffamily_12',['user_register_family',['../d1/d58/namespacehedgedev_1_1csl_1_1hook.html#adca270ee002fa09afa55b6016b998ebe',1,'hedgedev::csl::hook']]],
+  ['user_5freturn_13',['USER_RETURN',['../d5/d9f/hook__usercall__win32_8h.html#ac845289fa4f78cd92e7e8df234e0e6ca',1,'hook_usercall_win32.h']]],
+  ['user_5freturn_5fvoid_14',['USER_RETURN_VOID',['../d5/d9f/hook__usercall__win32_8h.html#ac2da152dcff8a6850939aaa8ae8e95bc',1,'hook_usercall_win32.h']]],
+  ['usercall_5finfo_15',['usercall_info',['../d4/d60/structhedgedev_1_1csl_1_1hook_1_1usercall__info.html',1,'hedgedev::csl::hook']]],
+  ['ut_2eh_16',['ut.h',['../da/ddc/ut_8h.html',1,'']]],
+  ['utf16_5fbe_17',['utf16_be',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a055086058cbd0acccaf9c06aedd9f79b',1,'hedgedev::csl::ut::encoding']]],
+  ['utf16_5fle_18',['utf16_le',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508ab3c25324b8cdaeb4a12731945d7cdb1f',1,'hedgedev::csl::ut::encoding']]],
+  ['utf32_5fbe_19',['utf32_be',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a00d3faae1934f040df931f72d3863896',1,'hedgedev::csl::ut::encoding']]],
+  ['utf32_5fle_20',['utf32_le',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a468486d90013ee43baf8b00c43c5d962',1,'hedgedev::csl::ut::encoding']]],
+  ['utf8_21',['utf8',['../d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#af2eb702b40ffcac48efd0da43f052508a9f61fe69c83ea0ca5f71097576739826',1,'hedgedev::csl::ut::encoding']]]
 ];

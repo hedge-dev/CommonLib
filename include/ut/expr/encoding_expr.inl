@@ -59,25 +59,4 @@ namespace hedgedev::csl::ut::expr
 
         return encoding::encoding_type::unknown;
     }
-
-    template <encoding::encoding_type encoding>
-    inline constexpr size_t get_bom_size()
-    {
-        if constexpr (encoding == encoding::utf8)
-        {
-            return 3;
-        }
-        else if constexpr (encoding == encoding::utf16_le || encoding == encoding::utf16_be)
-        {
-            return 2;
-        }
-        else if constexpr (encoding == encoding::utf32_le || encoding == encoding::utf32_be)
-        {
-            return 4;
-        }
-        else
-        {
-            return 0;
-        }
-    }
 }

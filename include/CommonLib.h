@@ -38,6 +38,7 @@
 #include "diag/diag.h"
 #include "hook/hook.h"
 #include "host/host.h"
+#include "io/io.h"
 #include "mem/mem.h"
 #include "ut/ut.h"
 

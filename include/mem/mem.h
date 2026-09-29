@@ -250,6 +250,29 @@ namespace hedgedev::csl::mem
     inline bool is_nop(void* in_address);
 
     ///
+    /// Aligns a memory address.
+    /// 
+    /// \tparam T The integral type of the address and alignment.
+    ///
+    /// \param in_address   The address to align.
+    /// \param in_alignment The alignment to use.
+    /// 
+    /// \returns The aligned memory address.
+    ///
+    template <typename T> requires (std::is_integral_v<T>)
+    inline constexpr T align(T in_address, T in_alignment);
+
+    ///
+    /// Aligns a memory address.
+    ///
+    /// \param in_address   The address to align.
+    /// \param in_alignment The alignment to use.
+    /// 
+    /// \returns The aligned memory address.
+    ///
+    inline void* align(void* in_address, uintptr_t in_alignment);
+
+    ///
     /// Reads a value in memory.
     ///
     /// \tparam T The type to read.

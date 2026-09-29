@@ -39,6 +39,35 @@ namespace hedgedev::csl::ut::encoding
     inline std::conditional_t<std::is_same_v<T_result, T_str> && !std::is_pointer_v<T_str>, const T_result&, T_result> convert(const T_str& in_str);
 
     ///
+    /// Gets the byte order mark of an encoding type.
+    ///
+    /// \param in_encoding The encoding type.
+    ///
+    /// \returns An vector of bytes containing the byte order mark for the
+    ///          specified encoding.
+    ///
+    inline std::vector<uint8_t> get_bom(ut::encoding::encoding_type in_encoding);
+
+    ///
+    /// Gets the size of the byte order mark of an encoding type.
+    ///
+    /// \param in_encoding The encoding type.
+    ///
+    /// \returns The size of the byte order mark.
+    ///
+    inline constexpr size_t get_bom_size(encoding_type in_encoding);
+
+    ///
+    /// Gets the size of the byte order mark of an encoding type.
+    ///
+    /// \tparam encoding The encoding type.
+    ///
+    /// \returns The size of the byte order mark.
+    ///
+    template <encoding_type encoding>
+    inline constexpr size_t get_bom_size();
+
+    ///
     /// Converts multiple strings to share the same encoding format.
     ///
     /// \tparam T_args   The string types.

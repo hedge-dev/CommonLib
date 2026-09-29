@@ -14,6 +14,17 @@
 
 namespace hedgedev::csl::mem
 {
+    template <typename T> requires (std::is_integral_v<T>)
+    inline constexpr T align(T in_address, T in_alignment)
+    {
+        return (in_address + (in_alignment - 1)) & ~(in_alignment - 1);
+    }
+
+    inline void* align(void* in_address, uintptr_t in_alignment)
+    {
+        return reinterpret_cast<void*>(align<uintptr_t>(uintptr_t(in_address), in_alignment));
+    }
+
     template <typename T>
     inline T read(void* in_address)
     {

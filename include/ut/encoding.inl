@@ -44,6 +44,54 @@ namespace hedgedev::csl::ut::encoding
 		}
 	}
 
+	inline std::vector<uint8_t> get_bom(ut::encoding::encoding_type in_encoding)
+	{
+		switch (in_encoding)
+		{
+			case ut::encoding::utf8:
+				return { 0xEF, 0xBB, 0xBF };
+
+			case ut::encoding::utf16_le:
+				return { 0xFF, 0xFE };
+
+			case ut::encoding::utf16_be:
+				return { 0xFE, 0xFF };
+
+			case ut::encoding::utf32_le:
+				return { 0xFF, 0xFE, 0x00, 0x00 };
+
+			case ut::encoding::utf32_be:
+				return { 0x00, 0x00, 0xFE, 0xFF };
+		}
+
+		return {};
+	}
+
+	inline constexpr size_t get_bom_size(encoding_type in_encoding)
+	{
+		switch (in_encoding)
+		{
+			case encoding::utf8:
+				return 3;
+
+			case encoding::utf16_le:
+			case encoding::utf16_be:
+				return 2;
+
+			case encoding::utf32_le:
+			case encoding::utf32_be:
+				return 4;
+		}
+
+		return 0;
+	}
+
+	template <encoding::encoding_type encoding>
+	inline constexpr size_t get_bom_size()
+	{
+		return get_bom_size(encoding);
+	}
+
 	template <expr::any_string... T_args, typename T_result>
 	inline std::array<T_result, sizeof...(T_args)> precedent_convert(const T_args&... in_args)
 	{

@@ -51,7 +51,6 @@
                 "CMAKE_CXX_FLAGS": "/std:c++20",
                 "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchains/WindowsToolchain/Windows.MSVC.toolchain.cmake",
                 "CMAKE_VS_VERSION_PRERELEASE": "ON",
-                "CMAKE_VS_VERSION_RANGE": "[17.0,19.0)",
                 "CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM": "10.0.26100.0"
             },
 
@@ -81,6 +80,11 @@
 
             "generator": "Visual Studio 18 2026",
 
+            "cacheVariables":
+            {
+                "CMAKE_VS_VERSION_RANGE": "[18.0,19.0)"
+            },
+
             "hidden": true
         },
         {
@@ -101,6 +105,11 @@
             "inherits": "Windows-MSVC",
 
             "generator": "Visual Studio 17 2022",
+
+            "cacheVariables":
+            {
+                "CMAKE_VS_VERSION_RANGE": "[17.0,18.0)"
+            },
 
             "hidden": true
         },

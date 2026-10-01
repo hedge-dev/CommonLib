@@ -431,7 +431,14 @@ namespace hedgedev::csl::ut::string
 		if (in_max_length)
 			result << std::setw(in_max_length) << std::setfill(string_char_t('0'));
 
-		result << in_value;
+		if constexpr (std::is_pointer_v<T_value>)
+		{
+			result << uintptr_t(in_value);
+		}
+		else
+		{
+			result << in_value;
+		}
 
 		return result.str();
 	}

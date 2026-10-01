@@ -45,10 +45,6 @@ var NAVTREEINDEX0 =
 "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html#a9ce7a7f0b0b39df54a15e61f60422b9c":[2,0,0,0,1,0,1],
 "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html#ac49e8a5e5d6e098750a9602408259053":[0,0,0,0,2,0,0],
 "d1/d47/classhedgedev_1_1csl_1_1hash_1_1hash__provider.html#ac49e8a5e5d6e098750a9602408259053":[2,0,0,0,1,0,0],
-"d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html":[0,0,0,0,7,1,1],
-"d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html":[2,0,0,0,4,0,1],
-"d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html#abd5b61d3c5165911f5da02849985052d":[0,0,0,0,7,1,1,0],
-"d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html#abd5b61d3c5165911f5da02849985052d":[2,0,0,0,4,0,1,0],
 "d1/d58/namespacehedgedev_1_1csl_1_1hook.html":[0,0,0,0,3],
 "d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a0a86a17efa5c461facc7cedc1924c3f9":[0,0,0,0,3,8],
 "d1/d58/namespacehedgedev_1_1csl_1_1hook.html#a32c2bdbdfc169b4bfffd33dd3846814e":[0,0,0,0,3,7],
@@ -129,6 +125,8 @@ var NAVTREEINDEX0 =
 "d1/d58/namespacehedgedev_1_1csl_1_1hook.html#ae376b8ae3067668b00483414a5e45e76ae2942a04780e223b215eb8b663cf5353":[0,0,0,0,3,1,25],
 "d1/d58/namespacehedgedev_1_1csl_1_1hook.html#ae376b8ae3067668b00483414a5e45e76aeee994d8f3b3c70335763b9a4a2caeb1":[0,0,0,0,3,1,1],
 "d1/d58/namespacehedgedev_1_1csl_1_1hook.html#ae376b8ae3067668b00483414a5e45e76af4f316d9e3af74567e781129ce9b384c":[0,0,0,0,3,1,2],
+"d1/d8e/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string_3_01std_1_1basic__string_3_01T__char_00bc55ea13cf304e722dfc08dce648be05.html":[0,0,0,0,7,1,9],
+"d1/d8e/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string_3_01std_1_1basic__string_3_01T__char_00bc55ea13cf304e722dfc08dce648be05.html":[2,0,0,0,4,0,9],
 "d1/dd6/expr_8inl.html":[3,0,0,7,0,4],
 "d1/dd6/expr_8inl_source.html":[3,0,0,7,0,4],
 "d1/deb/namespacehedgedev_1_1csl_1_1mem.html":[0,0,0,0,6],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcdafc5eb525dcf4343bbc99c4dbd69554a3":[0,0,0,0,6,2,9],
 "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#af7be76535db343e899313177d3a50dcdafc5eb525dcf4343bbc99c4dbd69554a3":[0,0,0,0,6,2,25],
 "d1/deb/namespacehedgedev_1_1csl_1_1mem.html#afafa5f81a67b1a2b59ac635c28517381":[0,0,0,0,6,11],
-"d1/deb/namespacehedgedev_1_1csl_1_1mem.html#affb24618981b3a7a6f3b2bd67b93bba3":[0,0,0,0,6,5]
+"d1/deb/namespacehedgedev_1_1csl_1_1mem.html#affb24618981b3a7a6f3b2bd67b93bba3":[0,0,0,0,6,5],
+"d1/deb/namespacehedgedev_1_1csl_1_1mem.html#affb24618981b3a7a6f3b2bd67b93bba3":[0,0,0,0,6,6],
+"d1/deb/namespacehedgedev_1_1csl_1_1mem.html#affb24618981b3a7a6f3b2bd67b93bba3a53b9e9679a8ea25880376080b76f98ad":[0,0,0,0,6,5,2]
 };

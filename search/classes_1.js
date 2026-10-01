@@ -1,7 +1,7 @@
 var searchData=
 [
   ['get_5fchar_5ftype_0',['get_char_type',['../d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type.html',1,'hedgedev::csl::ut::expr']]],
-  ['get_5fchar_5ftype_3c_20t_2c_20std_3a_3aenable_5fif_5ft_3c_20std_3a_3aranges_3a_3arange_3c_20std_3a_3aremove_5fcvref_5ft_3c_20t_20_3e_20_3e_20_26_26_21std_3a_3ais_5fpointer_5fv_3c_20std_3a_3adecay_5ft_3c_20t_20_3e_20_3e_20_3e_20_3e_1',['get_char_type&lt; T, std::enable_if_t&lt; std::ranges::range&lt; std::remove_cvref_t&lt; T &gt; &gt; &amp;&amp;!std::is_pointer_v&lt; std::decay_t&lt; T &gt; &gt; &gt; &gt;',['../d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html',1,'hedgedev::csl::ut::expr']]],
+  ['get_5fchar_5ftype_3c_20t_20_3e_1',['get_char_type&lt; T &gt;',['../d8/d73/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_4.html',1,'hedgedev::csl::ut::expr']]],
   ['get_5fencoding_5fchar_5ftype_2',['get_encoding_char_type',['../d6/d38/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type.html',1,'hedgedev::csl::ut::expr']]],
   ['get_5fencoding_5fchar_5ftype_3c_20encoding_3a_3autf16_5fbe_20_3e_3',['get_encoding_char_type&lt; encoding::utf16_be &gt;',['../d0/dce/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__be_01_4.html',1,'hedgedev::csl::ut::expr']]],
   ['get_5fencoding_5fchar_5ftype_3c_20encoding_3a_3autf16_5fle_20_3e_4',['get_encoding_char_type&lt; encoding::utf16_le &gt;',['../d2/da7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__le_01_4.html',1,'hedgedev::csl::ut::expr']]],

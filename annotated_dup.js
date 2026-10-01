@@ -21,7 +21,7 @@ var annotated_dup =
         [ "ut", "dc/d62/namespacehedgedev_1_1csl_1_1ut.html", [
           [ "expr", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html", [
             [ "get_char_type", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type.html", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type" ],
-            [ "get_char_type&lt; T, std::enable_if_t&lt; std::ranges::range&lt; std::remove_cvref_t&lt; T &gt; &gt; &amp;&amp;!std::is_pointer_v&lt; std::decay_t&lt; T &gt; &gt; &gt; &gt;", "d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html", "d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6" ],
+            [ "get_char_type&lt; T &gt;", "d8/d73/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_4.html", "d8/d73/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_4" ],
             [ "get_encoding_char_type", "d6/d38/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type.html", "d6/d38/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type" ],
             [ "get_encoding_char_type&lt; encoding::utf16_be &gt;", "d0/dce/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__be_01_4.html", "d0/dce/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__be_01_4" ],
             [ "get_encoding_char_type&lt; encoding::utf16_le &gt;", "d2/da7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__le_01_4.html", "d2/da7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf16__le_01_4" ],
@@ -29,7 +29,7 @@ var annotated_dup =
             [ "get_encoding_char_type&lt; encoding::utf32_le &gt;", "d3/d8d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf32__le_01_4.html", "d3/d8d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf32__le_01_4" ],
             [ "get_encoding_char_type&lt; encoding::utf8 &gt;", "db/dc7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf8_01_4.html", "db/dc7/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__encoding__char__type_3_01encoding_1_1utf8_01_4" ],
             [ "is_basic_string", "dd/d2f/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string.html", null ],
-            [ "is_basic_string&lt; std::basic_string&lt; T_char, T_traits &gt; &gt;", "dc/d90/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string_3_01std_1_1basic__string_3_01T__char_00_01T__traits_01_4_01_4.html", null ],
+            [ "is_basic_string&lt; std::basic_string&lt; T_char, T_traits, T_alloc &gt; &gt;", "d1/d8e/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string_3_01std_1_1basic__string_3_01T__char_00bc55ea13cf304e722dfc08dce648be05.html", null ],
             [ "is_basic_string_view", "d7/d31/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string__view.html", null ],
             [ "is_basic_string_view&lt; std::basic_string_view&lt; T_char, T_traits &gt; &gt;", "dc/d2d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string__view_3_01std_1_1basic__string__view_3_e5d060bd03cc49e648113b994f798484.html", null ]
           ] ]

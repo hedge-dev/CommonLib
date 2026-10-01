@@ -1,9 +1,9 @@
 var string__expr_8h =
 [
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; T, typename &gt;", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type.html", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type" ],
-    [ "hedgedev::csl::ut::expr::get_char_type&lt; T, std::enable_if_t&lt; std::ranges::range&lt; std::remove_cvref_t&lt; T &gt; &gt; &amp;&amp;!std::is_pointer_v&lt; std::decay_t&lt; T &gt; &gt; &gt; &gt;", "d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6.html", "d1/d4d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_00_01std_1_1enable__if__t_3_01std_14f7a9044134f4e74d1f9419d7c3733c6" ],
+    [ "hedgedev::csl::ut::expr::get_char_type&lt; T &gt;", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type.html", "d5/d0b/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type" ],
+    [ "hedgedev::csl::ut::expr::get_char_type&lt; T &gt;", "d8/d73/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_4.html", "d8/d73/structhedgedev_1_1csl_1_1ut_1_1expr_1_1get__char__type_3_01T_01_4" ],
     [ "hedgedev::csl::ut::expr::is_basic_string&lt; T &gt;", "dd/d2f/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string.html", null ],
-    [ "hedgedev::csl::ut::expr::is_basic_string&lt; std::basic_string&lt; T_char, T_traits &gt; &gt;", "dc/d90/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string_3_01std_1_1basic__string_3_01T__char_00_01T__traits_01_4_01_4.html", null ],
+    [ "hedgedev::csl::ut::expr::is_basic_string&lt; std::basic_string&lt; T_char, T_traits, T_alloc &gt; &gt;", "d1/d8e/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string_3_01std_1_1basic__string_3_01T__char_00bc55ea13cf304e722dfc08dce648be05.html", null ],
     [ "hedgedev::csl::ut::expr::is_basic_string_view&lt; T &gt;", "d7/d31/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string__view.html", null ],
     [ "hedgedev::csl::ut::expr::is_basic_string_view&lt; std::basic_string_view&lt; T_char, T_traits &gt; &gt;", "dc/d2d/structhedgedev_1_1csl_1_1ut_1_1expr_1_1is__basic__string__view_3_01std_1_1basic__string__view_3_e5d060bd03cc49e648113b994f798484.html", null ],
     [ "hedgedev::csl::ut::expr::raw_string_c", "d3/d76/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1raw__string__c.html", null ],
@@ -19,7 +19,7 @@ var string__expr_8h =
     [ "hedgedev::csl::ut::expr::any_string_u8", "d6/d16/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1any__string__u8.html", null ],
     [ "hedgedev::csl::ut::expr::any_string_u16", "db/deb/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1any__string__u16.html", null ],
     [ "hedgedev::csl::ut::expr::any_string_u32", "dc/dc0/concepthedgedev_1_1csl_1_1ut_1_1expr_1_1any__string__u32.html", null ],
-    [ "hedgedev::csl::ut::expr::get_char_type_t", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ae75e9f81ded6c722b930b77d48fc04f6", null ],
+    [ "hedgedev::csl::ut::expr::get_char_type_t", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a903526e34b7c9bfe2224c620cdece581", null ],
     [ "hedgedev::csl::ut::expr::inferred_fstream_t", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a23f17303c4dfa558d8e7ec7ba05767a4", null ],
     [ "hedgedev::csl::ut::expr::inferred_string_t", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#a953b13c0879a517f514ee405f464f831", null ],
     [ "hedgedev::csl::ut::expr::inferred_string_view_t", "d5/dee/namespacehedgedev_1_1csl_1_1ut_1_1expr.html#ab8fdee4cd01cb4f04b06277808d11c68", null ],

@@ -1,11 +1,11 @@
 var encoding_8inl =
 [
-    [ "hedgedev::csl::ut::encoding::convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a6499aef2fd3d38eb683663d3344fab03", null ],
-    [ "hedgedev::csl::ut::encoding::convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#ae07a8034ee8087b8922a9e271c2318f1", null ],
-    [ "hedgedev::csl::ut::encoding::get_bom", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#aa9443ac448b0f28daebb574e73b00af2", null ],
-    [ "hedgedev::csl::ut::encoding::get_bom_size", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a7f9c739f0eb56e23f1ced237516e45a2", null ],
-    [ "hedgedev::csl::ut::encoding::get_bom_size", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a843c7461b6a6088dff1a3bea4903e7c6", null ],
+    [ "hedgedev::csl::ut::encoding::convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a6caf6cbbfd000218d20e70a1d6b36d77", null ],
+    [ "hedgedev::csl::ut::encoding::convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#ae76f145d13f3ada48ca3c89404ae1c10", null ],
+    [ "hedgedev::csl::ut::encoding::get_bom", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a7aca45e74aed8f65f4f8e91870451b7c", null ],
+    [ "hedgedev::csl::ut::encoding::get_bom_length", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a49749c539d21b0a66942663c4d0278fa", null ],
+    [ "hedgedev::csl::ut::encoding::get_bom_length", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a67b9abd9bfee4a7fd1bcb96839b15a69", null ],
     [ "hedgedev::csl::ut::encoding::precedent_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a6e06f2ca067babe0f48e18668107f038", null ],
     [ "hedgedev::csl::ut::encoding::try_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a12e768f8c57b8e945704451340d91d8c", null ],
-    [ "hedgedev::csl::ut::encoding::try_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a074e26aafd497ac66d826198fff0cd52", null ]
+    [ "hedgedev::csl::ut::encoding::try_convert", "d4/dbb/namespacehedgedev_1_1csl_1_1ut_1_1encoding.html#a751d5bd5243a79d89df754f01ccb22ea", null ]
 ];

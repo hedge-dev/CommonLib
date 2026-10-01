@@ -210,7 +210,7 @@ namespace hedgedev::csl::io::file
         return compare(left, right, true, in_left_callback, in_right_callback);
     }
 
-    inline ut::encoding::encoding_type get_encoding(const std::filesystem::path& in_path, ut::encoding::encoding_type* out_bom)
+    inline ut::encoding::encoding_type get_encoding(const std::filesystem::path& in_path, ut::encoding::encoding_type* out_bom, bool in_native)
     {
         auto file = std::ifstream(in_path, std::ios::binary);
 
@@ -230,9 +230,19 @@ namespace hedgedev::csl::io::file
                 : ut::encoding::unknown;
         }
 
-        return length
+        auto result = length
             ? ut::encoding::encoding_type(simdutf::autodetect_encoding(buffer.data(), length))
             : ut::encoding::unknown;
+
+        if (in_native)
+        {
+            if (out_bom)
+                *out_bom = ut::expr::get_native_encoding_type(*out_bom);
+
+            result = ut::expr::get_native_encoding_type(result);
+        }
+
+        return result;
     }
 
     template <ut::expr::basic_string T>
@@ -247,46 +257,50 @@ namespace hedgedev::csl::io::file
 
         ut::encoding::encoding_type bom{};
         const auto encoding = get_encoding(in_path, &bom);
-        const auto bom_length = ut::encoding::get_bom_size(bom);
+        const auto bom_length = ut::encoding::get_bom_length(bom);
 
         auto file = std::ifstream(in_path, std::ios::binary | std::ios::ate);
 
         if (!file)
             return result;
 
-        const auto length = size_t(file.tellg()) - bom_length;
+        const auto length = int64_t(file.tellg()) - bom_length;
 
-        if (!length)
+        if (length <= 0)
             return result;
 
-        auto buffer = std::vector<ut::expr::get_char_type_t<T>>(length);
+        auto buffer = std::vector<char>(length);
 
         // Skip the byte order mark, if present.
         file.seekg(bom_length, std::ios::beg);
 
         // Read file contents into buffer.
-        file.rdbuf()->sgetn(reinterpret_cast<char*>(buffer.data()), length);
+        file.rdbuf()->sgetn(buffer.data(), length);
 
-        if (!ut::encoding::try_convert<T>(buffer, result, encoding))
-            return result;
+        const auto native_encoding = ut::expr::get_native_encoding_type(encoding);
+
+        switch (ut::expr::get_encoding_char_size(native_encoding))
+        {
+            case sizeof(char16_t):
+                result = ut::encoding::convert<T>(std::u16string_view(reinterpret_cast<const char16_t*>(buffer.data()), length / sizeof(char16_t)), native_encoding, encoding);
+                break;
+
+            case sizeof(char32_t):
+                result = ut::encoding::convert<T>(std::u32string_view(reinterpret_cast<const char32_t*>(buffer.data()), length / sizeof(char32_t)), native_encoding, encoding);
+                break;
+
+            default:
+                result = ut::encoding::convert<T>(std::string_view(buffer.data(), length), native_encoding, encoding);
+                break;
+        }
 
         return result;
     }
 
-    template <ut::expr::any_string T, ut::encoding::encoding_type encoding>
+    template <ut::expr::any_string T, ut::encoding::encoding_type target_encoding>
     inline bool write_all_text(const std::filesystem::path& in_path, const T& in_str, bool in_write_bom)
     {
-        ut::expr::encoded_string_t<encoding> str{};
-
-        if constexpr (std::is_same_v<ut::expr::get_char_type_t<T>, ut::expr::get_encoding_char_type_t<encoding>>)
-        {
-            str = in_str;
-        }
-        else
-        {
-            if (!ut::encoding::try_convert<encoding>(in_str, str))
-                return false;
-        }
+        const auto str = ut::encoding::convert<target_encoding>(in_str);
 
         if (str.empty())
             return false;
@@ -298,19 +312,19 @@ namespace hedgedev::csl::io::file
 
         if (in_write_bom)
         {
-            const auto bom = get_bom(encoding);
+            const auto bom = get_bom(target_encoding);
             file.write(reinterpret_cast<const char*>(bom.data()), bom.size());
         }
 
-        file.write(reinterpret_cast<const char*>(str.data()), str.size() * sizeof(ut::expr::get_encoding_char_type_t<encoding>));
+        file.write(reinterpret_cast<const char*>(str.data()), str.size() * sizeof(ut::expr::get_encoding_char_type_t<target_encoding>));
         file.close();
 
         return true;
     }
 
-    template <ut::encoding::encoding_type encoding, ut::expr::any_string T>
+    template <ut::encoding::encoding_type target_encoding, ut::expr::any_string T>
     inline bool write_all_text(const std::filesystem::path& in_path, const T& in_str, bool in_write_bom)
     {
-        return write_all_text<T, encoding>(in_path, in_str, in_write_bom);
+        return write_all_text<T, target_encoding>(in_path, in_str, in_write_bom);
     }
 }

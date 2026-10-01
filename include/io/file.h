@@ -104,12 +104,14 @@ namespace hedgedev::csl::io::file
     ///
     /// Gets the text encoding of a file heuristically.
     ///
-    /// \param in_path The path to the file to check.
-    /// \param out_bom The byte order mark, if present.
+    /// \param in_path   The path to the file to check.
+    /// \param out_bom   The byte order mark, if present.
+    /// \param in_native Determines whether to transform the encoding type to the
+    ///                  native endianness.
     ///
     /// \returns The encoding of the file.
     ///
-    inline ut::encoding::encoding_type get_encoding(const std::filesystem::path& in_path, ut::encoding::encoding_type* out_bom = nullptr);
+    inline ut::encoding::encoding_type get_encoding(const std::filesystem::path& in_path, ut::encoding::encoding_type* out_bom = nullptr, bool in_native = false);
 
     ///
     /// Reads a text file into a string.
@@ -127,8 +129,8 @@ namespace hedgedev::csl::io::file
     ///
     /// Writes a string to a file.
     /// 
-    /// \tparam T        The string type.
-    /// \tparam encoding The encoding of the file inferred from the string type.
+    /// \tparam T               The string type.
+    /// \tparam target_encoding The encoding of the file inferred from the string type.
     ///
     /// \param in_path      The path to the file to write.
     /// \param in_str       The string to write to the file.
@@ -140,14 +142,14 @@ namespace hedgedev::csl::io::file
     ///
     /// \returns `true` if the file was written successfully. Otherwise, `false`.
     ///
-    template <ut::expr::any_string T, ut::encoding::encoding_type encoding = ut::expr::get_char_encoding_type<T>()>
-    inline bool write_all_text(const std::filesystem::path& in_path, const T& in_str, bool in_write_bom = encoding != ut::encoding::utf8);
+    template <ut::expr::any_string T, ut::encoding::encoding_type target_encoding = ut::expr::get_char_encoding_type<T>()>
+    inline bool write_all_text(const std::filesystem::path& in_path, const T& in_str, bool in_write_bom = target_encoding != ut::encoding::utf8);
 
     ///
     /// Writes a string to a file.
     /// 
-    /// \tparam encoding The encoding of the file.
-    /// \tparam T        The string type.
+    /// \tparam target_encoding The encoding of the file.
+    /// \tparam T               The string type.
     ///
     /// \param in_path      The path to the file to write.
     /// \param in_str       The string to write to the file.
@@ -159,8 +161,8 @@ namespace hedgedev::csl::io::file
     ///
     /// \returns `true` if the file was written successfully. Otherwise, `false`.
     ///
-    template <ut::encoding::encoding_type encoding, ut::expr::any_string T>
-    inline bool write_all_text(const std::filesystem::path& in_path, const T& in_str, bool in_write_bom = encoding != ut::encoding::utf8);
+    template <ut::encoding::encoding_type target_encoding, ut::expr::any_string T>
+    inline bool write_all_text(const std::filesystem::path& in_path, const T& in_str, bool in_write_bom = target_encoding != ut::encoding::utf8);
 }
 
 #include "file.inl"

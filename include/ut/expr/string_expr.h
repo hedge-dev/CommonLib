@@ -15,20 +15,21 @@ namespace hedgedev::csl::ut::expr
     ///
     /// Gets the character type of a non-range type.
     ///
-    template <typename T, typename = void>
+    template <typename T>
     struct get_char_type { using type = std::remove_cv_t<std::remove_pointer_t<std::decay_t<T>>>; };
 
     ///
     /// Gets the character type of a range type.
     ///
     template <typename T>
-    struct get_char_type<T, std::enable_if_t<std::ranges::range<std::remove_cvref_t<T>> && !std::is_pointer_v<std::decay_t<T>>>> { using type = std::ranges::range_value_t<std::remove_cvref_t<T>>; };
+    requires (std::ranges::range<T> && !std::is_pointer_v<std::decay_t<T>>)
+    struct get_char_type<T> { using type = std::ranges::range_value_t<T>; };
 
     ///
     /// Gets the character type of a string container.
     ///
     template <typename T>
-    using get_char_type_t = typename get_char_type<T>::type;
+    using get_char_type_t = typename get_char_type<std::remove_cvref_t<T>>::type;
 
     ///
     /// A multibyte C string type.
@@ -63,8 +64,8 @@ namespace hedgedev::csl::ut::expr
     template <typename T>
     struct is_basic_string : std::false_type {};
 
-    template <typename T_char, typename T_traits>
-    struct is_basic_string<std::basic_string<T_char, T_traits>> : std::true_type {};
+    template <typename T_char, typename T_traits, typename T_alloc>
+    struct is_basic_string<std::basic_string<T_char, T_traits, T_alloc>> : std::true_type {};
 
     ///
     /// An `std::basic_string` type.

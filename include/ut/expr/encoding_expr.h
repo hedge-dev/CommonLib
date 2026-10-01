@@ -3,6 +3,7 @@
 #include <type_traits>
 
 #include "ut/encoding_type.h"
+#include "string_expr.h"
 
 namespace hedgedev::csl::ut::expr
 {
@@ -34,27 +35,55 @@ namespace hedgedev::csl::ut::expr
     using get_encoding_char_type_t = typename get_encoding_char_type<encoding>::type;
 
     ///
+    /// Gets an encoding type suitable for the character type.
+    ///
+    template <any_string T>
+    inline constexpr encoding::encoding_type get_char_encoding_type();
+
+    ///
+    /// Gets the native endianness of the specified encoding type.
+    ///
+    inline constexpr encoding::encoding_type get_native_encoding_type(encoding::encoding_type in_encoding);
+
+    ///
     /// Gets the character size of the encoding type.
     ///
     inline constexpr size_t get_encoding_char_size(encoding::encoding_type in_encoding);
 
     ///
-    /// Gets an encoding type suitable for the string type.
+    /// Checks if the encoding type matches the string type.
     ///
-    template <typename T>
-    inline constexpr encoding::encoding_type get_char_encoding_type();
+    /// \tparam T The string type.
+    ///
+    /// \param in_encoding The encoding type.
+    ///
+    /// \returns `true` if the encoding type matches the string. Otherwise, `false`.
+    ///
+    template <any_string T>
+    inline constexpr bool is_char_encoding_type(encoding::encoding_type in_encoding);
 
     ///
-    /// Gets the size of the byte order mark of a specific encoding type.
+    /// Checks if the encoding type matches the string type.
     ///
-    template <encoding::encoding_type encoding>
-    inline constexpr size_t get_bom_size();
+    /// \tparam T        The string type.
+    /// \tparam encoding The encoding type.
+    ///
+    /// \returns `true` if the encoding type matches the string. Otherwise, `false`.
+    ///
+    template <any_string T, encoding::encoding_type encoding>
+    inline constexpr bool is_char_encoding_type_v = is_char_encoding_type<T>(encoding);
 
     ///
     /// An `std::basic_string` inferred from an encoding type.
     ///
     template <encoding::encoding_type encoding>
     using encoded_string_t = std::basic_string<get_encoding_char_type_t<encoding>>;
+
+    ///
+    /// An `std::basic_string_view` inferred from an encoding type.
+    ///
+    template <encoding::encoding_type encoding>
+    using encoded_string_view_t = std::basic_string_view<get_encoding_char_type_t<encoding>>;
 }
 
 #include "encoding_expr.inl"

@@ -9,7 +9,7 @@ namespace hedgedev::csl::ut::expr
 
         const auto str_sv = inferred_string_view_t<T_str>(in_str);
 
-        result.reserve(str_sv.size());
+        result.reserve(str_sv.size() * sizeof(get_char_type_t<T_result>));
 
         std::transform(str_sv.begin(), str_sv.end(), std::back_inserter(result), [](get_char_type_t<T_str> in_char)
         {

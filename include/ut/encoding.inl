@@ -4,6 +4,7 @@
 #include "expr/encoding_expr.h"
 #include "expr/string_expr.h"
 #include "mem/mem.h"
+#include "encoding_type.h"
 #include "preprocessor.h"
 
 #define __CMNLIB_INTERNAL_STATIC_LIB_ENROLMENT
@@ -11,63 +12,45 @@
 namespace hedgedev::csl::ut::encoding
 {
 	template <expr::basic_string T_result, expr::any_string T_str>
-	inline std::conditional_t<std::is_same_v<T_result, T_str> && !std::is_pointer_v<T_str>, const T_result&, T_result> convert(const T_str& in_str, encoding_type in_encoding)
+	inline T_result convert(const T_str& in_str, encoding_type in_dst_encoding, encoding_type in_src_encoding)
 	{
-		if constexpr (std::is_same_v<T_result, T_str>)
-		{
-			return in_str;
-		}
-		else
-		{
-			T_result result{};
+		T_result result{};
 
-			try_convert<T_result, T_str>(in_str, result, in_encoding);
+		try_convert<T_result, T_str>(in_str, result, in_dst_encoding, in_src_encoding);
 
-			return result;
-		}
+		return result;
 	}
 
-	template <encoding_type encoding, expr::any_string T_str, typename T_result>
-	inline std::conditional_t<std::is_same_v<T_result, T_str> && !std::is_pointer_v<T_str>, const T_result&, T_result> convert(const T_str& in_str)
+	template <encoding_type dst_encoding, expr::any_string T_str, expr::any_string T_result>
+	inline T_result convert(const T_str& in_str)
 	{
-		if constexpr (std::is_same_v<T_result, T_str>)
-		{
-			return in_str;
-		}
-		else
-		{
-			T_result result{};
-
-			try_convert<encoding, T_str, T_result>(in_str, result);
-
-			return result;
-		}
+		return convert<T_result, T_str>(in_str, dst_encoding, expr::get_char_encoding_type<T_str>());
 	}
 
-	inline std::vector<uint8_t> get_bom(ut::encoding::encoding_type in_encoding)
+	inline std::vector<uint8_t> get_bom(encoding_type in_encoding)
 	{
 		switch (in_encoding)
 		{
-			case ut::encoding::utf8:
+			case encoding::utf8:
 				return { 0xEF, 0xBB, 0xBF };
 
-			case ut::encoding::utf16_le:
+			case encoding::utf16_le:
 				return { 0xFF, 0xFE };
 
-			case ut::encoding::utf16_be:
+			case encoding::utf16_be:
 				return { 0xFE, 0xFF };
 
-			case ut::encoding::utf32_le:
+			case encoding::utf32_le:
 				return { 0xFF, 0xFE, 0x00, 0x00 };
 
-			case ut::encoding::utf32_be:
+			case encoding::utf32_be:
 				return { 0x00, 0x00, 0xFE, 0xFF };
 		}
 
 		return {};
 	}
 
-	inline constexpr size_t get_bom_size(encoding_type in_encoding)
+	inline constexpr size_t get_bom_length(encoding_type in_encoding)
 	{
 		switch (in_encoding)
 		{
@@ -86,10 +69,10 @@ namespace hedgedev::csl::ut::encoding
 		return 0;
 	}
 
-	template <encoding::encoding_type encoding>
-	inline constexpr size_t get_bom_size()
+	template <encoding_type encoding>
+	inline constexpr size_t get_bom_length()
 	{
-		return get_bom_size(encoding);
+		return get_bom_length(encoding);
 	}
 
 	template <expr::any_string... T_args, typename T_result>
@@ -140,31 +123,37 @@ namespace hedgedev::csl::ut::encoding
 	}
 
 	template <expr::basic_string T_result, expr::any_string T_str>
-	inline bool try_convert(const T_str& in_str, T_result& out_result, encoding_type in_encoding)
+	inline bool try_convert(const T_str& in_str, T_result& out_result, encoding_type in_dst_encoding, encoding_type in_src_encoding)
 	{
 		using src_char_t = expr::get_char_type_t<T_str>;
 		using dst_char_t = expr::get_char_type_t<T_result>;
-
-		ASSERT_RETURN_FALSE(sizeof(dst_char_t) == expr::get_encoding_char_size(in_encoding));
-
 		using inferred_string_view_t = expr::inferred_string_view_t<T_str>;
 
 		inferred_string_view_t str_sv{};
 
-		if constexpr (std::is_constructible_v<inferred_string_view_t, const T_str&>)
+		if constexpr (std::ranges::range<T_str>)
+		{
+			str_sv = inferred_string_view_t(in_str.begin(), in_str.end());
+		}
+		else if constexpr (std::is_constructible_v<inferred_string_view_t, const T_str&>)
 		{
 			str_sv = inferred_string_view_t(in_str);
 		}
 		else
 		{
-			// Allow for vector-like types.
-			str_sv = inferred_string_view_t(in_str.begin(), in_str.end());
+			return false;
 		}
 
 		if constexpr (std::is_same_v<src_char_t, dst_char_t>)
 		{
-			out_result = T_result(str_sv);
-			return true;
+			// If the encoding types match the string character types, create
+			// an inferred string. Otherwise, perform an endian swap later.
+			if (expr::is_char_encoding_type<src_char_t>(in_src_encoding) &&
+				expr::is_char_encoding_type<dst_char_t>(in_dst_encoding))
+			{
+				out_result = T_result(str_sv);
+				return true;
+			}
 		}
 
 		if (str_sv.empty())
@@ -281,16 +270,22 @@ namespace hedgedev::csl::ut::encoding
 			out_result.resize(transcode_length);
 		}
 
-		const auto is_big_endian = ut::expr::has_flag(in_encoding, utf16_be) ||
-								   ut::expr::has_flag(in_encoding, utf32_be);
-		
-		const auto is_utf16 = ut::expr::has_flag(in_encoding, utf16_le) ||
-							  ut::expr::has_flag(in_encoding, utf16_be);
+		// Result hasn't been reserved, abort.
+		if (!out_result.capacity())
+			return false;
 
-		const auto is_utf32 = ut::expr::has_flag(in_encoding, utf32_le) ||
-							  ut::expr::has_flag(in_encoding, utf32_be);
+		const auto dst_char_size = expr::get_encoding_char_size(in_dst_encoding);
+
+		// Skip endian swap if encoding is unknown or multi-byte.
+		if (in_dst_encoding == encoding::unknown || dst_char_size == sizeof(char))
+			return true;
 
 		auto needs_endian_swap = false;
+
+		const auto is_big_endian = expr::has_flag(in_src_encoding, encoding::utf16_be) ||
+								   expr::has_flag(in_src_encoding, encoding::utf32_be) ||
+								   expr::has_flag(in_dst_encoding, encoding::utf16_be) ||
+								   expr::has_flag(in_dst_encoding, encoding::utf32_be);
 
 		if constexpr (std::endian::native == std::endian::little)
 		{
@@ -303,7 +298,7 @@ namespace hedgedev::csl::ut::encoding
 
 		if (needs_endian_swap)
 		{
-			if (is_utf16)
+			if (dst_char_size == sizeof(char16_t))
 			{
 				auto chars = reinterpret_cast<const char16_t*>(out_result.data());
 				const auto chars_length = transcode_length;
@@ -311,7 +306,7 @@ namespace hedgedev::csl::ut::encoding
 				for (size_t i = 0; i < chars_length; i++)
 					const_cast<char16_t*>(chars)[i] = mem::byteswap(chars[i]);
 			}
-			else if (is_utf32)
+			else if (dst_char_size == sizeof(char32_t))
 			{
 				auto chars = reinterpret_cast<const char32_t*>(out_result.data());
 				const auto chars_length = transcode_length;
@@ -324,9 +319,9 @@ namespace hedgedev::csl::ut::encoding
 		return true;
 	}
 
-	template <encoding_type encoding, expr::any_string T_str, typename T_result>
+	template <encoding_type dst_encoding, expr::any_string T_str, expr::any_string T_result>
 	inline bool try_convert(const T_str& in_str, T_result& out_result)
 	{
-		return try_convert<T_result, T_str>(in_str, out_result, encoding);
+		return try_convert<T_result, T_str>(in_str, out_result, dst_encoding, expr::get_char_encoding_type<T_str>());
 	}
 }
